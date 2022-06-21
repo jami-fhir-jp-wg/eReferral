@@ -2,7 +2,7 @@ Profile: JP_Bundle_eReferral
 Parent: JP_Bundle_CCLIX
 Id: JP-Bundle-eReferral
 Description: "処方情報のBundle Documentのプロファル。分割処方は別の分割情報処方用プロファイルを使用すること。"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
 * ^status = #draft
 * . ^short = "Contains a collection of resources リソース集合を含む文書バンドル"
 * . ^definition = "A container for a collection of resources.\r\nリソース集合のためのコンテナ\r\n診療情報交換のための文書形式のバンドルの共通プロファイル"

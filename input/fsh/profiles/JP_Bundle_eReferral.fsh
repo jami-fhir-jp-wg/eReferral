@@ -1,8 +1,8 @@
-Profile: JP_Bundle_ePrescriptionData
+Profile: JP_Bundle_eReferralData
 Parent: JP_Bundle_CCLIX
-Id: JP-Bundle-ePrescriptionData
+Id: JP-Bundle-eReferralData
 Description: "処方情報のBundle Documentのプロファル。分割処方は別の分割情報処方用プロファイルを使用すること。"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Bundle_ePrescriptionData"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferralData"
 * ^status = #draft
 * . ^short = "Contains a collection of resources リソース集合を含む文書バンドル"
 * . ^definition = "A container for a collection of resources.\r\nリソース集合のためのコンテナ\r\n診療情報交換のための文書形式のバンドルの共通プロファイル"
@@ -17,16 +17,16 @@ Description: "処方情報のBundle Documentのプロファル。分割処方は
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 
-* entry[composition].resource only JP_Composition_ePrescriptionData
-* entry[patient].resource only JP_Patient_ePrescriptionData
-* entry[encounterOnDocument].resource only JP_Encounter_ePrescriptionData
-* entry[healthInsurancePublic].resource only JP_Coverage_ePrescriptionData_insurance
-* entry[publicPayment].resource only JP_Coverage_ePrescriptionData_publicPayment
-* entry[commonPayerOrganization].resource only JP_Organization_ePrescriptionData_coveragePayer
-* entry[custodianOrganization].resource only JP_Organization_ePrescriptionData_issuer
-* entry[custodianDepartmentOfOrganization].resource only JP_Organization_ePrescriptionData_departmentOfIssuer
-* entry[authorisedAuthorRole].resource only JP_PractitionerRole_ePrescriptionData_author
-* entry[authorisedAuthor].resource only JP_Practitioner_ePrescriptionData_author
+* entry[composition].resource only JP_Composition_eReferralData
+* entry[patient].resource only JP_Patient_eReferralData
+* entry[encounterOnDocument].resource only JP_Encounter_eReferralData
+* entry[healthInsurancePublic].resource only JP_Coverage_eReferralData_insurance
+* entry[publicPayment].resource only JP_Coverage_eReferralData_publicPayment
+* entry[commonPayerOrganization].resource only JP_Organization_eReferralData_coveragePayer
+* entry[custodianOrganization].resource only JP_Organization_eReferralData_issuer
+* entry[custodianDepartmentOfOrganization].resource only JP_Organization_eReferralData_departmentOfIssuer
+* entry[authorisedAuthorRole].resource only JP_PractitionerRole_eReferralData_author
+* entry[authorisedAuthor].resource only JP_Practitioner_eReferralData_author
 
 * entry contains
     medicationRequest 0..*  MS and
@@ -37,7 +37,7 @@ Description: "処方情報のBundle Documentのプロファル。分割処方は
 * entry[medicationRequest].fullUrl 1.. MS
 * entry[medicationRequest].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[medicationRequest].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
-* entry[medicationRequest].resource only JP_MedicationRequest_ePrescriptionData
+* entry[medicationRequest].resource only JP_MedicationRequest_eReferralData
 * entry[medicationRequest].resource ^short = "MedicationRequestリソースのインスタンス本体"
 * entry[medicationRequest].resource ^definition = "MedicationRequestリソースのインスタンス本体。"
 
@@ -46,7 +46,7 @@ Description: "処方情報のBundle Documentのプロファル。分割処方は
 * entry[communication].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[communication].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[communication].fullUrl MS
-* entry[communication].resource only JP_Communication_ePrescriptionData
+* entry[communication].resource only JP_Communication_eReferralData
 * entry[communication].resource ^short = "Communicationrリソースのインスタンス本体"
 * entry[communication].resource ^definition = "Communicationrリソースのインスタンス本体"
 * entry[communication].search ..0

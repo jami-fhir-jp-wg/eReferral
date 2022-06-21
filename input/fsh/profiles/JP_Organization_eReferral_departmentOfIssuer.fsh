@@ -15,7 +15,7 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 
 * obeys checkOrganizationType0
 * obeys checkOrganizationType1
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_eReferral_departmentOfIssuer"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_departmentOfIssuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

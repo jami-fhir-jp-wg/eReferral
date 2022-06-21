@@ -27,7 +27,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 // * obeys checkValidCategoryTitle
 // * obeys checkValidCategory
 // * obeys checkValidSections
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Composition_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
 * ^status = #draft
 * text ^short = "読んで概略がわかるようにするためのテキスト情報"
 * text ^definition = "読んで概略がわかるようにするためのテキスト情報。\r\n以降の構想的な要素のデータからシステムが自動生成すること。\r\n本リソースをテキストで表現したもので、内容を省略しても構わない。 このデータは人がこのリソースの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。 この内容と以降の構造化されたデータとの内容が不一致の場合には、この要素の内容は無視される。（本文書のすべてのリソースで同様とする）。"
@@ -79,7 +79,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * category ^definition = "麻薬処方と一般処方とを区別する処方箋区分コード。"
 * category.coding 1..1 MS
 * category.coding.system 1.. MS
-* category.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category" (exactly)
+* category.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/prescription-category" (exactly)
 * category.coding.system ^short = "処方箋区分コードのコード体系"
 * category.coding.system ^definition = "処方箋区分コードのコード体系を識別するURI。固定値。"
 * category.coding.code 1.. MS
@@ -155,7 +155,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[bunkatsuInformation].code ^definition = "セクション区分コード"
 * section[bunkatsuInformation].code.coding 1..1 MS
 * section[bunkatsuInformation].code.coding.system 1.. MS
-* section[bunkatsuInformation].code.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section" (exactly)
+* section[bunkatsuInformation].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/prescription-section" (exactly)
 * section[bunkatsuInformation].code.coding.system ^short = "セクション区分コードのコード体系"
 * section[bunkatsuInformation].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
 * section[bunkatsuInformation].code.coding.code 1.. MS
@@ -197,7 +197,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[bunkatsuBesshiInformation].code ^definition = "セクション区分コード"
 * section[bunkatsuBesshiInformation].code.coding 1..1 MS
 * section[bunkatsuBesshiInformation].code.coding.system 1.. MS
-* section[bunkatsuBesshiInformation].code.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section" (exactly)
+* section[bunkatsuBesshiInformation].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/prescription-section" (exactly)
 * section[bunkatsuBesshiInformation].code.coding.system ^short = "セクション区分コードのコード体系"
 * section[bunkatsuBesshiInformation].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
 * section[bunkatsuBesshiInformation].code.coding.code 1.. MS
@@ -239,7 +239,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[prescriptionInformation].code ^definition = "セクション区分コード"
 * section[prescriptionInformation].code.coding 1..1 MS
 * section[prescriptionInformation].code.coding.system 1.. MS
-* section[prescriptionInformation].code.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section" (exactly)
+* section[prescriptionInformation].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/prescription-section" (exactly)
 * section[prescriptionInformation].code.coding.system ^short = "セクション区分コードのコード体系"
 * section[prescriptionInformation].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
 * section[prescriptionInformation].code.coding.code 1.. MS

@@ -2,7 +2,7 @@ Profile: JP_Coverage_eReferral_publicPayment
 Parent: JP_Coverage
 Id: JP-Coverage-eReferral-publicPayment
 Description: "処方の公費負担情報　JP_Coverageの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_eReferral_publicPayment"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Coverage_eReferral_publicPayment"
 * ^status = #draft
 * text ^short = "このリソースのショートサマリーで人が読んでわかるテキスト表現"
 * text ^definition = "このリソースのショートサマリーで人が読んでわかるテキスト表現"

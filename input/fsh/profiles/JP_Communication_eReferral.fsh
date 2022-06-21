@@ -2,7 +2,7 @@ Profile: JP_Communication_eReferral
 Parent: JP_Communication
 Id: JP-Communication-eReferral
 Description: "処方の全体での備考等情報　JP_Communicationの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Communication_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Communication_eReferral"
 * ^status = #draft
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -16,7 +16,7 @@ Description: "処方の全体での備考等情報　JP_Communicationの派生�
 * status  MS
 * category  0..1 MS
 * category.coding 1..1 MS
-* category.coding.system = "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category" (exactly)
+* category.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/communication-category" (exactly)
 * category.coding.system ^definition = "処方コメントカテゴリー"
 * category.coding.system 1.. MS
 * category.coding.code 1.. MS

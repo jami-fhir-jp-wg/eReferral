@@ -30,7 +30,7 @@ Profile: JP_Practitioner_eReferral_author
 Parent: JP_Practitioner
 Id: JP-Practitioner-eReferral-author
 Description: "処方を作成した医師情報　JP_Practitionerの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Practitioner_eReferral_author"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Practitioner_eReferral_author"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"

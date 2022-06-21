@@ -4,11 +4,11 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                          │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: ePrescriptionData
-canonical: http://jpfhir.jp/fhir/ePrescriptionData
-name: "JAMIePrescriptionDataImplementationGuide"
-title: "JAMI ePrescriptionData ImplementationGuide"
-description: "JAMI ePrescriptionData ImplementationGuide"
+id: eReferral
+canonical: http://jpfhir.jp/fhir/eReferral
+name: "JAMIeReferralImplementationGuide"
+title: "JAMI eReferral ImplementationGuide"
+description: "JAMI eReferral ImplementationGuide"
 status: draft # draft | active | retired | unknown 
 version: 1.0.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
@@ -19,7 +19,7 @@ releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | re
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 # https://www.hl7.org/fhir/valueset-jurisdiction.html 
 publisher:
-  name: KOhe
+  name: Kazuhiko Ohe@JAMI
   url: http://jpfhir.jp
   # email: test@example.org
 
@@ -57,7 +57,7 @@ dependencies:
 
 pages:
   index.md:
-    title: 処方情報HL7&reg; FHIR&reg;記述仕様書 第1版
+    title: 診療情報提供書HL7&reg; FHIR&reg;記述仕様書 第1版
   ePreTables.md:
     title: 各表一覧
 

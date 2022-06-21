@@ -13,25 +13,25 @@
 [JP_DiagnosticReport_Common_interaction]: StructureDefinition-jp-diagnosticreport-common.html#interaction一覧
 
 <!-- ImplementationGuide -->
-[JAMIePrescriptionDataImplementationGuide]: ImplementationGuide-ePrescriptionData.html
+[JAMIeReferralDataImplementationGuide]: ImplementationGuide-eReferralData.html
 
 <!-- StructureDefinition: Profile, DataType -->
 [JP_Bundle_CCLIX]: StructureDefinition-JP-Bundle-CCLIX.html
-[JP_Bundle_ePrescriptionData]: StructureDefinition-JP-Bundle-ePrescriptionData.html
-[JP_Communication_ePrescriptionData]: StructureDefinition-JP-Communication-ePrescriptionData.html
+[JP_Bundle_eReferralData]: StructureDefinition-JP-Bundle-eReferralData.html
+[JP_Communication_eReferralData]: StructureDefinition-JP-Communication-eReferralData.html
 [JP_Communication]: StructureDefinition-JP-Communication.html
-[JP_Composition_ePrescriptionData]: StructureDefinition-JP-Composition-ePrescriptionData.html
-[JP_Coverage_ePrescriptionData_insurance]: StructureDefinition-JP-Coverage-ePrescriptionData-insurance.html
-[JP_Coverage_ePrescriptionData_publicPayment]: StructureDefinition-JP-Coverage-ePrescriptionData-publicPayment.html
-[JP_Encounter_ePrescriptionData]: StructureDefinition-JP-Encounter-ePrescriptionData.html
-[JP_MedicationRequest_ePrescriptionData]: StructureDefinition-JP-MedicationRequest-ePrescriptionData.html
-[JP_Organization_ePrescriptionData_coveragePayer]: StructureDefinition-JP-Organization-ePrescriptionData-coveragePayer.html
-[JP_Organization_ePrescriptionData_departmentOfIssuer]: StructureDefinition-JP-Organization-ePrescriptionData-departmentOfIssuer.html
-[JP_Organization_ePrescriptionData_issuer]: StructureDefinition-JP-Organization-ePrescriptionData-issuer.html
+[JP_Composition_eReferralData]: StructureDefinition-JP-Composition-eReferralData.html
+[JP_Coverage_eReferralData_insurance]: StructureDefinition-JP-Coverage-eReferralData-insurance.html
+[JP_Coverage_eReferralData_publicPayment]: StructureDefinition-JP-Coverage-eReferralData-publicPayment.html
+[JP_Encounter_eReferralData]: StructureDefinition-JP-Encounter-eReferralData.html
+[JP_MedicationRequest_eReferralData]: StructureDefinition-JP-MedicationRequest-eReferralData.html
+[JP_Organization_eReferralData_coveragePayer]: StructureDefinition-JP-Organization-eReferralData-coveragePayer.html
+[JP_Organization_eReferralData_departmentOfIssuer]: StructureDefinition-JP-Organization-eReferralData-departmentOfIssuer.html
+[JP_Organization_eReferralData_issuer]: StructureDefinition-JP-Organization-eReferralData-issuer.html
 [JP_Patient_CCLIX]: StructureDefinition-JP-Patient-CCLIX.html
-[JP_Patient_ePrescriptionData]: StructureDefinition-JP-Patient-ePrescriptionData.html
-[JP_Practitioner_ePrescriptionData_author]: StructureDefinition-JP-Practitioner-ePrescriptionData-author.html
-[JP_PractitionerRole_ePrescriptionData_author]: StructureDefinition-JP-PractitionerRole-ePrescriptionData-author.html
+[JP_Patient_eReferralData]: StructureDefinition-JP-Patient-eReferralData.html
+[JP_Practitioner_eReferralData_author]: StructureDefinition-JP-Practitioner-eReferralData-author.html
+[JP_PractitionerRole_eReferralData_author]: StructureDefinition-JP-PractitionerRole-eReferralData-author.html
 
 <!-- StructureDefinition: Extension -->
 [JP_Communication_CommunicationContent]: StructureDefinition-JP-Communication-CommunicationContent.html
@@ -50,7 +50,7 @@
 [JAMI_codeSystem_ePreUsageRoute]: CodeSystem-jami-codeSystem-ePreUsageRoute.html
 [JP_codeSystem_documentTypeCode]: CodeSystem-jp-codeSystem-documentTypeCode.html
 [JP_codeSystem_ePreCommunication_category]: CodeSystem-jp-codeSystem-ePreCommunication-category.html
-[JP_codeSystem_ePrescription_section]: CodeSystem-jp-codeSystem-ePrescription-section.html
+[JP_codeSystem_eReferral_section]: CodeSystem-jp-codeSystem-eReferral-section.html
 [JP_codeSystem_insurerNumber]: CodeSystem-jp-codeSystem-insurerNumber.html
 [JP_codeSystem_practitioner_certificate_category]: CodeSystem-jp-codeSystem-practitioner-certificate-category.html
 [JP_codeSystem_practitioner_role_category]: CodeSystem-jp-codeSystem-practitioner-role-category.html

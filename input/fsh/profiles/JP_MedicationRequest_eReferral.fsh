@@ -2,7 +2,7 @@ Profile: JP_MedicationRequest_eReferral
 Parent: JP_MedicationRequest
 Id: JP-MedicationRequest-eReferral
 Description: "処方オーダ情報　JP_MedicationRequestの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_MedicationRequest_eReferral"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\ｓ\\nXHTML形式。"
@@ -23,7 +23,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * medication[x].coding[codingHOT9].system = "urn:oid:1.2.392.200119.4.403.1" (exactly)
 * medication[x].coding[codingHOT9].system ^definition = "HOT9コードの識別ID"
 * medication[x].coding[codingHOT9].code 1.. MS
-* medication[x].coding[codingHOT9].code from http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-hot9
+* medication[x].coding[codingHOT9].code from http://jpfhir.jp/fhir/eReferral/ValueSet/jp-drugCode-hot9
 * medication[x].coding[codingHOT9].code ^definition = "HOT9医薬品コード"
 * medication[x].coding[codingHOT9].display 1.. MS
 * medication[x].coding[codingHOT9].display ^definition = "医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。"
@@ -31,7 +31,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * medication[x].coding[codingYJ].system = "urn:oid:1.2.392.100495.20.1.73" (exactly)
 * medication[x].coding[codingYJ].system ^definition = "YJコードを識別するsystem値"
 * medication[x].coding[codingYJ].code 1.. MS
-* medication[x].coding[codingYJ].code from http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-yj
+* medication[x].coding[codingYJ].code from http://jpfhir.jp/fhir/eReferral/ValueSet/jp-drugCode-yj
 * medication[x].coding[codingYJ].display 1.. MS
 * medication[x].coding[codingYJ].display ^definition = "医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。"
 * medication[x].coding[codingGS1].system = "urn:oid:2.51.1.1" (exactly)
@@ -39,7 +39,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * medication[x].coding[codingGS1].system MS
 * medication[x].coding[codingGS1].code ^definition = "GS1標準の識別コード。医薬品コードおよび医療材料等コードとして、調剤包装単位（最少包装単位、個別包装単位）14桁のフォーマットで使用する。"
 * medication[x].coding[codingGS1].code MS
-* medication[x].coding[codingGS1].code  from http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-gs1-14
+* medication[x].coding[codingGS1].code  from http://jpfhir.jp/fhir/eReferral/ValueSet/jp-drugCode-gs1-14
 * medication[x].coding[codingGS1].display 1.. MS
 * medication[x].coding[codingGS1].display ^definition = "医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。"
 * medication[x].coding[codingGeneralName].system = "urn:oid:1.2.392.100495.20.1.81" (exactly)
@@ -47,7 +47,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * medication[x].coding[codingGeneralName].system MS
 * medication[x].coding[codingGeneralName].code ^definition = "厚生労働省保険局が定める一般処方名マスターコード"
 * medication[x].coding[codingGeneralName].code MS
-* medication[x].coding[codingGeneralName].code from http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-drugCode-generalNameCode
+* medication[x].coding[codingGeneralName].code from http://jpfhir.jp/fhir/eReferral/ValueSet/mhlw-drugCode-generalNameCode
 * medication[x].coding[codingGeneralName].display ^definition = "医薬品名称。この名称は使用するコード表において選択したコードに対応する文字列とする。"
 * medication[x].coding[codingGeneralName].display MS
 * medication[x].text ^definition = "入力したユーザーが見た/選択した/発したとおりの概念および・またはユーザーが意図した概念を自然言語で表現したもの。\r\n処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ず設定する。"
@@ -112,7 +112,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.timing.repeat.when ..0
 * dosageInstruction.timing.repeat.offset ..0
 * dosageInstruction.timing.code 1.. MS
-* dosageInstruction.timing.code from http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode
+* dosageInstruction.timing.code from http://jpfhir.jp/fhir/eReferral/ValueSet/jami-ePreOrderUsageCode
 * dosageInstruction.timing.code ^short = "用法コード"
 * dosageInstruction.timing.code ^definition = "服用タイミングなどを表す用法をJAMI標準用法コード16桁コードで記述する。"
 * dosageInstruction.timing.code.coding 1..1 MS

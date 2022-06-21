@@ -2,7 +2,7 @@ Profile: JP_Patient_eReferral
 Parent: JP_Patient_CCLIX
 Id: JP-Patient-eReferral
 Description: "処方情報の対象患者のPatientプロファイル　JP_Patientの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Patient_eReferral"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\r\nXHTML形式。\r\n例：田中一郎、男、1980/7/1生、東京都中央区日本橋１－１－１, 03_1234_5678"

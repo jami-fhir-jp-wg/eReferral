@@ -2,7 +2,7 @@ Profile: JP_Coverage_eReferral_insurance
 Parent: JP_Coverage
 Id: JP-Coverage-eReferral-insurance
 Description: "処方の保険情報　Coverageリソースプロファイル　JP_Coverageの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_eReferral_insurance"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Coverage_eReferral_insurance"
 * ^status = #draft
 * contained ..0
 * extension ^slicing.discriminator.type = #value
