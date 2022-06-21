@@ -1,0 +1,5 @@
+cp package.json package/; cp fsh-generated/resources/*.json package/;gtar czf package.tgz package
+
+target=Patient-JP-Patient-ePreData-Example.json;
+profile=JP_Patient_ePrescriptionData;
+java -jar ../work/validatorJPFHIR.jar fsh-generated/resources/$target -version 4.0.1 -ig jp-core.draft1#1.1.0-beta -ig package.tgz -profile http://jpfhir.jp/fhir/ePrescription/StructureDefinition/$profile -html-output outout.html

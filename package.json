@@ -1,0 +1,14 @@
+{
+    "name": "ePrescriptionDara",
+    "version": "0.1.0",
+    "description": "ePrescriptionDara",
+    "author": "Kohe",
+    "fhirVersions": [
+        "4.0.1"
+    ],
+    "dependencies": {
+        "hl7.fhir.r4.core": "4.0.1"
+    },
+    "url": "http://Users/kohe/GitHub/ePrescriptionData/package",
+    "canonical": "http://jpcore.jp/fhir/ePrescriptionData"
+}
