@@ -7,6 +7,14 @@ Description: """医療情報交換のために使用される診療関連の文�
 * ^status = #draft
 * . ^short = "Contains a collection of resources リソース集合を含む文書バンドル"
 * . ^definition = "A container for a collection of resources.\r\nリソース集合のためのコンテナ\r\n診療情報交換のための文書形式のバンドルの共通プロファイル"
+
+* identifier 1.. MS
+* identifier ^short = "このBundleの固定識別番号。Bundle作成時にシステムが設定し、サーバ間で移動、コピーされても変更されないID。"
+* identifier ^definition = "このBundleの固定識別番号。ドキュメントの場合、identifierがグローバルに一意になるように生成される必要がある。"
+* identifier.system 1.. MS
+* identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/documentInstance-identifier" (exactly)
+* identifier.value 1.. MS
+
 * type = #document (exactly)
 * type ^definition = "このバンドルの目的コード。本プロファイルでは document 固定とする。\r\n（document | message | transaction | transaction_response | batch | batch_response | history | searchset | collection）"
 * type MS
@@ -145,7 +153,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[authorisedAuthor].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[authorisedAuthor].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
 * entry[authorisedAuthor].resource 1.. MS
-* entry[authorisedAuthor].resource only JP_Practitioner
+* entry[authorisedAuthor].resource only c
 * entry[authorisedAuthor].resource ^short = "Practitionerリソースのインスタンス本体"
 * entry[authorisedAuthor].resource ^definition = "Practitionerリソースのインスタンス本体。"
 * entry[authorisedAuthor].search ..0

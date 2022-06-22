@@ -1,7 +1,7 @@
 Profile: JP_Patient_eReferral
 Parent: JP_Patient_CCLIX
 Id: JP-Patient-eReferral
-Description: "処方情報の対象患者のPatientプロファイル　JP_Patientの派生プロファイル"
+Description: "対象患者のPatientプロファイル　JP_Patientの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Patient_eReferral"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
@@ -16,7 +16,7 @@ Description: "処方情報の対象患者のPatientプロファイル　JP_Patie
 * gender 1.. MS
 * birthDate 1.. MS
 * address ..1 MS
-* address ^definition = "An address for the individual.\r\n個人の住所。\r\n麻薬処方箋として発行するデータの場合には、患者の住所は必須。それ以外の用途ではなくてもよい。"
+* address ^definition = "An address for the individual.\r\n患者の住所。なくてもよい"
 * address.text 1.. MS
 * address.postalCode 1.. MS
 * address.country 1.. MS
