@@ -1,0 +1,166 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_ePreCDA_clinicalDepartment_tbl10",
+  "id": "mhlw-codeSystem-ePreCDA-clinicalDepartment-tbl10",
+  "description": "厚労省電子処方CDA規格別表10 診療科コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.51",
+  "concept": [
+    {
+      "code": "01",
+      "display": "内科"
+    },
+    {
+      "code": "02",
+      "display": "精神科"
+    },
+    {
+      "code": "03",
+      "display": "神経科"
+    },
+    {
+      "code": "04",
+      "display": "神経内科"
+    },
+    {
+      "code": "05",
+      "display": "呼吸器科"
+    },
+    {
+      "code": "06",
+      "display": "消化器科"
+    },
+    {
+      "code": "07",
+      "display": "胃腸科"
+    },
+    {
+      "code": "08",
+      "display": "循環器科"
+    },
+    {
+      "code": "09",
+      "display": "小児科"
+    },
+    {
+      "code": "10",
+      "display": "外科"
+    },
+    {
+      "code": "11",
+      "display": "整形外科"
+    },
+    {
+      "code": "12",
+      "display": "形成外科"
+    },
+    {
+      "code": "13",
+      "display": "美容外科"
+    },
+    {
+      "code": "14",
+      "display": "脳神経外科"
+    },
+    {
+      "code": "15",
+      "display": "呼吸器外科"
+    },
+    {
+      "code": "16",
+      "display": "心臓血管外科"
+    },
+    {
+      "code": "17",
+      "display": "小児外科"
+    },
+    {
+      "code": "18",
+      "display": "皮膚泌尿器科"
+    },
+    {
+      "code": "19",
+      "display": "皮膚科"
+    },
+    {
+      "code": "20",
+      "display": "泌尿器科"
+    },
+    {
+      "code": "21",
+      "display": "性病科"
+    },
+    {
+      "code": "22",
+      "display": "肛門科"
+    },
+    {
+      "code": "23",
+      "display": "産婦人科"
+    },
+    {
+      "code": "24",
+      "display": "産科"
+    },
+    {
+      "code": "25",
+      "display": "婦人科"
+    },
+    {
+      "code": "26",
+      "display": "眼科"
+    },
+    {
+      "code": "27",
+      "display": "耳鼻咽喉科"
+    },
+    {
+      "code": "28",
+      "display": "気管食道科"
+    },
+    {
+      "code": "30",
+      "display": "放射線科"
+    },
+    {
+      "code": "31",
+      "display": "麻酔科"
+    },
+    {
+      "code": "33",
+      "display": "心療内科"
+    },
+    {
+      "code": "34",
+      "display": "アレルギー科"
+    },
+    {
+      "code": "35",
+      "display": "リウマチ科"
+    },
+    {
+      "code": "36",
+      "display": "リハビリテーション科"
+    },
+    {
+      "code": "37",
+      "display": "病理診断科"
+    },
+    {
+      "code": "38",
+      "display": "臨床検査科"
+    },
+    {
+      "code": "39",
+      "display": "救急科"
+    },
+    {
+      "code": "90",
+      "display": "歯科"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 38
+}

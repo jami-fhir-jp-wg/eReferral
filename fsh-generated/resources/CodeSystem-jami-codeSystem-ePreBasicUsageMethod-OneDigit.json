@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JAMI_codeSystem_ePreBasicUsageMethod_OneDigit",
+  "id": "jami-codeSystem-ePreBasicUsageMethod-OneDigit",
+  "description": "JAMI標準基本用法区分コード1桁",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.200250.2.2.20.30",
+  "concept": [
+    {
+      "code": "1",
+      "display": "内服"
+    },
+    {
+      "code": "2",
+      "display": "外用"
+    },
+    {
+      "code": "3",
+      "display": "注射"
+    },
+    {
+      "code": "4",
+      "display": "注入"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 4
+}

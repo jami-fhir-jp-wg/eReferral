@@ -1,0 +1,180 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Bundle-eReferral",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral",
+  "version": "1.0.0",
+  "name": "JP_Bundle_eReferral",
+  "status": "draft",
+  "description": "診療情報提供書のBundle Documentのプロファル。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Bundle_CCLIX",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "min": 4
+      },
+      {
+        "id": "Bundle.entry:composition",
+        "path": "Bundle.entry",
+        "sliceName": "composition"
+      },
+      {
+        "id": "Bundle.entry:composition.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Composition",
+            "profile": [
+              "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:authorisedAuthor",
+        "path": "Bundle.entry",
+        "sliceName": "authorisedAuthor",
+        "min": 1
+      },
+      {
+        "id": "Bundle.entry:communication",
+        "path": "Bundle.entry",
+        "sliceName": "communication",
+        "short": "備考情報エントリ",
+        "definition": "備考情報エントリで処方箋全体の指示、明細単位での備考を記述するリソースへの参照。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:communication.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "埋め込まれているPractitionerリソースを一意に識別するためのUUID",
+        "definition": "埋め込まれているPractitionerリソースを一意に識別するためのUUID",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:communication.resource",
+        "path": "Bundle.entry.resource",
+        "short": "Communicationrリソースのインスタンス本体",
+        "definition": "Communicationrリソースのインスタンス本体",
+        "type": [
+          {
+            "code": "Communication"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:communication.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:communication.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:communication.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:medicationRequest",
+        "path": "Bundle.entry",
+        "sliceName": "medicationRequest",
+        "short": "処方情報エントリ",
+        "definition": "処方情報エントリ。医薬品の数だけ出現する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:medicationRequest.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "埋め込まれているPractitionerリソースを一意に識別するためのUUID",
+        "definition": "埋め込まれているPractitionerリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:medicationRequest.resource",
+        "path": "Bundle.entry.resource",
+        "short": "MedicationRequestリソースのインスタンス本体",
+        "definition": "MedicationRequestリソースのインスタンス本体。",
+        "type": [
+          {
+            "code": "MedicationRequest",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:authorOrganization",
+        "path": "Bundle.entry",
+        "sliceName": "authorOrganization",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:authorOrganization.resource",
+        "path": "Bundle.entry.resource",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:authotDepartmentOfOrganization",
+        "path": "Bundle.entry",
+        "sliceName": "authotDepartmentOfOrganization",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:authotDepartmentOfOrganization.resource",
+        "path": "Bundle.entry.resource",
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "id": "JP-Organization-ePreData-departmentOfIssuer-ExampleType2",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_ePrescriptionData_departmentOfIssuer"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "dept",
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type"
+        }
+      ]
+    }
+  ],
+  "name": "内科",
+  "partOf": {
+    "reference": "Organization/JP-Organization-ePreData-issuer-Example"
+  }
+}

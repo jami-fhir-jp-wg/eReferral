@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JP_codeSystem_insurerNumber",
+  "id": "jp-codeSystem-insurerNumber",
+  "description": "保険者番号",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.3.61",
+  "concept": [
+    {
+      "code": "06123456",
+      "display": "サンプル健康保険組合06123456"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 1
+}

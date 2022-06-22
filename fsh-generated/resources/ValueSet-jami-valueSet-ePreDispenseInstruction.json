@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "JAMI_valueSet_ePreDispenseInstruction",
+  "id": "jami-valueSet-ePreDispenseInstruction",
+  "description": "調剤指示コード（備考欄）",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreDispenseInstruction",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:1.2.392.200250.2.2.30.10"
+      }
+    ]
+  }
+}

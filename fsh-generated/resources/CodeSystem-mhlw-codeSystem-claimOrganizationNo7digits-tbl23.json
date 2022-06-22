@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_claimOrganizationNo7digits_tbl23",
+  "id": "mhlw-codeSystem-claimOrganizationNo7digits-tbl23",
+  "description": "厚労省電子処方CDA規格別別表２３ 保険医療機関番号（7桁）",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.1.23",
+  "concept": [
+    {
+      "code": "1234567",
+      "display": "保険医療機関番号１２３４５６７ダミー"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 1
+}

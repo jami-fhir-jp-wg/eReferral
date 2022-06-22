@@ -1,0 +1,26 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_ePreCDA_insuredCoPayCategory_tbl13",
+  "id": "mhlw-codeSystem-ePreCDA-insuredCoPayCategory-tbl13",
+  "description": "厚労省電子処方CDA規格別表13 患者一部負担コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.63",
+  "concept": [
+    {
+      "code": "1",
+      "display": "高齢者一般（高一）"
+    },
+    {
+      "code": "2",
+      "display": "高齢者 7 割（高７）"
+    },
+    {
+      "code": "3",
+      "display": "６歳未満（６歳）"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 3
+}

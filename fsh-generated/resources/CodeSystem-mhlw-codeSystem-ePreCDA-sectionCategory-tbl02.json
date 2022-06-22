@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_ePreCDA_sectionCategory_tbl02",
+  "id": "mhlw-codeSystem-ePreCDA-sectionCategory-tbl02",
+  "description": "厚労省電子処方CDA規格別表2 セクション区分コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.12",
+  "concept": [
+    {
+      "code": "01",
+      "display": "処方指示"
+    },
+    {
+      "code": "02",
+      "display": "調剤実施内容"
+    },
+    {
+      "code": "11",
+      "display": "保険・公費情報"
+    },
+    {
+      "code": "101",
+      "display": "備考情報 処方箋の備考情報"
+    },
+    {
+      "code": "102",
+      "display": "備考情報 調剤結果の備考情報"
+    },
+    {
+      "code": "201",
+      "display": "補足情報"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 6
+}

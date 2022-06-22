@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_ePreCDA_unable2Change2Generic_tbl08",
+  "id": "mhlw-codeSystem-ePreCDA-unable2Change2Generic-tbl08",
+  "description": "厚労省電子処方CDA規格別表8 後発品変更不可コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.41",
+  "concept": [
+    {
+      "code": "0",
+      "display": "変更可"
+    },
+    {
+      "code": "1",
+      "display": "変更不可"
+    },
+    {
+      "code": "2",
+      "display": "剤形変更不可"
+    },
+    {
+      "code": "3",
+      "display": "含量規格変更不可"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 4
+}

@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "JP_valueSet_drugCode_gs1_14",
+  "id": "jp-valueSet-drugCode-gs1-14",
+  "description": "医薬品コードGTIN 14桁",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-gs1-14",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.51.1.1"
+      }
+    ]
+  }
+}

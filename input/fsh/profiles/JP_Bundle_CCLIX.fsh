@@ -153,7 +153,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[authorisedAuthor].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[authorisedAuthor].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
 * entry[authorisedAuthor].resource 1.. MS
-* entry[authorisedAuthor].resource only c
+* entry[authorisedAuthor].resource only JP_Practitioner
 * entry[authorisedAuthor].resource ^short = "Practitionerリソースのインスタンス本体"
 * entry[authorisedAuthor].resource ^definition = "Practitionerリソースのインスタンス本体。"
 * entry[authorisedAuthor].search ..0

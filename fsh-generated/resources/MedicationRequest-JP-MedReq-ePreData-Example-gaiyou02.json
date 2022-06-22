@@ -1,0 +1,127 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "JP-MedReq-ePreData-Example-gaiyou02",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.81",
+      "value": "2"
+    },
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.82",
+      "value": "1"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "106062101",
+        "system": "urn:oid:1.2.392.200119.4.403.1",
+        "display": "リンデロンＶＧクリーム ５ｇ"
+      }
+    ],
+    "text": "リンデロンＶＧクリーム５ｇ"
+  },
+  "subject": {
+    "reference": "Patient/JP-Patient-ePreData-Example"
+  },
+  "authoredOn": "2020-08-21T12:28:17+09:00",
+  "dosageInstruction": [
+    {
+      "text": "１日３回患部に塗布（膝）",
+      "timing": {
+        "code": {
+          "coding": [
+            {
+              "code": "2B73000000000000",
+              "system": "urn:oid:1.2.392.200250.2.2.20.20",
+              "display": "外用・塗布・１日３回"
+            }
+          ]
+        }
+      },
+      "site": {
+        "coding": [
+          {
+            "code": "950",
+            "system": "urn:oid:1.2.392.200250.2.2.20.32",
+            "display": "膝"
+          }
+        ]
+      },
+      "route": {
+        "coding": [
+          {
+            "code": "AP",
+            "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+            "display": "外用"
+          }
+        ]
+      },
+      "method": {
+        "coding": [
+          {
+            "code": "2B",
+            "system": "urn:oid:1.2.392.200250.2.2.20.40",
+            "display": "塗布"
+          }
+        ]
+      }
+    },
+    {
+      "text": "１日３回患部に塗布（すね）",
+      "timing": {
+        "code": {
+          "coding": [
+            {
+              "code": "2B73000000000000",
+              "system": "urn:oid:1.2.392.200250.2.2.20.20",
+              "display": "外用・塗布・１日３回"
+            }
+          ]
+        }
+      },
+      "site": {
+        "coding": [
+          {
+            "code": "970",
+            "system": "urn:oid:1.2.392.200250.2.2.20.32",
+            "display": "すね"
+          }
+        ]
+      },
+      "route": {
+        "coding": [
+          {
+            "code": "AP",
+            "system": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+            "display": "外用"
+          }
+        ]
+      },
+      "method": {
+        "coding": [
+          {
+            "code": "2B",
+            "system": "urn:oid:1.2.392.200250.2.2.20.40",
+            "display": "塗布"
+          }
+        ]
+      }
+    }
+  ],
+  "dispenseRequest": {
+    "quantity": {
+      "value": 2,
+      "code": "HON",
+      "system": "urn:oid:1.2.392.100495.20.2.101",
+      "unit": "本"
+    }
+  }
+}

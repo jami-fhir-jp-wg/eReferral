@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "JAMI_valueSet_ePreOrderUsageCode_16digits",
+  "id": "jami-valueSet-ePreOrderUsageCode-16digits",
+  "description": "JAMI16桁用法コード",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:1.2.392.200250.2.2.20.20"
+      }
+    ]
+  }
+}

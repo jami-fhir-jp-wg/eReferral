@@ -1,0 +1,386 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Patient-CCLIX",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Individuals"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Patient_CCLIX",
+  "version": "1.0.0",
+  "name": "JP_Patient_CCLIX",
+  "status": "draft",
+  "description": "診療情報交換に共通の患者情報プロファイル　JP_Patientの派生プロファイル ",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "loinc",
+      "uri": "http://loinc.org",
+      "name": "LOINC code for the element"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.text.id",
+        "path": "Patient.text.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.text.status",
+        "path": "Patient.text.status",
+        "definition": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
+      },
+      {
+        "id": "Patient.text.div",
+        "path": "Patient.text.div",
+        "definition": "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\r\nXHTML形式。\r\n例：田中一郎、男、1980/7/1生、東京都中央区日本橋１－１－１, 03_1234_5678"
+      },
+      {
+        "id": "Patient.contained",
+        "path": "Patient.contained",
+        "max": "0"
+      },
+      {
+        "id": "Patient.extension:religion",
+        "path": "Patient.extension",
+        "sliceName": "religion",
+        "max": "0"
+      },
+      {
+        "id": "Patient.extension:birthPlace",
+        "path": "Patient.extension",
+        "sliceName": "birthPlace",
+        "max": "0"
+      },
+      {
+        "id": "Patient.extension:race",
+        "path": "Patient.extension",
+        "sliceName": "race",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.id",
+        "path": "Patient.identifier.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.use",
+        "path": "Patient.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.type",
+        "path": "Patient.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.period",
+        "path": "Patient.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.assigner.id",
+        "path": "Patient.identifier.assigner.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.assigner.reference",
+        "path": "Patient.identifier.assigner.reference",
+        "short": "患者番号を付番した医療機関情報（Organization）への参照",
+        "definition": "Bundleリソース内に記述される患者番号を付番した医療機関情報（Organization）のfullUrlに記述されるUUIDを設定。\r\n例：\"urn:uuid:179f9f7f_e546_04c2_6888_a9e0b24e5720\"\r\n省略されたときには、処方発行機関での患者番号とみなす。\r\n処方発行発行機関や処方医所属医療機関と異なる場合、Bundleリソース内に患者番号を付番した医療機関情報を記述したOrganizationリソースを記述し、それを参照する。"
+      },
+      {
+        "id": "Patient.identifier.assigner.type",
+        "path": "Patient.identifier.assigner.type",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.assigner.identifier",
+        "path": "Patient.identifier.assigner.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Patient.identifier.assigner.display",
+        "path": "Patient.identifier.assigner.display",
+        "max": "0"
+      },
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "max": "0"
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "min": 1
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1
+      },
+      {
+        "id": "Patient.deceased[x]",
+        "path": "Patient.deceased[x]",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "definition": "An address for the individual.\r\n個人の住所。\r\n麻薬処方箋として発行するデータの場合には、患者の住所は必須。それ以外の用途ではなくてもよい。",
+        "max": "1"
+      },
+      {
+        "id": "Patient.address.id",
+        "path": "Patient.address.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.use",
+        "path": "Patient.address.use",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.type",
+        "path": "Patient.address.type",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.text",
+        "path": "Patient.address.text",
+        "min": 1
+      },
+      {
+        "id": "Patient.address.line",
+        "path": "Patient.address.line",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.city",
+        "path": "Patient.address.city",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.district",
+        "path": "Patient.address.district",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.state",
+        "path": "Patient.address.state",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address.postalCode",
+        "path": "Patient.address.postalCode",
+        "min": 1
+      },
+      {
+        "id": "Patient.address.period",
+        "path": "Patient.address.period",
+        "max": "0"
+      },
+      {
+        "id": "Patient.maritalStatus",
+        "path": "Patient.maritalStatus",
+        "max": "0"
+      },
+      {
+        "id": "Patient.multipleBirth[x]",
+        "path": "Patient.multipleBirth[x]",
+        "max": "0"
+      },
+      {
+        "id": "Patient.photo",
+        "path": "Patient.photo",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.id",
+        "path": "Patient.contact.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.relationship.id",
+        "path": "Patient.contact.relationship.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.relationship.coding.id",
+        "path": "Patient.contact.relationship.coding.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.relationship.coding.version",
+        "path": "Patient.contact.relationship.coding.version",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.relationship.coding.userSelected",
+        "path": "Patient.contact.relationship.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.name.id",
+        "path": "Patient.contact.name.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.name.text",
+        "path": "Patient.contact.name.text",
+        "min": 1
+      },
+      {
+        "id": "Patient.contact.name.family",
+        "path": "Patient.contact.name.family",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.name.given",
+        "path": "Patient.contact.name.given",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.name.prefix",
+        "path": "Patient.contact.name.prefix",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.name.suffix",
+        "path": "Patient.contact.name.suffix",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.name.period",
+        "path": "Patient.contact.name.period",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact.telecom.id",
+        "path": "Patient.contact.telecom.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.id",
+        "path": "Patient.communication.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.language.id",
+        "path": "Patient.communication.language.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.language.coding",
+        "path": "Patient.communication.language.coding",
+        "max": "1"
+      },
+      {
+        "id": "Patient.communication.language.coding.id",
+        "path": "Patient.communication.language.coding.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.language.coding.version",
+        "path": "Patient.communication.language.coding.version",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.language.coding.code",
+        "path": "Patient.communication.language.coding.code",
+        "min": 1
+      },
+      {
+        "id": "Patient.communication.language.coding.display",
+        "path": "Patient.communication.language.coding.display",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.language.coding.userSelected",
+        "path": "Patient.communication.language.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication.language.text",
+        "path": "Patient.communication.language.text",
+        "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.\r\nコードだけでは十分な情報が記述できいない場合に限り、追加的な情報をテキストで記述する。"
+      },
+      {
+        "id": "Patient.generalPractitioner",
+        "path": "Patient.generalPractitioner",
+        "definition": "Patient's nominated care provider.\r\n患者が指名するケア提供者。 登録されているかかりつけ医がある場合に記述することができる。"
+      },
+      {
+        "id": "Patient.generalPractitioner.id",
+        "path": "Patient.generalPractitioner.id",
+        "max": "0"
+      },
+      {
+        "id": "Patient.generalPractitioner.reference",
+        "path": "Patient.generalPractitioner.reference",
+        "short": "かかりつけ医の PractitionerRoleへの参照"
+      },
+      {
+        "id": "Patient.generalPractitioner.type",
+        "path": "Patient.generalPractitioner.type",
+        "min": 1
+      },
+      {
+        "id": "Patient.generalPractitioner.identifier",
+        "path": "Patient.generalPractitioner.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Patient.generalPractitioner.display",
+        "path": "Patient.generalPractitioner.display",
+        "max": "0"
+      },
+      {
+        "id": "Patient.managingOrganization",
+        "path": "Patient.managingOrganization",
+        "max": "0"
+      },
+      {
+        "id": "Patient.link",
+        "path": "Patient.link",
+        "max": "0"
+      }
+    ]
+  }
+}

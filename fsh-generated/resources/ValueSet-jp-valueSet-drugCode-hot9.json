@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "JP_valueSet_drugCode_hot9",
+  "id": "jp-valueSet-drugCode-hot9",
+  "description": "MEDIS 医薬品コードHOTコード（9桁）",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-hot9",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:1.2.392.200119.4.403.1"
+      }
+    ]
+  }
+}

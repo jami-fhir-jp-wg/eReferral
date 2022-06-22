@@ -1,0 +1,51 @@
+{
+  "resourceType": "Coverage",
+  "id": "JP-Coverage-ePreData-publicPayment-Example",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_ePrescriptionData_publicPayment"
+    ]
+  },
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "code": "8",
+        "system": "urn:oid:1.2.392.100495.20.2.61"
+      }
+    ]
+  },
+  "subscriberId": "12345678",
+  "beneficiary": {
+    "reference": "Patient/JP-Patient-ePreData-Example"
+  },
+  "period": {
+    "start": "2020-01-01",
+    "end": "2020-12-31"
+  },
+  "payor": [
+    {
+      "reference": "Organization/JP-Organization-ePreData-publicPayer-Example"
+    }
+  ],
+  "order": 1,
+  "costToBeneficiary": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "copaypct",
+            "system": "http://terminology.hl7.org/CodeSystem/coverage-copay-type",
+            "display": "負担率"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 10,
+        "code": "%",
+        "system": "http://unitsofmeasure.org",
+        "unit": "%"
+      }
+    }
+  ]
+}

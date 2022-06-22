@@ -1,0 +1,26 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JP_codeSystem_ePreCommunication_category",
+  "id": "jp-codeSystem-ePreCommunication-category",
+  "description": "処方箋備考区分",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category",
+  "concept": [
+    {
+      "code": "1",
+      "display": "処方箋備考"
+    },
+    {
+      "code": "2",
+      "display": "調剤者への指示"
+    },
+    {
+      "code": "3",
+      "display": "残薬確認指示"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 3
+}

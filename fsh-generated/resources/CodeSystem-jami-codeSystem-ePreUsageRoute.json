@@ -1,0 +1,202 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JAMI_codeSystem_ePreUsageRoute",
+  "id": "jami-codeSystem-ePreUsageRoute",
+  "description": "HL7医薬品投与経路コード（JAHIS 使用者定義表 0162 投薬経路）",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes",
+  "concept": [
+    {
+      "code": "AP",
+      "display": "外用"
+    },
+    {
+      "code": "B",
+      "display": "頬"
+    },
+    {
+      "code": "DT",
+      "display": "歯"
+    },
+    {
+      "code": "EP",
+      "display": "硬膜外"
+    },
+    {
+      "code": "ET",
+      "display": "気管内チューブ"
+    },
+    {
+      "code": "NT",
+      "display": "鼻気管内チューブ"
+    },
+    {
+      "code": "GTT",
+      "display": "消化器官"
+    },
+    {
+      "code": "GU",
+      "display": "GU洗浄"
+    },
+    {
+      "code": "IMR",
+      "display": "浸透"
+    },
+    {
+      "code": "IA",
+      "display": "動脈内"
+    },
+    {
+      "code": "IB",
+      "display": "滑液包内"
+    },
+    {
+      "code": "IC",
+      "display": "心臓内"
+    },
+    {
+      "code": "ICV",
+      "display": "子宮内"
+    },
+    {
+      "code": "ID",
+      "display": "皮膚内"
+    },
+    {
+      "code": "IH",
+      "display": "吸入"
+    },
+    {
+      "code": "IHA",
+      "display": "肝内動脈"
+    },
+    {
+      "code": "IM",
+      "display": "筋肉内"
+    },
+    {
+      "code": "IN",
+      "display": "鼻腔内"
+    },
+    {
+      "code": "IO",
+      "display": "眼内"
+    },
+    {
+      "code": "IP",
+      "display": "腹腔内"
+    },
+    {
+      "code": "IS",
+      "display": "滑液包内"
+    },
+    {
+      "code": "IT",
+      "display": "鞘内"
+    },
+    {
+      "code": "IU",
+      "display": "子宮内"
+    },
+    {
+      "code": "IV",
+      "display": "静脈内"
+    },
+    {
+      "code": "MTH",
+      "display": "口／喉"
+    },
+    {
+      "code": "MM",
+      "display": "粘膜"
+    },
+    {
+      "code": "NS",
+      "display": "鼻側"
+    },
+    {
+      "code": "NG",
+      "display": "経口径内腔"
+    },
+    {
+      "code": "NP",
+      "display": "鼻のプロング"
+    },
+    {
+      "code": "OP",
+      "display": "眼"
+    },
+    {
+      "code": "OT",
+      "display": "耳"
+    },
+    {
+      "code": "OTH",
+      "display": "その他／さまざま"
+    },
+    {
+      "code": "PF",
+      "display": "灌流"
+    },
+    {
+      "code": "PO",
+      "display": "口"
+    },
+    {
+      "code": "PR",
+      "display": "直腸"
+    },
+    {
+      "code": "RM",
+      "display": "リブリーザーマスク"
+    },
+    {
+      "code": "SD",
+      "display": "湿性包帯"
+    },
+    {
+      "code": "SC",
+      "display": "皮下"
+    },
+    {
+      "code": "SL",
+      "display": "舌下"
+    },
+    {
+      "code": "TP",
+      "display": "局所"
+    },
+    {
+      "code": "TRA",
+      "display": "気管切開"
+    },
+    {
+      "code": "TD",
+      "display": "経皮性"
+    },
+    {
+      "code": "TL",
+      "display": "経舌"
+    },
+    {
+      "code": "UR",
+      "display": "尿道"
+    },
+    {
+      "code": "VG",
+      "display": "膣"
+    },
+    {
+      "code": "VM",
+      "display": "換気マスク"
+    },
+    {
+      "code": "WND",
+      "display": "創傷"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 47
+}

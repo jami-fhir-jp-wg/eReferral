@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "JP_valueSet_drugCode_yj",
+  "id": "jp-valueSet-drugCode-yj",
+  "description": "医薬品コード（YJコード）",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-yj",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:1.2.392.100495.20.1.73"
+      }
+    ]
+  }
+}

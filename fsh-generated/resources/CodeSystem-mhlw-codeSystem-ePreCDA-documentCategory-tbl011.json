@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_ePreCDA_documentCategory_tbl01",
+  "id": "mhlw-codeSystem-ePreCDA-documentCategory-tbl011",
+  "description": "厚労省電子処方CDA規格別表１ 文書区分コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.11",
+  "concept": [
+    {
+      "code": "01",
+      "display": "処方箋"
+    },
+    {
+      "code": "02",
+      "display": "調剤結果"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 2
+}

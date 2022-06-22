@@ -134,11 +134,12 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * event.period.end ^short = "診療情報提供書の場合記述しないが、startと同一であれば存在していてもよい"
 * event.period.end ^definition = "診療情報提供書の場合記述しない。startと同一であれば存在していてもよい"
 * event.detail ..0
-* section ..*
+
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code.coding.code"
 * section ^slicing.rules = #open
-* section contains referralToSection 0..1 MS  // 紹介先情報セクション referralToSection
+* section contains
+     referralToSection 0..1 MS  // 紹介先情報セクション referralToSection
     and referralFromSection  0..1 MS    // 紹介元情報セクション referralFromSection
     and cdaSection   0..1 MS // CDA参照セクション    cdaSection
     and compositionSection     0..1 MS // 構造情報セクション   compositionSection
@@ -181,15 +182,23 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[referralToSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[referralToSection].mode ..0
 * section[referralToSection].orderedBy ..0
-* section[referralToSection].entry[0] 1..1 only Reference(JP_Organization)
-* section[referralToSection].entry[=] ^short= "紹介先医療機関"
-* section[referralToSection].entry[=] ^definition= "紹介先医療機関"
-* section[referralToSection].entry[+] 0..1 only Reference(JP_Organization)
-* section[referralToSection].entry[=] ^short= "紹介先医療機関の診療科"
-* section[referralToSection].entry[=] ^definition= "紹介先医療機関の診療科"
-* section[referralToSection].entry[+] 0..1 only Reference(JP_Practitioner)
-* section[referralToSection].entry[=] ^short= "紹介先医師"
-* section[referralToSection].entry[=] ^definition= "紹介先医師"
+* section[referralToSection].entry 1..3
+* section[referralToSection].entry  ^slicing.discriminator.type = #profile
+* section[referralToSection].entry  ^slicing.discriminator.path = "resolve()"
+* section[referralToSection].entry  ^slicing.rules = #open
+* section[referralToSection].entry contains
+    referralToOrganizaiton  1..1 MS
+    and referralToDepartment    0..1 MS
+    and referralToDoctor    0..1 MS
+* section[referralToSection].entry[referralToOrganizaiton] only Reference(JP_Organization)
+* section[referralToSection].entry[referralToOrganizaiton] ^short = "紹介先医療機関"
+* section[referralToSection].entry[referralToOrganizaiton] ^definition = "紹介先医療機関"
+* section[referralToSection].entry[referralToDepartment] only Reference(JP_Organization)
+* section[referralToSection].entry[referralToDepartment] ^short = "紹介先医療機関の診療科"
+* section[referralToSection].entry[referralToDepartment] ^definition = "紹介先医療機関の診療科"
+* section[referralToSection].entry[referralToDoctor] only Reference(JP_Practitioner)
+* section[referralToSection].entry[referralToDoctor] ^short = "紹介先医師"
+* section[referralToSection].entry[referralToDoctor] ^definition = "紹介先医師"
 * section[referralToSection].emptyReason ..0
 * section[referralToSection].section ..0
 //
@@ -229,15 +238,23 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[referralFromSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[referralFromSection].mode ..0
 * section[referralFromSection].orderedBy ..0
-* section[referralFromSection].entry[0] 1..1 only Reference(JP_Organization)
-* section[referralFromSection].entry[=] ^short= "紹介元医療機関"
-* section[referralFromSection].entry[=] ^definition= "紹介元医療機関"
-* section[referralFromSection].entry[+] 0..1 only Reference(JP_Organization)
-* section[referralFromSection].entry[=] ^short= "紹介元医療機関の診療科"
-* section[referralFromSection].entry[=] ^definition= "紹介元医療機関の診療科"
-* section[referralFromSection].entry[+] 0..1 only Reference(JP_Practitioner)
-* section[referralFromSection].entry[=] ^short= "紹介元医師"
-* section[referralFromSection].entry[=] ^definition= "紹介元医師"
+* section[referralFromSection].entry 1..3
+* section[referralFromSection].entry  ^slicing.discriminator.type = #profile
+* section[referralFromSection].entry  ^slicing.discriminator.path = "resolve()"
+* section[referralFromSection].entry  ^slicing.rules = #open
+* section[referralFromSection].entry contains
+    referralFromOrganizaiton  1..1 MS
+    and referralFromDepartment    0..1 MS
+    and referralFromDoctor    0..1 MS
+* section[referralFromSection].entry[referralFromOrganizaiton] only Reference(JP_Organization)
+* section[referralFromSection].entry[referralFromOrganizaiton] ^short = "紹介元医療機関"
+* section[referralFromSection].entry[referralFromOrganizaiton] ^definition = "紹介元医療機関"
+* section[referralFromSection].entry[referralFromDepartment] only Reference(JP_Organization)
+* section[referralFromSection].entry[referralFromDepartment] ^short = "紹介元医療機関の診療科"
+* section[referralFromSection].entry[referralFromDepartment] ^definition = "紹介元医療機関の診療科"
+* section[referralFromSection].entry[referralFromDoctor] only Reference(JP_Practitioner)
+* section[referralFromSection].entry[referralFromDoctor] ^short = "紹介元医師"
+* section[referralFromSection].entry[referralFromDoctor] ^definition = "紹介元医師"
 * section[referralFromSection].emptyReason ..0
 * section[referralFromSection].section ..0
 //
@@ -277,9 +294,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[cdaSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[cdaSection].mode ..0
 * section[cdaSection].orderedBy ..0
-* section[cdaSection].entry[0] 1..1 only Reference(DocumentRefrence)
-* section[cdaSection].entry[=] ^short= "CDA規約文書ファイルへの参照"
-* section[cdaSection].entry[=] ^definition= "CDA規約文書ファイルへの参照"
+* section[cdaSection].entry 1..1
+* section[cdaSection].entry only Reference(DocumentReference)
+* section[cdaSection].entry ^short = "CDA規約文書ファイルへの参照"
+* section[cdaSection].entry ^definition = "CDA規約文書ファイルへの参照"
 * section[cdaSection].emptyReason ..0
 * section[cdaSection].section ..0
 //
@@ -315,6 +333,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].emptyReason.coding.system = "http://terminology.hl7.org/CodeSystem/list-empty-reason"
 * section[compositionSection].emptyReason.coding.code = #unavilable (exactly)
 //
+* section[compositionSection].section ^slicing.discriminator.type = #value
+* section[compositionSection].section ^slicing.discriminator.path = "code.coding.code"
+* section[compositionSection].section ^slicing.rules = #open
+
 * section[compositionSection].section   contains 
         referralPurposeSection  1..1    MS  // 紹介目的セクション referralPurposeSection
     and problemSection    1..1    MS  // 傷病名・主訴セクション   problemSection
@@ -373,9 +395,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[referralPurposeSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[referralPurposeSection].mode ..0
 * section[compositionSection].section[referralPurposeSection].orderedBy ..0
-* section[compositionSection].section[referralPurposeSection].entry[0] 1..1 only Reference(JP_Encounter)
-* section[compositionSection].section[referralPurposeSection].entry[=] ^short= "必須。紹介先で予定している受診を記述したEncounterリソースを参照"
-* section[compositionSection].section[referralPurposeSection].entry[=] ^definition= """紹介先で予定している受診を記述したEncounterリソースを参照。
+* section[compositionSection].section[referralPurposeSection].entry 1..1
+* section[compositionSection].section[referralPurposeSection].entry only Reference(JP_Encounter)
+* section[compositionSection].section[referralPurposeSection].entry ^short = "必須。紹介先で予定している受診を記述したEncounterリソースを参照"
+* section[compositionSection].section[referralPurposeSection].entry ^definition = """紹介先で予定している受診を記述したEncounterリソースを参照。
     Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。
     そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。
     """
@@ -419,9 +442,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[problemSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[problemSection].mode ..0
 * section[compositionSection].section[problemSection].orderedBy ..0
-* section[compositionSection].section[problemSection].entry[0] 1..* only Reference(JP_Condition)
-* section[compositionSection].section[problemSection].entry[=] ^short= "必須。傷病名・主訴を１個以上必ず記述する。"
-* section[compositionSection].section[problemSection].entry[=] ^definition= """傷病名・主訴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。
+* section[compositionSection].section[problemSection].entry 1..*
+* section[compositionSection].section[problemSection].entry only Reference(JP_Condition)
+* section[compositionSection].section[problemSection].entry ^short = "必須。傷病名・主訴を１個以上必ず記述する。"
+* section[compositionSection].section[problemSection].entry ^definition = """傷病名・主訴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。
     フリーテキストでしか記述できない場合には、Condition.code.text に記述する。
     """
 * section[compositionSection].section[problemSection].emptyReason ..0
@@ -464,9 +488,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[presentIllnessSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[presentIllnessSection].mode ..0
 * section[compositionSection].section[presentIllnessSection].orderedBy ..0
-* section[compositionSection].section[presentIllnessSection].entry[0] 1..* only Reference(JP_Condition)
-* section[compositionSection].section[presentIllnessSection].entry[=] ^short= "必須。現病歴として記述すべき疾患に関する現在にいたる経過歴を１個以上必ず記述したConditionリソースを参照する。"
-* section[compositionSection].section[presentIllnessSection].entry[=] ^definition="""フリーテキストでしか記述できない場合には、それをCondition.code.text 
+* section[compositionSection].section[presentIllnessSection].entry 1..*
+* section[compositionSection].section[presentIllnessSection].entry only Reference(JP_Condition)
+* section[compositionSection].section[presentIllnessSection].entry ^short = "必須。現病歴として記述すべき疾患に関する現在にいたる経過歴を１個以上必ず記述したConditionリソースを参照する。"
+* section[compositionSection].section[presentIllnessSection].entry ^definition = """フリーテキストでしか記述できない場合には、それをCondition.code.text 
                                                                             およびCodition.noteに記述したConditionリソースを参照する。
                                                                             疾患ごとに分けて現病歴を記述できる場合には、それぞれをひとつのConditionリソースで記述して参照する。
                                                                             """
@@ -509,9 +534,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[pastIllnessSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[pastIllnessSection].mode ..0
 * section[compositionSection].section[pastIllnessSection].orderedBy ..0
-* section[compositionSection].section[pastIllnessSection].entry[0] 0..* only Reference(JP_Condition)
-* section[compositionSection].section[pastIllnessSection].entry[=] ^short= "既往歴をConditionリソースに記述して参照する。"
-* section[compositionSection].section[pastIllnessSection].entry[=] ^definition= """既往歴をConditionリソースに記述して参照する。
+* section[compositionSection].section[pastIllnessSection].entry 0..*
+* section[compositionSection].section[pastIllnessSection].entry only Reference(JP_Condition)
+* section[compositionSection].section[pastIllnessSection].entry ^short = "既往歴をConditionリソースに記述して参照する。"
+* section[compositionSection].section[pastIllnessSection].entry ^definition = """既往歴をConditionリソースに記述して参照する。
                                                                 1つの既往疾患につき1つのConditionリソースで記述されたものを参照する。
                                                                 記述すべき既往疾患が存在しないことを明示的に記述する（「既往特になし」など）場合にはentry要素は出現せず、emptyReasonにnilknownを記述する。
                                                                 既往疾患情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -556,9 +582,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[allergiesIIntoleranceSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[allergiesIIntoleranceSection].mode ..0
 * section[compositionSection].section[allergiesIIntoleranceSection].orderedBy ..0
-* section[compositionSection].section[allergiesIIntoleranceSection].entry[0] 0..* only Reference(JP_AllergyIntolerance)
-* section[compositionSection].section[allergiesIIntoleranceSection].entry[=] ^short= "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照"
-* section[compositionSection].section[allergiesIIntoleranceSection].entry[=] ^definition= """アレルギー・不耐性反応情報を記述して参照する。
+* section[compositionSection].section[allergiesIIntoleranceSection].entry 0..*
+* section[compositionSection].section[allergiesIIntoleranceSection].entry only Reference(JP_AllergyIntolerance)
+* section[compositionSection].section[allergiesIIntoleranceSection].entry ^short = "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照"
+* section[compositionSection].section[allergiesIIntoleranceSection].entry ^definition = """アレルギー・不耐性反応情報を記述して参照する。
                                                                 1つの既往疾患につき1つのAllergyIntoleranceリソースで記述されたものを参照する。
                                                                 記述すべきアレルギー・不耐性反応情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 アレルギー・不耐性反応情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -603,9 +630,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[familiyHistorySection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[familiyHistorySection].mode ..0
 * section[compositionSection].section[familiyHistorySection].orderedBy ..0
-* section[compositionSection].section[familiyHistorySection].entry[0] 0..* only Reference(JP_FamilyMemberHistory)
-* section[compositionSection].section[familiyHistorySection].entry[=] ^short= "家族歴情報を記述したFamilyMemberHistoryリソースを参照"
-* section[compositionSection].section[familiyHistorySection].entry[=] ^definition= """家族歴情報情報を記述して参照する。
+* section[compositionSection].section[familiyHistorySection].entry 0..*
+* section[compositionSection].section[familiyHistorySection].entry only Reference(FamilyMemberHistory)
+* section[compositionSection].section[familiyHistorySection].entry ^short = "家族歴情報を記述したFamilyMemberHistoryリソースを参照"
+* section[compositionSection].section[familiyHistorySection].entry ^definition = """家族歴情報情報を記述して参照する。
                                                                 1つの家族歴につき1つのFamilyMemberHistoryリソースで記述されたものを参照する。
                                                                 記述すべき家族歴情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 家族歴情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -650,9 +678,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[admissinoPhysicalStatusSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[admissinoPhysicalStatusSection].mode ..0
 * section[compositionSection].section[admissinoPhysicalStatusSection].orderedBy ..0
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry[0] 0..* only Reference(JP_Observation)
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry[=] ^short= "身体所見を記述したObservationリソースを参照"
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry[=] ^definition= """身体所見を記述して参照する。
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry 0..*
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry only Reference(Observation)
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry ^short = "身体所見を記述したObservationリソースを参照"
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry ^definition = """身体所見を記述して参照する。
                                                                 1つの身体所見につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき身体所見が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 身体所見を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -697,9 +726,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[infectiousDiseaseInformationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[infectiousDiseaseInformationSection].mode ..0
 * section[compositionSection].section[infectiousDiseaseInformationSection].orderedBy ..0
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry[0] 0..* only Reference(JP_Observation)
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry[=] ^short= "感染症情報を記述したObservationリソースを参照"
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry[=] ^definition= """感染症情報を記述して参照する。
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry 0..*
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(Observation)
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry ^short = "感染症情報を記述したObservationリソースを参照"
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry ^definition = """感染症情報を記述して参照する。
                                                                 1つの感染症情報につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき感染症情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 感染症情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -744,9 +774,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[socialHistorySection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[socialHistorySection].mode ..0
 * section[compositionSection].section[socialHistorySection].orderedBy ..0
-* section[compositionSection].section[socialHistorySection].entry[0] 0..* only Reference(JP_Observation)
-* section[compositionSection].section[socialHistorySection].entry[=] ^short= "社会歴・生活習慣情報を記述したObservationリソースを参照"
-* section[compositionSection].section[socialHistorySection].entry[=] ^definition= """社会歴・生活習慣情報を記述して参照する。
+* section[compositionSection].section[socialHistorySection].entry 0..*
+* section[compositionSection].section[socialHistorySection].entry only Reference(Observation)
+* section[compositionSection].section[socialHistorySection].entry ^short = "社会歴・生活習慣情報を記述したObservationリソースを参照"
+* section[compositionSection].section[socialHistorySection].entry ^definition = """社会歴・生活習慣情報を記述して参照する。
                                                                 1つの社会歴・生活習慣につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき社会歴・生活習慣情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 社会歴・生活習慣情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -792,9 +823,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[immunizationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[immunizationSection].mode ..0
 * section[compositionSection].section[immunizationSection].orderedBy ..0
-* section[compositionSection].section[immunizationSection].entry[0] 0..* only Reference(JP_Immunization)
-* section[compositionSection].section[immunizationSection].entry[=] ^short= "予防接種歴情報を記述したImmunizationリソースを参照"
-* section[compositionSection].section[immunizationSection].entry[=] ^definition= """予防接種歴情報を記述して参照する。
+* section[compositionSection].section[immunizationSection].entry 0..*
+* section[compositionSection].section[immunizationSection].entry only Reference(Immunization)
+* section[compositionSection].section[immunizationSection].entry ^short = "予防接種歴情報を記述したImmunizationリソースを参照"
+* section[compositionSection].section[immunizationSection].entry ^definition = """予防接種歴情報を記述して参照する。
                                                                 1つの予防接種歴情報につき1つのImmunizationリソースで記述されたものを参照する。
                                                                 記述すべき予防接種歴情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 予防接種歴情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -840,9 +872,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[surgicalProcedureSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[surgicalProcedureSection].mode ..0
 * section[compositionSection].section[surgicalProcedureSection].orderedBy ..0
-* section[compositionSection].section[surgicalProcedureSection].entry[0] 0..* only Reference(JP_Procedure)
-* section[compositionSection].section[surgicalProcedureSection].entry[=] ^short= "手術情報を記述したProcedureリソースを参照"
-* section[compositionSection].section[surgicalProcedureSection].entry[=] ^definition= """手術情報を記述して参照する。
+* section[compositionSection].section[surgicalProcedureSection].entry 0..*
+* section[compositionSection].section[surgicalProcedureSection].entry only Reference(JP_Procedure)
+* section[compositionSection].section[surgicalProcedureSection].entry ^short = "手術情報を記述したProcedureリソースを参照"
+* section[compositionSection].section[surgicalProcedureSection].entry ^definition = """手術情報を記述して参照する。
                                                                 1つの手術情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき手術情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 手術情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -888,9 +921,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[bloodInfusionProcedureSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[bloodInfusionProcedureSection].mode ..0
 * section[compositionSection].section[bloodInfusionProcedureSection].orderedBy ..0
-* section[compositionSection].section[bloodInfusionProcedureSection].entry[0] 0..* only Reference(JP_Procedure)
-* section[compositionSection].section[bloodInfusionProcedureSection].entry[=] ^short= "輸血歴情報を記述したProcedureリソースを参照"
-* section[compositionSection].section[bloodInfusionProcedureSection].entry[=] ^definition= """輸血歴情報を記述して参照する。
+* section[compositionSection].section[bloodInfusionProcedureSection].entry 0..*
+* section[compositionSection].section[bloodInfusionProcedureSection].entry only Reference(JP_Procedure)
+* section[compositionSection].section[bloodInfusionProcedureSection].entry ^short = "輸血歴情報を記述したProcedureリソースを参照"
+* section[compositionSection].section[bloodInfusionProcedureSection].entry ^definition = """輸血歴情報を記述して参照する。
                                                                 1つの輸血歴情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき輸血歴情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 輸血歴情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -936,9 +970,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[treatmentProcedureSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[treatmentProcedureSection].mode ..0
 * section[compositionSection].section[treatmentProcedureSection].orderedBy ..0
-* section[compositionSection].section[treatmentProcedureSection].entry[0] 0..* only Reference(JP_Procedure)
-* section[compositionSection].section[treatmentProcedureSection].entry[=] ^short= "処置情報を記述したImmunizationリソースを参照"
-* section[compositionSection].section[treatmentProcedureSection].entry[=] ^definition= """処置情報を記述して参照する。
+* section[compositionSection].section[treatmentProcedureSection].entry 0..*
+* section[compositionSection].section[treatmentProcedureSection].entry only Reference(JP_Procedure)
+* section[compositionSection].section[treatmentProcedureSection].entry ^short = "処置情報を記述したImmunizationリソースを参照"
+* section[compositionSection].section[treatmentProcedureSection].entry ^definition = """処置情報を記述して参照する。
                                                                 1つの処置情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき処置情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 処置情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -984,9 +1019,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[medicationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[medicationSection].mode ..0
 * section[compositionSection].section[medicationSection].orderedBy ..0
-* section[compositionSection].section[medicationSection].entry[0] 0..* only Reference(JP_MedicationRequest)
-* section[compositionSection].section[medicationSection].entry[=] ^short= "投薬指示情報を記述したMedicationRequestリソースを参照"
-* section[compositionSection].section[medicationSection].entry[=] ^definition= """投薬指示情報を記述して参照する。
+* section[compositionSection].section[medicationSection].entry 0..*
+* section[compositionSection].section[medicationSection].entry only Reference(JP_MedicationRequest)
+* section[compositionSection].section[medicationSection].entry ^short = "投薬指示情報を記述したMedicationRequestリソースを参照"
+* section[compositionSection].section[medicationSection].entry ^definition = """投薬指示情報を記述して参照する。
                                                                 1つの投薬指示情報につき1つのMedicationRequestリソースで記述されたものを参照する。
                                                                 記述すべき投薬指示情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 投薬指示情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -1032,9 +1068,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[examsStudySection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[examsStudySection].mode ..0
 * section[compositionSection].section[examsStudySection].orderedBy ..0
-* section[compositionSection].section[examsStudySection].entry[0] 0..* only Reference(JP_Observation)
-* section[compositionSection].section[examsStudySection].entry[=] ^short= "検査結果情報を記述したObservationリソースを参照"
-* section[compositionSection].section[examsStudySection].entry[=] ^definition= """検査結果情報を記述して参照する。
+* section[compositionSection].section[examsStudySection].entry 0..*
+* section[compositionSection].section[examsStudySection].entry only Reference(Observation)
+* section[compositionSection].section[examsStudySection].entry ^short = "検査結果情報を記述したObservationリソースを参照"
+* section[compositionSection].section[examsStudySection].entry ^definition = """検査結果情報を記述して参照する。
                                                                 1つの検査結果情報につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき検査結果情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 検査結果情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
@@ -1080,13 +1117,14 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[clinicalCourseSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[clinicalCourseSection].mode ..0
 * section[compositionSection].section[clinicalCourseSection].orderedBy ..0
-* section[compositionSection].section[examsStudySection].entry[0] 1..* only Reference(JP_DocumentReference)
-* section[compositionSection].section[examsStudySection].entry[=] ^short= "必須。臨床経過を記述したDocumentReferenceリソースを参照"
-* section[compositionSection].section[examsStudySection].entry[=] ^definition= """臨床経過を記述して参照する。
+* section[compositionSection].section[clinicalCourseSection].entry 1..*
+* section[compositionSection].section[clinicalCourseSection].entry only Reference(DocumentReference)
+* section[compositionSection].section[clinicalCourseSection].entry ^short = "必須。臨床経過を記述したDocumentReferenceリソースを参照"
+* section[compositionSection].section[clinicalCourseSection].entry ^definition = """臨床経過を記述して参照する。
                                                                 1つ以上のDocumentReferenceリソースで記述されたものを参照する。
                                                                 診療情報提供書では臨床経過の記述は常に必要である。
                                                                 """
-* section[compositionSection].section[examsStudySection].emptyReason ..0
+* section[compositionSection].section[clinicalCourseSection].emptyReason ..0
 * section[compositionSection].section[clinicalCourseSection].section ..0
 ////
 * section[compositionSection].section[clinicalInstructionSection]
@@ -1125,9 +1163,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[clinicalInstructionSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[clinicalInstructionSection].mode ..0
 * section[compositionSection].section[clinicalInstructionSection].orderedBy ..0
-* section[compositionSection].section[clinicalInstructionSection].entry[0] 0..* only Reference(JP_CarePlan)
-* section[compositionSection].section[clinicalInstructionSection].entry[=] ^short= "診療方針指示を記述したCarePlanリソースを参照"
-* section[compositionSection].section[clinicalInstructionSection].entry[=] ^definition= """診療方針指示を記述して参照する。
+* section[compositionSection].section[clinicalInstructionSection].entry 0..*
+* section[compositionSection].section[clinicalInstructionSection].entry only Reference(CarePlan)
+* section[compositionSection].section[clinicalInstructionSection].entry ^short = "診療方針指示を記述したCarePlanリソースを参照"
+* section[compositionSection].section[clinicalInstructionSection].entry ^definition = """診療方針指示を記述して参照する。
                                                                 1つの指示をひとつのCarePlanリソースで記述されたものを参照する。
                                                                 記述すべき診療方針指示が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
@@ -1171,9 +1210,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[medicalDeviceSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[medicalDeviceSection].mode ..0
 * section[compositionSection].section[medicalDeviceSection].orderedBy ..0
-* section[compositionSection].section[medicalDeviceSection].entry[0] 0..* only Reference(JP_DeviceUseStatement)
-* section[compositionSection].section[medicalDeviceSection].entry[=] ^short= "医療機器情報を記述したDocumentReferenceリソースを参照"
-* section[compositionSection].section[medicalDeviceSection].entry[=] ^definition= """医療機器情報を記述して参照する。
+* section[compositionSection].section[medicalDeviceSection].entry 0..*
+* section[compositionSection].section[medicalDeviceSection].entry only Reference(DeviceUseStatement)
+* section[compositionSection].section[medicalDeviceSection].entry ^short = "医療機器情報を記述したDocumentReferenceリソースを参照"
+* section[compositionSection].section[medicalDeviceSection].entry ^definition = """医療機器情報を記述して参照する。
                                                                 1つの医療機器情報をひとつのDeviceUseStatementリソースで記述されたものを参照する。
                                                                 記述すべき医療機器情報が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
@@ -1217,9 +1257,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[advanceDirectiveSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[advanceDirectiveSection].mode ..0
 * section[compositionSection].section[advanceDirectiveSection].orderedBy ..0
-* section[compositionSection].section[advanceDirectiveSection].entry[0] 0..* only Reference(JP_Concent)
-* section[compositionSection].section[advanceDirectiveSection].entry[=] ^short= "事前指示を記述したConcentリソースを参照"
-* section[compositionSection].section[advanceDirectiveSection].entry[=] ^definition= """事前指示を記述して参照する。
+* section[compositionSection].section[advanceDirectiveSection].entry 0..*
+* section[compositionSection].section[advanceDirectiveSection].entry only Reference(Consent)
+* section[compositionSection].section[advanceDirectiveSection].entry ^short = "事前指示を記述したConcentリソースを参照"
+* section[compositionSection].section[advanceDirectiveSection].entry ^definition = """事前指示を記述して参照する。
                                                                 1つの指示をひとつのConsentリソースで記述されたものを参照する。
                                                                 記述すべき事前指示が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
@@ -1263,9 +1304,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[researchParticipationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[researchParticipationSection].mode ..0
 * section[compositionSection].section[researchParticipationSection].orderedBy ..0
-* section[compositionSection].section[researchParticipationSection].entry[0] 0..* only Reference(JP_ResearchSubject)
-* section[compositionSection].section[researchParticipationSection].entry[=] ^short= "臨床研究参加情報を記述したDocumentReferenceリソースを参照"
-* section[compositionSection].section[researchParticipationSection].entry[=] ^definition= """臨床研究参加情報を記述して参照する。
+* section[compositionSection].section[researchParticipationSection].entry 0..*
+* section[compositionSection].section[researchParticipationSection].entry only Reference(ResearchSubject)
+* section[compositionSection].section[researchParticipationSection].entry ^short = "臨床研究参加情報を記述したDocumentReferenceリソースを参照"
+* section[compositionSection].section[researchParticipationSection].entry ^definition = """臨床研究参加情報を記述して参照する。
                                                                 1つの臨床研究参加情報をひとつのResearchSubjectリソースで記述されたものを参照する。
                                                                 記述すべき臨床研究参加情報が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。

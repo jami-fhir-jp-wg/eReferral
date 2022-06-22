@@ -1,0 +1,270 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_drugUnitAbbr_tbl20",
+  "id": "mhlw-codeSystem-drugUnitAbbr-tbl20",
+  "description": "厚労省電子処方CDA規格別表２０\t医薬品単位略号",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.101",
+  "concept": [
+    {
+      "code": "PART",
+      "display": "分"
+    },
+    {
+      "code": "TIME",
+      "display": "回"
+    },
+    {
+      "code": "KIND",
+      "display": "種"
+    },
+    {
+      "code": "BOX",
+      "display": "箱"
+    },
+    {
+      "code": "ROLL",
+      "display": "巻"
+    },
+    {
+      "code": "SHT",
+      "display": "枚"
+    },
+    {
+      "code": "HON",
+      "display": "本"
+    },
+    {
+      "code": "PAIR",
+      "display": "組"
+    },
+    {
+      "code": "SET",
+      "display": "セット"
+    },
+    {
+      "code": "KO",
+      "display": "個"
+    },
+    {
+      "code": "TEAR",
+      "display": "裂"
+    },
+    {
+      "code": "DIR",
+      "display": "方向"
+    },
+    {
+      "code": "TROC",
+      "display": "トローチ"
+    },
+    {
+      "code": "AMP",
+      "display": "アンプル"
+    },
+    {
+      "code": "CAP",
+      "display": "カプセル"
+    },
+    {
+      "code": "TAB",
+      "display": "錠"
+    },
+    {
+      "code": "PILL",
+      "display": "丸"
+    },
+    {
+      "code": "PCK",
+      "display": "包"
+    },
+    {
+      "code": "BTL",
+      "display": "瓶"
+    },
+    {
+      "code": "BAG",
+      "display": "袋"
+    },
+    {
+      "code": "BTLB",
+      "display": "瓶（袋）"
+    },
+    {
+      "code": "TUBE",
+      "display": "管"
+    },
+    {
+      "code": "SYRG",
+      "display": "シリンジ"
+    },
+    {
+      "code": "DOSE",
+      "display": "回分"
+    },
+    {
+      "code": "TEST",
+      "display": "テスト分"
+    },
+    {
+      "code": "GCYL",
+      "display": "ガラス筒"
+    },
+    {
+      "code": "RODT",
+      "display": "桿錠"
+    },
+    {
+      "code": "UNT",
+      "display": "単位"
+    },
+    {
+      "code": "TTUN",
+      "display": "万単位"
+    },
+    {
+      "code": "FEET",
+      "display": "フィート"
+    },
+    {
+      "code": "DROP",
+      "display": "滴"
+    },
+    {
+      "code": "MG",
+      "display": "ｍｇ"
+    },
+    {
+      "code": "G",
+      "display": "ｇ"
+    },
+    {
+      "code": "KG",
+      "display": "ｋｇ"
+    },
+    {
+      "code": "CC",
+      "display": "ｃｃ"
+    },
+    {
+      "code": "ML",
+      "display": "ｍＬ"
+    },
+    {
+      "code": "L",
+      "display": "Ｌ"
+    },
+    {
+      "code": "MLV",
+      "display": "ｍＬＶ"
+    },
+    {
+      "code": "VIL",
+      "display": "バイアル"
+    },
+    {
+      "code": "CM",
+      "display": "ｃｍ"
+    },
+    {
+      "code": "CM2",
+      "display": "ｃｍ２"
+    },
+    {
+      "code": "M",
+      "display": "ｍ"
+    },
+    {
+      "code": "MCCI",
+      "display": "μＣｉ"
+    },
+    {
+      "code": "MCI",
+      "display": "ｍＣｉ"
+    },
+    {
+      "code": "MCG",
+      "display": "μｇ"
+    },
+    {
+      "code": "BKR",
+      "display": "管（瓶）"
+    },
+    {
+      "code": "PIPE",
+      "display": "筒"
+    },
+    {
+      "code": "GBQ",
+      "display": "ＧＢｑ"
+    },
+    {
+      "code": "MGBQ",
+      "display": "ＭＢｑ"
+    },
+    {
+      "code": "KIT",
+      "display": "キット"
+    },
+    {
+      "code": "IUNT",
+      "display": "国際単位"
+    },
+    {
+      "code": "PAT",
+      "display": "患者当り"
+    },
+    {
+      "code": "ATM",
+      "display": "気圧"
+    },
+    {
+      "code": "CAN",
+      "display": "缶"
+    },
+    {
+      "code": "OPE",
+      "display": "手術当り"
+    },
+    {
+      "code": "VSL",
+      "display": "容器"
+    },
+    {
+      "code": "MLG",
+      "display": "ｍＬ（ｇ）"
+    },
+    {
+      "code": "BLST",
+      "display": "ブリスター"
+    },
+    {
+      "code": "SHET",
+      "display": "シート"
+    },
+    {
+      "code": "CST",
+      "display": "カセット"
+    },
+    {
+      "code": "TUNT",
+      "display": "千単位"
+    },
+    {
+      "code": "TTIU",
+      "display": "万国際単位"
+    },
+    {
+      "code": "MEQ",
+      "display": "ｍEｑ"
+    },
+    {
+      "code": "MCL",
+      "display": "μＬ"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 64
+}

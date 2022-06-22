@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JP_codeSystem_practitioner_role_category",
+  "id": "jp-codeSystem-practitioner-role-category",
+  "description": "医療者役割コード(処方)",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category",
+  "concept": [
+    {
+      "code": "doctor",
+      "display": "医師"
+    },
+    {
+      "code": "dentist",
+      "display": "歯科医師"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 2
+}

@@ -1,0 +1,1226 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JAMI_codeSystem_ePreSiteCode",
+  "id": "jami-codeSystem-ePreSiteCode",
+  "description": "JAMI標準用法部位コード（３桁）",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.200250.2.2.20.32",
+  "concept": [
+    {
+      "code": "010",
+      "display": "全身"
+    },
+    {
+      "code": "120",
+      "display": "頭皮"
+    },
+    {
+      "code": "12L",
+      "display": "左頭皮"
+    },
+    {
+      "code": "12R",
+      "display": "右頭皮"
+    },
+    {
+      "code": "130",
+      "display": "頭部"
+    },
+    {
+      "code": "13L",
+      "display": "左頭部"
+    },
+    {
+      "code": "13R",
+      "display": "右頭部"
+    },
+    {
+      "code": "140",
+      "display": "頭頂部"
+    },
+    {
+      "code": "150",
+      "display": "後頭部"
+    },
+    {
+      "code": "15L",
+      "display": "左後頭部"
+    },
+    {
+      "code": "15R",
+      "display": "右後頭部"
+    },
+    {
+      "code": "210",
+      "display": "ひたい"
+    },
+    {
+      "code": "21L",
+      "display": "左ひたい"
+    },
+    {
+      "code": "21R",
+      "display": "右ひたい"
+    },
+    {
+      "code": "220",
+      "display": "顔"
+    },
+    {
+      "code": "22B",
+      "display": "両顔"
+    },
+    {
+      "code": "22L",
+      "display": "左顔"
+    },
+    {
+      "code": "22R",
+      "display": "右顔"
+    },
+    {
+      "code": "230",
+      "display": "まゆ"
+    },
+    {
+      "code": "23B",
+      "display": "両まゆ"
+    },
+    {
+      "code": "23L",
+      "display": "左まゆ"
+    },
+    {
+      "code": "23R",
+      "display": "右まゆ"
+    },
+    {
+      "code": "240",
+      "display": "まゆのまわり"
+    },
+    {
+      "code": "24B",
+      "display": "両まゆのまわり"
+    },
+    {
+      "code": "24L",
+      "display": "左まゆのまわり"
+    },
+    {
+      "code": "24R",
+      "display": "右まゆのまわり"
+    },
+    {
+      "code": "250",
+      "display": "まぶた"
+    },
+    {
+      "code": "25B",
+      "display": "両まぶた"
+    },
+    {
+      "code": "25L",
+      "display": "左まぶた"
+    },
+    {
+      "code": "25R",
+      "display": "右まぶた"
+    },
+    {
+      "code": "260",
+      "display": "眼"
+    },
+    {
+      "code": "26B",
+      "display": "両眼"
+    },
+    {
+      "code": "26L",
+      "display": "左眼"
+    },
+    {
+      "code": "26R",
+      "display": "右眼"
+    },
+    {
+      "code": "270",
+      "display": "目のまわり"
+    },
+    {
+      "code": "27B",
+      "display": "両目のまわり"
+    },
+    {
+      "code": "27L",
+      "display": "左目のまわり"
+    },
+    {
+      "code": "27R",
+      "display": "右目のまわり"
+    },
+    {
+      "code": "310",
+      "display": "頬"
+    },
+    {
+      "code": "31B",
+      "display": "両頬"
+    },
+    {
+      "code": "31L",
+      "display": "左頬"
+    },
+    {
+      "code": "31R",
+      "display": "右頬"
+    },
+    {
+      "code": "320",
+      "display": "鼻"
+    },
+    {
+      "code": "32L",
+      "display": "左鼻"
+    },
+    {
+      "code": "32R",
+      "display": "右鼻"
+    },
+    {
+      "code": "330",
+      "display": "鼻のまわり"
+    },
+    {
+      "code": "33L",
+      "display": "左鼻のまわり"
+    },
+    {
+      "code": "33R",
+      "display": "右鼻のまわり"
+    },
+    {
+      "code": "340",
+      "display": "鼻の下"
+    },
+    {
+      "code": "34L",
+      "display": "左鼻の下"
+    },
+    {
+      "code": "34R",
+      "display": "右鼻の下"
+    },
+    {
+      "code": "350",
+      "display": "鼻腔内"
+    },
+    {
+      "code": "35B",
+      "display": "両鼻腔内"
+    },
+    {
+      "code": "35L",
+      "display": "左鼻腔内"
+    },
+    {
+      "code": "35R",
+      "display": "右鼻腔内"
+    },
+    {
+      "code": "420",
+      "display": "耳"
+    },
+    {
+      "code": "42B",
+      "display": "両耳"
+    },
+    {
+      "code": "42L",
+      "display": "左耳"
+    },
+    {
+      "code": "42R",
+      "display": "右耳"
+    },
+    {
+      "code": "430",
+      "display": "耳たぶ"
+    },
+    {
+      "code": "43B",
+      "display": "両耳たぶ"
+    },
+    {
+      "code": "43L",
+      "display": "左耳たぶ"
+    },
+    {
+      "code": "43R",
+      "display": "右耳たぶ"
+    },
+    {
+      "code": "440",
+      "display": "耳のうしろ"
+    },
+    {
+      "code": "44B",
+      "display": "両耳のうしろ"
+    },
+    {
+      "code": "44L",
+      "display": "左耳のうしろ"
+    },
+    {
+      "code": "44R",
+      "display": "右耳のうしろ"
+    },
+    {
+      "code": "450",
+      "display": "耳のまわり"
+    },
+    {
+      "code": "45B",
+      "display": "両耳のまわり"
+    },
+    {
+      "code": "45L",
+      "display": "左耳のまわり"
+    },
+    {
+      "code": "45R",
+      "display": "右耳のまわり"
+    },
+    {
+      "code": "460",
+      "display": "耳の中"
+    },
+    {
+      "code": "46B",
+      "display": "両耳の中"
+    },
+    {
+      "code": "46L",
+      "display": "左耳の中"
+    },
+    {
+      "code": "46R",
+      "display": "右耳の中"
+    },
+    {
+      "code": "520",
+      "display": "口"
+    },
+    {
+      "code": "530",
+      "display": "口のまわり"
+    },
+    {
+      "code": "540",
+      "display": "口唇"
+    },
+    {
+      "code": "550",
+      "display": "口腔内"
+    },
+    {
+      "code": "55L",
+      "display": "左口腔内"
+    },
+    {
+      "code": "55R",
+      "display": "右口腔内"
+    },
+    {
+      "code": "560",
+      "display": "口腔内ほほの内側"
+    },
+    {
+      "code": "56B",
+      "display": "両口腔内ほほの内側"
+    },
+    {
+      "code": "56L",
+      "display": "左口腔内ほほの内側"
+    },
+    {
+      "code": "56R",
+      "display": "右口腔内ほほの内側"
+    },
+    {
+      "code": "570",
+      "display": "口腔内上あご部"
+    },
+    {
+      "code": "57B",
+      "display": "両口腔内上あご部"
+    },
+    {
+      "code": "57L",
+      "display": "左口腔内上あご部"
+    },
+    {
+      "code": "57R",
+      "display": "右口腔内上あご部"
+    },
+    {
+      "code": "580",
+      "display": "上歯茎部"
+    },
+    {
+      "code": "58B",
+      "display": "両上歯茎部"
+    },
+    {
+      "code": "58L",
+      "display": "左上歯茎部"
+    },
+    {
+      "code": "58R",
+      "display": "右上歯茎部"
+    },
+    {
+      "code": "590",
+      "display": "下歯茎部"
+    },
+    {
+      "code": "59B",
+      "display": "両下歯茎部"
+    },
+    {
+      "code": "59L",
+      "display": "左下歯茎部"
+    },
+    {
+      "code": "59R",
+      "display": "右下歯茎部"
+    },
+    {
+      "code": "5A0",
+      "display": "舌"
+    },
+    {
+      "code": "5AL",
+      "display": "左舌"
+    },
+    {
+      "code": "5AR",
+      "display": "右舌"
+    },
+    {
+      "code": "5B0",
+      "display": "舌の裏側"
+    },
+    {
+      "code": "5BL",
+      "display": "左舌の裏側"
+    },
+    {
+      "code": "5BR",
+      "display": "右舌の裏側"
+    },
+    {
+      "code": "610",
+      "display": "喉の奥"
+    },
+    {
+      "code": "61L",
+      "display": "左喉の奥"
+    },
+    {
+      "code": "61R",
+      "display": "右喉の奥"
+    },
+    {
+      "code": "620",
+      "display": "扁桃腺部"
+    },
+    {
+      "code": "62B",
+      "display": "両扁桃腺部"
+    },
+    {
+      "code": "62L",
+      "display": "左扁桃腺部"
+    },
+    {
+      "code": "62R",
+      "display": "右扁桃腺部"
+    },
+    {
+      "code": "630",
+      "display": "下あご"
+    },
+    {
+      "code": "63L",
+      "display": "左下あご"
+    },
+    {
+      "code": "63R",
+      "display": "右下あご"
+    },
+    {
+      "code": "640",
+      "display": "首"
+    },
+    {
+      "code": "64B",
+      "display": "両首"
+    },
+    {
+      "code": "64L",
+      "display": "左首"
+    },
+    {
+      "code": "64R",
+      "display": "右首"
+    },
+    {
+      "code": "650",
+      "display": "うなじ"
+    },
+    {
+      "code": "65L",
+      "display": "左うなじ"
+    },
+    {
+      "code": "65R",
+      "display": "右うなじ"
+    },
+    {
+      "code": "710",
+      "display": "肩"
+    },
+    {
+      "code": "71B",
+      "display": "両肩"
+    },
+    {
+      "code": "71L",
+      "display": "左肩"
+    },
+    {
+      "code": "71R",
+      "display": "右肩"
+    },
+    {
+      "code": "720",
+      "display": "上肢"
+    },
+    {
+      "code": "72B",
+      "display": "両上肢"
+    },
+    {
+      "code": "72L",
+      "display": "左上肢"
+    },
+    {
+      "code": "72R",
+      "display": "右上肢"
+    },
+    {
+      "code": "730",
+      "display": "腕"
+    },
+    {
+      "code": "73B",
+      "display": "両腕"
+    },
+    {
+      "code": "73L",
+      "display": "左腕"
+    },
+    {
+      "code": "73R",
+      "display": "右腕"
+    },
+    {
+      "code": "740",
+      "display": "上腕"
+    },
+    {
+      "code": "74B",
+      "display": "両上腕"
+    },
+    {
+      "code": "74L",
+      "display": "左上腕"
+    },
+    {
+      "code": "74R",
+      "display": "右上腕"
+    },
+    {
+      "code": "750",
+      "display": "前腕"
+    },
+    {
+      "code": "75B",
+      "display": "両前腕"
+    },
+    {
+      "code": "75L",
+      "display": "左前腕"
+    },
+    {
+      "code": "75R",
+      "display": "右前腕"
+    },
+    {
+      "code": "760",
+      "display": "ひじ"
+    },
+    {
+      "code": "76B",
+      "display": "両ひじ"
+    },
+    {
+      "code": "76L",
+      "display": "左ひじ"
+    },
+    {
+      "code": "76R",
+      "display": "右ひじ"
+    },
+    {
+      "code": "770",
+      "display": "手"
+    },
+    {
+      "code": "77B",
+      "display": "両手"
+    },
+    {
+      "code": "77L",
+      "display": "左手"
+    },
+    {
+      "code": "77R",
+      "display": "右手"
+    },
+    {
+      "code": "780",
+      "display": "手の甲"
+    },
+    {
+      "code": "78B",
+      "display": "両手の甲"
+    },
+    {
+      "code": "78L",
+      "display": "左手の甲"
+    },
+    {
+      "code": "78R",
+      "display": "右手の甲"
+    },
+    {
+      "code": "790",
+      "display": "手のひら"
+    },
+    {
+      "code": "79B",
+      "display": "両手のひら"
+    },
+    {
+      "code": "79L",
+      "display": "左手のひら"
+    },
+    {
+      "code": "79R",
+      "display": "右手のひら"
+    },
+    {
+      "code": "7A0",
+      "display": "手の指"
+    },
+    {
+      "code": "7AB",
+      "display": "両手の指"
+    },
+    {
+      "code": "7AL",
+      "display": "左手の指"
+    },
+    {
+      "code": "7AR",
+      "display": "右手の指"
+    },
+    {
+      "code": "7B0",
+      "display": "手の指の間"
+    },
+    {
+      "code": "7BB",
+      "display": "両手の指の間"
+    },
+    {
+      "code": "7BL",
+      "display": "左手の指の間"
+    },
+    {
+      "code": "7BR",
+      "display": "右手の指の間"
+    },
+    {
+      "code": "7C0",
+      "display": "手の爪"
+    },
+    {
+      "code": "7CB",
+      "display": "両手の爪"
+    },
+    {
+      "code": "7CL",
+      "display": "左手の爪"
+    },
+    {
+      "code": "7CR",
+      "display": "右手の爪"
+    },
+    {
+      "code": "7D0",
+      "display": "手足"
+    },
+    {
+      "code": "7DB",
+      "display": "両手足"
+    },
+    {
+      "code": "7DL",
+      "display": "左手足"
+    },
+    {
+      "code": "7DR",
+      "display": "右手足"
+    },
+    {
+      "code": "810",
+      "display": "体幹部"
+    },
+    {
+      "code": "81L",
+      "display": "左体幹部"
+    },
+    {
+      "code": "81R",
+      "display": "右体幹部"
+    },
+    {
+      "code": "820",
+      "display": "背中"
+    },
+    {
+      "code": "82L",
+      "display": "左背中"
+    },
+    {
+      "code": "82R",
+      "display": "右背中"
+    },
+    {
+      "code": "830",
+      "display": "上背部"
+    },
+    {
+      "code": "83L",
+      "display": "左上背部"
+    },
+    {
+      "code": "83R",
+      "display": "右上背部"
+    },
+    {
+      "code": "840",
+      "display": "脇の下"
+    },
+    {
+      "code": "84B",
+      "display": "両脇の下"
+    },
+    {
+      "code": "84L",
+      "display": "左脇の下"
+    },
+    {
+      "code": "84R",
+      "display": "右脇の下"
+    },
+    {
+      "code": "850",
+      "display": "全胸部"
+    },
+    {
+      "code": "85L",
+      "display": "左胸部"
+    },
+    {
+      "code": "85R",
+      "display": "右胸部"
+    },
+    {
+      "code": "860",
+      "display": "乳房"
+    },
+    {
+      "code": "86B",
+      "display": "両乳房"
+    },
+    {
+      "code": "86L",
+      "display": "左乳房"
+    },
+    {
+      "code": "86R",
+      "display": "右乳房"
+    },
+    {
+      "code": "870",
+      "display": "乳房まわり"
+    },
+    {
+      "code": "87B",
+      "display": "両乳房まわり"
+    },
+    {
+      "code": "87L",
+      "display": "左乳房まわり"
+    },
+    {
+      "code": "87R",
+      "display": "右乳房まわり"
+    },
+    {
+      "code": "880",
+      "display": "乳首"
+    },
+    {
+      "code": "88B",
+      "display": "両乳首"
+    },
+    {
+      "code": "88L",
+      "display": "左乳首"
+    },
+    {
+      "code": "88R",
+      "display": "右乳首"
+    },
+    {
+      "code": "890",
+      "display": "上腹部"
+    },
+    {
+      "code": "89L",
+      "display": "左上腹部"
+    },
+    {
+      "code": "89R",
+      "display": "右上腹部"
+    },
+    {
+      "code": "8A0",
+      "display": "下腹部"
+    },
+    {
+      "code": "8AL",
+      "display": "左下腹部"
+    },
+    {
+      "code": "8AR",
+      "display": "右下腹部"
+    },
+    {
+      "code": "8B0",
+      "display": "へそ"
+    },
+    {
+      "code": "8C0",
+      "display": "へそのまわり"
+    },
+    {
+      "code": "8D0",
+      "display": "臀部"
+    },
+    {
+      "code": "8DB",
+      "display": "両臀部"
+    },
+    {
+      "code": "8DL",
+      "display": "左臀部"
+    },
+    {
+      "code": "8DR",
+      "display": "右臀部"
+    },
+    {
+      "code": "8E0",
+      "display": "陰のう"
+    },
+    {
+      "code": "8EB",
+      "display": "両陰のう"
+    },
+    {
+      "code": "8EL",
+      "display": "左陰のう"
+    },
+    {
+      "code": "8ER",
+      "display": "右陰のう"
+    },
+    {
+      "code": "8F0",
+      "display": "陰部"
+    },
+    {
+      "code": "8FL",
+      "display": "左陰部"
+    },
+    {
+      "code": "8FR",
+      "display": "右陰部"
+    },
+    {
+      "code": "8G0",
+      "display": "股間部"
+    },
+    {
+      "code": "8GL",
+      "display": "左股間部"
+    },
+    {
+      "code": "8GR",
+      "display": "右股間部"
+    },
+    {
+      "code": "8H0",
+      "display": "肛門部"
+    },
+    {
+      "code": "8J0",
+      "display": "肛門周囲"
+    },
+    {
+      "code": "910",
+      "display": "下肢"
+    },
+    {
+      "code": "91B",
+      "display": "両下肢"
+    },
+    {
+      "code": "91L",
+      "display": "左下肢"
+    },
+    {
+      "code": "91R",
+      "display": "右下肢"
+    },
+    {
+      "code": "920",
+      "display": "ふともも"
+    },
+    {
+      "code": "92B",
+      "display": "両ふともも"
+    },
+    {
+      "code": "92L",
+      "display": "左ふともも"
+    },
+    {
+      "code": "92R",
+      "display": "右ふともも"
+    },
+    {
+      "code": "930",
+      "display": "ふともも後ろ"
+    },
+    {
+      "code": "93B",
+      "display": "両ふともも後ろ"
+    },
+    {
+      "code": "93L",
+      "display": "左ふともも後ろ"
+    },
+    {
+      "code": "93R",
+      "display": "右ふともも後ろ"
+    },
+    {
+      "code": "940",
+      "display": "ふとももとすね"
+    },
+    {
+      "code": "94B",
+      "display": "両ふとももとすね"
+    },
+    {
+      "code": "94L",
+      "display": "左ふとももとすね"
+    },
+    {
+      "code": "94R",
+      "display": "右ふとももとすね"
+    },
+    {
+      "code": "950",
+      "display": "膝"
+    },
+    {
+      "code": "95B",
+      "display": "両膝"
+    },
+    {
+      "code": "95L",
+      "display": "左膝"
+    },
+    {
+      "code": "95R",
+      "display": "右膝"
+    },
+    {
+      "code": "960",
+      "display": "膝のうら"
+    },
+    {
+      "code": "96B",
+      "display": "両膝のうら"
+    },
+    {
+      "code": "96L",
+      "display": "左膝のうら"
+    },
+    {
+      "code": "96R",
+      "display": "右膝のうら"
+    },
+    {
+      "code": "970",
+      "display": "すね"
+    },
+    {
+      "code": "97B",
+      "display": "両すね"
+    },
+    {
+      "code": "97L",
+      "display": "左すね"
+    },
+    {
+      "code": "97R",
+      "display": "右すね"
+    },
+    {
+      "code": "980",
+      "display": "ふくらはぎ"
+    },
+    {
+      "code": "98B",
+      "display": "両ふくらはぎ"
+    },
+    {
+      "code": "98L",
+      "display": "左ふくらはぎ"
+    },
+    {
+      "code": "98R",
+      "display": "右ふくらはぎ"
+    },
+    {
+      "code": "990",
+      "display": "くるぶし"
+    },
+    {
+      "code": "99B",
+      "display": "両くるぶし"
+    },
+    {
+      "code": "99L",
+      "display": "左くるぶし"
+    },
+    {
+      "code": "99R",
+      "display": "右くるぶし"
+    },
+    {
+      "code": "9A0",
+      "display": "かかと"
+    },
+    {
+      "code": "9AB",
+      "display": "両かかと"
+    },
+    {
+      "code": "9AL",
+      "display": "左かかと"
+    },
+    {
+      "code": "9AR",
+      "display": "右かかと"
+    },
+    {
+      "code": "9B0",
+      "display": "足"
+    },
+    {
+      "code": "9BB",
+      "display": "両足"
+    },
+    {
+      "code": "9BL",
+      "display": "左足"
+    },
+    {
+      "code": "9BR",
+      "display": "右足"
+    },
+    {
+      "code": "9C0",
+      "display": "足の裏"
+    },
+    {
+      "code": "9CB",
+      "display": "両足の裏"
+    },
+    {
+      "code": "9CL",
+      "display": "左足の裏"
+    },
+    {
+      "code": "9CR",
+      "display": "右足の裏"
+    },
+    {
+      "code": "9D0",
+      "display": "足の甲"
+    },
+    {
+      "code": "9DB",
+      "display": "両足の甲"
+    },
+    {
+      "code": "9DL",
+      "display": "左足の甲"
+    },
+    {
+      "code": "9DR",
+      "display": "右足の甲"
+    },
+    {
+      "code": "9E0",
+      "display": "足のゆび"
+    },
+    {
+      "code": "9EB",
+      "display": "両足のゆび"
+    },
+    {
+      "code": "9EL",
+      "display": "左足のゆび"
+    },
+    {
+      "code": "9ER",
+      "display": "右足のゆび"
+    },
+    {
+      "code": "9F0",
+      "display": "足のゆびの間"
+    },
+    {
+      "code": "9FB",
+      "display": "両足のゆびの間"
+    },
+    {
+      "code": "9FL",
+      "display": "左足のゆびの間"
+    },
+    {
+      "code": "9FR",
+      "display": "右足のゆびの間"
+    },
+    {
+      "code": "9G0",
+      "display": "足の爪"
+    },
+    {
+      "code": "9GB",
+      "display": "両足の爪"
+    },
+    {
+      "code": "9GL",
+      "display": "左足の爪"
+    },
+    {
+      "code": "9GR",
+      "display": "右足の爪"
+    },
+    {
+      "code": "A10",
+      "display": "かゆい所"
+    },
+    {
+      "code": "A1B",
+      "display": "両かゆい所"
+    },
+    {
+      "code": "A1L",
+      "display": "左かゆい所"
+    },
+    {
+      "code": "A1R",
+      "display": "右かゆい所"
+    },
+    {
+      "code": "A20",
+      "display": "カサカサした所"
+    },
+    {
+      "code": "A30",
+      "display": "じくじくした所"
+    },
+    {
+      "code": "A40",
+      "display": "ひどい所"
+    },
+    {
+      "code": "A50",
+      "display": "褥瘡部"
+    },
+    {
+      "code": "A60",
+      "display": "発赤部"
+    },
+    {
+      "code": "A70",
+      "display": "発疹部"
+    },
+    {
+      "code": "A80",
+      "display": "ストマ部"
+    },
+    {
+      "code": "A90",
+      "display": "カテ挿入部"
+    },
+    {
+      "code": "AA0",
+      "display": "患部"
+    },
+    {
+      "code": "AAL",
+      "display": "左患部"
+    },
+    {
+      "code": "AAR",
+      "display": "右患部"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 303
+}

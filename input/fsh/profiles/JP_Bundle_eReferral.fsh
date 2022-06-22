@@ -16,21 +16,22 @@ Description: "診療情報提供書のBundle Documentのプロファル。"
 
 //    medicationRequest 0..*  MS and
     communication 0..* MS 
+and medicationRequest 0..* MS
 and authorOrganization 0..1 MS // 文書作成機関
 and authotDepartmentOfOrganization 0..1 MS // 文書作成者の診療科
 
 
-* entry[composition].resource MS only JP_Composition_eReferral // Bundleに含まれる全リソースエントリの参照リスト
+* entry[composition].resource only JP_Composition_eReferral // Bundleに含まれる全リソースエントリの参照リスト
 * entry[patient].resource MS // 患者情報エントリ Composition.subject
-* entry[authorisedAuthor] MS 1..1
+* entry[authorisedAuthor] 1..1 MS 
 * entry[authorisedAuthor].resource MS     // 文書作成者  Composition.author
 * entry[authorOrganization].resource MS  // 文書作成機関 authorisedAuthorから、またはauthotDepartmentOfOrganizationから参照される
-* entry[authotDepartmentOfOrganization].resource MS　// 文書作成者の診療科　authorOrganization　を参照する
+* entry[authotDepartmentOfOrganization].resource MS  // 文書作成者の診療科　authorOrganization　を参照する
 * entry[custodianOrganization].resource MS  // 文書管理機関 authorisedAuthorから参照される
 
 
-* entry[encounterOnDocument].resource only JP_Encounter_eReferral   // この診療情報提供書を作成する元となった当該医療機関での受診情報 Composition.encounter
-* entry[Condition].resource only JP_Encounter_eReferral // 入院期間中の診断情報
+* entry[encounterOnDocument].resource only JP_Encounter   // この診療情報提供書を作成する元となった当該医療機関での受診情報 Composition.encounter
+//* entry[condition].resource only JP_Encounter // 入院期間中の診断情報
 
 /*
 * entry[healthInsurancePublic].resource only JP_Coverage_eReferral_insurance
@@ -45,7 +46,7 @@ and authotDepartmentOfOrganization 0..1 MS // 文書作成者の診療科
 * entry[medicationRequest].fullUrl 1.. MS
 * entry[medicationRequest].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[medicationRequest].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
-* entry[medicationRequest].resource only JP_MedicationRequest_eReferral
+* entry[medicationRequest].resource only JP_MedicationRequest
 * entry[medicationRequest].resource ^short = "MedicationRequestリソースのインスタンス本体"
 * entry[medicationRequest].resource ^definition = "MedicationRequestリソースのインスタンス本体。"
 
@@ -54,7 +55,7 @@ and authotDepartmentOfOrganization 0..1 MS // 文書作成者の診療科
 * entry[communication].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[communication].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[communication].fullUrl MS
-* entry[communication].resource only JP_Communication_eReferral
+* entry[communication].resource only Communication
 * entry[communication].resource ^short = "Communicationrリソースのインスタンス本体"
 * entry[communication].resource ^definition = "Communicationrリソースのインスタンス本体"
 * entry[communication].search ..0

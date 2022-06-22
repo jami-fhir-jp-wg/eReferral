@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_claimOrganizationCategory_tbl22",
+  "id": "mhlw-codeSystem-claimOrganizationCategory-tbl22",
+  "description": "厚労省電子処方CDA規格別別表２２ 点数表番号",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.3.22",
+  "concept": [
+    {
+      "code": "1",
+      "display": "医科"
+    },
+    {
+      "code": "3",
+      "display": "歯科"
+    },
+    {
+      "code": "4",
+      "display": "調剤"
+    },
+    {
+      "code": "6",
+      "display": "訪問看護"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 4
+}

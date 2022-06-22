@@ -1,0 +1,34 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JP_codeSystem_documentTypeCode",
+  "id": "jp-codeSystem-documentTypeCode",
+  "description": "FHIR文書の文書区分（医療文書全般）",
+  "version": "1.0.0",
+  "url": "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes",
+  "concept": [
+    {
+      "code": "JPGCHKUP01",
+      "display": "健診結果報告書"
+    },
+    {
+      "code": "JPMCHKUP01",
+      "display": "自治体検診結果報告書"
+    },
+    {
+      "code": "18842-5",
+      "display": "退院時サマリー"
+    },
+    {
+      "code": "57133-1",
+      "display": "診療情報提供書"
+    },
+    {
+      "code": "57833-6",
+      "display": "処方箋"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 5
+}

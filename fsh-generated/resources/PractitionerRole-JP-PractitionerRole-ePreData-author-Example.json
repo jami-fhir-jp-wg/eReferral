@@ -1,0 +1,31 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "JP-PractitionerRole-ePreData-author-Example",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_PractitionerRole_ePrescriptionData_author"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://exapmleHospital.jp/IdSystem/hisUserRoleId",
+      "value": "702"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/JP-Practitioner-ePreData-author-Example"
+  },
+  "organization": {
+    "reference": "Organization/JP-Organization-ePreData-issuer-Example"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "doctor",
+          "system": "http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "JAMI_codeSystem_ePreOrderUsageAuxCode",
+  "id": "jami-codeSystem-ePreOrderUsageAuxCode",
+  "description": "JAMI補足用法コード8桁",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.200250.2.2.20.22",
+  "concept": [
+    {
+      "code": "V11NNNNN",
+      "display": "不均等・１回目・１単位量"
+    },
+    {
+      "code": "V12NNNNN",
+      "display": "不均等・１回目・２単位量"
+    },
+    {
+      "code": "V13NNNNN",
+      "display": "不均等・１回目・３単位量"
+    },
+    {
+      "code": "V14NNNNN",
+      "display": "不均等・１回目・４単位量"
+    },
+    {
+      "code": "V15NNNNN",
+      "display": "不均等・１回目・５単位量"
+    },
+    {
+      "code": "V16NNNNN",
+      "display": "不均等・１回目・６単位量"
+    },
+    {
+      "code": "V17NNNNN",
+      "display": "不均等・１回目・７単位量"
+    },
+    {
+      "code": "V18NNNNN",
+      "display": "不均等・１回目・８単位量"
+    },
+    {
+      "code": "V19NNNNN",
+      "display": "不均等・１回目・９単位量"
+    },
+    {
+      "code": "V21NNNNN",
+      "display": "不均等・１回目・１単位量"
+    },
+    {
+      "code": "V22NNNNN",
+      "display": "不均等・１回目・２単位量"
+    },
+    {
+      "code": "V23NNNNN",
+      "display": "不均等・１回目・３単位量"
+    },
+    {
+      "code": "V24NNNNN",
+      "display": "不均等・１回目・４単位量"
+    },
+    {
+      "code": "V25NNNNN",
+      "display": "不均等・１回目・５単位量"
+    },
+    {
+      "code": "V26NNNNN",
+      "display": "不均等・１回目・６単位量"
+    },
+    {
+      "code": "V27NNNNN",
+      "display": "不均等・１回目・７単位量"
+    },
+    {
+      "code": "V28NNNNN",
+      "display": "不均等・１回目・８単位量"
+    },
+    {
+      "code": "V29NNNNN",
+      "display": "不均等・１回目・９単位量"
+    },
+    {
+      "code": "V31NNNNN",
+      "display": "不均等・１回目・１単位量"
+    },
+    {
+      "code": "V32NNNNN",
+      "display": "不均等・１回目・２単位量"
+    },
+    {
+      "code": "V33NNNNN",
+      "display": "不均等・１回目・３単位量"
+    },
+    {
+      "code": "V34NNNNN",
+      "display": "不均等・１回目・４単位量"
+    },
+    {
+      "code": "V35NNNNN",
+      "display": "不均等・１回目・５単位量"
+    },
+    {
+      "code": "V36NNNNN",
+      "display": "不均等・１回目・６単位量"
+    },
+    {
+      "code": "V37NNNNN",
+      "display": "不均等・１回目・７単位量"
+    },
+    {
+      "code": "V38NNNNN",
+      "display": "不均等・１回目・８単位量"
+    },
+    {
+      "code": "V39NNNNN",
+      "display": "不均等・１回目・９単位量"
+    },
+    {
+      "code": "V41NNNNN",
+      "display": "不均等・１回目・１単位量"
+    },
+    {
+      "code": "V42NNNNN",
+      "display": "不均等・１回目・２単位量"
+    },
+    {
+      "code": "V43NNNNN",
+      "display": "不均等・１回目・３単位量"
+    },
+    {
+      "code": "V44NNNNN",
+      "display": "不均等・１回目・４単位量"
+    },
+    {
+      "code": "V45NNNNN",
+      "display": "不均等・１回目・５単位量"
+    },
+    {
+      "code": "V46NNNNN",
+      "display": "不均等・１回目・６単位量"
+    },
+    {
+      "code": "V47NNNNN",
+      "display": "不均等・１回目・７単位量"
+    },
+    {
+      "code": "V48NNNNN",
+      "display": "不均等・１回目・８単位量"
+    },
+    {
+      "code": "V49NNNNN",
+      "display": "不均等・１回目・９単位量"
+    },
+    {
+      "code": "V51NNNNN",
+      "display": "不均等・１回目・１単位量"
+    },
+    {
+      "code": "V52NNNNN",
+      "display": "不均等・１回目・２単位量"
+    },
+    {
+      "code": "V53NNNNN",
+      "display": "不均等・１回目・３単位量"
+    },
+    {
+      "code": "V54NNNNN",
+      "display": "不均等・１回目・４単位量"
+    },
+    {
+      "code": "V55NNNNN",
+      "display": "不均等・１回目・５単位量"
+    },
+    {
+      "code": "V56NNNNN",
+      "display": "不均等・１回目・６単位量"
+    },
+    {
+      "code": "V57NNNNN",
+      "display": "不均等・１回目・７単位量"
+    },
+    {
+      "code": "V58NNNNN",
+      "display": "不均等・１回目・８単位量"
+    },
+    {
+      "code": "V59NNNNN",
+      "display": "不均等・１回目・９単位量"
+    },
+    {
+      "code": "V61NNNNN",
+      "display": "不均等・１回目・１単位量"
+    },
+    {
+      "code": "V62NNNNN",
+      "display": "不均等・１回目・２単位量"
+    },
+    {
+      "code": "V63NNNNN",
+      "display": "不均等・１回目・３単位量"
+    },
+    {
+      "code": "V64NNNNN",
+      "display": "不均等・１回目・４単位量"
+    },
+    {
+      "code": "V65NNNNN",
+      "display": "不均等・１回目・５単位量"
+    },
+    {
+      "code": "V66NNNNN",
+      "display": "不均等・１回目・６単位量"
+    },
+    {
+      "code": "V67NNNNN",
+      "display": "不均等・１回目・７単位量"
+    },
+    {
+      "code": "V68NNNNN",
+      "display": "不均等・１回目・８単位量"
+    },
+    {
+      "code": "V69NNNNN",
+      "display": "不均等・１回目・９単位量"
+    },
+    {
+      "code": "I1100000",
+      "display": "隔日投与"
+    },
+    {
+      "code": "W1100001",
+      "display": "日曜日、月曜日"
+    },
+    {
+      "code": "W0110000",
+      "display": "月曜日、火曜日"
+    },
+    {
+      "code": "W0101000",
+      "display": "月曜日、水曜日"
+    },
+    {
+      "code": "W0100100",
+      "display": "月曜日、木曜日"
+    },
+    {
+      "code": "W0100010",
+      "display": "月曜日、金曜日"
+    },
+    {
+      "code": "W0100001",
+      "display": "月曜日、土曜日"
+    },
+    {
+      "code": "W0010000",
+      "display": "火曜日、水曜日"
+    },
+    {
+      "code": "W0011000",
+      "display": "火曜日、目曜日"
+    },
+    {
+      "code": "W0000100",
+      "display": "火曜日、木曜日"
+    },
+    {
+      "code": "W0000010",
+      "display": "火曜日、金曜日"
+    },
+    {
+      "code": "W0000001",
+      "display": "火曜日、土曜日"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 66
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "MHLW_codeSystem_ePreCDA_drugDosageStrength_tbl04",
+  "id": "mhlw-codeSystem-ePreCDA-drugDosageStrength-tbl04",
+  "description": "厚労省電子処方CDA規格別表4 力価区分コード",
+  "version": "1.0.0",
+  "url": "urn:oid:1.2.392.100495.20.2.22",
+  "concept": [
+    {
+      "code": "1",
+      "display": "製剤量"
+    },
+    {
+      "code": "2",
+      "display": "原薬量"
+    }
+  ],
+  "caseSensitive": false,
+  "count": 2
+}

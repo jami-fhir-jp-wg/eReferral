@@ -1,0 +1,54 @@
+{
+  "resourceType": "Patient",
+  "id": "JP-Patient-ePreData-Example",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.100495.20.3.51.11311234567",
+      "value": "00000010"
+    }
+  ],
+  "name": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+          "valueCode": "IDE"
+        }
+      ],
+      "use": "official",
+      "text": "東京　太郎",
+      "family": "東京",
+      "given": [
+        "太郎"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+          "valueCode": "SYL"
+        }
+      ],
+      "use": "official",
+      "text": "トウキョウ　タロウ",
+      "family": "トウキョウ",
+      "given": [
+        "タロウ"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1920-02-11",
+  "address": [
+    {
+      "text": "神奈川県横浜市港区１－２－３",
+      "postalCode": "123-4567",
+      "country": "JP"
+    }
+  ]
+}
