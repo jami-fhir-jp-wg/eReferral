@@ -1,8 +1,8 @@
-Instance: JP-Patient-ePreData-Example
+Instance: JP-Patient-eReferral-Example
 InstanceOf: Patient
 Usage: #example
-Description: "処方対象の患者 Patientリソースのインスタンス例"
-* meta.profile = "http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Patient_ePrescriptionData"
+Description: "対象の患者 Patientリソースのインスタンス例"
+* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Patient_eReferral"
 * identifier.system = "urn:oid:1.2.392.100495.20.3.51.11311234567"
 * identifier.value = "00000010"
 * name[0].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"

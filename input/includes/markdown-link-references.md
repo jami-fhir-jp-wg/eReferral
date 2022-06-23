@@ -13,25 +13,28 @@
 [JP_DiagnosticReport_Common_interaction]: StructureDefinition-jp-diagnosticreport-common.html#interaction一覧
 
 <!-- ImplementationGuide -->
-[JAMIeReferralDataImplementationGuide]: ImplementationGuide-eReferralData.html
+[JAMIeReferralImplementationGuide]: ImplementationGuide-eReferral.html
 
 <!-- StructureDefinition: Profile, DataType -->
 [JP_Bundle_CCLIX]: StructureDefinition-JP-Bundle-CCLIX.html
-[JP_Bundle_eReferralData]: StructureDefinition-JP-Bundle-eReferralData.html
-[JP_Communication_eReferralData]: StructureDefinition-JP-Communication-eReferralData.html
-[JP_Communication]: StructureDefinition-JP-Communication.html
-[JP_Composition_eReferralData]: StructureDefinition-JP-Composition-eReferralData.html
-[JP_Coverage_eReferralData_insurance]: StructureDefinition-JP-Coverage-eReferralData-insurance.html
-[JP_Coverage_eReferralData_publicPayment]: StructureDefinition-JP-Coverage-eReferralData-publicPayment.html
-[JP_Encounter_eReferralData]: StructureDefinition-JP-Encounter-eReferralData.html
-[JP_MedicationRequest_eReferralData]: StructureDefinition-JP-MedicationRequest-eReferralData.html
-[JP_Organization_eReferralData_coveragePayer]: StructureDefinition-JP-Organization-eReferralData-coveragePayer.html
-[JP_Organization_eReferralData_departmentOfIssuer]: StructureDefinition-JP-Organization-eReferralData-departmentOfIssuer.html
-[JP_Organization_eReferralData_issuer]: StructureDefinition-JP-Organization-eReferralData-issuer.html
+[JP_Bundle_eReferral]: StructureDefinition-JP-Bundle-eReferral.html
+[JP_CarePlan]: StructureDefinition-JP-CarePlan.html
+[JP_Composition_eReferral]: StructureDefinition-JP-Composition-eReferral.html
+[JP_Consent]: StructureDefinition-JP-Consent.html
+[JP_DeviceUseStatement]: StructureDefinition-JP-DeviceUseStatement.html
+[JP_DocumentReference]: StructureDefinition-JP-DocumentReference.html
+[JP_Encounter_eReferral]: StructureDefinition-JP-Encounter-eReferral.html
+[JP_FamilyMemberHistory]: StructureDefinition-JP-FamilyMemberHistory.html
+[JP_Immunization]: StructureDefinition-JP-Immunization.html
+[JP_MedicationRequest_eReferral]: StructureDefinition-JP-MedicationRequest-eReferral.html
+[JP_Observation]: StructureDefinition-JP-Observation.html
+[JP_Organization_eReferral_departmentOfIssuer]: StructureDefinition-JP-Organization-eReferral-departmentOfIssuer.html
+[JP_Organization_eReferral_issuer]: StructureDefinition-JP-Organization-eReferral-issuer.html
 [JP_Patient_CCLIX]: StructureDefinition-JP-Patient-CCLIX.html
-[JP_Patient_eReferralData]: StructureDefinition-JP-Patient-eReferralData.html
-[JP_Practitioner_eReferralData_author]: StructureDefinition-JP-Practitioner-eReferralData-author.html
-[JP_PractitionerRole_eReferralData_author]: StructureDefinition-JP-PractitionerRole-eReferralData-author.html
+[JP_Patient_eReferral]: StructureDefinition-JP-Patient-eReferral.html
+[JP_Practitioner_eReferral_author]: StructureDefinition-JP-Practitioner-eReferral-author.html
+[JP_PractitionerRole_eReferral_author]: StructureDefinition-JP-PractitionerRole-eReferral-author.html
+[JP_JResearchSubject]: StructureDefinition-JP-ResearchSubject.html
 
 <!-- StructureDefinition: Extension -->
 [JP_Communication_CommunicationContent]: StructureDefinition-JP-Communication-CommunicationContent.html
@@ -50,7 +53,7 @@
 [JAMI_codeSystem_ePreUsageRoute]: CodeSystem-jami-codeSystem-ePreUsageRoute.html
 [JP_codeSystem_documentTypeCode]: CodeSystem-jp-codeSystem-documentTypeCode.html
 [JP_codeSystem_ePreCommunication_category]: CodeSystem-jp-codeSystem-ePreCommunication-category.html
-[JP_codeSystem_eReferral_section]: CodeSystem-jp-codeSystem-eReferral-section.html
+[JP_codeSystem_ePrescription_section]: CodeSystem-jp-codeSystem-ePrescription-section.html
 [JP_codeSystem_insurerNumber]: CodeSystem-jp-codeSystem-insurerNumber.html
 [JP_codeSystem_practitioner_certificate_category]: CodeSystem-jp-codeSystem-practitioner-certificate-category.html
 [JP_codeSystem_practitioner_role_category]: CodeSystem-jp-codeSystem-practitioner-role-category.html
@@ -72,6 +75,7 @@
 [MHLW_codeSystem_ePreCDA_unable2Change2Generic_tbl08]: CodeSystem-mhlw-codeSystem-ePreCDA-unable2Change2Generic-tbl08.html
 
 <!-- ValueSet -->
+[JAMI_valueSet_ePreDispenseInstruction]: ValueSet-jami-valueSet-ePreDispenseInstruction.html
 [JAMI_valueSet_ePreOrderUsageCode_16digits]: ValueSet-jami-valueSet-ePreOrderUsageCode-16digits.html
 [JP_valueSet_documentTypeCode]: ValueSet-jp-valueSet-documentTypeCode.html
 [JP_valueSet_drugCode_gs1_14]: ValueSet-jp-valueSet-drugCode-gs1-14.html
@@ -81,6 +85,33 @@
 [MHLW_valueSet_ePreCDA_insuranceCategory_tbl11]: ValueSet-mhlw-valueSet-ePreCDA-insuranceCategory-tbl11.html
 
 <!-- Example -->
+[Bundle-for-JP-MedReq-ePreData-Example01]: Bundle-Bundle-for-JP-MedReq-ePreData-Example01.html
+[JP-Coverage-ePreData-insurance-Example]: Coverage-JP-Coverage-ePreData-insurance-Example.html
+[JP-Coverage-ePreData-publicPayment-Example]: Coverage-JP-Coverage-ePreData-publicPayment-Example.html
+[JP-Encounter-ePreData-Example]: Encounter-JP-Encounter-ePreData-Example.html
+[JP-MedReq-ePreData-Example-fukintouByDay]: MedicationRequest-JP-MedReq-ePreData-Example-fukintouByDay.html
+[JP-MedReq-ePreData-Example-fukintouByTimes01]: MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTimes01.html
+[JP-MedReq-ePreData-Example-fukintouByTimes02]: MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTimes02.html
+[JP-MedReq-ePreData-Example-fukintouByTimes03]: MedicationRequest-JP-MedReq-ePreData-Example-fukintouByTimes03.html
+[JP-MedReq-ePreData-Example-gaiyou01]: MedicationRequest-JP-MedReq-ePreData-Example-gaiyou01.html
+[JP-MedReq-ePreData-Example-gaiyou02]: MedicationRequest-JP-MedReq-ePreData-Example-gaiyou02.html
+[JP-MedReq-ePreData-Example-gaiyou03]: MedicationRequest-JP-MedReq-ePreData-Example-gaiyou03.html
+[JP-MedReq-ePreData-Example-kakujitsu]: MedicationRequest-JP-MedReq-ePreData-Example-kakujitsu.html
+[JP-MedReq-ePreData-Example-naihuku]: MedicationRequest-JP-MedReq-ePreData-Example-naihuku.html
+[JP-MedReq-ePreData-Example-youbiShiitei]: MedicationRequest-JP-MedReq-ePreData-Example-youbiShiitei.html
+[JP-MedReq-ePreData-Example-zenzou01per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou01per03.html
+[JP-MedReq-ePreData-Example-zenzou02per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou02per03.html
+[JP-MedReq-ePreData-Example-zenzou03per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou03per03.html
+[JP-Organization-ePreData-coveragePayer-Example]: Organization-JP-Organization-ePreData-coveragePayer-Example.html
+[JP-Organization-ePreData-departmentOfIssuer-Example]: Organization-JP-Organization-ePreData-departmentOfIssuer-Example.html
+[JP-Organization-ePreData-departmentOfIssuer-ExampleType2]: Organization-JP-Organization-ePreData-departmentOfIssuer-ExampleType2.html
+[JP-Organization-ePreData-issuer-Example]: Organization-JP-Organization-ePreData-issuer-Example.html
+[JP-Organization-ePreData-publicPayer-Example]: Organization-JP-Organization-ePreData-publicPayer-Example.html
+[JP-Patient-ePreData-Example]: Patient-JP-Patient-ePreData-Example.html
+[JP-Practitioner-ePreData-author-Example]: Practitioner-JP-Practitioner-ePreData-author-Example.html
+[JP-PractitionerRole-ePreData-author-Example]: PractitionerRole-JP-PractitionerRole-ePreData-author-Example.html
+
+<!-- example -->
 [Bundle-for-JP-MedReq-ePreData-Example01]: Bundle-Bundle-for-JP-MedReq-ePreData-Example01.html
 [JP-Coverage-ePreData-insurance-Example]: Coverage-JP-Coverage-ePreData-insurance-Example.html
 [JP-Coverage-ePreData-publicPayment-Example]: Coverage-JP-Coverage-ePreData-publicPayment-Example.html
