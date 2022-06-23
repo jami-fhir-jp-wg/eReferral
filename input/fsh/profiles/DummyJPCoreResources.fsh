@@ -35,7 +35,7 @@ Parent:			Consent
 Id:             JP-Consent
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent"
 
-Profile:        JP_JResearchSubject
+Profile:        JP_ResearchSubject
 Parent:			ResearchSubject
 Id:             JP-ResearchSubject
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_JResearchSubject"
