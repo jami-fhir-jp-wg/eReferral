@@ -58,7 +58,7 @@ dependencies:
 pages:
   index.md:
     title: 診療情報提供書HL7&reg; FHIR&reg;記述仕様書 第1版
-  ePreTables.md:
+  eReferralTables.md:
     title: 各表一覧
 
 #   index.md:
