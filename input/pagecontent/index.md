@@ -173,7 +173,7 @@ Bundleリソースは図のように、Compositionリソースにてセクショ
 
 Bundleリソース全体の構造を以下の表に示す。
 
-＜[表3　　Bundleリソース　文書情報]()＞
+＜[表3　　Bundleリソース　文書情報](eReferralTables.html#tbl-03)＞
 
 この表で示すように、documentタイプのBundleリソースでは、管理的な情報を格納する要素としてtimestamp、 signature などがあり、文書自体の内容情報を格納する要素として、ひとつのentry要素（エントリリスト）がある。このentry要素の値には、複数のresource要素を含むブロックが繰り返される。
 この表では様々なentryが列挙されているが、先にも述べたように、entry要素自体は1度だけ出現し、その値がリストとなることに注意されたい。 
@@ -187,7 +187,7 @@ entryの最初のresource は、先に述べたように、構成リソース一
 ### . Compositionリソース
 Compositionリソースは、診療情報提供書FHIR documentにentry として格納される複数のリソースのうちの最初に出現するもので、この文書全体の構成目次に相当する情報や、セクションの構成を記述したものである。
 診療情報提供書FHIR documentでの** **Compositionリソースの仕様を次の表に示す。
-[＜**エラー****! ****参照元が見つかりません。**]()[表5　　Compositionリソース　文書構成情報]()＞
+＜[表5　　Compositionリソース　文書構成情報](eReferralTables.html#tbl-05)＞
 
 診療情報提供書は、あとで説明するように4つのセクション（CDA参照セクション、構造情報セクション、PDFセクション、添付情報セクション）から構成され、さらにそのうち構造情報セクションには子となるセクションが複数配置されている。
 Compositionリソースは患者や作成者など文書情報管理用の情報を記述するいわゆるヘッダ部、および診療情報提供書文書の本体内容を記述するボディー部から構成される。
@@ -251,22 +251,22 @@ Composition.identifier要素には、その医療機関が発行した診療情�
 この診療情報提供書を作成する対象となる患者をPatientリソースを、そのPatientリソースのリソースIDである"urn:uuid: ..... "　を記述することにより内部参照する。
 Patientリソースの仕様は次の表で示す。
 
-＜[表21　　Patientリソース　患者情報]()＞
+＜[表21　　Patientリソース　患者情報](eReferralTables.html#tbl-21)＞
 
 ####  Composition.encounter要素
 この診療情報提供書を作成する元となった当該医療機関での受診情報を表すEncounterリソースを、そのEncounterリソースのリソースIDである"urn:uuid: ..... "　を記述することにより内部参照する。
 Encounterリソースの仕様は次の表で示す。
 
-＜[表12　　Encounterリソース　入院詳細情報]()＞
+＜[表12　　Encounterリソース　入院詳細情報](eReferralTables.html#tbl-12)＞
 
 ####  Composition.author要素
 この診療情報提供書文書の作成責任者を表すPractionerリソースを、そのPractionerリソースのリソースIDである"urn:uuid: ..... "　を記述することにより内部参照する。
 さらに同じ要素に、続けて文書作成機関を表すOrganizationリソースを、そのOrganizationリソースのリソースIDである"urn:uuid: ..... "　を記述することにより内部参照する。
 Practionerリソース、Organizationリソースの仕様はそれぞれ次の表で示す。
 
-＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報]()＞
-＜[表19　　Organizationリソース　文書作成医療機関情報]()＞
-＜[表20　　Organizationリソース　診療科情報]()＞
+＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞
+＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞
+＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
 
 ####  Composition.custodian要素
 この診療情報提供書文書の作成・修正を行い、文書の管理責任を持つ機関を表す。
@@ -278,7 +278,7 @@ Organizationリソースを、そのOrganizationリソースのリソースIDで
 ####  Composition.section要素
 すべてのComposition.section要素は、以下の構造をとる。
 
-＜[表5-3 Composition_sectionの情報構造]()＞
+＜[表5-3 Composition_sectionの情報構造](eReferralTables.html#tbl-05-3)＞
 
 Compositionの直下には、紹介先医療機関と紹介元医療機関の情報を保持する2つのセクションと、診療情報提供書文書の内容を異なる2つの形態のいずれかで格納するためにどちらか一方を選択して使用するCDA参照セクションと構造情報セクション、およびどの形態においても使うことのある添付情報セクション、PDFセクションの計6つのsectionが子要素として存在している。
 これらのうちCDA参照セクションは既存のCDA規約にもとづいてすでに十分に構造化されたXMLファイルを有していて、それをそのまま包み込むことによって、FHIRドキュメント作成になるべくコストを割きたくない場合を想定して、それぞれ用意されている。
@@ -290,13 +290,13 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 　紹介先の診療科を記述したい場合には、加えて診療科をOrganizationリソースで記述し、そのインスタンスへの参照を本セクションのentry要素リストに記述する。
 　それぞれの仕様を次の表に示す。文書作成に関わる情報となっているが共通仕様であり、必須要素以外の記述は不要である。
 
-＜[表19　　Organizationリソース　文書作成医療機関情報]()＞
-＜[表20　　Organizationリソース　診療科情報]()＞
+＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞
+＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
 
 　また、紹介先の医師の情報も記述したい場合には、加えて医師情報をPractitionerリソースで記述し、そのインスタンスへの参照を本セクションのentry要素リストに記述する。
 　Practitionerリソースの仕様を次の表に示す。作成者情報となっているが共通仕様である。
 
-＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報]()＞（再掲）
+＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞（再掲）
 　
 2）紹介元情報セクション
 　紹介元医療機関、紹介元診療科、紹介元医師の情報記述は紹介先情報と同一仕様である。
@@ -319,7 +319,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 ###  紹介目的セクション
 紹介先で予定している受診を記述したEncounterリソースを参照する。
 
-＜[表12　　Encounterリソース　入院詳細情報]()＞　（再掲）
+＜[表12　　Encounterリソース　入院詳細情報](eReferralTables.html#tbl-12)＞　（再掲）
 
 Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。
 
@@ -327,7 +327,7 @@ Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状に
 傷病名・主訴は、それらを1つにつき1つのConditionで記述したインスタンスを、本セクションのentryから参照する。
 Conditionリソースの仕様は次の表である。
 
-＜[表6　　Conditionリソース　患者状態情報]()＞
+＜[表6　　Conditionリソース　患者状態情報](eReferralTables.html#tbl-06)＞
 
 ### . 現病歴セクション
 傷病名・主訴セクションと同様である。
@@ -345,35 +345,35 @@ Conditionリソースの仕様は次の表である。
 ###  家族歴セクション
 家族歴情報は、家族一人について1つのFamilyMemberHistoryリソースを使用して記述する。仕様は次の表である。
 
-＜[表13　　FamiliMemberHistoryリソース　家族歴情報]()＞
+＜[表13　　FamiliMemberHistoryリソース　家族歴情報](eReferralTables.html#tbl-13)＞
 
 ###  身体所見セクション
 身体所見は観察や検査所見の一種として、1項目ごとに1つのObservationリソースを使用して記述する。Observationのcategory要素に"exam"を設定する。項目コードObservation .code.coding.codeに設定すべき適切な標準コードがない項目の場合には、Observation .code.text にテキストで項目名だけを記述することもできる。
 仕様は次の表である。
 
-＜[表18　　Observationリソース　　検査・観察情報]()＞　
+＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-16)＞　
 
 ###  感染症情報セクション
 感染症に関する患者状態は、検査結果による情報と、疾患名による情報があるので、適宜、検査所見の一種として、1項目ごとに1つのObservationリソースを使用するか、傷病名・主訴セクションと同様に1疾患ごとに1つのConditionリソースを使用するか、またはその両方を使用して記述する。
 
-＜[表18　　Observationリソース　　検査・観察情報]()＞　（再掲）
+＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
 
 ###  入院時服薬情報セクション
 入院時の服薬情報（正確には入院直前までの服薬情報）は、1医薬品ごとに1つのMedicationStatementリソースを使用して記述する。MedicationStatementでは、1医薬品ごとに用法を記述することができ、それが必要な場合で情報が入手できる場合には、MedicationStatement.dosage要素に記述する。
 仕様は次の表である。
 
-＜[表17　　MedicationStatementリソース　　服薬情報]()＞
-＜[表17-1 MedicationStatement* *dosage　処方依頼情報の服薬用法情報]()＞
+＜[表17　　MedicationStatementリソース　　服薬情報](eReferralTables.html#tbl-17)＞
+＜[表17-1 MedicationStatement* *dosage　処方依頼情報の服薬用法情報](eReferralTables.html#tbl-17-1)＞
 
 ###  社会歴・生活習慣セクション
 社会（生活）歴情報は観察調査の一種として、1項目ごとに1つのObservationリソースを使用して記述する。Observationのcategory要素に"social-history"を設定する。項目コードObservation .code.coding.codeに設定すべき適切な標準コードがない項目の場合には、Observation .code.text にテキストで項目名だけを記述することもできる。仕様は次の表である。
 
-＜[表18　　Observationリソース　　検査・観察情報]()＞（再掲）
+＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞（再掲）
 
 ###  予防接種歴セクション
 予防接種の履歴は、入院にかかわらずImmunaizaionリソースを使用して記述する。仕様を次の表に示す。
 
-＜[表15　　Immunizationリソース　ワクチン接種情報]()＞
+＜[表15　　Immunizationリソース　ワクチン接種情報](eReferralTables.html#tbl-15)＞
 
 ###  手術セクション
 ### . 輸血歴セクション
@@ -381,14 +381,14 @@ Conditionリソースの仕様は次の表である。
 治療・処置・手術等（投薬を除く）は、すべてProcedureリソースを使用して記述する。
 なお、診断のための検査手技の実施については、検査結果のセクションで記述する。
 note要素に叙述的記述はできるが、3.7で説明したようにentry.textに記述してもよい。
-＜[表23　　Procedureリソース　　入院中治療処置情報]()＞
+＜[表23　　Procedureリソース　　入院中治療処置情報](eReferralTables.html#tbl-23)＞
 
 ###  投薬指示セクション
 処方指示は、1医薬品ごとに1つのMedicationReauestリソースを使用して記述する。MedicationReauestでは、1医薬品ごとに用法を記述しており、MedicationRequest.dosaggInstruction要素に記述する。
 仕様は次の表である。
 
-＜[表16　　MedicationRequestリソース　処方依頼情報]()＞
-＜[表16-1 MedicationRequest dosageInstruction　処方情報の用法指示情報]()＞
+＜[表16　　MedicationRequestリソース　処方依頼情報](eReferralTables.html#tbl-16)＞
+＜[表16-1 MedicationRequest dosageInstruction　処方情報の用法指示情報](eReferralTables.html#tbl-16-1)＞
 
 記述方法の詳細は、処方箋データFHIR記述仕様を参照のこと。
 なお、処方箋データFHIR記述仕様にもとづいた処方箋文書（Bundleリソースインスタンス）を直接参照する方法でも記述できる。
@@ -398,40 +398,40 @@ note要素に叙述的記述はできるが、3.7で説明したようにentry.t
 実施済みの検査結果は、検査室の検査や観察などはObservationリソースで、画像検査はその実施記録をImagingStudy、診断報告をDiagnosticReportで、それぞれ記述する。画像そのものはDICOMファイル、波形・写真・図などはそれぞれのファイル形式で添付情報セクションに添付または外部ファイル参照する。
 仕様はそれぞれ次の表に示す。
 
-＜[表18　　Observationリソース　　検査・観察情報]()＞　（再掲）
-＜[表14　　ImagingStudyリソース　画像検査実施情報]()＞
-＜[表10　　DiagnosticReportリソース　診断報告書情報]()＞
+＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
+＜[表14　　ImagingStudyリソース　画像検査実施情報](eReferralTables.html#tbl-14)＞
+＜[表10　　DiagnosticReportリソース　診断報告書情報](eReferralTables.html#tbl-10)＞
 
 ###  臨床経過セクション
 紹介元でのこれまでの臨床経過は、ほとんどの場合、叙述的に記述することが必要である。経過中の主訴、診断や検査、投薬、治療などは他のセクションにおいて、Observation、ImagingStudy、DiagnositcReport 、Procedure、MedicationRequest、MedicationStatement、Encounter　などの各リソースで記述される。
 それ以外の経過は、主としてこれらのリソースで記述された客観的情報の時間的接続性に関する叙述的な記述や、患者のSubjectiveな記述、および医療者による評価所見（アセスメント的な印象）といった情報となる。本仕様ではDocumentReferenceリソースを使用し、DocumentReference.type にLOINCコード"11506-3"　（Progress note）を設定し、叙述的内容をDocumentReference.description要素に文章をstring型で記述する。仕様は次の表に示す。
 
-＜[表11*　　*DocumentReferenceリソース　 文書参照情報]()＞
+＜[表11  DocumentReferenceリソース　 文書参照情報](eReferralTables.html#tbl-11)＞
 
 ###  診療方針指示セクション
 今後の治療の方針や患者や家族への指示は、ほとんどの場合に叙述的記述にとどまると考えられるが、この内容はFHIRでは、CarePlanリソースを使用して記述する。方針指示内容はCarePlanのdescription 要素に叙述的に記述する。
 診療情報提供書において方針指示に関する情報を提供するのは、あくまで、患者にはこれまで紹介元医療機関としてどのように指示していたかを伝える目的であり、紹介先医療機関に指示する目的ではない。仕様は次の表である。
 
-＜[表4　　CarePlanリソース　診療方針指示情報]()＞
+＜[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-04)＞
 
 ###  医療機器セクション
 患者が使用、装着、離脱した医療機器に関する情報を記述したい場合には、DeviceUseStatementリソースを使用して記述する。このリソースからは使用するデバイスを参照するので、あわせてDeviceリソースも記述して格納する。仕様をそれぞれ次の表に示す。
 
-＜[表8　　DeviceUseStatementリソース　医療機器使用歴情報]()＞
-＜[表9　　Deviceリソース　医療機器情報]()＞
+＜[表8　　DeviceUseStatementリソース　医療機器使用歴情報](eReferralTables.html#tbl-08)＞
+＜[表9　　Deviceリソース　医療機器情報](eReferralTables.html#tbl-09)＞
 
 ###  事前指示セクション
 患者や家族の治療意思と治療方針への同意情報は、事前指示に限らず同意情報としてConsentリソースを使用して記述する。
 Consent.scope 要素に"adr"　を設定（Advanced Care Directive）すると、事前指示として記述できる。仕様を次の表に示す。
 
-＜[表7　　Consentリソース　同意情報]()＞
+＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-07)＞
 
 ###  臨床研究参加セクション
 患者が臨床研究に参加している、あるいは参加予定である場合など、研究参加情報は、ResearchSubjectリソースを使用して記述する。ResearchSubjectリソースは対象となるResearchStudyリソースを参照するので、あわせてResearchStudyリソースも記述して格納する。仕様を次の表に示す。
 
-＜[表26　　ResearchSubjectリソース　　研究対象情報]()＞
-＜[表25　　ResearchStudyリソース　　研究対象情報]()＞
-＜[表7　　Consentリソース　同意情報]()＞　（再掲）
+＜[表26　　ResearchSubjectリソース　　研究対象情報](eReferralTables.html#tbl-26)＞
+＜[表25　　ResearchStudyリソース　　研究対象情報](eReferralTables.html#tbl-25)＞
+＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-07)＞　（再掲）
 
 ###  添付情報セクション
 添付情報は、DocumentReferenceリソース、またはBinaryリソースにより記述して格納する。
@@ -439,8 +439,8 @@ Consent.scope 要素に"adr"　を設定（Advanced Care Directive）すると�
 また複数の外部ファイルがある場合には、たとえば厚生労働省標準HS009のIHE 統合プロファイル「可搬型医用画像」で規定しているIHE:PDI方式に準拠したフォルダ構成で各ファイルを格納した上でZIP形式などでアーカイブ してひとつのファイルとして、それを外部参照するとよい。
 DocumentReferenceリソース、およびBinaryリソースの仕様は次の表にそれぞれ示す。
 
-＜[表11*　　*DocumentReferenceリソース　 文書参照情報]()＞
-＜[表2　　Binaryリソース　 バイナリーデータ情報]()＞
+＜[表11  DocumentReferenceリソース　 文書参照情報](eReferralTables.html#tbl-11)＞
+＜[表2　　Binaryリソース　 バイナリーデータ情報](eReferralTables.html#tbl-02)＞
 
 ### . セクションから直接参照されないリソース
 各セクションのentry要素から直接参照されるリソースは、さらに別のリソースを参照する。ここではそれら、間接的参照のリソースのうち主要はリソースの仕様を記述する。、
@@ -452,14 +452,14 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 また、機関のなかの部門についても、機関の中の機関と見做すことで同じOrganizationリソースを使用して記述できる。たとえば診療科の記述はOrganizationリソースを使用して記述する。
 仕様は次の表に示す。この仕様では文書作成医療機関を想定して表が作成されているが、これに限らず他の施設、機関にも適用できる。
 
-＜[表19　　Organizationリソース　文書作成医療機関情報]()＞（再掲）
-＜[表20　　Organizationリソース　診療科情報]()＞（再掲）
+＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞（再掲）
+＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞（再掲）
 
 ###  　RelatedPersonリソース
 患者の関係者（親族や同居者、あるいは友人なども含む）のリソースとしてRelatedPersonリソースが参照される。
 たとえば同意取得や第三者確認などで使用されることがある。仕様を次の表に示す。
 
-＜[表24　　RelatedPersonリソース　　患者関係者情報]()＞
+＜[表24　　RelatedPersonリソース　　患者関係者情報](eReferralTables.html#tbl-24)＞
 
 
 ##  データタイプ
