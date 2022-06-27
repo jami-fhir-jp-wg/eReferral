@@ -1,5 +1,6 @@
 # =======================================================
 # sushi-config.yaml　special url　生成スクリプト
+# sushi-config.yaml に　special-url:　の行があることが必要。そこの後ろに書き足される。
 # 処理概要：
 # cannonical urlの命名規則の警告を避けるため、リソースファイル
 # url情報を抽出し、sushi-config.yamlを書き換える処理を行なう。

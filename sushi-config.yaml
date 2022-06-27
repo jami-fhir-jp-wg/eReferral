@@ -126,7 +126,29 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   excludeexample: 'false'
   generate: #what does this do - todo: remove and see
     - json
- 
+  special-url:
+    - http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Bundle_CCLIX
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_DeviceUseStatement
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_DocumentReference
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Encounter_eReferral
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_FamilyMemberHistory
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_MedicationRequest_eReferral
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_departmentOfIssuer
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_issuer
+    - http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Patient_CCLIX
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Patient_eReferral
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Practitioner_eReferral_author
+    - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_PractitionerRole_eReferral_author
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_JResearchSubject
+    - http://jpfhir.jp/fhir/eReferral/Extension/StructureDefinition/JP_Communication_CommunicationContent
+    - http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense
+
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
 # │  resource. These properties are less commonly needed than those above.                         │
