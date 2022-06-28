@@ -33,6 +33,7 @@ and surgicalProcedure 0..* MS
 and medication 0..* MS
 and clinicalCourse 0..* MS
 and carePlan 0..* MS
+and medicalDevice 0..* MS
 and advancedDirective 0..* MS
 and researchCollabo 0..* MS
 
@@ -88,7 +89,7 @@ and researchCollabo 0..* MS
 * entry[familyHistory] ^short = "家族歴情報を記述したFamilyMemberHistoryリソースを参照"
 * entry[familyHistory] ^definition = "家族歴情報情報を記述して参照する。"
 
-* entry[physicalExams].resource only JP_ObservationCommon_eClinicalSummary
+* entry[physicalExams].resource only JP_Observation_Common_eClinicalSummary
 * entry[physicalExams] ^short = "身体所見／感染症情報／社会歴・生活習慣情報／検査結果を記述したObservationリソースを参照"
 * entry[physicalExams] ^definition = "身体所見／感染症情報／社会歴・生活習慣情報／検査結果を記述して参照する。"
 

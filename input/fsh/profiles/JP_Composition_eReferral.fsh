@@ -679,7 +679,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[admissinoPhysicalStatusSection].mode ..0
 * section[compositionSection].section[admissinoPhysicalStatusSection].orderedBy ..0
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry 0..*
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry only Reference(JP_Observation)
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry ^short = "身体所見を記述したObservationリソースを参照"
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry ^definition = """身体所見を記述して参照する。
                                                                 1つの身体所見につき1つのObservationリソースで記述されたものを参照する。
@@ -727,7 +727,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[infectiousDiseaseInformationSection].mode ..0
 * section[compositionSection].section[infectiousDiseaseInformationSection].orderedBy ..0
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry 0..*
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(JP_Observation)
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^short = "感染症情報を記述したObservationリソースを参照"
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^definition = """感染症情報を記述して参照する。
                                                                 1つの感染症情報につき1つのObservationリソースで記述されたものを参照する。
@@ -775,7 +775,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[socialHistorySection].mode ..0
 * section[compositionSection].section[socialHistorySection].orderedBy ..0
 * section[compositionSection].section[socialHistorySection].entry 0..*
-* section[compositionSection].section[socialHistorySection].entry only Reference(JP_Observation)
+* section[compositionSection].section[socialHistorySection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[socialHistorySection].entry ^short = "社会歴・生活習慣情報を記述したObservationリソースを参照"
 * section[compositionSection].section[socialHistorySection].entry ^definition = """社会歴・生活習慣情報を記述して参照する。
                                                                 1つの社会歴・生活習慣につき1つのObservationリソースで記述されたものを参照する。
@@ -1069,7 +1069,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[examsStudySection].mode ..0
 * section[compositionSection].section[examsStudySection].orderedBy ..0
 * section[compositionSection].section[examsStudySection].entry 0..*
-* section[compositionSection].section[examsStudySection].entry only Reference(JP_Observation)
+* section[compositionSection].section[examsStudySection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[examsStudySection].entry ^short = "検査結果情報を記述したObservationリソースを参照"
 * section[compositionSection].section[examsStudySection].entry ^definition = """検査結果情報を記述して参照する。
                                                                 1つの検査結果情報につき1つのObservationリソースで記述されたものを参照する。
