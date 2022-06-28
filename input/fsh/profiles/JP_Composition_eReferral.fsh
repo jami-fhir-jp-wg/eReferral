@@ -63,7 +63,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * type.coding.system MS
 * type.coding.version
 * type.coding.code 1.. MS
-* type.coding.code = #57833-6 (exactly)
+* type.coding.code = #57133-1 (exactly)
 * type.coding.code ^definition = "診療情報提供書\"57133-1\"を指定。固定値。"
 * type.coding.display = "診療情報提供書" (exactly)
 * type.coding.display ^short = "文書区分コードの表示名。"
