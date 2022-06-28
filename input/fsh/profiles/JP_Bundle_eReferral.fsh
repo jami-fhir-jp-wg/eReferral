@@ -30,12 +30,18 @@ and familyHistory 0..* MS
 and physicalExams 0..* MS
 and immunization 0..* MS
 and surgicalProcedure 0..* MS
-and medication 0..* MS
 and clinicalCourse 0..* MS
 and carePlan 0..* MS
-and medicalDevice 0..* MS
+and medicalDeviceUse 0..* MS
 and advancedDirective 0..* MS
-and researchCollabo 0..* MS
+and researchSubject 0..* MS
+and medicationStatement 0..* MS
+and medicalDevice 0..* MS
+and imageStudy 0..* MS
+and diagReport 0..* MS
+and researchStudy 0..* MS
+and relatedPerson 0..* MS
+and binaryData 0..* MS
 
 * entry[composition].resource only JP_Composition_eReferral // Bundleに含まれる全リソースエントリの参照リスト
 * entry[patient].resource MS // 患者情報エントリ Composition.subject
@@ -101,9 +107,13 @@ and researchCollabo 0..* MS
 * entry[surgicalProcedure] ^short = "手術処置/輸血歴情報を記述したProcedureリソースを参照"
 * entry[surgicalProcedure] ^definition = "手術処置/輸血歴情報を記述して参照する。"
 
-* entry[medication].resource only JP_MedicationRequest
-* entry[medication] ^short = "投薬指示情報を記述したMedicationRequestリソースを参照"
-* entry[medication] ^definition = "投薬指示情報を記述して参照する。"
+* entry[medicationStatement].resource only JP_MedicationStatement
+* entry[medicationStatement] ^short = "投薬指示情報を記述したMedicationStatementリソースを参照"
+* entry[medicationStatement] ^definition = "投薬指示情報を記述して参照する。"
+
+* entry[medicationRequest].resource only JP_MedicationRequest
+* entry[medicationRequest] ^short = "処方情報を記述したMedicationStatementリソースを参照"
+* entry[medicationRequest] ^definition = "処方情報を記述して参照する。"
 
 * entry[clinicalCourse].resource only JP_DocumentReference_eClinicalSummary
 * entry[clinicalCourse] ^short = "必須。臨床経過を記述したDocumentReferenceリソースを参照"
@@ -113,14 +123,39 @@ and researchCollabo 0..* MS
 * entry[carePlan] ^short = "診療方針指示を記述したCarePlanリソースを参照"
 * entry[carePlan] ^definition = "診療方針指示を記述して参照する。"
 
-* entry[medicalDevice].resource only JP_DeviceUseStatement_eClinicalSummary
-* entry[medicalDevice] ^short = "医療機器情報を記述したDocumentReferenceリソースを参照"
-* entry[medicalDevice] ^definition = "医療機器情報を記述して参照する。"
+* entry[medicalDeviceUse].resource only JP_DeviceUseStatement
+* entry[medicalDeviceUse] ^short = "医療機器の使用状況を記述したDeviceUseStatementリソースを参照"
+* entry[medicalDeviceUse] ^definition = "医療機器の使用状況を記述したDeviceUseStatementリソースを参照する。"
 
-* entry[advancedDirective].resource only JP_Consent_eClinicalSummary
+* entry[medicalDevice].resource only JP_Device
+* entry[medicalDevice] ^short = "医療機器情報を記述したDeviceリソースを参照"
+* entry[medicalDevice] ^definition = "医療機器情報を記述したDeviceリソースを参照する。"
+
+* entry[imageStudy].resource only JP_ImagingStudy_Radiology
+* entry[imageStudy] ^short = "画像検査情報を記述したImagingStudyリソースを参照"
+* entry[imageStudy] ^definition = "画像検査医療機器情報を記述したImagingStudyリソースを参照する。"
+
+* entry[diagReport].resource only JP_DiagnosticReport_Common
+* entry[diagReport] ^short = "診断レポート情報を記述したDiagnosticReportリソースを参照"
+* entry[diagReport] ^definition = "診断レポート情報を記述したDiagnosticReportリソースを参照する。"
+
+
+* entry[advancedDirective].resource only JP_Consent
 * entry[advancedDirective] ^short = "事前指示を記述したConcentリソースを参照"
 * entry[advancedDirective] ^definition = "事前指示を記述して参照する。"
 
-* entry[researchCollabo].resource only JP_ResearchSubject_eClinicalSummary
-* entry[researchCollabo] ^short = "臨床研究参加情報を記述したDocumentReferenceリソースを参照"
-* entry[researchCollabo] ^definition = "臨床研究参加情報を記述して参照する。"
+* entry[researchSubject].resource only JP_ResearchSubject
+* entry[researchSubject] ^short = "臨床研究参加情報者を記述したResearchSubject_リソースを参照"
+* entry[researchSubject] ^definition = "臨床研究参加者情報を記述して参照する。"
+
+* entry[researchStudy].resource only JP_ResearchStudy
+* entry[researchStudy] ^short = "臨床研究情報を記述したResearchStudyリソースを参照"
+* entry[researchStudy] ^definition = "臨床研究情報を記述して参照する。"
+
+* entry[relatedPerson].resource only JP_RelatedPerson
+* entry[relatedPerson] ^short = "親族情報を記述したRelatedPersonリソースを参照"
+* entry[relatedPerson] ^definition = "親族情報を記述して参照する。"
+
+* entry[binaryData].resource only JP_Binary
+* entry[binaryData] ^short = "各種備考参照情報を記述したBinaryリソースを参照"
+* entry[binaryData] ^definition = "各種備考参照情報を記述して参照する。"
