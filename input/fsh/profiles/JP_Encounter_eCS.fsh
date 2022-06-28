@@ -1,7 +1,7 @@
 Profile: JP_Encounter_eClinicalSummary
 Parent: JP_Encounter
 Id: JP-Encounter-eClinicalSummary
-Description: "処方発行時の入退院受診情報などEncouter情報　JP_Encounterの派生プロファイル"
+Description: "診療情報提供では、紹介理由を記述するEncouter情報　JP_Encounterの派生プロファイル。診療サマリーではサマリー対象となる受診や入院に関する情報。"
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Encounter_eClinicalSummary"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
@@ -9,7 +9,7 @@ Description: "処方発行時の入退院受診情報などEncouter情報　JP_E
 * status = #finished (exactly)
 * status ^definition = "finished の固定値を設定する。"
 * status MS
-* class ^definition = "Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.\r\n外来（外来）、入院、救急、在宅医療、その他の地域差による患者Encouterの分類を表す概念。"
+* class ^definition = "外来（外来）、入院、救急、在宅医療、その他の地域差による患者Encouterの分類を表す概念。"
 * class MS
 * class.system 1.. MS
 * class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode" (exactly)
@@ -30,7 +30,12 @@ Description: "処方発行時の入退院受診情報などEncouter情報　JP_E
 * appointment ..0
 * period ..0
 * length ..0
-* reasonCode ..0
+* reasonCode ..* MS
+* reasonCode ^short = "入院時主訴・入院理由。紹介する理由（主訴・目的）"
+* reasonCode ^definition = "コードで記述できる場合にそのコード記述。system値はMEDIS標準病名マスター病名交換用コードを使用できる。text要素にフリーテキストで記述してもよい。"
+* reasonCode.coding.system MS
+* reasonCode.coding.code MS
+* reasonCode.text MS
 * reasonReference ..0
 * diagnosis ..0
 * account ..0
