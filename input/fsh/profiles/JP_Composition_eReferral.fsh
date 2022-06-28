@@ -972,7 +972,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[treatmentProcedureSection].orderedBy ..0
 * section[compositionSection].section[treatmentProcedureSection].entry 0..*
 * section[compositionSection].section[treatmentProcedureSection].entry only Reference(JP_Procedure)
-* section[compositionSection].section[treatmentProcedureSection].entry ^short = "処置情報を記述したImmunizationリソースを参照"
+* section[compositionSection].section[treatmentProcedureSection].entry ^short = "処置情報を記述したProcedureリソースを参照"
 * section[compositionSection].section[treatmentProcedureSection].entry ^definition = """処置情報を記述して参照する。
                                                                 1つの処置情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき処置情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。

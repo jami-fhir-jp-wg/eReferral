@@ -1,8 +1,8 @@
-Profile: JP_MedicationRequest_eReferral
+Profile: JP_MedicationRequest_eClinicalSummary
 Parent: JP_MedicationRequest
-Id: JP-MedicationRequest-eReferral
+Id: JP-MedicationRequest-eClinicalSummary
 Description: "処方オーダ情報　JP_MedicationRequestの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_MedicationRequest_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_MedicationRequest_eClinicalSummary"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\ｓ\\nXHTML形式。"

@@ -5,12 +5,12 @@ Severity: #error
 Expression: "(telecom.where(system='phone' and value.exists())).exists()"
 
 
-Profile: JP_Organization_eReferral_issuer
+Profile: JP_Organization_eClinicalSummary_issuer
 Parent: JP_Organization
-Id: JP-Organization-eReferral-issuer
+Id: JP-Organization-eClinicalSummary-issuer
 Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
 * obeys checkPhoneNumberExists
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_issuer"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eClinicalSummary_issuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"

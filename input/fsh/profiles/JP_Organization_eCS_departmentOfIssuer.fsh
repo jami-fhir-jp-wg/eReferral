@@ -8,14 +8,14 @@ Description: "【診療科コード(type[1].coding.where(system='urn:oid:1.2.392
 Severity: #error
 Expression: "(type[1].exists().not()) or ((type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists())"
 
-Profile: JP_Organization_eReferral_departmentOfIssuer
+Profile: JP_Organization_eClinicalSummary_departmentOfIssuer
 Parent: JP_Organization
-Id: JP-Organization-eReferral-departmentOfIssuer
+Id: JP-Organization-eClinicalSummary-departmentOfIssuer
 Description: "処方を発行した医療機関の診療科情報　JP_Organizationの派生プロファイル"
 
 * obeys checkOrganizationType0
 * obeys checkOrganizationType1
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_departmentOfIssuer"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eClinicalSummary_departmentOfIssuer"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

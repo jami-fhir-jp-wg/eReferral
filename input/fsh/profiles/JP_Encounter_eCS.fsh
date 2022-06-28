@@ -1,8 +1,8 @@
-Profile: JP_Encounter_eReferral
+Profile: JP_Encounter_eClinicalSummary
 Parent: JP_Encounter
-Id: JP-Encounter-eReferral
+Id: JP-Encounter-eClinicalSummary
 Description: "処方発行時の入退院受診情報などEncouter情報　JP_Encounterの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Encounter_eReferral"
+* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Encounter_eClinicalSummary"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\r\\nXHTML形式。"
