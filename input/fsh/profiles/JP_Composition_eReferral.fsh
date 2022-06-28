@@ -80,7 +80,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * category.coding.system ^short = "文書カテゴリコードのコード体系"
 * category.coding.system ^definition = "文書カテゴリコードのコード体系を識別するURI。固定値。"
 * category.coding.code 1.. MS
-* category.coding.code = #57833-6 (exactly)
+* category.coding.code = #57133-1 (exactly)
 * category.coding.code ^short = "文書カテゴリコード"
 * category.coding.code ^definition = "文書カテゴリコード"
 * category.coding.display ^short = "文書カテゴリコードの表示名"
