@@ -194,12 +194,12 @@ Id:             JP-Consent-eClinicalSummary
 Profile:        JP_ResearchSubject
 Parent:			ResearchSubject
 Id:             JP-ResearchSubject
-* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_JResearchSubject"
+* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchSubject"
 
 Profile:        JP_ResearchStudy
 Parent:			ResearchStudy
 Id:             JP-ResearchStudy
-* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_JResearchSubject"
+* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchStudy"
 
 
 Profile:        JP_ResearchSubject_eClinicalSummary
