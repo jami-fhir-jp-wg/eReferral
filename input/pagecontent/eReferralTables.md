@@ -1,22 +1,25 @@
 <style type="text/css">
 .text table {
-table-layout: fixed;
+width: auto;
+border: 1px solid #000000;
 border-collapse: collapse;
 border-spacing: 0;
+}
+table {
+  border: solid 1px black;
+  border-collapse: collapse;
 }
 
 table td {
   border: solid 1px black;
   border-collapse: collapse;
-  width: 50px;
-}
 
+}
 table th {
   border: solid 1px black;
   border-collapse: collapse;
-  width: 50px;
-}
 
+}
 </style>
 
 
