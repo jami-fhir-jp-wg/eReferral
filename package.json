@@ -1,7 +1,7 @@
 {
-    "name": "ePrescriptionDara",
-    "version": "0.1.0",
-    "description": "ePrescriptionDara",
+    "name": "eReferral",
+    "version": "0.9.0",
+    "description": "eReferral",
     "author": "Kohe",
     "fhirVersions": [
         "4.0.1"
@@ -9,6 +9,6 @@
     "dependencies": {
         "hl7.fhir.r4.core": "4.0.1"
     },
-    "url": "http://Users/kohe/GitHub/ePrescriptionData/package",
-    "canonical": "http://jpcore.jp/fhir/ePrescriptionData"
+    "url": "http://jpfhir.jp/fhir/core/ImplementationGuide/eReferral#0.9.0",
+    "canonical": "http://jpfhir.jp/fhir/eReferral"
 }

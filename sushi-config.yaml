@@ -10,7 +10,7 @@ name: "JAMIeReferralImplementationGuide"
 title: "JAMI eReferral ImplementationGuide"
 description: "JAMI eReferral ImplementationGuide"
 status: draft # draft | active | retired | unknown 
-version: 1.0.0
+version: 0.9.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 
