@@ -1,5 +1,6 @@
 
 
+{% include markdown-link-references.md %}
 
 目次
 

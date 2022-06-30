@@ -21,15 +21,12 @@ table th {
 
 }
 </style>
+{% include markdown-link-references.md %}
 
 
 退院時サマリーHL7 FHIR記述仕様　第1版
 診療情報提供書HL7FHIR記述仕様　   第1版
-（共通）
-**リソース記述に関する表**
-
-
-日本HL7協会
+（共通）日本HL7協会
 
 
 **本表における****C****odeableConcept****型要素の略記法について**

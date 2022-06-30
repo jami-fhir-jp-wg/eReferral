@@ -76,6 +76,7 @@ table th {
     }
 
 </style>
+{% include markdown-link-references.md %}
 
 
 日本医療情報学会　2021年10月 Ver. 1.0.2 (2022.2.24) 
@@ -269,7 +270,7 @@ Encounterリソースの仕様は次の表で示す。
 Practionerリソース、Organizationリソースの仕様はそれぞれ次の表で示す。
 
 ＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞
-＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞
+＜[表19　　Organizationリソース　文書作成医療機関情報][eReferralTables.html#tbl-19]＞
 ＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
 
 ####  Composition.custodian要素
