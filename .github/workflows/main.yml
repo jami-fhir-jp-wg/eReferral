@@ -56,12 +56,7 @@ jobs:
         tag: 'latest'
         path: .
         file: publisher.jar
-
-    - name: Wget IG PublisherJPFHIR
-      uses: wei/wget@v1
-      with:
-        args:  https://tx.jpfhir.jp/download/publisherJPFHIR.jar
-
+        
     - name: Run filepp by file pre proccessor converting egg to egg.fsh
       run: | 
         while read -r f; do echo "converting $f to $f.fsh"; filepp  -m for.pm -m  bigdef.pm $f >$f.fsh; done < <(find ./ -name *.egg -mindepth 1)
@@ -73,6 +68,10 @@ jobs:
       run: | 
         mkdir input-cache
         mv ./publisher.jar ./input-cache
+        : # - name: Wget IG PublisherJPFHIR
+        : # uses: wei/wget@v1
+        : # with:
+        : #  args:  https://tx.jpfhir.jp/download/publisherJPFHIR.jar
         : # this is a comment:  ls -la ./input-cache
         mkdir /home/runner/.fhir
         mkdir /home/runner/.fhir/packages
