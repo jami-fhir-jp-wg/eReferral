@@ -1,0 +1,324 @@
+{
+  "resourceType": "Composition",
+  "id": "compositionReferralExample01",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+      "valueString": "ARGcode"
+    }
+  ],
+  "identifier": {
+    "system": "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier",
+    "value": "ARGcode"
+  },
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "code": "57133-1",
+        "system": "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes",
+        "display": "診療情報提供書"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "57133-1",
+          "system": "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes",
+          "display": "診療情報提供書"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "jppatientExample01",
+    "display": "患者リソースPatient"
+  },
+  "encounter": {
+    "reference": "encounterReferralExample01",
+    "display": "受診Encounterリソース"
+  },
+  "date": "2020-08-21T12:12:20+09:00",
+  "author": [
+    {
+      "reference": "紹介状作成者Practitionerリソース",
+      "display": "紹介状作成者PractitionerRoleリソース"
+    },
+    {
+      "reference": "紹介状作成機関Organaizationリソース9",
+      "display": "紹介状作成機関Organaizationリソース"
+    }
+  ],
+  "title": "診療情報提供書",
+  "custodian": {
+    "reference": "紹介状作成機関Organaizationリソース",
+    "display": "紹介状交付責任機関Organaizationリソース"
+  },
+  "event": [
+    {
+      "code": [
+        {
+          "text": "診療情報提供書発行"
+        }
+      ],
+      "period": {
+        "start": "2020-08-21"
+      }
+    }
+  ],
+  "section": [
+    {
+      "title": "紹介先情報",
+      "code": {
+        "coding": [
+          {
+            "code": "910",
+            "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+            "display": "紹介先情報セクション"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div>東京第一病院</div>"
+      },
+      "entry": [
+        {
+          "reference": "urn:uuid:9b4e6a12-7bb3-5d46-a126-31b33410f796",
+          "display": "紹介先医療機関 JP_Organization"
+        },
+        {
+          "reference": "urn:uuid:9b4e6a12-7bb3-5d46-a126-31b33410f796",
+          "display": "紹介先診療科 JP_Organization"
+        },
+        {
+          "reference": "urn:uuid:a871437d-03eb-edfb-9ac7-f3313c54f31a",
+          "display": "紹介先医師 JP_Practitioner"
+        }
+      ]
+    },
+    {
+      "title": "紹介元情報",
+      "code": {
+        "coding": [
+          {
+            "code": "910",
+            "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+            "display": "紹介元情報セクション"
+          }
+        ]
+      },
+      "text": {
+        "status": "additional",
+        "div": "<div>港区第一診療所</div>"
+      },
+      "entry": [
+        {
+          "reference": "urn:uuid:9b4e6a12-7bb3-5d46-a126-31b33410f796",
+          "display": "紹介元医療機関 JP_Organization"
+        },
+        {
+          "reference": "urn:uuid:9b4e6a12-7bb3-5d46-a126-31b33410f796",
+          "display": "紹介元診療科 JP_Organization"
+        },
+        {
+          "reference": "urn:uuid:a871437d-03eb-edfb-9ac7-f3313c54f31a",
+          "display": "紹介元医師 JP_Practitioner"
+        }
+      ]
+    },
+    {
+      "title": "構造情報",
+      "code": {
+        "coding": [
+          {
+            "code": "300",
+            "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+            "display": "構造情報セクション"
+          }
+        ]
+      },
+      "section": [
+        {
+          "title": "紹介目的",
+          "code": {
+            "coding": [
+              {
+                "code": "950",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "紹介目的セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>腹痛精査お願いします。</div>"
+          },
+          "entry": [
+            {
+              "reference": "purposeReferralExample01"
+            }
+          ]
+        },
+        {
+          "title": "傷病名・主訴",
+          "code": {
+            "coding": [
+              {
+                "code": "340",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "傷病名・主訴セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>上腹部痛、腰痛</div>"
+          },
+          "entry": [
+            {
+              "reference": "cc1ReferralExample01"
+            },
+            {
+              "reference": "cc2ReferralExample01"
+            }
+          ]
+        },
+        {
+          "title": "現病歴",
+          "code": {
+            "coding": [
+              {
+                "code": "360",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "現病歴セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>２０２２年６月上旬から夜食後に時々上腹部痛があり、だんだんひどくなっている。他に目立った症状なし。</div>"
+          },
+          "entry": [
+            {
+              "reference": "piReferralExample01"
+            }
+          ]
+        },
+        {
+          "title": "既往歴",
+          "code": {
+            "coding": [
+              {
+                "code": "370",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "既往歴セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>2018年　狭心症　２ヶ月治療で軽快。2019年　交通事故で左前腕骨折　３ヶ月ギプス固定。</div>"
+          },
+          "entry": [
+            {
+              "reference": "ph1ReferralExample01"
+            },
+            {
+              "reference": "ph2ReferralExample01"
+            }
+          ]
+        },
+        {
+          "title": "アレルギー・不耐性反応",
+          "code": {
+            "coding": [
+              {
+                "code": "370",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "アレルギー・不耐性反応セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>サバ　キーウイ</div>"
+          },
+          "entry": [
+            {
+              "reference": "alg1ReferralExample01"
+            },
+            {
+              "reference": "alg1ReferralExample02"
+            }
+          ]
+        },
+        {
+          "title": "家族歴",
+          "code": {
+            "coding": [
+              {
+                "code": "370",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "家族歴セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>母　胃がん</div>"
+          },
+          "entry": [
+            {
+              "reference": "ARGref..."
+            }
+          ]
+        },
+        {
+          "title": "身体所見",
+          "code": {
+            "coding": [
+              {
+                "code": "370",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "身体所見セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>腹部所見：上腹部圧痛あり、その他特に所見なし。</div>"
+          },
+          "entry": [
+            {
+              "reference": "psobsCommonExample01"
+            }
+          ]
+        },
+        {
+          "title": "感染症情報",
+          "code": {
+            "coding": [
+              {
+                "code": "370",
+                "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                "display": "感染症情報セクション"
+              }
+            ]
+          },
+          "text": {
+            "status": "additional",
+            "div": "<div>特になし</div>"
+          }
+        }
+      ]
+    }
+  ]
+}

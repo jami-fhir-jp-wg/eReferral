@@ -1,0 +1,48 @@
+{
+  "resourceType": "AllergyIntolerance",
+  "id": "alg1ReferralExample01",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_AllergyIntolerance",
+      "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://jpfhir.jp/fhir/Common/CodeSystem/resourceInstance-identifier",
+      "value": "102934701"
+    }
+  ],
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active",
+        "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+      }
+    ]
+  },
+  "type": "allergy",
+  "category": [
+    "food"
+  ],
+  "criticality": "unable-to-assess",
+  "code": {
+    "text": "サバ"
+  },
+  "patient": {
+    "reference": "Patient/jppatientExample01"
+  },
+  "encounter": {
+    "reference": "Encounter/encounterReferralExample01"
+  },
+  "onsetAge": {
+    "system": "http://unitsofmeasure.org",
+    "value": 30,
+    "code": "a"
+  },
+  "note": [
+    {
+      "text": "サバ食後３時間ほどで全身に発疹と腹痛あり"
+    }
+  ]
+}

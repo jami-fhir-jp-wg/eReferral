@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "JP_ProcedureCodes_VS",
+  "id": "jp-procedurecodes-vs",
+  "title": "JP ProcedureCodes ValueSet",
+  "version": "1.1.0a",
+  "url": "http://jpfhir.jp/fhir/Common/ValueSet/JP_ProcedureCodes_VS",
+  "date": "2022-03-25",
+  "compose": {
+    "include": [
+      {
+        "system": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_ProcedureCodes_CS"
+      }
+    ]
+  }
+}

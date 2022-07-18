@@ -2,7 +2,7 @@ Profile: JP_Encounter_eClinicalSummary
 Parent: JP_Encounter
 Id: JP-Encounter-eClinicalSummary
 Description: "診療情報提供では、紹介理由を記述するEncouter情報　JP_Encounterの派生プロファイル。診療サマリーではサマリー対象となる受診や入院に関する情報。"
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Encounter_eClinicalSummary"
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\r\\nXHTML形式。"
@@ -19,7 +19,7 @@ Description: "診療情報提供では、紹介理由を記述するEncouter情�
 * class.code ^definition = "AMB:外来　EMER:救急　HH:在宅ケア    IMP:入院または入院中    ACUTE: 入院中臨時     NONAC:入院中定時   PRENC:予定入院時    VR:リモート診療"
 * class.display ^definition = "AMB:外来　EMER:救急　HH:在宅ケア    IMP:入院または入院中    ACUTE: 入院中臨時     NONAC:入院中定時   PRENC:予定入院時    VR:リモート診療"
 * class.display MS
-* classHistory ..0
+* classHistory ..1
 * type ..0
 * serviceType ..0
 * priority ..0

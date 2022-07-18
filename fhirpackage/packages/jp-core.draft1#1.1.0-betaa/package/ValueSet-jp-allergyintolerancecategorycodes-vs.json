@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "JP_AllergyIntoleranceCategoryCodes_VS",
+  "id": "jp-allergyintolerancecategorycodes-vs",
+  "title": "JP AllergyIntoleranceCategoryCodes ValueSet",
+  "version": "1.1.0a",
+  "url": "http://jpfhir.jp/fhir/Common/ValueSet/JP_AllergyIntoleranceCategoryCodes_VS",
+  "date": "2022-03-25",
+  "compose": {
+    "include": [
+      {
+        "system": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_AllergyIntoleranceCategoryCodes_CS"
+      }
+    ]
+  }
+}

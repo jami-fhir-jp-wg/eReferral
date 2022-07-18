@@ -1,0 +1,41 @@
+{
+  "resourceType": "Condition",
+  "id": "cc2ReferralExample01",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Condition",
+      "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Condition_eClinicalSummary"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://jpfhir.jp/fhir/Common/CodeSystem/resourceInstance-identifier",
+      "value": "192837-02"
+    }
+  ],
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active",
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "problem-list-item",
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "text": "腰痛"
+  },
+  "subject": {
+    "reference": "Patient/jppatientExample01"
+  },
+  "onsetDateTime": "2022-05"
+}

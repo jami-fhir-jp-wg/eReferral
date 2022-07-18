@@ -1,0 +1,14 @@
+{
+  "name": "jp-core.draft1",
+  "version": "1.1.0-betaa",
+  "description": "JP-CORE Draft V1\r\nThis Project id for Releasing  JP-CORE Draft V1.\r\nThis site is for resources except Implementation Guide.\r\nImplementation Guide for  JP-CORE Draft V1 is on another project site called \"JP-CORE\".\r\n",
+  "author": "JAMI NeXEHRS FHIR IGWG",
+  "fhirVersions": [
+    "4.0.1"
+  ],
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1"
+  },
+  "url": "http://jpcore.jp/fhir/core",
+  "canonical": "http://jpcore.jp/fhir/core"
+}

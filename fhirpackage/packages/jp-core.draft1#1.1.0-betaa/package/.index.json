@@ -1,0 +1,653 @@
+﻿{
+  "index-version": 1,
+  "files": [
+    {
+      "filename": "CapabilityStatement-jp-client-capabilitystatement.json",
+      "resourceType": "CapabilityStatement",
+      "id": "jp-client-capabilitystatement",
+      "url": "http://jpfhir.jp/fhir/core/CapabilityStatement/JP_Client_CapabilityStatement",
+      "kind": "requirements"
+    },
+    {
+      "filename": "CapabilityStatement-jp-server-capabilitystatement.json",
+      "resourceType": "CapabilityStatement",
+      "id": "jp-server-capabilitystatement",
+      "url": "http://jpfhir.jp/fhir/core/CapabilityStatement/JP_Server_CapabilityStatement",
+      "kind": "requirements"
+    },
+    {
+      "filename": "CodeSystem-jp-allergyintolerancecategorycodes-cs.json",
+      "resourceType": "CodeSystem",
+      "id": "jp-allergyintolerancecategorycodes-cs",
+      "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_AllergyIntoleranceCategoryCodes_CS",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "CodeSystem-jp-eventstatus-cs.json",
+      "resourceType": "CodeSystem",
+      "id": "jp-eventstatus-cs",
+      "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_EventStatus_CS",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "CodeSystem-jp-physicalexamcodes-cs.json",
+      "resourceType": "CodeSystem",
+      "id": "jp-physicalexamcodes-cs",
+      "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_PhysicalExamCodes_CS",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "CodeSystem-jp-procedurecodes-cs.json",
+      "resourceType": "CodeSystem",
+      "id": "jp-procedurecodes-cs",
+      "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_ProcedureCodes_CS",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "ImplementationGuide-hl7.fhir.jp.core.json",
+      "resourceType": "ImplementationGuide",
+      "id": "hl7.fhir.jp.core",
+      "url": "http://jpfhir.jp/fhir/core/ImplementationGuide/hl7.fhir.jp.core",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "SearchParameter-jp-coverage-insuredpersonnumber-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-coverage-insuredpersonnumber-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonNumber_SP",
+      "type": "string"
+    },
+    {
+      "filename": "SearchParameter-jp-coverage-insuredpersonsubnumber-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-coverage-insuredpersonsubnumber-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonSubNumber_SP",
+      "type": "string"
+    },
+    {
+      "filename": "SearchParameter-jp-coverage-insuredpersonsymbol-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-coverage-insuredpersonsymbol-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonSymbol_SP",
+      "type": "string"
+    },
+    {
+      "filename": "SearchParameter-jp-organization-insuranceorganizationcategory-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-organization-insuranceorganizationcategory-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_InsuranceOrganizationCategory_SP",
+      "type": "token"
+    },
+    {
+      "filename": "SearchParameter-jp-organization-insuranceorganizationno-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-organization-insuranceorganizationno-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_InsuranceOrganizationNo_SP",
+      "type": "token"
+    },
+    {
+      "filename": "SearchParameter-jp-organization-prefectureno-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-organization-prefectureno-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_PrefectureNo_SP",
+      "type": "token"
+    },
+    {
+      "filename": "SearchParameter-jp-patient-kananame-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-patient-kananame-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Patient_KanaName_SP",
+      "type": "token"
+    },
+    {
+      "filename": "SearchParameter-jp-patient-kanjiname-sp.json",
+      "resourceType": "SearchParameter",
+      "id": "jp-patient-kanjiname-sp",
+      "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Patient_KanjiName_SP",
+      "type": "token"
+    },
+    {
+      "filename": "StructureDefinition-jp-allergyintolerance.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-allergyintolerance",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_AllergyIntolerance",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "AllergyIntolerance"
+    },
+    {
+      "filename": "StructureDefinition-jp-condition.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-condition",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Condition",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Condition"
+    },
+    {
+      "filename": "StructureDefinition-jp-coverage-insuredpersonnumber.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-coverage-insuredpersonnumber",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonNumber",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-coverage-insuredpersonsubnumber.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-coverage-insuredpersonsubnumber",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSubNumber",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-coverage-insuredpersonsymbol.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-coverage-insuredpersonsymbol",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-coverage.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-coverage",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Coverage",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Coverage"
+    },
+    {
+      "filename": "StructureDefinition-jp-diagnosticreport-common.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-diagnosticreport-common",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_Common",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "DiagnosticReport"
+    },
+    {
+      "filename": "StructureDefinition-jp-diagnosticreport-labresult.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-diagnosticreport-labresult",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_LabResult",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "DiagnosticReport"
+    },
+    {
+      "filename": "StructureDefinition-jp-diagnosticreport-radiology.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-diagnosticreport-radiology",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_Radiology",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "DiagnosticReport"
+    },
+    {
+      "filename": "StructureDefinition-jp-encounter.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-encounter",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Encounter",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Encounter"
+    },
+    {
+      "filename": "StructureDefinition-jp-humanname.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-humanname",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_HumanName",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "HumanName"
+    },
+    {
+      "filename": "StructureDefinition-jp-imagingstudy-radiology.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-imagingstudy-radiology",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "ImagingStudy"
+    },
+    {
+      "filename": "StructureDefinition-jp-location.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-location",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Location",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Location"
+    },
+    {
+      "filename": "StructureDefinition-jp-medication-ingredient-drugno.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medication-ingredient-drugno",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_Ingredient_DrugNo",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medication-ingredientstrength-strengthtype.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medication-ingredientstrength-strengthtype",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_IngredientStrength_StrengthType",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medication.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medication",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Medication",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Medication"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-dosage-dosagecomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-dosage-dosagecomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_DosageComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-dosage-linecomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-dosage-linecomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-dosagemethod-methodcomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-dosagemethod-methodcomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-dosagerate-ratecomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-dosagerate-ratecomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRate_RateComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-dosageroute-routecomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-dosageroute-routecomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-dosagesite-sitecomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-dosagesite-sitecomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageSite_SiteComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-injection.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-injection",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Injection",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationAdministration"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-location.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-location",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-requestauthoredon.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-requestauthoredon",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-requestdepartment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-requestdepartment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestDepartment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-requester.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-requester",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Requester",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration-uncategorizedcomment.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration-uncategorizedcomment",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationadministration.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationadministration",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationAdministration"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationdispense-injection.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationdispense-injection",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Injection",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationDispense"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationdispense-preparation.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationdispense-preparation",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDispense_Preparation",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationdispense.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationdispense",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationDispense"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationdispensebase.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationdispensebase",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispenseBase",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationDispense"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-dispenserequest-expectedrepeatcount.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-dispenserequest-expectedrepeatcount",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-dispenserequest-instructionfordispense.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-dispenserequest-instructionfordispense",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-dosageinstruction-device.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-dosageinstruction-device",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-dosageinstruction-line.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-dosageinstruction-line",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-dosageinstruction-periodofuse.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-dosageinstruction-periodofuse",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-dosageinstruction-usageduration.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-dosageinstruction-usageduration",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest-injection.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest-injection",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_Injection",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationRequest"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequest.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequest",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationRequest"
+    },
+    {
+      "filename": "StructureDefinition-jp-medicationrequestbase.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-medicationrequestbase",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestBase",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "MedicationRequest"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-bodymeasurement.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-bodymeasurement",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_BodyMeasurement",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Observation"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-bodysite-bodysiteposition.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-bodysite-bodysiteposition",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Observation_BodySite_BodySitePosition",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-common.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-common",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Observation"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-labresult.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-labresult",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_LabResult",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Observation"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-physicalexam.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-physicalexam",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_PhysicalExam",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Observation"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-socialhistory.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-socialhistory",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_SocialHistory",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Observation"
+    },
+    {
+      "filename": "StructureDefinition-jp-observation-vitalsigns.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-observation-vitalsigns",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_VitalSigns",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Observation"
+    },
+    {
+      "filename": "StructureDefinition-jp-organization-insuranceorganizationcategory.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-organization-insuranceorganizationcategory",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationCategory",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-organization-insuranceorganizationno.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-organization-insuranceorganizationno",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationNo",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-organization-prefectureno.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-organization-prefectureno",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-organization.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-organization",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Organization",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Organization"
+    },
+    {
+      "filename": "StructureDefinition-jp-patient-race.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-patient-race",
+      "url": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Patient_Race",
+      "version": "1.1.0a",
+      "kind": "complex-type",
+      "type": "Extension"
+    },
+    {
+      "filename": "StructureDefinition-jp-patient.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-patient",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Patient"
+    },
+    {
+      "filename": "StructureDefinition-jp-practitioner.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-practitioner",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Practitioner",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Practitioner"
+    },
+    {
+      "filename": "StructureDefinition-jp-practitionerrole.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-practitionerrole",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_PractitionerRole",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "PractitionerRole"
+    },
+    {
+      "filename": "StructureDefinition-jp-procedure.json",
+      "resourceType": "StructureDefinition",
+      "id": "jp-procedure",
+      "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Procedure",
+      "version": "1.1.0a",
+      "kind": "resource",
+      "type": "Procedure"
+    },
+    {
+      "filename": "ValueSet-jp-allergyintolerancecategorycodes-vs.json",
+      "resourceType": "ValueSet",
+      "id": "jp-allergyintolerancecategorycodes-vs",
+      "url": "http://jpfhir.jp/fhir/Common/ValueSet/JP_AllergyIntoleranceCategoryCodes_VS",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "ValueSet-jp-eventstatus-vs.json",
+      "resourceType": "ValueSet",
+      "id": "jp-eventstatus-vs",
+      "url": "http://jpfhir.jp/fhir/Common/ValueSet/JP_EventStatus_VS",
+      "version": "1.1.0a"
+    },
+    {
+      "filename": "ValueSet-jp-procedurecodes-vs.json",
+      "resourceType": "ValueSet",
+      "id": "jp-procedurecodes-vs",
+      "url": "http://jpfhir.jp/fhir/Common/ValueSet/JP_ProcedureCodes_VS",
+      "version": "1.1.0a"
+    }
+  ]
+}

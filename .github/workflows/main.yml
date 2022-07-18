@@ -48,7 +48,7 @@ jobs:
       run: |
         sudo apt-get install filepp
 
-    # -- DUMMY download from here
+
     - name: Download IG Publisher
       uses: Legion2/download-release-action@v2.1.0
       with:
@@ -56,7 +56,6 @@ jobs:
         tag: 'latest'
         path: .
         file: publisher.jar
-    # -- DUMMY download until here
 
     - name: Wget IG PublisherJPFHIR
       uses: wei/wget@v1
@@ -66,14 +65,14 @@ jobs:
     - name: Run filepp by file pre proccessor converting egg to egg.fsh
       run: | 
         while read -r f; do echo "converting $f to $f.fsh"; filepp  -m for.pm -m  bigdef.pm $f >$f.fsh; done < <(find ./ -name *.egg -mindepth 1)
+    
     - name: Run IG Publisher
       env:
         PACKAGE: jp-core.draft1#1.1.0-beta
         PACKAGECORE: hl7.fhir.r4.core#4.0.1
       run: | 
         mkdir input-cache
-        mv ./publisherJPFHIR.jar ./input-cache
-        : # mv ./publisher.jar ./input-cache
+        mv ./publisher.jar ./input-cache
         : # this is a comment:  ls -la ./input-cache
         mkdir /home/runner/.fhir
         mkdir /home/runner/.fhir/packages
@@ -86,7 +85,7 @@ jobs:
         tar xzf /home/runner/.fhir/packages/$PACKAGECORE/$PACKAGECORE.tgz -C /home/runner/.fhir/packages/$PACKAGECORE/
         unset DISPLAY
         : # 
-        java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisherJPFHIR.jar -ig ig.ini  -tx https://tx.jpfhir.jp
+        java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key

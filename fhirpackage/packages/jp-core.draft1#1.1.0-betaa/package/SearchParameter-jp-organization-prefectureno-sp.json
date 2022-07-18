@@ -1,0 +1,35 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "jp-organization-prefectureno-sp",
+  "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_PrefectureNo_SP",
+  "name": "JP_Organization_PrefectureNo_SP",
+  "status": "draft",
+  "date": "2022-03-23",
+  "description": "OrganizationリソースのPrefectureNo(都道府県番号)に関する検索を定義します。",
+  "code": "jp-prefectureno",
+  "base": [
+    "Organization"
+  ],
+  "type": "token",
+  "expression": "Organization.extension.where(url='http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo').value.as(code)",
+  "xpath": "f:Organization/f:extension[@url='http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo']/f:valueCoding/f:code",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "_multipleOr": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode": "MAY"
+      }
+    ]
+  },
+  "multipleAnd": true,
+  "_multipleAnd": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode": "MAY"
+      }
+    ]
+  }
+}

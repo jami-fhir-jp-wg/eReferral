@@ -1,0 +1,1090 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.jp.core",
+  "url": "http://jpfhir.jp/fhir/core/ImplementationGuide/hl7.fhir.jp.core",
+  "version": "1.1.0a",
+  "name": "FHIRJPCoreImplementationGuide",
+  "title": "HL7 FHIR JP Core ImplementationGuide",
+  "status": "draft",
+  "date": "2022-04-06",
+  "publisher": "FHIR Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "contact": [
+    {
+      "name": "FHIR Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://jpfhir.jp"
+        },
+        {
+          "system": "email",
+          "value": "office@hlfhir.jp"
+        }
+      ]
+    }
+  ],
+  "description": "日本医療情報学会(JAMI) NeXEHRS課題研究会「HL7®FHIR® 日本実装検討WG」で作成した日本国内におけるベースとなるJP Core実装ガイドのドラフトVer.1.1 です。",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "JP",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "copyright": "FHIR Japanese implementation research working group in Japan Association of Medical Informatics (JAMI)",
+  "packageId": "hl7.fhir.jp.core",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-allergyintolerance"
+        },
+        "name": "JP Core AllergyIntolerance Profile",
+        "description": "本プロファイルはAllergyIntoleranceリソースに対して、患者のアレルギーや不耐症に関するデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-condition"
+        },
+        "name": "JP Core Condition Profile",
+        "description": "本プロファイルはConditionリソースに対して、患者の健康状態に関するデータを送受信するための共通の制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-coverage"
+        },
+        "name": "JP Core Coverage Profile",
+        "description": "このプロファイルはCoverageリソースに対して、保険・公費のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-diagnosticreport-common"
+        },
+        "name": "JP Core DiagnosticReport Common Profile",
+        "description": "このプロファイルはDiagnosticReportリソースに対して、データを送受信するための共通の制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-diagnosticreport-labresult"
+        },
+        "name": "JP Core DiagnosticReport LabResult Profile",
+        "description": "このプロファイルはDiagnosticReportリソースに対して、検体検査結果のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-diagnosticreport-radiology"
+        },
+        "name": "JP Core DiagnosticReport Radiology Profile",
+        "description": "このプロファイルはDiagnosticReportリソースに対して、放射線検査のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-encounter"
+        },
+        "name": "JP Core Encounter Profile",
+        "description": "このプロファイルはEncounterリソースに対して、来院/入院情報のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-humanname"
+        },
+        "name": "JP Core HumanName DataType",
+        "description": "このプロファイルはHumanName DataTypeに対して、患者のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-imagingstudy-radiology"
+        },
+        "name": "JP Core ImagingStudy Radiology Profile",
+        "description": "このプロファイルはImagingStudyリソースに対して、放射線検査のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-location"
+        },
+        "name": "JP Core Location Profile",
+        "description": "このプロファイルはLocationリソースに対して、所在場所のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medication"
+        },
+        "name": "JP Core Medication Profile",
+        "description": "このプロファイルはMedicationリソースに対して、主に薬剤データを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration"
+        },
+        "name": "JP Core MedicationAdministration Profile",
+        "description": "このプロファイルはMedicationAdministrationリソースに対して、内服・外用薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-injection"
+        },
+        "name": "JP Core MedicationAdministration Injection Profile",
+        "description": "このプロファイルはMedicationAdministrationリソースに対して、注射薬剤処方投与実施情報のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationdispense"
+        },
+        "name": "JP Core MedicationDispense Profile",
+        "description": "このプロファイルはMedicationDispenseリソースに対して、内服・外用薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。JP_MedicationDispenseBaseプロファイルからの派生プロファイルである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationdispensebase"
+        },
+        "name": "JP Core MedicationDispenseBase Profile",
+        "description": "このプロファイルはユーザは直接適用するものではなく、JP_MedicationDispenseとJP_MedicationDispenseInjectionの共通の親となる抽象プロファイルである。このプロファイルはMedicationDispenseリソースに対して、内服・外用薬剤処方調剤・払い出し記録のデータを送受信するため、JP_MedicationDispenseとJP_MedicationDispenseInjectionの各プロファイルの基礎となる制約と拡張のうち共通部分を定めている。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationdispense-injection"
+        },
+        "name": "JP Core MedicationDispense Injection Profile",
+        "description": "このプロファイルはMedicationDispenseリソースに対して、注射薬剤処方調剤・払い出し記録のデータを送受信するための基礎となる制約と拡張を定めたものである。JP_MedicationDispenseBaseプロファイルからの派生プロファイルである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest"
+        },
+        "name": "JP Core MedicationRequest Profile",
+        "description": "このプロファイルはJP_MedicationRequestBaseリソースに対して、内服・外用薬剤処方のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequestbase"
+        },
+        "name": "JP Core MedicationRequestBase Profile",
+        "description": "このプロファイルはユーザは直接適用するものではなく、JP_MedicationRequestとJP_MedicationRequestInjectionの共通の親となる抽象プロファイルである。MedicationRequestリソースに対して、内服・外用薬剤処方、注射・点滴などのデータを送受信するため、JP_MedicationRequestとJP_MedicationRequestInjectionの各プロファイルの基礎となる制約と拡張のうち共通部分を定めている。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-injection"
+        },
+        "name": "JP Core MedicationRequest Injection Profile",
+        "description": "このプロファイルはJP_MedicationRequestBaseリソースに対して、注射薬剤処方のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-bodymeasurement"
+        },
+        "name": "JP Core Observation BodyMeasurement Profile",
+        "description": "このプロファイルはObservationリソースに対して、身体計測のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-common"
+        },
+        "name": "JP Core Observation Common Profile",
+        "description": "このプロファイルはObservationリソースに対して、データを送受信するための共通の制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-labresult"
+        },
+        "name": "JP Core Observation LabResult Profile",
+        "description": "このプロファイルはObservationリソースに対して、検体検査結果のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-physicalexam"
+        },
+        "name": "JP Core Observation PhysicalExam Profile",
+        "description": "このプロファイルはObservationリソースに対して、身体所見のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-socialhistory"
+        },
+        "name": "JP Core Observation SocialHistory Profile",
+        "description": "このプロファイルはObservationリソースに対して、生活背景のデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-vitalsigns"
+        },
+        "name": "JP Core Observation VitalSigns Profile",
+        "description": "このプロファイルはObservationリソースに対して、バイタルサインのデータを送受信するための制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-organization"
+        },
+        "name": "JP Core Organization Profile",
+        "description": "このプロファイルはOrganizationリソースに対して、組織情報のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-patient"
+        },
+        "name": "JP Core Patient Profile",
+        "description": "このプロファイルはPatientリソースに対して、患者のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-practitioner"
+        },
+        "name": "JP Core Practitioner Profile",
+        "description": "このプロファイルはPractitionerリソースに対して、医療従事者のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-practitionerrole"
+        },
+        "name": "JP Core PractitionerRole Profile",
+        "description": "このプロファイルはPractitionerRoleリソースに対して、医療従事者役割のデータを送受信するための基礎となる制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-procedure"
+        },
+        "name": "JP Core Procedure Profile",
+        "description": "このプロファイルはProcedureリソースに対して、患者に対する医療的な処置のデータを送受信するための共通の制約と拡張を定めたものである。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-coverage-insuredpersonnumber"
+        },
+        "name": "JP Core Coverage InsuredPersonNumber Extension",
+        "description": "健康保険における被保険者証番号を示す拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-coverage-insuredpersonsubnumber"
+        },
+        "name": "JP Core Coverage InsuredPersonSubNumber Extension",
+        "description": "健康保険における被保険者証番号の枝番を示す拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-coverage-insuredpersonsymbol"
+        },
+        "name": "JP Core Coverage InsuredPersonSymbol Extension",
+        "description": "健康保険における被保険者証記号を示す拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-dosagemethod-methodcomment"
+        },
+        "name": "JP Core MedicationAdministration DosageMethod MethodComment Extension",
+        "description": "手技コメントを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-dosagerate-ratecomment"
+        },
+        "name": "JP Core MedicationAdministration DosageRate RateComment Extension",
+        "description": "投与速度コメントを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-dosageroute-routecomment"
+        },
+        "name": "JP Core MedicationAdministration DosageRoute RouteComment Extension",
+        "description": "投与経路コメントを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-dosagesite-sitecomment"
+        },
+        "name": "JP Core MedicationAdministration DosageSite SiteComment Extension",
+        "description": "投与部位コメントを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-dosage-dosagecomment"
+        },
+        "name": "JP Core MedicationAdministration Dosage DosageComment Extension",
+        "description": "用法コメントを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-dosage-linecomment"
+        },
+        "name": "JP Core MedicationAdministration atDosage LineComment Extension",
+        "description": "ラインコメントを格納する",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-location"
+        },
+        "name": "JP Core MedicationAdministration Location Extension",
+        "description": "実施場所を格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-requestauthoredon"
+        },
+        "name": "JP Core MedicationAdministration RequestAuthoredOn Extension",
+        "description": "依頼日時を格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-requestdepartment"
+        },
+        "name": "JP Core MedicationAdministration RequestDepartment Extension",
+        "description": "依頼科を格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-requester"
+        },
+        "name": "JP Core MedicationAdministration Requester Extension",
+        "description": "依頼医を格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationadministration-uncategorizedcomment"
+        },
+        "name": "JP Core MedicationAdministration UncategorizedComment Extension",
+        "description": "未分類コメントを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationdispense-preparation"
+        },
+        "name": "JP Core MedicationDispense Preparation Extension",
+        "description": "薬剤単位の調剤結果",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dispenserequest-expectedrepeatcount"
+        },
+        "name": "JP Core MedicationRequest DispenseRequest ExpectedRepeatCount Extension",
+        "description": "頓用回数",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dispenserequest-instructionfordispense"
+        },
+        "name": "JP Core MedicationRequest DispenseRequest InstructionForDispense Extension",
+        "description": "調剤指示。薬剤単位の調剤指示を表現するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dosageinstruction-device"
+        },
+        "name": "JP Core MedicationRequest DosageInstruction Device Extension",
+        "description": "投与装置を格納する拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dosageinstruction-line"
+        },
+        "name": "JP Core MedicationRequest DosageInstruction Line Extension",
+        "description": "指示ラインを格納するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dosageinstruction-periodofuse"
+        },
+        "name": "JP Core MedicationRequest DosageInstruction PeriodOfUse Extension",
+        "description": "投与開始日を格納する拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dosageinstruction-usageduration"
+        },
+        "name": "JP MedicationRequest DosageInstruction UsageDuration Extension",
+        "description": "隔日投与など、服⽤開始日から終了日までの日数と実投与日数が異なる場合に、実投与日数を明⽰したい場合に使⽤する拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medication-ingredientstrength-strengthtype"
+        },
+        "name": "JP Core Medication IngredientStrength StrengthType Extension",
+        "description": "投与量が製剤単位か成分単位かを格納する拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medication-ingredient-drugno"
+        },
+        "name": "JP Core Medication Ingredient DrugNo Extension",
+        "description": "投与量が製剤単位か成分単位かを格納する拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-observation-bodysite-bodysiteposition"
+        },
+        "name": "JP Core Observation BodySite BodySitePosition Extension",
+        "description": "部位（bodySite）の左右の区別を表現する際に使用する",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-organization-insuranceorganizationcategory"
+        },
+        "name": "JP Core Organization InsuranceOrganizationCategory Extension",
+        "description": "点数表コード１桁（医科１、歯科３）表現するためのExtension。 JP Core Organizationプロファイルで利用されることを想定しているが、他のリソースでも利用可能である",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-organization-insuranceorganizationno"
+        },
+        "name": "JP Core Organization InsuranceOrganizationNo Extension",
+        "description": "保険医療機関番号７桁を表現するためのExtension。 JP Core Organizationプロファイルで利用されることを想定しているが、他のリソースでも利用可能である",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-organization-prefectureno"
+        },
+        "name": "JP Core Organization PrefectureNo Extension",
+        "description": "都道府県番号２桁を表現するためのExtension。\nJP Core Organizationプロファイルで利用されることを想定しているが、他のリソースでも利用可能である",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-patient-race"
+        },
+        "name": "JP Core Patient Race Extension",
+        "description": "人種(Race)に関する情報を格納するためのExtension。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jp-allergyintolerancecategorycodes-vs"
+        },
+        "name": "JP AllergyIntoleranceCategoryCodes ValueSet",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jp-eventstatus-vs"
+        },
+        "name": "JP EventStatus ValueSet",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jp-procedurecodes-vs"
+        },
+        "name": "JP ProcedureCodes ValueSet",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-allergyintolerancecategorycodes-cs"
+        },
+        "name": "JP AllergyIntoleranceCategoryCodes CodeSystem",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-eventstatus-cs"
+        },
+        "name": "JP EventStatus CodeSystem",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-physicalexamcodes-cs"
+        },
+        "name": "JP PhysicalExamCodes CodeSystem",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-procedurecodes-cs"
+        },
+        "name": "JP ProcedureCodes CodeSystem",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/jp-client-capabilitystatement"
+        },
+        "name": "jp-client-capabilitystatement",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-coverage-insuredpersonnumber-sp"
+        },
+        "name": "jp-coverage-insuredpersonnumber-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-coverage-insuredpersonsubnumber-sp"
+        },
+        "name": "jp-coverage-insuredpersonsubnumber-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-coverage-insuredpersonsymbol-sp"
+        },
+        "name": "jp-coverage-insuredpersonsymbol-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-organization-insuranceorganizationcategory-sp"
+        },
+        "name": "jp-organization-insuranceorganizationcategory-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-organization-insuranceorganizationno-sp"
+        },
+        "name": "jp-organization-insuranceorganizationno-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-organization-prefectureno-sp"
+        },
+        "name": "jp-organization-prefectureno-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-patient-kananame-sp"
+        },
+        "name": "jp-patient-kananame-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "SearchParameter/jp-patient-kanjiname-sp"
+        },
+        "name": "jp-patient-kanjiname-sp",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CapabilityStatement/jp-server-capabilitystatement"
+        },
+        "name": "jp-server-capabilitystatement",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "HL7 FHIR JP Core 実装ガイド ＜ Draft Ver1.1 ＞",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "guidance.html",
+          "title": "ガイダンス",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "guide-general.html",
+              "title": "総合ガイダンス",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "guide-mustSupportCardinality.html",
+              "title": "Must SupportとCardinality(多重度)のルール",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "guide-handlingOfNonExistentData.html",
+              "title": "欠損値（データが存在しない場合）の扱い",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "guide-characterEncoding.html",
+              "title": "文字コード",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "guide-stringSearch.html",
+              "title": "検索",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "group-fhircontents.html",
+          "title": "FHIR Contents List",
+          "generation": "markdown",
+          "page": [
+            {
+              "nameUrl": "group-administration.html",
+              "title": "Administration Group",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "group-medication.html",
+              "title": "Medication Group",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "group-diagnostic.html",
+              "title": "Diagnostic Group",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "group-clinical.html",
+              "title": "Clinical Group",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "group-capabilityStatement.html",
+              "title": "CapabilityStatement",
+              "generation": "markdown"
+            },
+            {
+              "nameUrl": "group-searchParameter.html",
+              "title": "Search Parameter",
+              "generation": "markdown"
+            }
+          ]
+        },
+        {
+          "nameUrl": "security.html",
+          "title": "セキュリティ",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "download.html",
+          "title": "ダウンロード",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2022+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/resources"
+      },
+      {
+        "code": "path-resource",
+        "value": "fsh-generated/resources"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/pagecontent"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/intro-notes"
+      },
+      {
+        "code": "path-pages",
+        "value": "fsh-generated/includes"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/_resources/exp-params.json"
+      },
+      {
+        "code": "active-tables",
+        "value": "false"
+      },
+      {
+        "code": "apply-version",
+        "value": "true"
+      },
+      {
+        "code": "apply-copyright",
+        "value": "true"
+      },
+      {
+        "code": "apply-publisher",
+        "value": "true"
+      },
+      {
+        "code": "apply-contact",
+        "value": "true"
+      },
+      {
+        "code": "apply-licese",
+        "value": "true"
+      },
+      {
+        "code": "apply-jurisdiction",
+        "value": "true"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "true"
+      },
+      {
+        "code": "usage-stats-opt-out",
+        "value": "true"
+      },
+      {
+        "code": "excludexml",
+        "value": "false"
+      },
+      {
+        "code": "excludejsn",
+        "value": "false"
+      },
+      {
+        "code": "excludettl",
+        "value": "true"
+      },
+      {
+        "code": "excludemap",
+        "value": "true"
+      },
+      {
+        "code": "excludeexample",
+        "value": "true"
+      },
+      {
+        "code": "generate",
+        "value": "xml"
+      },
+      {
+        "code": "generate",
+        "value": "json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_AllergyIntolerance"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Condition"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Coverage"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_Common"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_LabResult"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_Radiology"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Encounter"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_HumanName"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Location"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Medication"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration_Injection"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationAdministration"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense_Injection"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispense"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDispenseBase"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_Injection"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequestBase"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_BodyMeasurement"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_LabResult"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_PhysicalExam"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_SocialHistory"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_VitalSigns"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Organization"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Practitioner"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_PractitionerRole"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Procedure"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonNumber"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSubNumber"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_Ingredient_DrugNo"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Medication_IngredientStrength_StrengthType"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_DosageComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Dosage_LineComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageMethod_MethodComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRate_RateComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageRoute_RouteComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_DosageSite_SiteComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Location"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestAuthoredOn"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_RequestDepartment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_Requester"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationAdministration_UncategorizedComment"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDispense_Preparation"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_ExpectedRepeatCount"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Device"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_Line"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_PeriodOfUse"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Observation_BodySite_BodySitePosition"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationCategory"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationNo"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Patient_Race"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/CapabilityStatement/JP_Client_CapabilityStatement"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/CapabilityStatement/JP_Server_CapabilityStatement"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonNumber_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonSubNumber_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonSymbol_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_InsuranceOrganizationCategory_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_InsuranceOrganizationNo_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_PrefectureNo_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Patient_KanaName_SP"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Patient_KanjiName_SP"
+      }
+    ]
+  }
+}

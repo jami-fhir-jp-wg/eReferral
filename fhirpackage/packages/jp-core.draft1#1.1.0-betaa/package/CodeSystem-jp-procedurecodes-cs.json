@@ -1,0 +1,12 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "JP_ProcedureCodes_CS",
+  "id": "jp-procedurecodes-cs",
+  "title": "JP ProcedureCodes CodeSystem",
+  "version": "1.1.0a",
+  "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_ProcedureCodes_CS",
+  "date": "2022-03-25",
+  "caseSensitive": true
+}

@@ -1,0 +1,45 @@
+{
+  "resourceType": "Condition",
+  "id": "piReferralExample01",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Condition",
+      "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Condition_eClinicalSummary"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://jpfhir.jp/fhir/Common/CodeSystem/resourceInstance-identifier",
+      "value": "192838"
+    }
+  ],
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active",
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "problem-list-item",
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "text": ""
+  },
+  "subject": {
+    "reference": "Patient/jppatientExample01"
+  },
+  "note": [
+    {
+      "text": "２０２２年６月上旬から夜食後に時々上腹部痛があり、だんだんひどくなっている。他に目立った症状なし。"
+    }
+  ]
+}

@@ -143,8 +143,8 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
     and referralFromSection  0..1 MS    // 紹介元情報セクション referralFromSection
     and cdaSection   0..1 MS // CDA参照セクション    cdaSection
     and compositionSection     0..1 MS // 構造情報セクション   compositionSection
-	and AttachmentSection    0..*    MS  //  添付情報セクション	AttachmentSection
-    and PDFSection    0..*    MS  //  PDFセクション	PDFSection
+	and attachmentSection    0..*    MS  //  添付情報セクション	attachmentSection
+    and remarksCommunication    0..*    MS  //  備考・連絡情報セクション	remarksCommunicationSection
 // CDA参照セクションと構造情報セクションは、どちらか一方だけが出現する。制約条件の記述が必要。
 //
 * section[referralToSection] ^short = "紹介先情報セクション"
@@ -301,6 +301,94 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[cdaSection].emptyReason ..0
 * section[cdaSection].section ..0
 //
+//
+//	and attachmentSection    0..*    MS  //  添付情報セクション	attachmentSection
+//    and remarksCommunication    0..*    MS  //  備考・連絡情報セクション	remarksCommunicationSection
+* section[attachmentSection] ^short = "添付情報セクション"
+* section[attachmentSection] ^definition = "添付情報セクション"
+* section[attachmentSection].title 1.. MS
+* section[attachmentSection].title = "添付情報" (exactly)
+* section[attachmentSection].title ^short = "セクションタイトル"
+* section[attachmentSection].title ^definition = "セクションタイトル。固定値。"
+* section[attachmentSection].code 1.. MS
+* section[attachmentSection].code ^short = "セクション区分コード"
+* section[attachmentSection].code ^definition = "セクション区分コード"
+* section[attachmentSection].code.coding 1..1 MS
+* section[attachmentSection].code.coding.system 1.. MS
+* section[attachmentSection].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section" (exactly)
+* section[attachmentSection].code.coding.system ^short = "セクション区分コードのコード体系"
+* section[attachmentSection].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
+* section[attachmentSection].code.coding.code 1.. MS
+* section[attachmentSection].code.coding.code = #210 (exactly)
+* section[attachmentSection].code.coding.code ^short = "セクション区分のコード値"
+* section[attachmentSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
+* section[attachmentSection].code.coding.display = "添付情報セクション" (exactly)
+* section[attachmentSection].code.coding.display ^short = "セクション区分コードの表示名"
+* section[attachmentSection].code.coding.display ^definition = "セクション区分コードの表示名。"
+* section[attachmentSection].code.coding.display MS
+* section[attachmentSection].code.coding.userSelected ..0
+* section[attachmentSection].code.text ..0
+* section[attachmentSection].text ^short = "このセクションに含められるすべてのテキスト（叙述的記述）表現"
+* section[attachmentSection].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
+* section[attachmentSection].text MS
+* section[attachmentSection].text.status MS
+* section[attachmentSection].text.status = #additional (exactly)
+* section[attachmentSection].text.status ^short = "セクションの内容作成状態コード"
+* section[attachmentSection].text.status ^definition = "generated | extensions | additional | empty　から　\"additional\" の固定値。このセクションに含められるすべてのentry要素による情報に加えて、それらで表現し尽くせていない情報も含めた完全な叙述表現であることを示す。"
+* section[attachmentSection].text.div ^short = "xhtml簡略形式に従った叙述記述データ"
+* section[attachmentSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
+* section[attachmentSection].mode ..0
+* section[attachmentSection].orderedBy ..0
+* section[attachmentSection].entry 1..1
+* section[attachmentSection].entry only Reference(JP_DocumentReference or JP_Binary)
+* section[attachmentSection].entry ^short = "添付情報ファイルへの参照"
+* section[attachmentSection].entry ^definition = "添付情報ファイルへの参照"
+* section[attachmentSection].emptyReason ..0
+* section[attachmentSection].section ..0
+//
+//
+* section[remarksCommunication] ^short = "備考・連絡情報セクション"
+* section[remarksCommunication] ^definition = "備考・連絡情報セクション"
+* section[remarksCommunication].title 1.. MS
+* section[remarksCommunication].title = "備考・連絡情報" (exactly)
+* section[remarksCommunication].title ^short = "セクションタイトル"
+* section[remarksCommunication].title ^definition = "セクションタイトル。固定値。"
+* section[remarksCommunication].code 1.. MS
+* section[remarksCommunication].code ^short = "セクション区分コード"
+* section[remarksCommunication].code ^definition = "セクション区分コード"
+* section[remarksCommunication].code.coding 1..1 MS
+* section[remarksCommunication].code.coding.system 1.. MS
+* section[remarksCommunication].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section" (exactly)
+* section[remarksCommunication].code.coding.system ^short = "セクション区分コードのコード体系"
+* section[remarksCommunication].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
+* section[remarksCommunication].code.coding.code 1.. MS
+* section[remarksCommunication].code.coding.code = #220 (exactly)
+* section[remarksCommunication].code.coding.code ^short = "セクション区分のコード値"
+* section[remarksCommunication].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
+* section[remarksCommunication].code.coding.display = "PDFセクション" (exactly)
+* section[remarksCommunication].code.coding.display ^short = "セクション区分コードの表示名"
+* section[remarksCommunication].code.coding.display ^definition = "セクション区分コードの表示名。"
+* section[remarksCommunication].code.coding.display MS
+* section[remarksCommunication].code.coding.userSelected ..0
+* section[remarksCommunication].code.text ..0
+* section[remarksCommunication].text ^short = "このセクションに含められるすべてのテキスト（叙述的記述）表現"
+* section[remarksCommunication].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
+* section[remarksCommunication].text MS
+* section[remarksCommunication].text.status MS
+* section[remarksCommunication].text.status = #additional (exactly)
+* section[remarksCommunication].text.status ^short = "セクションの内容作成状態コード"
+* section[remarksCommunication].text.status ^definition = "generated | extensions | additional | empty　から　\"additional\" の固定値。このセクションに含められるすべてのentry要素による情報に加えて、それらで表現し尽くせていない情報も含めた完全な叙述表現であることを示す。"
+* section[remarksCommunication].text.div ^short = "xhtml簡略形式に従った叙述記述データ"
+* section[remarksCommunication].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
+* section[remarksCommunication].mode ..0
+* section[remarksCommunication].orderedBy ..0
+* section[remarksCommunication].entry 1..1
+* section[remarksCommunication].entry only Reference(JP_DocumentReference)
+* section[remarksCommunication].entry ^short = "備考・連絡情報バイナリファイルへの参照"
+* section[remarksCommunication].entry ^definition = "備考・連絡情報バイナリファイルへの参照"
+* section[remarksCommunication].emptyReason ..0
+* section[remarksCommunication].section ..0
+////
 * section[compositionSection] ^short = "構造情報セクション"
 * section[compositionSection] ^definition = "構造情報セクション"
 * section[compositionSection].title 1.. MS
@@ -328,10 +416,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].text ..0 
 * section[compositionSection].mode ..0
 * section[compositionSection].orderedBy ..0
-* section[compositionSection].emptyReason 1..1  MS
-* section[compositionSection].emptyReason.coding    1..1    MS
-* section[compositionSection].emptyReason.coding.system = "http://terminology.hl7.org/CodeSystem/list-empty-reason"
-* section[compositionSection].emptyReason.coding.code = #unavilable (exactly)
+* section[compositionSection].emptyReason ..0  MS
+//* section[compositionSection].emptyReason.coding    1..1    MS
+//* section[compositionSection].emptyReason.coding.system = "http://terminology.hl7.org/CodeSystem/list-empty-reason"
+//* section[compositionSection].emptyReason.coding.code = #unavilable (exactly)
 //
 * section[compositionSection].section ^slicing.discriminator.type = #value
 * section[compositionSection].section ^slicing.discriminator.path = "code.coding.code"

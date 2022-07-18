@@ -1,0 +1,35 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "jp-coverage-insuredpersonsymbol-sp",
+  "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Coverage_InsuredPersonSymbol_SP",
+  "name": "JP_Coverage_InsuredPersonSymbol_SP",
+  "status": "draft",
+  "date": "2022-03-23",
+  "description": "CoverageリソースのInsuredPersonSymbol(健康保険における被保険者証記号)に関する検索を定義します。",
+  "code": "jp-insured-personsymbol",
+  "base": [
+    "Coverage"
+  ],
+  "type": "string",
+  "expression": "Coverage.extension.where(url='http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol').value.as(string)",
+  "xpath": "f:Coverage/f:extension[@url='http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Coverage_InsuredPersonSymbol']/f:valueString",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "_multipleOr": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode": "MAY"
+      }
+    ]
+  },
+  "multipleAnd": true,
+  "_multipleAnd": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode": "MAY"
+      }
+    ]
+  }
+}

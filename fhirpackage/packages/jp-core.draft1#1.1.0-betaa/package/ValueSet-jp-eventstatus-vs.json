@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "JP_EventStatus_VS",
+  "id": "jp-eventstatus-vs",
+  "title": "JP EventStatus ValueSet",
+  "version": "1.1.0a",
+  "url": "http://jpfhir.jp/fhir/Common/ValueSet/JP_EventStatus_VS",
+  "date": "2022-03-25",
+  "compose": {
+    "include": [
+      {
+        "system": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_EventStatus_CS"
+      }
+    ]
+  }
+}

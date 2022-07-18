@@ -1,0 +1,24 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "JP_PhysicalExamCodes_CS",
+  "id": "jp-physicalexamcodes-cs",
+  "title": "JP PhysicalExamCodes CodeSystem",
+  "version": "1.1.0a",
+  "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_PhysicalExamCodes_CS",
+  "concept": [
+    {
+      "code": "physical-findings",
+      "display": "Physical Findings"
+    },
+    {
+      "code": "detailed-physical-findings",
+      "display": "Detailed Physical Findings"
+    }
+  ],
+  "date": "2022-03-25",
+  "caseSensitive": true,
+  "valueSet": "http://jpfhir.jp/fhir/Common/ValueSet/JP_PhysicalExamCodes_VS",
+  "count": 2
+}

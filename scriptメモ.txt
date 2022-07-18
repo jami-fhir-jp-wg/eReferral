@@ -1,4 +1,4 @@
-cp package.json package/; cp fsh-generated/resources/*.json package/;gtar czf package.tgz package
+cp package.json package/; cp fsh-generated/resources/*.json package/;gtar czf jp-eReferral#0.9.0-beta.tgz package
 
 target=Patient-JP-Patient-ePreData-Example.json;　　
 profile=JP_Patient_ePrescriptionData;

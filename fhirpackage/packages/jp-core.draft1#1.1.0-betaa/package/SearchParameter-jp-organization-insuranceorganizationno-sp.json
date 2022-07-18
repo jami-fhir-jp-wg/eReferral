@@ -1,0 +1,35 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "jp-organization-insuranceorganizationno-sp",
+  "url": "http://jpfhir.jp/fhir/core/SearchParameter/JP_Organization_InsuranceOrganizationNo_SP",
+  "name": "JP_Organization_InsuranceOrganizationNo_SP",
+  "status": "draft",
+  "date": "2022-03-23",
+  "description": "OrganizationリソースのInsuranceOrganizationNo(保険医療機関番号)に関する検索を定義します。",
+  "code": "jp-insurance-organizationno",
+  "base": [
+    "Organization"
+  ],
+  "type": "token",
+  "expression": "Organization.extension.where(url='http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationNo').value.as(code)",
+  "xpath": "f:Organization/f:extension[@url='http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationNo']/f:valueCoding/f:code",
+  "xpathUsage": "normal",
+  "multipleOr": true,
+  "_multipleOr": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode": "MAY"
+      }
+    ]
+  },
+  "multipleAnd": true,
+  "_multipleAnd": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation",
+        "valueCode": "MAY"
+      }
+    ]
+  }
+}

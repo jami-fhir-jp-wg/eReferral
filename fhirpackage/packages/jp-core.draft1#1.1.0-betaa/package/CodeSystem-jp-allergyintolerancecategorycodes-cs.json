@@ -1,0 +1,30 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "JP_AllergyIntoleranceCategoryCodes_CS",
+  "id": "jp-allergyintolerancecategorycodes-cs",
+  "title": "JP AllergyIntoleranceCategoryCodes CodeSystem",
+  "version": "1.1.0a",
+  "url": "http://jpfhir.jp/fhir/Common/CodeSystem/JP_AllergyIntoleranceCategoryCodes_CS",
+  "concept": [
+    {
+      "code": "jp_food",
+      "display": "jp_food",
+      "definition": "食品を原因とするアレルギー"
+    },
+    {
+      "code": "jp_medication",
+      "display": "jp_medication",
+      "definition": "医薬品を原因とするアレルギー"
+    },
+    {
+      "code": "jp_environment_others",
+      "display": "jp_environment_others",
+      "definition": "食品と医薬品以外を原因とするアレルゲン（主に生活や環境に由来するアレルゲン）"
+    }
+  ],
+  "date": "2022-03-25",
+  "caseSensitive": true,
+  "count": 3
+}

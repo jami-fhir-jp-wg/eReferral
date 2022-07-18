@@ -2,7 +2,7 @@ Profile: JP_PractitionerRole_eClinicalSummary_author
 Parent: JP_PractitionerRole
 Id: JP-PractitionerRole-eClinicalSummary-author
 Description: "処方を発行した医療者の資格情報　JP_PractitionerRole の派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_PractitionerRole_eClinicalSummary_author"
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_PractitionerRole_eClinicalSummary_author"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"

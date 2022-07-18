@@ -30,7 +30,7 @@ Profile: JP_Practitioner_eClinicalSummary_author
 Parent: JP_Practitioner
 Id: JP-Practitioner-eClinicalSummary-author
 Description: "処方を作成した医師情報　JP_Practitionerの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Practitioner_eClinicalSummary_author"
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary_author"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
@@ -45,11 +45,14 @@ Description: "処方を作成した医師情報　JP_Practitionerの派生プロ
 * identifier.value ^definition = "処方医を識別するIDや番号として、処方医療機関における処方医ID（たとえば端末利用者アカウント、あるいは職員番号など）をPractitionerリソースのidentifier要素に記録する。"
 * identifier.value MS
 * name ^short = "処方医氏名"
+/* 診療情報提供書では資格の明記は不要のためチェックしない
 * obeys
     checkQualification-DoctorLicenseExists and 
     checkQualification-approapriateLicense and 
     checkQualification-NarcoticPractitioner and 
     checkQualification-category
+    */
+
 * qualification.identifier 0..* MS
 * qualification.identifier.system 1.. MS
 * qualification.identifier.system ^definition = "医籍登録番号（歯科医籍登録番号を含む、以下同じ）の場合、識別する名前空間のURI urn:oid:1.2.392.100495.20.3.31。\r\n麻薬施用免許番号の場合：都道府県番号を２桁（１桁の都道府県では０をつけた２桁）を末尾につけた\r\nurn:oid:1.2.392.100495.20.3.32.1[都道府県番号2桁]　形式。"
