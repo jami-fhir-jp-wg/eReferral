@@ -64,7 +64,7 @@ jobs:
     - name: Download Japanese version of hl7.fhir.core package
       uses: wei/wget@v1
       with:
-        args:  https://jpfhir.jp/fhir/core/hl7.fhir.r4.core-4.0.1.tgz
+        args:  https://jpfhir.jp/fhir/hl7.fhir.r4.core-4.0.1.tgz
 
     - name: Run IG Publisher
       env:
