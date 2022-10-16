@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['3.0']
+    environment: SSH_PORT_JPFHIR  # JAMI WG アップロードサイトに関するアクセス情報の環境名
     steps:
     - uses: actions/checkout@v2
 
@@ -97,6 +98,9 @@ jobs:
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
+          SSH_PORT: ${{ secrets.SSH_PORT_JPFHIR }}
+          JAMIWG_WEBHOST: ${{ secrets.JAMIWG_WEBHOST }}
+          JAMIWG_WEBPATH: ${{ secrets.JAMIWG_WEBPATH }}
     - name: rsync remote-site-deploy
-      run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 8022" --delete ./output ./fsh-generated r2217734@www41.onamae.ne.jp:/home/r2217734/public_html/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+      run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete ./output ./fsh-generated ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
 
