@@ -24,11 +24,11 @@ Description: "処方を発行した医療機関の診療科情報　JP_Organizat
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension ^min = 0
-* extension[PrefectureNo] ..0
-* extension[OrganizationCategory] ..0
-* extension[OrganizationNo] ..0
-* identifier[MedicalInstitutionCode] ..0
-* identifier[InsurerNumber] ..0
+* extension[prefectureNo] ..0
+* extension[organizationCategory] ..0
+* extension[organizationNo] ..0
+* identifier[medicalInstitutionCode] ..0
+* identifier[insurerNumber] ..0
 * name 1.. MS
 * name ^short = "診療科の名称"
 * name ^definition = "処方箋などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。"

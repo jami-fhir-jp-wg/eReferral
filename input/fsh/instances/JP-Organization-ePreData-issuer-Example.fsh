@@ -12,7 +12,7 @@ Description: "発行の医療機関　 Organizationリソースのインスタ�
 * extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_InsuranceOrganizationNo"
 * extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.23"
 * extension[=].valueIdentifier.value = "1234567"
-* identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no"
+* identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no"
 * identifier.value = "1311234567"
 * type.coding = $organization-type#prov
 * name = "第一病院"

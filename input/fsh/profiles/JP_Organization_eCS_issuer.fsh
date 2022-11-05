@@ -19,22 +19,22 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension[PrefectureNo] 1.. MS
-* extension[PrefectureNo].value[x] 1.. MS
-* extension[OrganizationCategory] 1.. MS
-* extension[OrganizationCategory].value[x] 1.. MS
-* extension[OrganizationNo] 1.. MS
-* extension[OrganizationNo].value[x] 1.. MS
-* identifier[MedicalInstitutionCode] 1..1 MS
-* identifier[MedicalInstitutionCode].system 1.. MS
-* identifier[MedicalInstitutionCode].system = "http://jpfhir.jp/fhir/Common/IdSystem/insurance-medical-institution-no" (exactly)
-* identifier[MedicalInstitutionCode].system ^short = "保険医療機関番号10桁の名前空間を識別するURL"
-* identifier[MedicalInstitutionCode].system ^definition = "保険医療機関番号10桁の名前空間を識別するURL。固定値。"
-* identifier[MedicalInstitutionCode].value ^short = "保険医療機関番号10桁"
-* identifier[MedicalInstitutionCode].value ^definition = "保険医療機関番号10桁。\r\n都道府県番号２桁、医科１または歯科３の種別コード１桁、保険医療機関番号７桁を連結した半角数字１０桁固定長の文字列。"
-* identifier[MedicalInstitutionCode].value MS
-* identifier[InsurerNumber] ..0
-* identifier[InsurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
+* extension[prefectureNo] 1.. MS
+* extension[prefectureNo].value[x] 1.. MS
+* extension[organizationCategory] 1.. MS
+* extension[organizationCategory].value[x] 1.. MS
+* extension[organizationNo] 1.. MS
+* extension[organizationNo].value[x] 1.. MS
+* identifier[medicalInstitutionCode] 1..1 MS
+* identifier[medicalInstitutionCode].system 1.. MS
+* identifier[medicalInstitutionCode].system = "http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no" (exactly)
+* identifier[medicalInstitutionCode].system ^short = "保険医療機関番号10桁の名前空間を識別するURL"
+* identifier[medicalInstitutionCode].system ^definition = "保険医療機関番号10桁の名前空間を識別するURL。固定値。"
+* identifier[medicalInstitutionCode].value ^short = "保険医療機関番号10桁"
+* identifier[medicalInstitutionCode].value ^definition = "保険医療機関番号10桁。\r\n都道府県番号２桁、医科１または歯科３の種別コード１桁、保険医療機関番号７桁を連結した半角数字１０桁固定長の文字列。"
+* identifier[medicalInstitutionCode].value MS
+* identifier[insurerNumber] ..0
+* identifier[insurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
 * type 1..1 MS
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type" (exactly)
 * type.coding.system MS

@@ -6,9 +6,9 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * ^status = #draft
 * text.status ^definition = "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\ｓ\\nXHTML形式。"
-* identifier[RpNumber] 1..1 MS
-* identifier[OrderInRp] 1..1 MS
-* identifier[RequestIdentifier] ..0 MS
+* identifier[rpNumber] 1..1 MS
+* identifier[orderInRp] 1..1 MS
+* identifier[requestIdentifier] ..0 MS
 * medication[x] ^definition = "医薬品コードと医薬品名称。coding要素を繰り返すことでHOT9 やYJコードなど複数のコード体系で医薬品コード並記することが可能。\r\n本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。\r\n日本では同じ用法の複数の薬剤をひとつの処方区分とすることがある。複数の薬剤を表記するMedication Resourceのインスタンスを参照するか、codeableConceptとして、薬品コードと処方の詳細な内容を示すか既知の処方リストの中から特定の処方を選択するための属性を表すResourceにリンクされている。"
 * medication[x] MS
 * medication[x].coding ^slicing.discriminator.type = #value
@@ -75,12 +75,12 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.extension ^slicing.rules = #open
 * dosageInstruction.extension ^min = 0
 * dosageInstruction.extension MS
-* dosageInstruction.extension[PeriodOfUse] ^min = 0
-* dosageInstruction.extension[PeriodOfUse].value[x] ^definition = "MedicationRequestに投与期間の開始日を明示するための拡張。\r\n投与期間の終了日は記述しない。これは例えば隔日投与の場合に、終了日が服用しない日となり紛らわしいためである。"
-* dosageInstruction.extension[PeriodOfUse] MS
-* dosageInstruction.extension[UsageDuration] ^definition = "隔日投与などで実投与日数と処方期間が異なる場合に用いられる。\r\n実際に服用する日数を記述する。"
-* dosageInstruction.extension[UsageDuration] ^min = 0
-* dosageInstruction.extension[UsageDuration] MS
+* dosageInstruction.extension[periodOfUse] ^min = 0
+* dosageInstruction.extension[periodOfUse].value[x] ^definition = "MedicationRequestに投与期間の開始日を明示するための拡張。\r\n投与期間の終了日は記述しない。これは例えば隔日投与の場合に、終了日が服用しない日となり紛らわしいためである。"
+* dosageInstruction.extension[periodOfUse] MS
+* dosageInstruction.extension[usageDuration] ^definition = "隔日投与などで実投与日数と処方期間が異なる場合に用いられる。\r\n実際に服用する日数を記述する。"
+* dosageInstruction.extension[usageDuration] ^min = 0
+* dosageInstruction.extension[usageDuration] MS
 * dosageInstruction.text ^definition = "JP Coreでは必須。フリーテキストの用法指示。\r\ndosageInstructionが表す処方指示の文字列表現。\r\n例）\"内服・経口・１日３回朝昼夕食後　１回１錠　７日分\""
 * dosageInstruction.text MS
 * dosageInstruction.additionalInstruction ^short = "患者に対する補足指示や注意"
@@ -95,8 +95,7 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dosageInstruction.additionalInstruction.text MS
 * dosageInstruction.timing.event ^definition = "服用タイミングを具体的な日時で指定する場合に使用する。複数回の指定日で指示する場合には、本要素を繰り返す。"
 * dosageInstruction.timing.event MS
-* dosageInstruction.timing.repeat.bounds[x].value ^definition = "投薬にｃｃうう。"
-* dosageInstruction.timing.repeat.bounds[x].value MS
+* dosageInstruction.timing.repeat.boundsDuration.value MS
 * dosageInstruction.timing.repeat.count ..0
 * dosageInstruction.timing.repeat.countMax ..0
 * dosageInstruction.timing.repeat.duration ..0
@@ -155,8 +154,8 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dispenseRequest.extension ^slicing.discriminator.path = "url"
 * dispenseRequest.extension ^slicing.rules = #open
 * dispenseRequest.extension ^min = 0
-* dispenseRequest.extension[ExpectedRepeatCount] ^min = 0
-* dispenseRequest.extension[ExpectedRepeatCount] MS
+* dispenseRequest.extension[expectedRepeatCount] ^min = 0
+* dispenseRequest.extension[expectedRepeatCount] MS
 * dispenseRequest.quantity.value ^definition = "調剤量。精度を含めた値が暗示される。\r\n例）１日３錠で７日分の場合、この要素には21 が設定される。"
 * dispenseRequest.quantity.value MS
 * dispenseRequest.quantity.system ^definition = "医薬品単位略号を識別するURL。urn:oid:1.2.392.200119.4.403.1で固定される。\r\n厚生労働省電子処方箋 CDA 記述仕様　別表２０ 医薬品単位略号　コード表を準用。拡張可能性あり。"
