@@ -96,7 +96,7 @@ jobs:
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
     - name: ssh key generate
-      run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+      run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; cat key; ls -l key
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
           SSH_PORT: ${{ secrets.SSH_PORT_JPFHIR }}
