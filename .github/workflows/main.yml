@@ -96,15 +96,9 @@ jobs:
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
     - name: ssh key generate
-      run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; cat key; ls -l key
+      run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
-          SSH_PORT: ${{ secrets.SSH_PORT_JPFHIR }}
-          JAMIWG_WEBHOST: ${{ secrets.JAMIWG_WEBHOST }}
-          JAMIWG_WEBPATH: ${{ secrets.JAMIWG_WEBPATH }}
     - name: rsync remote-site-deploy
       run: echo ${{ secrets.JAMIWG_WEBPATH }}; rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete ./output ./fsh-generated ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
-      env:
-        SSH_PORT: ${{ secrets.SSH_PORT_JPFHIR }}
-        JAMIWG_WEBHOST: ${{ secrets.JAMIWG_WEBHOST }}
-        JAMIWG_WEBPATH: ${{ secrets.JAMIWG_WEBPATH }}
+
