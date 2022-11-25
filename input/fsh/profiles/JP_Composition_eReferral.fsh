@@ -28,7 +28,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 // * obeys checkValidCategory
 // * obeys checkValidSections
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
-* ^status = #draft
+* ^status = #active
 * contained ..0
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
@@ -1108,7 +1108,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * section[compositionSection].section[medicationSection].mode ..0
 * section[compositionSection].section[medicationSection].orderedBy ..0
 * section[compositionSection].section[medicationSection].entry 0..*
-* section[compositionSection].section[medicationSection].entry only Reference(JP_MedicationRequest)
+* section[compositionSection].section[medicationSection].entry only Reference(JP_MedicationRequest_ePrescriptionData)
 * section[compositionSection].section[medicationSection].entry ^short = "投薬指示情報を記述したMedicationRequestリソースを参照"
 * section[compositionSection].section[medicationSection].entry ^definition = """投薬指示情報を記述して参照する。
                                                                 1つの投薬指示情報につき1つのMedicationRequestリソースで記述されたものを参照する。

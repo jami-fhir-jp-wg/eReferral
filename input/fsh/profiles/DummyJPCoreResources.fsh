@@ -9,7 +9,7 @@ Parent:			JP_AllergyIntolerance
 Id:             JP-AllergyIntolerance-eClinicalSummary
 Description:    "Dummy for JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
-* ^status = #draft
+* ^status = #active
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text 0..1 MS
 * text.status ^short = "generated"

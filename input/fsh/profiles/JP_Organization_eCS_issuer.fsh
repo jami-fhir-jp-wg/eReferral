@@ -11,7 +11,7 @@ Id: JP-Organization-eClinicalSummary-issuer
 Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
 * obeys checkPhoneNumberExists
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_issuer"
-* ^status = #draft
+* ^status = #active
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
 * text.status ^short = "generated| extensions | additional | empty"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
@@ -33,8 +33,6 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * identifier[medicalInstitutionCode].value ^short = "保険医療機関番号10桁"
 * identifier[medicalInstitutionCode].value ^definition = "保険医療機関番号10桁。\r\n都道府県番号２桁、医科１または歯科３の種別コード１桁、保険医療機関番号７桁を連結した半角数字１０桁固定長の文字列。"
 * identifier[medicalInstitutionCode].value MS
-* identifier[insurerNumber] ..0
-* identifier[insurerNumber].system = "urn:oid:1.2.392.100495.20.3.61" (exactly)
 * type 1..1 MS
 * type.coding.system = "http://terminology.hl7.org/CodeSystem/organization-type" (exactly)
 * type.coding.system MS

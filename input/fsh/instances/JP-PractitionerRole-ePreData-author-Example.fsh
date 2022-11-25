@@ -8,4 +8,4 @@ Description: "処方した医師の役割 PractitionerRoleリソースのイン�
 * identifier.value = "702"
 * practitioner = Reference(JP-Practitioner-eReferral-author-Example)
 * organization = Reference(JP-Organization-eReferral-issuer-Example)
-* code = $practitioner-role-category#doctor
+* code = $JP_PractitionerRole_CS#JPR10000  "医師"

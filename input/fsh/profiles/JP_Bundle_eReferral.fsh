@@ -3,7 +3,7 @@ Parent: JP_Bundle_CCLIX
 Id: JP-Bundle-eReferral
 Description: "診療情報提供書のBundle Documentのプロファル。"
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
-* ^status = #draft
+* ^status = #active
 * . ^short = "Contains a collection of resources リソース集合を含む文書バンドル"
 * . ^definition = "A container for a collection of resources.\r\nリソース集合のためのコンテナ\r\n診療情報交換のための文書形式のバンドルの共通プロファイル"
 

@@ -4,7 +4,7 @@ Id: JP-Bundle-CCLIX
 Description: """医療情報交換のために使用される診療関連の文書形式の情報を記述するためのBundleリソースの共通プロファイル。
 このリソースのインスタンスだけで、必要な参照情報はすべて包含され、外部のリソースインスタンスへの外部参照を持たないため作成した医療機関を超えた情報交換に使用できる。"""
 * ^url = "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Bundle_CCLIX"
-* ^status = #draft
+* ^status = #active
 * . ^short = "Contains a collection of resources リソース集合を含む文書バンドル"
 * . ^definition = "A container for a collection of resources.\r\nリソース集合のためのコンテナ\r\n診療情報交換のための文書形式のバンドルの共通プロファイル"
 

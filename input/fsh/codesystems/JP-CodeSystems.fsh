@@ -1016,17 +1016,6 @@ Description: "厚労省電子処方CDA規格別別表２３ 保険医療機関�
 // urn:oid:1.2.392.100495.20.3.32.1[都道府県番号]
 // 未定義
 
-// 医療者役割コード(処方)
-CodeSystem:  JP_codeSystem_practitioner_role_category
-Id:   jp-codeSystem-practitioner-role-category
-Description: "医療者役割コード(処方)"
-* ^url = "http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category"
-// * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/practitioner-role-category"
-* ^status = #active
-* ^content = #complete
-* ^caseSensitive = false
-* #doctor "医師"
-* #dentist "歯科医師"
 
 // 保険者番号
 // 固定のコード表の作成が可能か厚労省に確認する
