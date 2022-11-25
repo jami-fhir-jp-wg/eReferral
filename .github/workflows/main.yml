@@ -103,4 +103,7 @@ jobs:
           JAMIWG_WEBPATH: ${{ secrets.JAMIWG_WEBPATH }}
     - name: rsync remote-site-deploy
       run: rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete ./output ./fsh-generated ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
-
+      env:
+        SSH_PORT: ${{ secrets.SSH_PORT_JPFHIR }}
+        JAMIWG_WEBHOST: ${{ secrets.JAMIWG_WEBHOST }}
+        JAMIWG_WEBPATH: ${{ secrets.JAMIWG_WEBPATH }}
