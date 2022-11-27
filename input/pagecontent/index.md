@@ -248,7 +248,7 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 Composition.identifier要素には、その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。
 施設固有のID設定方式を用いて構わないが、Identifier型のvalue要素に、保険医療機関番号（10桁）、発行年（4桁）、施設内において発行年内で一意となる番号（8桁）をハイフン(“-“：U+002D)で連結した文字列を指定する方法を本仕様では具体的として採用している。
 例：”1311234567-2020-00123456”
-この場合には、Identifier型のsystem要素には、” http://jpfhir.jp/fhir/Common/CodeSystem/resourceInstance-identifier”を指定する。
+この場合には、Identifier型のsystem要素には、” http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier”を指定する。
 
 ###  Compositionリソースから各リソースへの参照
 以下では、内部の各FHIRリソースインスタンスを参照するCompositionの要素について概説する。

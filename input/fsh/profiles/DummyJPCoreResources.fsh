@@ -18,7 +18,7 @@ Description:    "Dummy for JP-Core"
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * identifier 0..1 MS
 * identifier.system 1..1 MS
-* identifier.system = "http://jpfhir.jp/fhir/Common/CodeSystem/resourceInstance-identifier"
+* identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value 1..1 MS
 * clinicalStatus   0..1 MS
 * clinicalStatus   ^short = "臨床的状態のステータス。"
@@ -100,7 +100,7 @@ Id:             JP-CarePlan-eClinicalSummary
 * text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
 * identifier 0..1 MS
 * identifier.system 1..1 MS
-* identifier.system = "http://jpfhir.jp/fhir/Common/CodeSystem/resourceInstance-identifier"
+* identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value 1..1 MS
 * status 1..1 MS
 * status ^short = "プランのステータス"
