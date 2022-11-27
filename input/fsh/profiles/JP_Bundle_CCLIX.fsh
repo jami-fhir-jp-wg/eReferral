@@ -28,15 +28,15 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 * entry contains
-    composition 1..1 MS and
-    patient 1..1 MS and
-    encounterOnDocument 0..1 MS and
+    composition 1..1 MS and // 文書構成情報
+    patient 1..1 MS and //  患者情報
+    encounterOnDocument 0..1 MS and 
     healthInsurancePublic 0.. MS and
     publicPayment 0.. and
     commonPayerOrganization 0..2 MS and
-    custodianOrganization 1..1 MS and
-    custodianDepartmentOfOrganization 0..1 MS and
-    authorisedAuthorRole 0..1 MS and
+    custodianOrganization 1..1 MS and   // 文書作成機関
+    custodianDepartmentOfOrganization 0..1 MS and   // 文書作成機関診療科
+    authorisedAuthorRole 0..1 MS and  
     authorisedAuthor 0..1 MS
 * entry[composition] ^short = "documentタイプのBundleリソースの先頭entryはCompositionリソース。"
 * entry[composition] ^definition = "compositionリソースのエントリー。"
@@ -50,6 +50,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[composition].search ..0
 * entry[composition].request ..0
 * entry[composition].response ..0
+
 * entry[patient] ^short = "Patientリソース"
 * entry[patient] ^definition = "Patientリソースのエントリー。"
 * entry[patient].fullUrl 1.. MS
@@ -62,6 +63,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[patient].search ..0
 * entry[patient].request ..0
 * entry[patient].response ..0
+
 * entry[encounterOnDocument] ^short = "文書作成時の医療側と患者側との接触関係の情報"
 * entry[encounterOnDocument] ^definition = "医療側と患者側との接触関係の情報をEncounterリソースで記述する。"
 * entry[encounterOnDocument] ^comment = "文書が作成された診療場面の情報を表すEncounter情報への参照である。\r\n外来診察で作成された文書の場合には、その外来受診を表すEncounter情報。\r\n入院時、入院中、退院時の場合には、その時点での病棟情報などを表すEncounter情報。"
@@ -75,6 +77,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[encounterOnDocument].search ..0
 * entry[encounterOnDocument].request ..0
 * entry[encounterOnDocument].response ..0
+
 * entry[healthInsurancePublic] ^short = "文書が作成された診療の健康保険に関する情報。"
 * entry[healthInsurancePublic] ^definition = "文書が作成された診療の健康保険に関する情報をCovarageリソースで記述する。\r\nこの文書の作成、あるいはこの文書の内容が実施される場合に適用される（された）医療保険の情報。\r\n保険診療に関わらず作成された文書や、文書内容が保険診療により実施されるのではない場合、文書の用途の観点から保険情報が必須でない場合には、省略できる。"
 * entry[healthInsurancePublic].fullUrl 1.. MS
@@ -87,6 +90,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[healthInsurancePublic].search ..0
 * entry[healthInsurancePublic].request ..0
 * entry[healthInsurancePublic].response ..0
+
 * entry[publicPayment] ^short = "公費負担に関する情報"
 * entry[publicPayment] ^definition = "公費負担に関する情報をCovarageリソースで記述する。\r\nこの文書の作成、あるいはこの文書の内容が実施される場合に適用される（された）医療保険の情報。\r\n公費負担によらず作成された文書や、文書内容が公費負担により実施されるのではない場合、文書の用途の観点から公費負担情報が必須でない場合には、省略できる。複数の公費負担情報を必要とする場合には、繰り返しで記述する。"
 * entry[publicPayment].fullUrl 1.. MS
@@ -99,6 +103,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[publicPayment].search ..0
 * entry[publicPayment].request ..0
 * entry[publicPayment].response ..0
+
 * entry[commonPayerOrganization] ^short = "医療保険者組織または公費負担者に関する情報"
 * entry[commonPayerOrganization] ^definition = "healthInsurancePublic要素またはpublicPayment要素に関係する詳細情報をOrganaizationリソースで記述する。\r\n詳細情報を必要とする場合に記述する。"
 * entry[commonPayerOrganization].fullUrl 1.. MS
@@ -111,6 +116,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[commonPayerOrganization].search ..0
 * entry[commonPayerOrganization].request ..0
 * entry[commonPayerOrganization].response ..0
+
 * entry[custodianOrganization] ^short = "文書の作成と管理に責任を有する組織の情報"
 * entry[custodianOrganization] ^definition = "文書を作成した組織（医療機関等）の情報をOrganaizationリソースで記述する。"
 * entry[custodianOrganization].fullUrl 1.. MS
@@ -123,6 +129,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[custodianOrganization].search ..0
 * entry[custodianOrganization].request ..0
 * entry[custodianOrganization].response ..0
+
 * entry[custodianDepartmentOfOrganization] ^short = "文書を作成した組織（医療機関等）の部門や診療科情報"
 * entry[custodianDepartmentOfOrganization] ^definition = "文書を作成した組織（医療機関等）における部門や診療科に関する情報をOrganaizationリソースで記述する。"
 * entry[custodianDepartmentOfOrganization].fullUrl 1.. MS
@@ -135,6 +142,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[custodianDepartmentOfOrganization].search ..0
 * entry[custodianDepartmentOfOrganization].request ..0
 * entry[custodianDepartmentOfOrganization].response ..0
+
 * entry[authorisedAuthorRole] ^short = "正当な権限があって文書を作成した個人の役割情報"
 * entry[authorisedAuthorRole] ^definition = "正当な権限があって文書を作成した個人の役割を表すPractitionerRoleリソースで記述する。\r\nauthorisedAuthorへの参照を含む。"
 * entry[authorisedAuthorRole].fullUrl 1.. MS
@@ -147,6 +155,7 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[authorisedAuthorRole].search ..0
 * entry[authorisedAuthorRole].request ..0
 * entry[authorisedAuthorRole].response ..0
+
 * entry[authorisedAuthor] ^short = "正当な権限があって文書を作成した個人の情報"
 * entry[authorisedAuthor] ^definition = "正当な権限があって文書を作成した個人を表すPractitionerリソースで記述する。\r\nauthorisedAuthorRole要素が参照するPractitionerRoleから参照される。"
 * entry[authorisedAuthor].fullUrl 1.. MS
@@ -159,5 +168,6 @@ Description: """医療情報交換のために使用される診療関連の文�
 * entry[authorisedAuthor].search ..0
 * entry[authorisedAuthor].request ..0
 * entry[authorisedAuthor].response ..0
+
 * signature ^definition = "base64でエンコードされた電子署名。JWT仕様。"
 * signature ^comment = "文書情報全体（signature要素以外の部分）に対する電子署名を送受信間で合意にもとづき運用したい場合に使用できる。各要素は参考仕様であり、今後JWT（JSON Web Token）にもとづく仕様が関係団体で策定された場合には、それに置き換える。"

@@ -12,43 +12,69 @@ Description: "診療情報提供書のBundle Documentのプロファル。"
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
 
-* entry contains
+// --- JP_Bundle_CCLIX ---
+// * entry contains
+//     composition 1..1 MS and
+//     patient 1..1 MS and
+//     encounterOnDocument 0..1 MS and
+//     healthInsurancePublic 0.. MS and
+//     publicPayment 0.. and
+//     commonPayerOrganization 0..2 MS and
+//     custodianOrganization 1..1 MS and
+//     custodianDepartmentOfOrganization 0..1 MS and
+//     authorisedAuthorRole 0..1 MS and
+//     authorisedAuthor 0..1 MS
 
-//    medicationRequest 0..*  MS and
-    communication 0..* MS 
-and medicationRequest 0..* MS
-and authorOrganization 0..1 MS // 文書作成機関
-and authotDepartmentOfOrganization 0..1 MS // 文書作成者の診療科
-and referralOrganizaiton 0..2 MS
-and referralDepartment 0..2 MS
-and referralDoctor 0..2 MS
-and cdaDocument 0..1 MS
-and referralPurpose 0..1 MS
-and problem 0..* MS
-and allergy 0..* MS
-and familyHistory 0..* MS
-and physicalExams 0..* MS
-and immunization 0..* MS
+* entry contains
+//    composition 1..1 MS
+//and patient 1..1 MS 
+//and encounterOnDocument 0..1 MS
+    authorOrganization 1..1 MS // 文書作成機関
+and authorDepartmentOfOrganization 0..1 MS // 文書作成者の診療科
+//and authorisedAuthor 0..1 MS // 文書作成者
+//and custodianOrganization 1..1 MS // 文書作成管理機関
+
+and referralToOrganizaiton 1..1 MS  // 紹介先医療機関
+and referralToDepartment 0..1 MS     // 紹介先医療機関の診療科
+and referralToDoctor 0..1 MS    // 紹介先医療機関の医師
+and referralFromOrganizaiton 1..1 MS  // 紹介元の医療機関
+and referralFromDepartment 0..1 MS  // 紹介元の医療機関の診療科
+and referralFromDoctor 1..1 MS  // 紹介元の医療機関の医師
+and cdaDocument 0..1 MS   // CDA形式で作成された文書データ
+and problem 1..* MS  // 傷病名・主訴　（様式11 傷病名）Condition
+and referralPurpose 1..1 MS  // 紹介目的　　（様式11 紹介目的）Encounter　
+and pastIllness 1..* MS // 既往歴　（様式11 既往歴および家族歴）Condition
+and pastIllnessWithFamilyHistoryNote 1..* MS // 様式11 既往歴および家族歴 DocumentReference
+and presentIllness 1..* MS // 現病歴 (様式11 症状経過および検査結果）Condition 
+and presentIllnessNote 1..* MS // 様式11 症状経過および検査結果　DocumentReference 
+and allergy 1..* MS // アレルギー・薬剤禁忌情報　AllergyIntolerance
+and allergyNote 1..* MS // アレルギー・薬剤禁忌情報　DocumentReference 
+and familyHistory 0..* MS   // 家族歴　FamilyMemberHistory
+and physicalExams 1..* MS   // 身体所見 Observation
+and immunization 0..* MS    // 予防接種 
 and surgicalProcedure 0..* MS
-and clinicalCourse 0..* MS
+and clinicalCourse 0..* MS  // 診療経過　（様式11 治療経過）DocumentReference
 and carePlan 0..* MS
 and medicalDeviceUse 0..* MS
 and advancedDirective 0..* MS
 and researchSubject 0..* MS
-and medicationStatement 0..* MS
-and medicalDevice 0..* MS
-and imageStudy 0..* MS
-and diagReport 0..* MS
-and researchStudy 0..* MS
-and relatedPerson 0..* MS
-and binaryData 0..* MS
+and communication 0..* MS   // 備考（様式11 備考）
+and medicationRequest 0..* MS   // 処方オーダ
+and medicationStatement 0..* MS  // 現在の処方　（様式11 現在の処方）　medicationStatement
+and medicationNote 0..* MS  // 現在の処方（非構造的情報）（様式11 現在の処方）DocumentReference
+and medicalDevice 0..* MS   // 医療機器
+and imageStudy 0..* MS  // 画像検査結果
+and diagReport 0..* MS  // 診断報告書
+and researchStudy 0..* MS   // 臨床研究参加情報
+and relatedPerson 0..* MS   // 関係者情報
+and binaryData 0..* MS  // その他の添付バイナリーデータ
 
 * entry[composition].resource only JP_Composition_eReferral // Bundleに含まれる全リソースエントリの参照リスト
 * entry[patient].resource MS // 患者情報エントリ Composition.subject
 * entry[authorisedAuthor] 1..1 MS 
 * entry[authorisedAuthor].resource MS     // 文書作成者  Composition.author
 * entry[authorOrganization].resource MS  // 文書作成機関 authorisedAuthorから、またはauthotDepartmentOfOrganizationから参照される
-* entry[authotDepartmentOfOrganization].resource MS  // 文書作成者の診療科　authorOrganization　を参照する
+* entry[authorDepartmentOfOrganization].resource MS  // 文書作成者の診療科　authorOrganization　を参照する
 * entry[custodianOrganization].resource MS  // 文書管理機関 authorisedAuthorから参照される
 
 
@@ -63,17 +89,29 @@ and binaryData 0..* MS
 * entry[authorisedAuthorRole].resource only JP_PractitionerRole_eReferral_author
 */
 
-* entry[referralOrganizaiton].resource only JP_Organization_eClinicalSummary_issuer
-* entry[referralOrganizaiton] ^short = "紹介先/元医療機関"
-* entry[referralOrganizaiton] ^definition = "紹介先/元医療機関"
+* entry[referralToOrganizaiton].resource only JP_Organization_eClinicalSummary
+* entry[referralToOrganizaiton] ^short = "紹介先医療機関"
+* entry[referralToOrganizaiton] ^definition = "紹介先医療機関"
 
-* entry[referralDepartment].resource only JP_Organization_eClinicalSummary_departmentOfIssuer
-* entry[referralDepartment] ^short = "紹介先/元医療機関の診療科"
-* entry[referralDepartment] ^definition = "紹介先/元医療機関の診療科"
+* entry[referralToDepartment].resource only JP_Organization_eClinicalSummary_department
+* entry[referralToDepartment] ^short = "紹介先医療機関の診療科"
+* entry[referralToDepartment] ^definition = "紹介先医療機関の診療科"
 
-* entry[referralDoctor].resource only JP_Practitioner_eClinicalSummary_author
-* entry[referralDoctor] ^short = "紹介先/元医師"
-* entry[referralDoctor] ^definition = "紹介先/元医師"
+* entry[referralToDoctor].resource only JP_Practitioner_eClinicalSummary
+* entry[referralToDoctor] ^short = "紹介先医師"
+* entry[referralToDoctor] ^definition = "紹介先医師"
+
+* entry[referralFromOrganizaiton].resource only JP_Organization_eClinicalSummary
+* entry[referralFromOrganizaiton] ^short = "紹介元医療機関"
+* entry[referralFromOrganizaiton] ^definition = "紹介元医療機関"
+
+* entry[referralFromDepartment].resource only JP_Organization_eClinicalSummary_department
+* entry[referralFromDepartment] ^short = "紹介元医療機関の診療科"
+* entry[referralFromDepartment] ^definition = "紹介元医療機関の診療科"
+
+* entry[referralFromDoctor].resource only JP_Practitioner_eClinicalSummary
+* entry[referralFromDoctor] ^short = "紹介元医師"
+* entry[referralFromDoctor] ^definition = "紹介元医師"
 
 * entry[cdaDocument].resource only JP_DocumentReference_CDAdocument
 * entry[cdaDocument] ^short = "CDA規約文書ファイルへの参照"

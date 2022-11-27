@@ -29,7 +29,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 // * obeys checkValidSections
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
 * ^status = #active
-* contained ..0
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
@@ -41,9 +40,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * extension[version].value[x] ^short = "文書のバージョン番号を表す文字列。"
 * extension[version].value[x] ^definition = "文書のバージョン番号を表す文字列。\r\n例 : 第１版は  \"1\" とする。"
 * extension[version].value[x] 1..1 MS
+
 * identifier 1.. MS
 * identifier.system 1.. MS
-* identifier.system = "http://jpfhir.jp/fhir/Common/IdSystem/resourceInstance-identifier" (exactly)
+* identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier" (exactly)
 * identifier.system ^short = "文書リソースIDの名前空間を表すURI。固定値。"
 * identifier.system ^definition = "文書リソースIDの名前空間を表すURI。固定値。"
 * identifier.value 1.. MS
@@ -53,6 +53,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * status = #final (exactly)
 * status ^short = "この文書のステータス。"
 * status ^definition = "この文書のステータス。\r\n仕様上は、preliminary | final | amended | entered_in_error　のいずれかを設定できるが、医療機関から登録される段階では、\"final\" でなければならない。"
+
 * type ^short = "文書区分コード"
 * type ^definition = "documentタイプのうち文書種別"
 * type MS
@@ -69,8 +70,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * type.coding.display ^short = "文書区分コードの表示名。"
 * type.coding.display ^definition = "文書区分コードの表示名。"
 * type.coding.display MS
-* type.coding.userSelected ..0
-* type.text ..0
+
 * category 1..1 MS
 * category ^short = "文書カテゴリーコード"
 * category ^definition = "文書カテゴリーコード。　診療情報提供書ではtype.coding.codeに記述される文書区分コードと同一。"
@@ -86,39 +86,48 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * category.coding.display ^short = "文書カテゴリコードの表示名"
 * category.coding.display ^definition = "文書カテゴリ"
 * category.coding.display MS
-* category.coding.userSelected ..0
-* category.text ..0
+
 * subject 1.. MS
 * subject ^short = "患者情報を表すPatientリソースへの参照。"
 * subject ^definition = "患者情報を表すPatientリソースへの参照。"
-* subject.reference 1.. MS
+* subject.reference 1..1 MS
 * subject.reference ^short = "PatientリソースのfullUrl要素に指定されるUUIDを指定。"
 * subject.reference ^definition = "Bundleリソースに記述されるPatientリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:11f0a9a6_a91d_3aef_fc4e_069995b89c4f\""
+
 * encounter ^short = "この文書が作成された受診時状況情報を表すEncounterリソースへの参照"
 * encounter ^definition = "この文書が作成された受診時状況情報を表すEncounterリソースへの参照"
-* encounter MS
+* encounter 0..1 MS
 * encounter.reference ^short = "EncounterリソースのfullUrl要素に指定されるUUIDを指定。"
 * encounter.reference ^definition = "Bundleリソースに記述されるEncounterリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:12f0a9a6_a91d_8aef_d14e_069795b89c9f\""
-* encounter.reference MS
+* encounter.reference 1..1 MS
+
 * date ^definition = "このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。\r\n午前0時を\"24:00\"と記録することはできないため\"00:00\"と記録すること。　\r\n例：\"2020_08_21T12:28:21+09:00\""
 * date 1..1 MS
-* author ..2 MS
+
+* author 2..3 MS
 * author ^slicing.discriminator.type = #profile
 * author ^slicing.discriminator.path = "resolve()"
 * author ^slicing.rules = #open
 * author ^short = "文書作成責任者と文書作成機関とへの参照。"
-* author ^definition = "文書作成責任者を表すPractitionerRoleリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
+* author ^definition = "文書作成責任者を表すPractitionerリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
+* author contains
+    authorPractitioner 1..1 MS 
+and authorOrganization 1..1 MS
+and authorDepartment 0..1 MS
+* author[authorPractitioner] = Reference(JP_Practitioner_eClinicalSummary)
+* author[authorOrganization] = Reference(JP_Organization_eClinicalSummary)
+* author[authorDepartment] = Reference(JP_Organization_eClinicalSummary_issuer)
+
+
+
 * title MS
 * title = "診療情報提供書" (exactly)
-* confidentiality ..0
-* attester ..0
-* custodian 1.. MS
+* custodian 1..1 MS
 * custodian ^short = "文書の作成・修正を行い、文書の管理責任を持つ医療機関（Organizationリソース）への参照"
 * custodian ^definition = "文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表すOrganizationリソースへの参照となる。文書作成機関とは異なる組織である場合は、文書作成機関とは別のOrganizationリソースで表現し、custodian要素からはそのOrganizationリソースを参照する。"
 * custodian.reference 1..1
 * custodian.reference ^short = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
 * custodian.reference ^definition = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:179f9f7f_e546_04c2_6888_a9e0b24e5720\""
-* relatesTo ..0
 * event 1..1 MS
 * event ^short = "診療情報提供書の発行イベントの情報"
 * event ^definition = "診療情報提供書の発行イベントの情報"
@@ -133,14 +142,13 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * event.period.start ^definition = "診療情報提供書発行日。ISO8601に準拠yyyy-mm-dd形式で記述する。"
 * event.period.end ^short = "診療情報提供書の場合記述しないが、startと同一であれば存在していてもよい"
 * event.period.end ^definition = "診療情報提供書の場合記述しない。startと同一であれば存在していてもよい"
-* event.detail ..0
 
 * section ^slicing.discriminator.type = #value
 * section ^slicing.discriminator.path = "code.coding.code"
 * section ^slicing.rules = #open
 * section contains
-     referralToSection 0..1 MS  // 紹介先情報セクション referralToSection
-    and referralFromSection  0..1 MS    // 紹介元情報セクション referralFromSection
+     referralToSection 1..1 MS  // 紹介先情報セクション referralToSection
+    and referralFromSection  1..1 MS    // 紹介元情報セクション referralFromSection
     and cdaSection   0..1 MS // CDA参照セクション    cdaSection
     and compositionSection     0..1 MS // 構造情報セクション   compositionSection
 	and attachmentSection    0..*    MS  //  添付情報セクション	attachmentSection

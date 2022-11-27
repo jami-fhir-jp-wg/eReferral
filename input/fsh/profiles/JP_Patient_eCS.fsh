@@ -13,10 +13,11 @@ Description: "対象患者のPatientプロファイル　JP_Patientの派生プ�
 * identifier.assigner.reference ^short = "患者番号を付番した医療機関情報（Organization）への参照"
 * identifier.assigner.reference ^definition = "Bundleリソース内に記述される患者番号を付番した医療機関情報（Organization）のfullUrlに記述されるUUIDを設定。\r\n例：\"urn:uuid:179f9f7f_e546_04c2_6888_a9e0b24e5720\"\r\n省略されたときには、処方発行機関での患者番号とみなす。\r\n処方発行発行機関や処方医所属医療機関と異なる場合、Bundleリソース内に患者番号を付番した医療機関情報を記述したOrganizationリソースを記述し、それを参照する。"
 * identifier.assigner.reference MS
+* name 1.. MS
 * gender 1.. MS
 * birthDate 1.. MS
-* address ..1 MS
-* address ^definition = "An address for the individual.\r\n患者の住所。なくてもよい"
+* address 1..1 MS
+* address ^definition = "An address for the individual.\r\n患者の住所。必須。"
 * address.text 1.. MS
 * address.postalCode 1.. MS
 * address.country 0.. MS
