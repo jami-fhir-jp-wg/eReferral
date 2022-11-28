@@ -35,6 +35,7 @@ and cdaDocument 0..1 MS
 and referralEncounter 0..2 MS
 and problem 1..* MS
 and allergy 0..* MS
+and familyHistory 0..* MS
 and observation 0..* MS
 and immunization 0..* MS
 and procedure 0..* MS
@@ -70,7 +71,7 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[patient].fullUrl ^short = "埋め込まれているPatientリソースを一意に識別するためのUUID"
 * entry[patient].fullUrl ^definition = "埋め込まれているPatientリソースを一意に識別するためのUUID。"
 * entry[patient].resource 1.. MS
-* entry[patient].resource only JP_Patient_eCS  // 患者情報エントリ Composition.subject
+* entry[patient].resource only JP_Patient_eClinicalSummary  // 患者情報エントリ Composition.subject
 * entry[patient].resource ^short = "Patientリソースのインスタンス本体"
 * entry[patient].resource ^definition = "Patientリソースのインスタンス本体。"
 * entry[patient].search ..0

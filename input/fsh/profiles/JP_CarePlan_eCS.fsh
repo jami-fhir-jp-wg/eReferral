@@ -1,3 +1,9 @@
+Profile:        JP_CarePlan
+Parent:			CarePlan
+Id:             JP-CarePlan
+* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan"
+
+
 Profile:        JP_CarePlan_eClinicalSummary
 Parent:			JP_CarePlan
 Id:             JP-CarePlan-eClinicalSummary
@@ -8,7 +14,7 @@ Id:             JP-CarePlan-eClinicalSummary
 * text.status ^short = "generated"
 * text.status ^definition = "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
 * text.status = #generated
-* text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
+* text.div ^definition = "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式"
 * identifier 0..1 MS
 * identifier.system 1..1 MS
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"

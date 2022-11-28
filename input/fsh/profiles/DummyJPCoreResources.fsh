@@ -38,11 +38,6 @@ Parent:			JP_Immunization
 Id:             JP-Immunization-eClinicalSummary
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Immunization_eClinicalSummary"
 
-Profile:        JP_CarePlan
-Parent:			CarePlan
-Id:             JP-CarePlan
-* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan"
-
 Profile:        JP_MedicationStatement
 Parent:			MedicationStatement
 Id:             JP-MedicationStatement
