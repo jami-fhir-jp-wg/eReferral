@@ -21,7 +21,7 @@ or (category.coding.code='03' and (section.code.coding.where(code = '11')).exist
 */
 
 // 
-Invariant: checkExist_CDASection_or_CompositionSection
+Invariant: checkExist-CDASection-or-CompositionSection
 Description: "【セクション構成はCDAセクションと構造情報セクションのどちらか一方だけ存在している必要がある。】"
 Severity: #error
 Expression: "((section.code.coding.where(code = '200')).exists()) xor (section.code.coding.where(code = '300')).exists())"
@@ -33,7 +33,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 // * obeys checkValidCategoryTitle
 // * obeys checkValidCategory
 // * obeys checkValidSections
-* obeys checkValidCategoryTitle
+* obeys checkExist-CDASection-or-CompositionSection
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
 * ^status = #active
 * extension ^slicing.discriminator.type = #value
@@ -400,7 +400,7 @@ and authorDepartment 0..1 MS
 * section[remarksCommunication].mode ..0
 * section[remarksCommunication].orderedBy ..0
 * section[remarksCommunication].entry 1..1
-* section[remarksCommunication].entry only Reference(DocumentReference|Binary)  // あえてJP_を外している
+* section[remarksCommunication].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
 * section[remarksCommunication].entry ^short = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunication].entry ^definition = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunication].emptyReason ..0
@@ -450,7 +450,7 @@ and authorDepartment 0..1 MS
     and allergiesIIntoleranceSection      0..1    MS  // アレルギー・不耐性反応セクション allergiesIIntoleranceSection
     and familiyHistorySection     0..1    MS  // 家族歴セクション familiyHistorySection
     and admissinoPhysicalStatusSection    0..1    MS  // 身体所見セクション   admissinoPhysicalStatusSection
-    and infectiousDiseaseInformationSection   9..1    MS  //  感染症情報セクション    infectiousDiseaseInformationSection"
+    and infectiousDiseaseInformationSection   0..1    MS  //  感染症情報セクション    infectiousDiseaseInformationSection"
     and socialHistorySection      0..1    MS  //  社会歴・生活習慣セクション  socialHistorySection
 	and immunizationSection   0..1    MS  //  予防接種歴セクション    immunizationSection
 	and surgicalProcedureSection      0..1    MS  //  手術セクション  surgucalProcedureSection
