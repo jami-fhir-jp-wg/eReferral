@@ -20,6 +20,12 @@ Expression: "((category.coding.code='01' or category.coding.code='02') and (sect
 or (category.coding.code='03' and (section.code.coding.where(code = '11')).exists() and (section.code.coding.where(code = '12')).exists())"
 */
 
+// 
+Invariant: checkExist_CDASection_or_CompositionSection
+Description: "【セクション構成はCDAセクションと構造情報セクションのどちらか一方だけ存在している必要がある。】"
+Severity: #error
+Expression: "((section.code.coding.where(code = '200')).exists()) xor (section.code.coding.where(code = '300')).exists())"
+
 Profile: JP_Composition_eReferral
 Parent: Composition
 Id: JP-Composition-eReferral
@@ -27,6 +33,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 // * obeys checkValidCategoryTitle
 // * obeys checkValidCategory
 // * obeys checkValidSections
+* obeys checkValidCategoryTitle
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
 * ^status = #active
 * extension ^slicing.discriminator.type = #value
@@ -114,24 +121,26 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
     authorPractitioner 1..1 MS 
 and authorOrganization 1..1 MS
 and authorDepartment 0..1 MS
-* author[authorPractitioner] = Reference(JP_Practitioner_eClinicalSummary)
-* author[authorOrganization] = Reference(JP_Organization_eClinicalSummary)
-* author[authorDepartment] = Reference(JP_Organization_eClinicalSummary_issuer)
+* author[authorPractitioner] = Reference(JP_Practitioner)
+* author[authorOrganization] = Reference(JP_Organization)
+* author[authorDepartment] = Reference(JP_Organization)
 
-
-
-* title MS
+* title 1..1 MS
 * title = "診療情報提供書" (exactly)
+
 * custodian 1..1 MS
 * custodian ^short = "文書の作成・修正を行い、文書の管理責任を持つ医療機関（Organizationリソース）への参照"
 * custodian ^definition = "文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表すOrganizationリソースへの参照となる。文書作成機関とは異なる組織である場合は、文書作成機関とは別のOrganizationリソースで表現し、custodian要素からはそのOrganizationリソースを参照する。"
+* custodian = Reference(JP_Organization)
 * custodian.reference 1..1
 * custodian.reference ^short = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
 * custodian.reference ^definition = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:179f9f7f_e546_04c2_6888_a9e0b24e5720\""
+
 * event 1..1 MS
 * event ^short = "診療情報提供書の発行イベントの情報"
 * event ^definition = "診療情報提供書の発行イベントの情報"
 * event.code 1..1 MS
+* event.code.coding ..0
 * event.code.text 1.. MS
 * event.code.text = "診療情報提供書発行" (exactly)
 * event.period 1.. MS
@@ -147,8 +156,8 @@ and authorDepartment 0..1 MS
 * section ^slicing.discriminator.path = "code.coding.code"
 * section ^slicing.rules = #open
 * section contains
-     referralToSection 1..1 MS  // 紹介先情報セクション referralToSection
-    and referralFromSection  1..1 MS    // 紹介元情報セクション referralFromSection
+        referralFromSection  1..1 MS    // 紹介元情報セクション referralFromSection
+    and referralToSection 1..1 MS  // 紹介先情報セクション referralToSection
     and cdaSection   0..1 MS // CDA参照セクション    cdaSection
     and compositionSection     0..1 MS // 構造情報セクション   compositionSection
 	and attachmentSection    0..*    MS  //  添付情報セクション	attachmentSection
@@ -303,7 +312,7 @@ and authorDepartment 0..1 MS
 * section[cdaSection].mode ..0
 * section[cdaSection].orderedBy ..0
 * section[cdaSection].entry 1..1
-* section[cdaSection].entry only Reference(JP_DocumentReference)
+* section[cdaSection].entry only Reference(DocumentReference)
 * section[cdaSection].entry ^short = "CDA規約文書ファイルへの参照"
 * section[cdaSection].entry ^definition = "CDA規約文書ファイルへの参照"
 * section[cdaSection].emptyReason ..0
@@ -348,7 +357,7 @@ and authorDepartment 0..1 MS
 * section[attachmentSection].mode ..0
 * section[attachmentSection].orderedBy ..0
 * section[attachmentSection].entry 1..1
-* section[attachmentSection].entry only Reference(JP_DocumentReference or JP_Binary)
+* section[attachmentSection].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
 * section[attachmentSection].entry ^short = "添付情報ファイルへの参照"
 * section[attachmentSection].entry ^definition = "添付情報ファイルへの参照"
 * section[attachmentSection].emptyReason ..0
@@ -391,7 +400,7 @@ and authorDepartment 0..1 MS
 * section[remarksCommunication].mode ..0
 * section[remarksCommunication].orderedBy ..0
 * section[remarksCommunication].entry 1..1
-* section[remarksCommunication].entry only Reference(JP_DocumentReference)
+* section[remarksCommunication].entry only Reference(DocumentReference|Binary)  // あえてJP_を外している
 * section[remarksCommunication].entry ^short = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunication].entry ^definition = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunication].emptyReason ..0
@@ -438,10 +447,10 @@ and authorDepartment 0..1 MS
     and problemSection    1..1    MS  // 傷病名・主訴セクション   problemSection
     and presentIllnessSection     1..1    MS  // 現病歴セクション presentIllnessSection
     and pastIllnessSection    1..1    MS  // 既往歴セクション pastIllnessSection
-    and allergiesIIntoleranceSection      1..1    MS  // アレルギー・不耐性反応セクション allergiesIIntoleranceSection
-    and familiyHistorySection     1..1    MS  // 家族歴セクション familiyHistorySection
-    and admissinoPhysicalStatusSection    1..1    MS  // 身体所見セクション   admissinoPhysicalStatusSection
-    and infectiousDiseaseInformationSection   1..1    MS  //  感染症情報セクション    infectiousDiseaseInformationSection"
+    and allergiesIIntoleranceSection      0..1    MS  // アレルギー・不耐性反応セクション allergiesIIntoleranceSection
+    and familiyHistorySection     0..1    MS  // 家族歴セクション familiyHistorySection
+    and admissinoPhysicalStatusSection    0..1    MS  // 身体所見セクション   admissinoPhysicalStatusSection
+    and infectiousDiseaseInformationSection   9..1    MS  //  感染症情報セクション    infectiousDiseaseInformationSection"
     and socialHistorySection      0..1    MS  //  社会歴・生活習慣セクション  socialHistorySection
 	and immunizationSection   0..1    MS  //  予防接種歴セクション    immunizationSection
 	and surgicalProcedureSection      0..1    MS  //  手術セクション  surgucalProcedureSection
@@ -459,7 +468,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[referralPurposeSection] ^short = "紹介目的セクション"
 * section[compositionSection].section[referralPurposeSection] ^definition = "紹介目的セクション"
 * section[compositionSection].section[referralPurposeSection].title 1.. MS
-* section[compositionSection].section[referralPurposeSection].title = "紹介目的" (exactly)
+* section[compositionSection].section[referralPurposeSection].title = "紹介目的"
 * section[compositionSection].section[referralPurposeSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[referralPurposeSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[referralPurposeSection].code 1.. MS
@@ -491,14 +500,14 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[referralPurposeSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[referralPurposeSection].mode ..0
 * section[compositionSection].section[referralPurposeSection].orderedBy ..0
-* section[compositionSection].section[referralPurposeSection].entry 1..1
+* section[compositionSection].section[referralPurposeSection].entry 0..1 MS
 * section[compositionSection].section[referralPurposeSection].entry only Reference(JP_Encounter)
 * section[compositionSection].section[referralPurposeSection].entry ^short = "必須。紹介先で予定している受診を記述したEncounterリソースを参照"
 * section[compositionSection].section[referralPurposeSection].entry ^definition = """紹介先で予定している受診を記述したEncounterリソースを参照。
     Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。
     そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。
     """
-* section[compositionSection].section[referralPurposeSection].emptyReason ..0
+* section[compositionSection].section[referralPurposeSection].emptyReason ..1 MS
 * section[compositionSection].section[referralPurposeSection].section ..0
 //
 //
@@ -506,7 +515,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[problemSection] ^short = "傷病名・主訴セクション"
 * section[compositionSection].section[problemSection] ^definition = "傷病名・主訴セクション"
 * section[compositionSection].section[problemSection].title 1.. MS
-* section[compositionSection].section[problemSection].title = "傷病名・主訴" (exactly)
+* section[compositionSection].section[problemSection].title = "傷病名・主訴"
 * section[compositionSection].section[problemSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[problemSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[problemSection].code 1.. MS
@@ -538,13 +547,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[problemSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[problemSection].mode ..0
 * section[compositionSection].section[problemSection].orderedBy ..0
-* section[compositionSection].section[problemSection].entry 1..*
+* section[compositionSection].section[problemSection].entry 0..* MS
 * section[compositionSection].section[problemSection].entry only Reference(JP_Condition)
 * section[compositionSection].section[problemSection].entry ^short = "必須。傷病名・主訴を１個以上必ず記述する。"
 * section[compositionSection].section[problemSection].entry ^definition = """傷病名・主訴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。
     フリーテキストでしか記述できない場合には、Condition.code.text に記述する。
     """
-* section[compositionSection].section[problemSection].emptyReason ..0
+* section[compositionSection].section[problemSection].emptyReason ..1 MS
 * section[compositionSection].section[problemSection].section ..0
 //
 //
@@ -552,7 +561,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[presentIllnessSection] ^short = "現病歴セクション"
 * section[compositionSection].section[presentIllnessSection] ^definition = "現病歴セクション"
 * section[compositionSection].section[presentIllnessSection].title 1.. MS
-* section[compositionSection].section[presentIllnessSection].title = "現病歴" (exactly)
+* section[compositionSection].section[presentIllnessSection].title = "現病歴"
 * section[compositionSection].section[presentIllnessSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[presentIllnessSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[presentIllnessSection].code 1.. MS
@@ -584,7 +593,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[presentIllnessSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[presentIllnessSection].mode ..0
 * section[compositionSection].section[presentIllnessSection].orderedBy ..0
-* section[compositionSection].section[presentIllnessSection].entry 1..*
+* section[compositionSection].section[presentIllnessSection].entry 0..* MS
 * section[compositionSection].section[presentIllnessSection].entry only Reference(JP_Condition)
 * section[compositionSection].section[presentIllnessSection].entry ^short = "必須。現病歴として記述すべき疾患に関する現在にいたる経過歴を１個以上必ず記述したConditionリソースを参照する。"
 * section[compositionSection].section[presentIllnessSection].entry ^definition = """フリーテキストでしか記述できない場合には、それをCondition.code.text 
@@ -598,7 +607,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[pastIllnessSection] ^short = "既往歴セクション"
 * section[compositionSection].section[pastIllnessSection] ^definition = "既往歴セクション"
 * section[compositionSection].section[pastIllnessSection].title 1.. MS
-* section[compositionSection].section[pastIllnessSection].title = "既往歴" (exactly)
+* section[compositionSection].section[pastIllnessSection].title = "既往歴"
 * section[compositionSection].section[pastIllnessSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[pastIllnessSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[pastIllnessSection].code 1.. MS
@@ -630,7 +639,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[pastIllnessSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[pastIllnessSection].mode ..0
 * section[compositionSection].section[pastIllnessSection].orderedBy ..0
-* section[compositionSection].section[pastIllnessSection].entry 0..*
+* section[compositionSection].section[pastIllnessSection].entry 0..* MS
 * section[compositionSection].section[pastIllnessSection].entry only Reference(JP_Condition)
 * section[compositionSection].section[pastIllnessSection].entry ^short = "既往歴をConditionリソースに記述して参照する。"
 * section[compositionSection].section[pastIllnessSection].entry ^definition = """既往歴をConditionリソースに記述して参照する。
@@ -646,7 +655,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[allergiesIIntoleranceSection] ^short = "アレルギー・不耐性反応セクション"
 * section[compositionSection].section[allergiesIIntoleranceSection] ^definition = "アレルギー・不耐性反応セクション"
 * section[compositionSection].section[allergiesIIntoleranceSection].title 1.. MS
-* section[compositionSection].section[allergiesIIntoleranceSection].title = "アレルギー・不耐性反応" (exactly)
+* section[compositionSection].section[allergiesIIntoleranceSection].title = "アレルギー・不耐性反応"
 * section[compositionSection].section[allergiesIIntoleranceSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[allergiesIIntoleranceSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[allergiesIIntoleranceSection].code 1.. MS
@@ -678,7 +687,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[allergiesIIntoleranceSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[allergiesIIntoleranceSection].mode ..0
 * section[compositionSection].section[allergiesIIntoleranceSection].orderedBy ..0
-* section[compositionSection].section[allergiesIIntoleranceSection].entry 0..*
+* section[compositionSection].section[allergiesIIntoleranceSection].entry 0..* MS
 * section[compositionSection].section[allergiesIIntoleranceSection].entry only Reference(JP_AllergyIntolerance)
 * section[compositionSection].section[allergiesIIntoleranceSection].entry ^short = "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照"
 * section[compositionSection].section[allergiesIIntoleranceSection].entry ^definition = """アレルギー・不耐性反応情報を記述して参照する。
@@ -694,7 +703,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[familiyHistorySection] ^short = "家族歴セクション"
 * section[compositionSection].section[familiyHistorySection] ^definition = "家族歴セクション"
 * section[compositionSection].section[familiyHistorySection].title 1.. MS
-* section[compositionSection].section[familiyHistorySection].title = "家族歴" (exactly)
+* section[compositionSection].section[familiyHistorySection].title = "家族歴"
 * section[compositionSection].section[familiyHistorySection].title ^short = "セクションタイトル"
 * section[compositionSection].section[familiyHistorySection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[familiyHistorySection].code 1.. MS
@@ -726,7 +735,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[familiyHistorySection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[familiyHistorySection].mode ..0
 * section[compositionSection].section[familiyHistorySection].orderedBy ..0
-* section[compositionSection].section[familiyHistorySection].entry 0..*
+* section[compositionSection].section[familiyHistorySection].entry 0..* MS
 * section[compositionSection].section[familiyHistorySection].entry only Reference(JP_FamilyMemberHistory)
 * section[compositionSection].section[familiyHistorySection].entry ^short = "家族歴情報を記述したFamilyMemberHistoryリソースを参照"
 * section[compositionSection].section[familiyHistorySection].entry ^definition = """家族歴情報情報を記述して参照する。
@@ -742,7 +751,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[admissinoPhysicalStatusSection] ^short = "身体所見セクション"
 * section[compositionSection].section[admissinoPhysicalStatusSection] ^definition = "身体所見セクション"
 * section[compositionSection].section[admissinoPhysicalStatusSection].title 1.. MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].title = "身体所見" (exactly)
+* section[compositionSection].section[admissinoPhysicalStatusSection].title = "身体所見"
 * section[compositionSection].section[admissinoPhysicalStatusSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[admissinoPhysicalStatusSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[admissinoPhysicalStatusSection].code 1.. MS
@@ -774,7 +783,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[admissinoPhysicalStatusSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[admissinoPhysicalStatusSection].mode ..0
 * section[compositionSection].section[admissinoPhysicalStatusSection].orderedBy ..0
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry 0..*
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry 0..* MS
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry ^short = "身体所見を記述したObservationリソースを参照"
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry ^definition = """身体所見を記述して参照する。
@@ -790,7 +799,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[infectiousDiseaseInformationSection] ^short = "感染症情報セクション"
 * section[compositionSection].section[infectiousDiseaseInformationSection] ^definition = "感染症情報セクション"
 * section[compositionSection].section[infectiousDiseaseInformationSection].title 1.. MS
-* section[compositionSection].section[infectiousDiseaseInformationSection].title = "感染症情報" (exactly)
+* section[compositionSection].section[infectiousDiseaseInformationSection].title = "感染症情報"
 * section[compositionSection].section[infectiousDiseaseInformationSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[infectiousDiseaseInformationSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[infectiousDiseaseInformationSection].code 1.. MS
@@ -822,7 +831,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[infectiousDiseaseInformationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[infectiousDiseaseInformationSection].mode ..0
 * section[compositionSection].section[infectiousDiseaseInformationSection].orderedBy ..0
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry 0..*
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry 0..* MS
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^short = "感染症情報を記述したObservationリソースを参照"
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^definition = """感染症情報を記述して参照する。
@@ -838,7 +847,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[socialHistorySection] ^short = "社会歴・生活習慣セクション"
 * section[compositionSection].section[socialHistorySection] ^definition = "社会歴・生活習慣セクション"
 * section[compositionSection].section[socialHistorySection].title 1.. MS
-* section[compositionSection].section[socialHistorySection].title = "社会歴・生活習慣" (exactly)
+* section[compositionSection].section[socialHistorySection].title = "社会歴・生活習慣"
 * section[compositionSection].section[socialHistorySection].title ^short = "セクションタイトル"
 * section[compositionSection].section[socialHistorySection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[socialHistorySection].code 1.. MS
@@ -870,7 +879,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[socialHistorySection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[socialHistorySection].mode ..0
 * section[compositionSection].section[socialHistorySection].orderedBy ..0
-* section[compositionSection].section[socialHistorySection].entry 0..*
+* section[compositionSection].section[socialHistorySection].entry 0..* MS
 * section[compositionSection].section[socialHistorySection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[socialHistorySection].entry ^short = "社会歴・生活習慣情報を記述したObservationリソースを参照"
 * section[compositionSection].section[socialHistorySection].entry ^definition = """社会歴・生活習慣情報を記述して参照する。
@@ -887,7 +896,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[immunizationSection] ^short = "予防接種歴セクション"
 * section[compositionSection].section[immunizationSection] ^definition = "予防接種歴セクション"
 * section[compositionSection].section[immunizationSection].title 1.. MS
-* section[compositionSection].section[immunizationSection].title = "予防接種歴" (exactly)
+* section[compositionSection].section[immunizationSection].title = "予防接種歴"
 * section[compositionSection].section[immunizationSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[immunizationSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[immunizationSection].code 1.. MS
@@ -919,7 +928,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[immunizationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[immunizationSection].mode ..0
 * section[compositionSection].section[immunizationSection].orderedBy ..0
-* section[compositionSection].section[immunizationSection].entry 0..*
+* section[compositionSection].section[immunizationSection].entry 0..* MS
 * section[compositionSection].section[immunizationSection].entry only Reference(JP_Immunization)
 * section[compositionSection].section[immunizationSection].entry ^short = "予防接種歴情報を記述したImmunizationリソースを参照"
 * section[compositionSection].section[immunizationSection].entry ^definition = """予防接種歴情報を記述して参照する。
@@ -936,7 +945,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[surgicalProcedureSection] ^short = "手術セクション"
 * section[compositionSection].section[surgicalProcedureSection] ^definition = "手術セクション"
 * section[compositionSection].section[surgicalProcedureSection].title 1.. MS
-* section[compositionSection].section[surgicalProcedureSection].title = "手術" (exactly)
+* section[compositionSection].section[surgicalProcedureSection].title = "手術"
 * section[compositionSection].section[surgicalProcedureSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[surgicalProcedureSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[surgicalProcedureSection].code 1.. MS
@@ -968,7 +977,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[surgicalProcedureSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[surgicalProcedureSection].mode ..0
 * section[compositionSection].section[surgicalProcedureSection].orderedBy ..0
-* section[compositionSection].section[surgicalProcedureSection].entry 0..*
+* section[compositionSection].section[surgicalProcedureSection].entry 0..* MS
 * section[compositionSection].section[surgicalProcedureSection].entry only Reference(JP_Procedure)
 * section[compositionSection].section[surgicalProcedureSection].entry ^short = "手術情報を記述したProcedureリソースを参照"
 * section[compositionSection].section[surgicalProcedureSection].entry ^definition = """手術情報を記述して参照する。
@@ -985,7 +994,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[bloodInfusionProcedureSection] ^short = "輸血歴セクション"
 * section[compositionSection].section[bloodInfusionProcedureSection] ^definition = "輸血歴セクション"
 * section[compositionSection].section[bloodInfusionProcedureSection].title 1.. MS
-* section[compositionSection].section[bloodInfusionProcedureSection].title = "輸血歴" (exactly)
+* section[compositionSection].section[bloodInfusionProcedureSection].title = "輸血歴"
 * section[compositionSection].section[bloodInfusionProcedureSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[bloodInfusionProcedureSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[bloodInfusionProcedureSection].code 1.. MS
@@ -1017,7 +1026,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[bloodInfusionProcedureSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[bloodInfusionProcedureSection].mode ..0
 * section[compositionSection].section[bloodInfusionProcedureSection].orderedBy ..0
-* section[compositionSection].section[bloodInfusionProcedureSection].entry 0..*
+* section[compositionSection].section[bloodInfusionProcedureSection].entry 0..* MS
 * section[compositionSection].section[bloodInfusionProcedureSection].entry only Reference(JP_Procedure)
 * section[compositionSection].section[bloodInfusionProcedureSection].entry ^short = "輸血歴情報を記述したProcedureリソースを参照"
 * section[compositionSection].section[bloodInfusionProcedureSection].entry ^definition = """輸血歴情報を記述して参照する。
@@ -1034,7 +1043,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[treatmentProcedureSection] ^short = "処置セクション"
 * section[compositionSection].section[treatmentProcedureSection] ^definition = "処置セクション"
 * section[compositionSection].section[treatmentProcedureSection].title 1.. MS
-* section[compositionSection].section[treatmentProcedureSection].title = "処置" (exactly)
+* section[compositionSection].section[treatmentProcedureSection].title = "処置"
 * section[compositionSection].section[treatmentProcedureSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[treatmentProcedureSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[treatmentProcedureSection].code 1.. MS
@@ -1066,7 +1075,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[treatmentProcedureSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[treatmentProcedureSection].mode ..0
 * section[compositionSection].section[treatmentProcedureSection].orderedBy ..0
-* section[compositionSection].section[treatmentProcedureSection].entry 0..*
+* section[compositionSection].section[treatmentProcedureSection].entry 0..* MS
 * section[compositionSection].section[treatmentProcedureSection].entry only Reference(JP_Procedure)
 * section[compositionSection].section[treatmentProcedureSection].entry ^short = "処置情報を記述したProcedureリソースを参照"
 * section[compositionSection].section[treatmentProcedureSection].entry ^definition = """処置情報を記述して参照する。
@@ -1083,7 +1092,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicationSection] ^short = "投薬指示セクション"
 * section[compositionSection].section[medicationSection] ^definition = "投薬指示セクション"
 * section[compositionSection].section[medicationSection].title 1.. MS
-* section[compositionSection].section[medicationSection].title = "投薬指示" (exactly)
+* section[compositionSection].section[medicationSection].title = "投薬指示"
 * section[compositionSection].section[medicationSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[medicationSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[medicationSection].code 1.. MS
@@ -1115,7 +1124,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[medicationSection].mode ..0
 * section[compositionSection].section[medicationSection].orderedBy ..0
-* section[compositionSection].section[medicationSection].entry 0..*
+* section[compositionSection].section[medicationSection].entry 0..* MS
 * section[compositionSection].section[medicationSection].entry only Reference(JP_MedicationRequest_ePrescriptionData)
 * section[compositionSection].section[medicationSection].entry ^short = "投薬指示情報を記述したMedicationRequestリソースを参照"
 * section[compositionSection].section[medicationSection].entry ^definition = """投薬指示情報を記述して参照する。
@@ -1132,7 +1141,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[examsStudySection] ^short = "検査結果セクション"
 * section[compositionSection].section[examsStudySection] ^definition = "検査結果セクション"
 * section[compositionSection].section[examsStudySection].title 1.. MS
-* section[compositionSection].section[examsStudySection].title = "検査結果" (exactly)
+* section[compositionSection].section[examsStudySection].title = "検査結果"
 * section[compositionSection].section[examsStudySection].title ^short = "セクションタイトル"
 * section[compositionSection].section[examsStudySection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[examsStudySection].code 1.. MS
@@ -1164,7 +1173,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[examsStudySection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[examsStudySection].mode ..0
 * section[compositionSection].section[examsStudySection].orderedBy ..0
-* section[compositionSection].section[examsStudySection].entry 0..*
+* section[compositionSection].section[examsStudySection].entry 0..* MS
 * section[compositionSection].section[examsStudySection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[examsStudySection].entry ^short = "検査結果情報を記述したObservationリソースを参照"
 * section[compositionSection].section[examsStudySection].entry ^definition = """検査結果情報を記述して参照する。
@@ -1181,7 +1190,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalCourseSection] ^short = "臨床経過セクション"
 * section[compositionSection].section[clinicalCourseSection] ^definition = "臨床経過セクション"
 * section[compositionSection].section[clinicalCourseSection].title 1.. MS
-* section[compositionSection].section[clinicalCourseSection].title = "臨床経過" (exactly)
+* section[compositionSection].section[clinicalCourseSection].title = "臨床経過"
 * section[compositionSection].section[clinicalCourseSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[clinicalCourseSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[clinicalCourseSection].code 1.. MS
@@ -1213,7 +1222,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalCourseSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[clinicalCourseSection].mode ..0
 * section[compositionSection].section[clinicalCourseSection].orderedBy ..0
-* section[compositionSection].section[clinicalCourseSection].entry 1..*
+* section[compositionSection].section[clinicalCourseSection].entry 1..* MS
 * section[compositionSection].section[clinicalCourseSection].entry only Reference(JP_DocumentReference)
 * section[compositionSection].section[clinicalCourseSection].entry ^short = "必須。臨床経過を記述したDocumentReferenceリソースを参照"
 * section[compositionSection].section[clinicalCourseSection].entry ^definition = """臨床経過を記述して参照する。
@@ -1227,7 +1236,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalInstructionSection] ^short = "診療方針指示セクション"
 * section[compositionSection].section[clinicalInstructionSection] ^definition = "診療方針指示セクション"
 * section[compositionSection].section[clinicalInstructionSection].title 1.. MS
-* section[compositionSection].section[clinicalInstructionSection].title = "診療方針指示" (exactly)
+* section[compositionSection].section[clinicalInstructionSection].title = "診療方針指示"
 * section[compositionSection].section[clinicalInstructionSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[clinicalInstructionSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[clinicalInstructionSection].code 1.. MS
@@ -1259,7 +1268,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalInstructionSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[clinicalInstructionSection].mode ..0
 * section[compositionSection].section[clinicalInstructionSection].orderedBy ..0
-* section[compositionSection].section[clinicalInstructionSection].entry 0..*
+* section[compositionSection].section[clinicalInstructionSection].entry 0..* MS
 * section[compositionSection].section[clinicalInstructionSection].entry only Reference(JP_CarePlan)
 * section[compositionSection].section[clinicalInstructionSection].entry ^short = "診療方針指示を記述したCarePlanリソースを参照"
 * section[compositionSection].section[clinicalInstructionSection].entry ^definition = """診療方針指示を記述して参照する。
@@ -1274,7 +1283,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicalDeviceSection] ^short = "医療機器セクション"
 * section[compositionSection].section[medicalDeviceSection] ^definition = "医療機器セクション"
 * section[compositionSection].section[medicalDeviceSection].title 1.. MS
-* section[compositionSection].section[medicalDeviceSection].title = "医療機器" (exactly)
+* section[compositionSection].section[medicalDeviceSection].title = "医療機器"
 * section[compositionSection].section[medicalDeviceSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[medicalDeviceSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[medicalDeviceSection].code 1.. MS
@@ -1306,7 +1315,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicalDeviceSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[medicalDeviceSection].mode ..0
 * section[compositionSection].section[medicalDeviceSection].orderedBy ..0
-* section[compositionSection].section[medicalDeviceSection].entry 0..*
+* section[compositionSection].section[medicalDeviceSection].entry 0..* MS
 * section[compositionSection].section[medicalDeviceSection].entry only Reference(JP_DeviceUseStatement)
 * section[compositionSection].section[medicalDeviceSection].entry ^short = "医療機器情報を記述したDocumentReferenceリソースを参照"
 * section[compositionSection].section[medicalDeviceSection].entry ^definition = """医療機器情報を記述して参照する。
@@ -1321,7 +1330,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[advanceDirectiveSection] ^short = "事前指示セクション"
 * section[compositionSection].section[advanceDirectiveSection] ^definition = "事前指示セクション"
 * section[compositionSection].section[advanceDirectiveSection].title 1.. MS
-* section[compositionSection].section[advanceDirectiveSection].title = "事前指示" (exactly)
+* section[compositionSection].section[advanceDirectiveSection].title = "事前指示"
 * section[compositionSection].section[advanceDirectiveSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[advanceDirectiveSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[advanceDirectiveSection].code 1.. MS
@@ -1353,7 +1362,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[advanceDirectiveSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[advanceDirectiveSection].mode ..0
 * section[compositionSection].section[advanceDirectiveSection].orderedBy ..0
-* section[compositionSection].section[advanceDirectiveSection].entry 0..*
+* section[compositionSection].section[advanceDirectiveSection].entry 0..* MS
 * section[compositionSection].section[advanceDirectiveSection].entry only Reference(JP_Consent)
 * section[compositionSection].section[advanceDirectiveSection].entry ^short = "事前指示を記述したConcentリソースを参照"
 * section[compositionSection].section[advanceDirectiveSection].entry ^definition = """事前指示を記述して参照する。
@@ -1368,7 +1377,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[researchParticipationSection] ^short = "臨床研究参加セクション"
 * section[compositionSection].section[researchParticipationSection] ^definition = "臨床研究参加セクション"
 * section[compositionSection].section[researchParticipationSection].title 1.. MS
-* section[compositionSection].section[researchParticipationSection].title = "臨床研究参加" (exactly)
+* section[compositionSection].section[researchParticipationSection].title = "臨床研究参加"
 * section[compositionSection].section[researchParticipationSection].title ^short = "セクションタイトル"
 * section[compositionSection].section[researchParticipationSection].title ^definition = "セクションタイトル。固定値。"
 * section[compositionSection].section[researchParticipationSection].code 1.. MS
@@ -1400,7 +1409,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[researchParticipationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[researchParticipationSection].mode ..0
 * section[compositionSection].section[researchParticipationSection].orderedBy ..0
-* section[compositionSection].section[researchParticipationSection].entry 0..*
+* section[compositionSection].section[researchParticipationSection].entry 0..* MS
 * section[compositionSection].section[researchParticipationSection].entry only Reference(JP_ResearchSubject)
 * section[compositionSection].section[researchParticipationSection].entry ^short = "臨床研究参加情報を記述したDocumentReferenceリソースを参照"
 * section[compositionSection].section[researchParticipationSection].entry ^definition = """臨床研究参加情報を記述して参照する。
