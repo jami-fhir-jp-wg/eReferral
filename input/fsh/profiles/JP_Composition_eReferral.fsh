@@ -113,7 +113,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 
 * author 2..3 MS
 * author ^slicing.discriminator.type = #profile
-* author ^slicing.discriminator.path = "resolve()"
+* author ^slicing.discriminator.path = "resolve(reference)"
 * author ^slicing.rules = #open
 * author ^short = "文書作成責任者と文書作成機関とへの参照。"
 * author ^definition = "文書作成責任者を表すPractitionerリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
@@ -121,9 +121,9 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
     authorPractitioner 1..1 MS 
 and authorOrganization 1..1 MS
 and authorDepartment 0..1 MS
-* author[authorPractitioner] = Reference(JP_Practitioner)
-* author[authorOrganization] = Reference(JP_Organization)
-* author[authorDepartment] = Reference(JP_Organization)
+* author[authorPractitioner] = Reference(JP_Practitioner_eClinicalSummary)
+* author[authorOrganization] = Reference(JP_Organization_eClinicalSummary)
+* author[authorDepartment] = Reference(JP_Organization_eClinicalSummary_department)
 
 * title 1..1 MS
 * title = "診療情報提供書" (exactly)
@@ -131,10 +131,10 @@ and authorDepartment 0..1 MS
 * custodian 1..1 MS
 * custodian ^short = "文書の作成・修正を行い、文書の管理責任を持つ医療機関（Organizationリソース）への参照"
 * custodian ^definition = "文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表すOrganizationリソースへの参照となる。文書作成機関とは異なる組織である場合は、文書作成機関とは別のOrganizationリソースで表現し、custodian要素からはそのOrganizationリソースを参照する。"
-* custodian = Reference(JP_Organization)
 * custodian.reference 1..1
 * custodian.reference ^short = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。"
 * custodian.reference ^definition = "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。\r\n例：\"urn:uuid:179f9f7f_e546_04c2_6888_a9e0b24e5720\""
+* custodian = Reference(JP_Organization)
 
 * event 1..1 MS
 * event ^short = "診療情報提供書の発行イベントの情報"
