@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Communication-CommunicationContent",
+  "url": "http://jpfhir.jp/fhir/eReferral/Extension/StructureDefinition/JP_Communication_CommunicationContent",
+  "version": "0.9.1",
+  "name": "JP_Communication_CommunicationContent",
+  "status": "draft",
+  "description": "処方箋備考情報のための拡張プロファイル",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Communication"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "definition": "処方箋備考情報のための拡張プロファイル"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://jpfhir.jp/fhir/eReferral/Extension/StructureDefinition/JP_Communication_CommunicationContent"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

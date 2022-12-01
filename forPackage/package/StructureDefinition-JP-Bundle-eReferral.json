@@ -1,0 +1,746 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Bundle-eReferral",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral",
+  "version": "0.9.1",
+  "name": "JP_Bundle_eReferral",
+  "status": "active",
+  "description": "診療情報提供書のための文書 Bundleリソース",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "short": "診療情報提供書のための文書 Bundleリソース",
+        "definition": "診療情報提供書のための文書 Bundleリソース"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "short": "この文書Bundleの固定識別番号。Bundle作成時にシステムが設定し、サーバ間で移動、コピーされても変更されないID。",
+        "definition": "この文書Bundleの固定識別番号。identifierがグローバルに一意になるように生成される必要がある。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "definition": "このバンドルの目的コード。本プロファイルでは document 固定とする。\r\n（document | message | transaction | transaction_response | batch | batch_response | history | searchset | collection）",
+        "fixedCode": "document",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "short": "このバンドルリソースのインスタンスが作成された日時。",
+        "definition": "このリソースを生成した日時。時刻の精度はミリ秒とし、タイムゾーンを含めること。　例：\"2021-02-01T13:28:17.239+09:00\"",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resource"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 6
+      },
+      {
+        "id": "Bundle.entry:composition",
+        "path": "Bundle.entry",
+        "sliceName": "composition",
+        "short": "documentタイプのBundleリソースの先頭entryはCompositionリソース。",
+        "definition": "compositionリソースのエントリー。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:composition.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "埋め込まれているCompositionリソースを一意に識別するためのUUID",
+        "definition": "埋め込まれているCompositionリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:composition.resource",
+        "path": "Bundle.entry.resource",
+        "short": "Compositionリソースのインスタンス本体",
+        "definition": "Compositionリソースのインスタンス本体。",
+        "min": 1,
+        "type": [
+          {
+            "code": "Composition",
+            "profile": [
+              "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:composition.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:composition.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:composition.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:patient",
+        "path": "Bundle.entry",
+        "sliceName": "patient",
+        "short": "Patientリソース",
+        "definition": "Patientリソースのエントリー。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:patient.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "埋め込まれているPatientリソースを一意に識別するためのUUID",
+        "definition": "埋め込まれているPatientリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:patient.resource",
+        "path": "Bundle.entry.resource",
+        "short": "Patientリソースのインスタンス本体",
+        "definition": "Patientリソースのインスタンス本体。",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eClinicalSummary"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:patient.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:patient.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:patient.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eferralDoctorAndauthorisedAuthor",
+        "path": "Bundle.entry",
+        "sliceName": "eferralDoctorAndauthorisedAuthor",
+        "short": "正当な権限があって文書を作成した個人や紹介先／元医師の情報",
+        "definition": "正当な権限があって文書を作成した個人や紹介先／元医師を表すPractitionerリソースで記述する。\r\nauthorisedAuthorRole要素が参照するPractitionerRoleから参照される。",
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:eferralDoctorAndauthorisedAuthor.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "埋め込まれているPractitionerリソースを一意に識別するためのUUID",
+        "definition": "埋め込まれているPractitionerリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:eferralDoctorAndauthorisedAuthor.resource",
+        "path": "Bundle.entry.resource",
+        "short": "Practitionerリソースのインスタンス本体",
+        "definition": "Practitionerリソースのインスタンス本体。",
+        "min": 1,
+        "type": [
+          {
+            "code": "Practitioner",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary_author"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:eferralDoctorAndauthorisedAuthor.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eferralDoctorAndauthorisedAuthor.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:eferralDoctorAndauthorisedAuthor.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organizaiton",
+        "path": "Bundle.entry",
+        "sliceName": "organizaiton",
+        "short": "紹介先／元医療機関／文書作成機関／文書管理機関",
+        "definition": "紹介先／元医療機関",
+        "min": 2,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:organizaiton.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:organizaiton.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organizaiton.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:organizaiton.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:department",
+        "path": "Bundle.entry",
+        "sliceName": "department",
+        "short": "紹介先／元医療機関／文書作成機関の診療科",
+        "definition": "紹介先／元医療機関／文書作成機関の診療科",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:department.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:department.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:department.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:department.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry:referralEncounter",
+        "path": "Bundle.entry",
+        "sliceName": "referralEncounter",
+        "short": "紹介目的や受診時状況のEncounterリソースを参照",
+        "definition": "紹介目的や受診時状況のEncounterリソースを参照。",
+        "min": 0,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:referralEncounter.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Encounter",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:problem",
+        "path": "Bundle.entry",
+        "sliceName": "problem",
+        "short": "必須。傷病名・主訴／現病歴／既往歴を１個以上必ず記述する。",
+        "definition": "必須。傷病名・主訴／現病歴／既往歴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:problem.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Condition",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:allergy",
+        "path": "Bundle.entry",
+        "sliceName": "allergy",
+        "short": "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照",
+        "definition": "アレルギー・不耐性反応情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:allergy.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "AllergyIntolerance",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:familyHistory",
+        "path": "Bundle.entry",
+        "sliceName": "familyHistory",
+        "short": "家族歴情報を記述したFamilyMemberHistoryリソースを参照",
+        "definition": "家族歴情報情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:familyHistory.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "FamilyMemberHistory",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_FamilyMemberHistory_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:observation",
+        "path": "Bundle.entry",
+        "sliceName": "observation",
+        "short": "身体所見／感染症情報／社会歴・生活習慣情報／検査結果を記述したObservationリソースを参照",
+        "definition": "身体所見／感染症情報／社会歴・生活習慣情報／検査結果を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:observation.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Observation",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:immunization",
+        "path": "Bundle.entry",
+        "sliceName": "immunization",
+        "short": "予防接種歴情報を記述したImmunizationリソースを参照",
+        "definition": "予防接種歴情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:immunization.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Immunization",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Immunization_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:procedure",
+        "path": "Bundle.entry",
+        "sliceName": "procedure",
+        "short": "手術処置/輸血歴情報/処置等を記述したProcedureリソースを参照",
+        "definition": "手術処置/輸血歴情報/処置等を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:procedure.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Procedure",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Procedure_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:medicationRequest",
+        "path": "Bundle.entry",
+        "sliceName": "medicationRequest",
+        "short": "処方情報を記述したMedicationStatementリソースを参照",
+        "definition": "処方情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:medicationRequest.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "MedicationRequest",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:documentReference",
+        "path": "Bundle.entry",
+        "sliceName": "documentReference",
+        "short": "DocumentReferenceリソースを参照",
+        "definition": "臨床経過を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:documentReference.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "DocumentReference",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:carePlan",
+        "path": "Bundle.entry",
+        "sliceName": "carePlan",
+        "short": "診療方針指示を記述したCarePlanリソースを参照",
+        "definition": "診療方針指示を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:carePlan.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "CarePlan",
+            "profile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_CarePlan_eClinicalSummary"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:medicalDeviceUse",
+        "path": "Bundle.entry",
+        "sliceName": "medicalDeviceUse",
+        "short": "医療機器の使用状況を記述したDeviceUseStatementリソースを参照",
+        "definition": "医療機器の使用状況を記述したDeviceUseStatementリソースを参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:medicalDeviceUse.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "DeviceUseStatement",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DeviceUseStatement"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:medicalDevice",
+        "path": "Bundle.entry",
+        "sliceName": "medicalDevice",
+        "short": "医療機器情報を記述したDeviceリソースを参照",
+        "definition": "医療機器情報を記述したDeviceリソースを参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:medicalDevice.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Device",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:imageStudy",
+        "path": "Bundle.entry",
+        "sliceName": "imageStudy",
+        "short": "画像検査情報を記述したImagingStudyリソースを参照",
+        "definition": "画像検査医療機器情報を記述したImagingStudyリソースを参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:imageStudy.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "ImagingStudy",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:diagReport",
+        "path": "Bundle.entry",
+        "sliceName": "diagReport",
+        "short": "診断レポート情報を記述したDiagnosticReportリソースを参照",
+        "definition": "診断レポート情報を記述したDiagnosticReportリソースを参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:diagReport.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "DiagnosticReport",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_Common"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:advancedDirective",
+        "path": "Bundle.entry",
+        "sliceName": "advancedDirective",
+        "short": "事前指示を記述したConcentリソースを参照",
+        "definition": "事前指示を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:advancedDirective.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Consent",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:researchSubject",
+        "path": "Bundle.entry",
+        "sliceName": "researchSubject",
+        "short": "臨床研究参加情報者を記述したResearchSubject_リソースを参照",
+        "definition": "臨床研究参加者情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:researchSubject.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "ResearchSubject",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchSubject"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:researchStudy",
+        "path": "Bundle.entry",
+        "sliceName": "researchStudy",
+        "short": "臨床研究情報を記述したResearchStudyリソースを参照",
+        "definition": "臨床研究情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:researchStudy.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "ResearchStudy",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchStudy"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:relatedPerson",
+        "path": "Bundle.entry",
+        "sliceName": "relatedPerson",
+        "short": "親族情報を記述したRelatedPersonリソースを参照",
+        "definition": "親族情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:relatedPerson.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "RelatedPerson",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_RelatedPerson"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Bundle.entry:binaryData",
+        "path": "Bundle.entry",
+        "sliceName": "binaryData",
+        "short": "各種備考参照情報を記述したBinaryリソースを参照",
+        "definition": "各種備考参照情報を記述して参照する。",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:binaryData.resource",
+        "path": "Bundle.entry.resource",
+        "type": [
+          {
+            "code": "Binary",
+            "profile": [
+              "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Binary"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

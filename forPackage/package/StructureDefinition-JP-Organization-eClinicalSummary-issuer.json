@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Organization-eClinicalSummary-issuer",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Entities"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_issuer",
+  "version": "0.9.1",
+  "name": "JP_Organization_eClinicalSummary_issuer",
+  "status": "active",
+  "description": "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "constraint": [
+          {
+            "key": "checkPhoneNumberExists",
+            "severity": "error",
+            "human": "【telecomに電話番号が最低ひとつ記述されている】",
+            "expression": "(telecom.where(value.exists())).exists()",
+            "source": "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_issuer"
+          }
+        ]
+      },
+      {
+        "id": "Organization.telecom",
+        "path": "Organization.telecom",
+        "short": "医療機関電話番号。電話番号は最低１件必ず記述されること。",
+        "min": 1
+      },
+      {
+        "id": "Organization.address",
+        "path": "Organization.address",
+        "short": "医療機関住所 診療情報提供書の発行組織では必須",
+        "definition": "医療機関住所 診療情報提供書の発行組織では必須",
+        "min": 1
+      }
+    ]
+  }
+}

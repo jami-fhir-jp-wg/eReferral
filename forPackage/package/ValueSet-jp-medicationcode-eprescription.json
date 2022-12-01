@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "JP_MedicationCode_ePrescription",
+  "id": "jp-medicationcode-eprescription",
+  "title": "JP MedicationCode ePrescription ValueSet",
+  "description": "医薬品処方コードの値セット 処方情報規格用",
+  "version": "0.9.1",
+  "url": "http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-medicationcode",
+  "experimental": false,
+  "date": "2022-11-07",
+  "copyright": "Copyright JAMI FHIR日本実装WG/Kazuhiko Ohe",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:1.2.392.100495.20.1.81"
+      },
+      {
+        "system": "urn:oid:1.2.392.200119.4.403.2"
+      },
+      {
+        "system": "urn:oid:1.2.392.200119.4.403.1"
+      },
+      {
+        "system": "urn:oid:1.2.392.100495.20.1.73"
+      },
+      {
+        "system": "urn:oid:2.51.1.1"
+      }
+    ]
+  }
+}

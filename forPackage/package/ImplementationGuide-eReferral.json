@@ -1,0 +1,839 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "eReferral",
+  "url": "http://jpfhir.jp/fhir/eReferral/ImplementationGuide/eReferral",
+  "version": "0.9.1",
+  "name": "JAMIeReferralImplementationGuide",
+  "title": "JAMI eReferral ImplementationGuide",
+  "status": "draft",
+  "publisher": "Kazuhiko Ohe@JAMI",
+  "contact": [
+    {
+      "name": "Kazuhiko Ohe@JAMI",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://jpfhir.jp"
+        }
+      ]
+    }
+  ],
+  "description": "JAMI eReferral ImplementationGuide",
+  "packageId": "eReferral",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "jp-core.r4",
+      "uri": "http://jpfhir.jp/fhir/core/ImplementationGuide/jp-core.r4",
+      "version": "1.1.1-snap",
+      "id": "jp_core_r4"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-AllergyIntolerance-eClinicalSummary"
+        },
+        "name": "JP_AllergyIntolerance_eClinicalSummary",
+        "description": "Dummy for JP-Core",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Binary"
+        },
+        "name": "JP_Binary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Bundle-eReferral"
+        },
+        "name": "JP_Bundle_eReferral",
+        "description": "診療情報提供書のための文書 Bundleリソース",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-CarePlan"
+        },
+        "name": "JP_CarePlan",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-CarePlan-eClinicalSummary"
+        },
+        "name": "JP_CarePlan_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Composition-eReferral"
+        },
+        "name": "JP_Composition_eReferral",
+        "description": "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Condition-eClinicalSummary"
+        },
+        "name": "JP_Condition_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Consent"
+        },
+        "name": "JP_Consent",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Consent-eClinicalSummary"
+        },
+        "name": "JP_Consent_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Device"
+        },
+        "name": "JP_Device",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-DeviceUseStatement"
+        },
+        "name": "JP_DeviceUseStatement",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-DeviceUseStatement-eClinicalSummary"
+        },
+        "name": "JP_DeviceUseStatement_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-DocumentReference"
+        },
+        "name": "JP_DocumentReference",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-DocumentReference-CDAdocument"
+        },
+        "name": "JP_DocumentReference_CDAdocument",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-DocumentReference-eClinicalSummary"
+        },
+        "name": "JP_DocumentReference_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Encounter-eClinicalSummary"
+        },
+        "name": "JP_Encounter_eClinicalSummary",
+        "description": "診療情報提供では、紹介理由を記述するEncouter情報　JP_Encounterの派生プロファイル。診療サマリーではサマリー対象となる受診や入院に関する情報。",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-FamilyMemberHistory-eClinicalSummary"
+        },
+        "name": "JP_FamilyMemberHistory",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Immunization"
+        },
+        "name": "JP_Immunization",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Immunization-eClinicalSummary"
+        },
+        "name": "JP_Immunization_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-MedicationRequest-ePrescriptionData"
+        },
+        "name": "JP MedicationRequest ePrescriptionData Profile",
+        "description": "処方オーダ情報　JP_MedicationRequestの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-MedicationStatement"
+        },
+        "name": "JP_MedicationStatement",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Observation-eClinicalSummary"
+        },
+        "name": "JP_Observation_Common_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Organization-eClinicalSummary"
+        },
+        "name": "JP_Organization_eClinicalSummary",
+        "description": "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Organization-eClinicalSummary-department"
+        },
+        "name": "JP_Organization_eClinicalSummary_department",
+        "description": "医療機関の診療科情報　JP_Organizationの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Organization-eClinicalSummary-departmentOfissuer"
+        },
+        "name": "JP_Organization_eClinicalSummary_departmentOfIssuer",
+        "description": "医療文書を発行した医療機関の診療科情報　JP_Organizationの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Organization-eClinicalSummary-issuer"
+        },
+        "name": "JP_Organization_eClinicalSummary_issuer",
+        "description": "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Patient-eClinicalSummary"
+        },
+        "name": "JP_Patient_eClinicalSummary",
+        "description": "対象患者のPatientプロファイル　JP_Patientの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-PractitionerRole-eClinicalSummary-author"
+        },
+        "name": "JP_PractitionerRole_eClinicalSummary_author",
+        "description": "処方を発行した医療者の資格情報　JP_PractitionerRole の派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Practitioner-eClinicalSummary"
+        },
+        "name": "JP_Practitioner_eClinicalSummary",
+        "description": "処方を作成した医師情報　JP_Practitionerの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Practitioner-eClinicalSummary-author"
+        },
+        "name": "JP_Practitioner_eClinicalSummary_author",
+        "description": "処方を作成した医師情報　JP_Practitionerの派生プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Procedure-eClinicalSummary"
+        },
+        "name": "JP_Procedure_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-RelatedPerson"
+        },
+        "name": "JP_RelatedPerson",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-ResearchStudy"
+        },
+        "name": "JP_ResearchStudy",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-ResearchSubject"
+        },
+        "name": "JP_ResearchSubject",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-ResearchSubject-eClinicalSummary"
+        },
+        "name": "JP_ResearchSubject_eClinicalSummary",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/JP-Communication-CommunicationContent"
+        },
+        "name": "JP_Communication_CommunicationContent",
+        "description": "処方箋備考情報のための拡張プロファイル",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/jp-medicationrequest-dispenserequest-instructionfordispense"
+        },
+        "name": "JP Core MedicationRequest DispenseRequest InstructionForDispense Extension",
+        "description": "調剤指示。薬剤単位の調剤指示を表現するための拡張",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jami-valueSet-ePreDispenseInstruction"
+        },
+        "name": "JAMI_valueSet_ePreDispenseInstruction",
+        "description": "調剤指示コード（備考欄）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jami-valueSet-ePreOrderUsageCode-16digits"
+        },
+        "name": "JAMI_valueSet_ePreOrderUsageCode_16digits",
+        "description": "JAMI16桁用法コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jp-medicationcode-eprescription"
+        },
+        "name": "JP MedicationCode ePrescription ValueSet",
+        "description": "医薬品処方コードの値セット 処方情報規格用",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jp-valueSet-documentTypeCode"
+        },
+        "name": "doc-typecodes",
+        "description": "FHIR文書の文書区分（医療文書全般）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/jp-valueSet-medicationCode-gs1-14"
+        },
+        "name": "JP_valueSet_medicationCode_gs1_14",
+        "description": "医薬品コードGTIN 14桁",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mhlw-valueSet-ePreCDA-insuranceCategory-tbl11"
+        },
+        "name": "MHLW_valueSet_ePreCDA_insuranceCategory_tbl11",
+        "description": "厚労省電子処方CDA規格別表11 保険種別コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jami-codeSystem-ePreBasicUsageMethod-OneDigit"
+        },
+        "name": "JAMI_codeSystem_ePreBasicUsageMethod_OneDigit",
+        "description": "JAMI標準基本用法区分コード1桁",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jami-codeSystem-ePreDetailUsageMethod-TwoDigits"
+        },
+        "name": "JAMI_codeSystem_ePreDetailUsageMethod_TwoDigits",
+        "description": "JAMI標準投与方法区分コード2桁",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jami-codeSystem-ePreDispenseInstruction"
+        },
+        "name": "JAMI_codeSystem_ePreDispenseInstruction",
+        "description": "調剤指示コード（備考欄）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jami-codeSystem-ePreOrderUsageAuxCode"
+        },
+        "name": "JAMI_codeSystem_ePreOrderUsageAuxCode",
+        "description": "JAMI補足用法コード8桁",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jami-codeSystem-ePreSiteCode"
+        },
+        "name": "JAMI_codeSystem_ePreSiteCode",
+        "description": "JAMI標準用法部位コード（３桁）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jami-codeSystem-ePreUsageRoute"
+        },
+        "name": "JAMI_codeSystem_ePreUsageRoute",
+        "description": "HL7医薬品投与経路コード（JAHIS 使用者定義表 0162 投薬経路）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-documentTypeCode"
+        },
+        "name": "JP_codeSystem_documentTypeCode",
+        "description": "FHIR文書の文書区分（医療文書全般）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-ePreCommunication-category"
+        },
+        "name": "JP_codeSystem_ePreCommunication_category",
+        "description": "処方箋備考区分",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-ePrescription-section"
+        },
+        "name": "JP_codeSystem_ePrescription_section",
+        "description": "処方セクション区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-eReferral-document-section"
+        },
+        "name": "JP_codeSystem_eReferral_document_section",
+        "description": "処方セクション区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-insurerNumber"
+        },
+        "name": "JP_codeSystem_insurerNumber",
+        "description": "保険者番号",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-eReferral-mimetype"
+        },
+        "name": "JP_codeSystem_mimetype",
+        "description": "mime type",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-practitioner-certificate-category"
+        },
+        "name": "JP_codeSystem_practitioner_certificate_category",
+        "description": "医療従事者資格種別",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-prefectureNumber"
+        },
+        "name": "JP_codeSystem_prefectureNumber",
+        "description": "都道府県番号",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-prescription-category"
+        },
+        "name": "JP_codeSystem_prescription_category",
+        "description": "処方箋区分コード　（01:一般処方箋、02:麻薬処方箋、03:分割一般処方）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/jp-codeSystem-publicPyerNumber"
+        },
+        "name": "JP_codeSystem_publicPyerNumber",
+        "description": "公費負担者番号",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-claimOrganizationCategory-tbl22"
+        },
+        "name": "MHLW_codeSystem_claimOrganizationCategory_tbl22",
+        "description": "厚労省電子処方CDA規格別別表２２ 点数表番号",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-claimOrganizationNo7digits-tbl23"
+        },
+        "name": "MHLW_codeSystem_claimOrganizationNo7digits_tbl23",
+        "description": "厚労省電子処方CDA規格別別表２３ 保険医療機関番号（7桁）",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-drugUnitAbbr-tbl20"
+        },
+        "name": "MHLW_codeSystem_drugUnitAbbr_tbl20",
+        "description": "厚労省電子処方CDA規格別表２０\t医薬品単位略号",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-clinicalDepartment-tbl10"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_clinicalDepartment_tbl10",
+        "description": "厚労省電子処方CDA規格別表10 診療科コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-documentCategory-tbl011"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_documentCategory_tbl01",
+        "description": "厚労省電子処方CDA規格別表１ 文書区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-drugDosageStrength-tbl04"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_drugDosageStrength_tbl04",
+        "description": "厚労省電子処方CDA規格別表4 力価区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-drugUsageForm-tbl03"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_drugsageForm_tbl03",
+        "description": "厚労省電子処方CDA規格別表3  剤形区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-instructionResidual-tbl09"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_instructionResidual_tbl09",
+        "description": "厚労省電子処方CDA規格別表9 残薬確認指示コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-insuranceCategory-tbl11"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_insuranceCategory_tbl11",
+        "description": "厚労省電子処方CDA規格別表11 保険種別コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-insuredCoPayCategory-tbl13"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_insuredCoPayCategory_tbl13",
+        "description": "厚労省電子処方CDA規格別表13 患者一部負担コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-insuredRelationship-tbl12"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_insuredRelationship_tbl12",
+        "description": "厚労省電子処方CDA規格別表12 被保険者区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-sectionCategory-tbl02"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_sectionCategory_tbl02",
+        "description": "厚労省電子処方CDA規格別表2 セクション区分コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/mhlw-codeSystem-ePreCDA-unable2Change2Generic-tbl08"
+        },
+        "name": "MHLW_codeSystem_ePreCDA_unable2Change2Generic_tbl08",
+        "description": "厚労省電子処方CDA規格別表8 後発品変更不可コード",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Encounter/JP-Encounter-ePreData-Example"
+        },
+        "name": "JP-Encounter-ePreData-Example",
+        "description": "受診情報Encounterリソースのインスタンス例（外来）",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/JP-Organization-eReferral-departmentOfIssuer-Example"
+        },
+        "name": "JP-Organization-eReferral-departmentOfIssuer-Example",
+        "description": "発行の診療科　 Organizationリソースのインスタンス例（診療科コードがある例）",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/JP-Organization-eReferral-departmentOfIssuer-ExampleType2"
+        },
+        "name": "JP-Organization-eReferral-departmentOfIssuer-ExampleType2",
+        "description": "発行の診療科　 Organizationリソースのインスタンス例（診療科コードがない例）",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/JP-Organization-eReferral-issuer-Example"
+        },
+        "name": "JP-Organization-eReferral-issuer-Example",
+        "description": "発行の医療機関　 Organizationリソースのインスタンス例",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/JP-Patient-eReferral-Example"
+        },
+        "name": "JP-Patient-eReferral-Example",
+        "description": "対象の患者 Patientリソースのインスタンス例",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/JP-Practitioner-eReferral-author-Example"
+        },
+        "name": "JP-Practitioner-eReferral-author-Example",
+        "description": "作成した医師 Practitionerリソースのインスタンス例（医師免許番号あり）",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/JP-PractitionerRole-eReferral-author-Example"
+        },
+        "name": "JP-PractitionerRole-eReferral-author-Example",
+        "description": "処方した医師の役割 PractitionerRoleリソースのインスタンス例",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "診療情報提供書HL7&reg; FHIR&reg;記述仕様書 第1版",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "eReferralTables.html",
+          "title": "各表一覧",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2022+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      },
+      {
+        "code": "path-resource",
+        "value": "input/resources"
+      },
+      {
+        "code": "path-resource",
+        "value": "fsh-generated/resources"
+      },
+      {
+        "code": "path-pages",
+        "value": "input/pagecontent"
+      },
+      {
+        "code": "path-pages",
+        "value": "fsh-generated/includes"
+      },
+      {
+        "code": "path-expansion-params",
+        "value": "../../input/_resources/exp-params.json"
+      },
+      {
+        "code": "active-tables",
+        "value": "false"
+      },
+      {
+        "code": "apply-version",
+        "value": "true"
+      },
+      {
+        "code": "apply-copyright",
+        "value": "true"
+      },
+      {
+        "code": "apply-publisher",
+        "value": "true"
+      },
+      {
+        "code": "apply-contact",
+        "value": "true"
+      },
+      {
+        "code": "apply-licese",
+        "value": "true"
+      },
+      {
+        "code": "apply-jurisdiction",
+        "value": "true"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "true"
+      },
+      {
+        "code": "usage-stats-opt-out",
+        "value": "true"
+      },
+      {
+        "code": "excludexml",
+        "value": "true"
+      },
+      {
+        "code": "excludejsn",
+        "value": "false"
+      },
+      {
+        "code": "excludettl",
+        "value": "true"
+      },
+      {
+        "code": "excludemap",
+        "value": "true"
+      },
+      {
+        "code": "excludeexample",
+        "value": "false"
+      },
+      {
+        "code": "generate",
+        "value": "json"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Bundle_CCLIX"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DeviceUseStatement"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_DocumentReference"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Encounter_eReferral"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_FamilyMemberHistory"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_MedicationRequest_eReferral"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_departmentOfIssuer"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_issuer"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Patient_CCLIX"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Patient_eReferral"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Practitioner_eReferral_author"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_PractitionerRole_eReferral_author"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_JResearchSubject"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/eReferral/Extension/StructureDefinition/JP_Communication_CommunicationContent"
+      },
+      {
+        "code": "special-url",
+        "value": "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense"
+      }
+    ]
+  }
+}
