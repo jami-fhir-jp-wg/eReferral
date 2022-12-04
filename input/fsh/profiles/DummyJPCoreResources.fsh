@@ -40,7 +40,7 @@ Id:             JP-Immunization-eClinicalSummary
 
 Profile:        JP_ImagingStudy_Radiology_eClinicalSummary
 Parent:			JP_ImagingStudy_Radiology
-Id:             JP-ImagingStudy_Radiology-eClinicalSummary
+Id:             JP-ImagingStudy-Radiology-eClinicalSummary
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eClinicalSummary"
 
 Profile:        JP_MedicationStatement
@@ -121,12 +121,7 @@ Id:             JP-RelatedPerson
 Profile:        JP_RelatedPerson_eClinicalSummary
 Parent:			JP_RelatedPerson
 Id:             JP-RelatedPerson-eClinicalSummary
-* ^url = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_RelatedPerson_eClinicalSummary
-
-Profile:        JP_ObservationCommon_eClinicalSummary
-Parent:			JP_ObservationCommon
-Id:             JP-ObservationCommon-eClinicalSummary
-* ^url = http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ObservationCommon_eClinicalSummary
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_RelatedPerson_eClinicalSummary"
 
 Profile:        JP_Binary
 Parent:			Binary
