@@ -9,7 +9,7 @@ Profile: JP_Organization_eClinicalSummary
 Parent: JP_Organization
 Id: JP-Organization-eClinicalSummary
 Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
-* obeys checkPhoneNumberExists
+//* obeys checkPhoneNumberExists
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
 * ^status = #active
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
