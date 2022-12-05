@@ -27,9 +27,9 @@ Description: "診療情報提供書のための文書 Bundleリソース"
 * entry contains
     composition 1..1 MS  // 文書構成情報
 and patient 1..1 MS  //  患者情報
-and authorisedAuthor 1..1 MS
-and organizaiton 1..* MS
-and organizaitonFrom 1..* MS
+and practitioners 1..2 MS
+and organization 2..2 MS
+//and organizationFrom 1..* MS
 and department 0..* MS
 and departmentOfissuer  0..* MS
 //and referralDoctor 1..* MS
@@ -80,32 +80,32 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[patient].request ..0
 * entry[patient].response ..0
 
-* entry[authorisedAuthor] ^short = "正当な権限があって文書を作成した個人の情報"
-* entry[authorisedAuthor] ^definition = "正当な権限があって文書を作成した個人を表すPractitionerリソースで記述する。\r\nauthorisedAuthorRole要素が参照するPractitionerRoleから参照される。"
-* entry[authorisedAuthor].fullUrl 1.. MS
-* entry[authorisedAuthor].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
-* entry[authorisedAuthor].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
-* entry[authorisedAuthor].resource 1.. MS
-* entry[authorisedAuthor].resource only JP_Practitioner_eClinicalSummary
-* entry[authorisedAuthor].resource ^short = "Practitionerリソースのインスタンス本体"
-* entry[authorisedAuthor].resource ^definition = "Practitionerリソースのインスタンス本体。"
-* entry[authorisedAuthor].search ..0
-* entry[authorisedAuthor].request ..0
-* entry[authorisedAuthor].response ..0
+* entry[practitioners] ^short = "正当な権限があって文書を作成した個人の情報"
+* entry[practitioners] ^definition = "正当な権限があって文書を作成した個人を表すPractitionerリソースで記述する。\r\nauthorisedAuthorRole要素が参照するPractitionerRoleから参照される。"
+* entry[practitioners].fullUrl 1.. MS
+* entry[practitioners].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
+* entry[practitioners].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
+* entry[practitioners].resource 1.. MS
+* entry[practitioners].resource only JP_Practitioner_eClinicalSummary
+* entry[practitioners].resource ^short = "Practitionerリソースのインスタンス本体"
+* entry[practitioners].resource ^definition = "Practitionerリソースのインスタンス本体。"
+* entry[practitioners].search ..0
+* entry[practitioners].request ..0
+* entry[practitioners].response ..0
 
-* entry[organizaiton].resource only JP_Organization_eClinicalSummary
-* entry[organizaiton] ^short = "紹介先／元医療機関／文書作成機関／文書管理機関"
-* entry[organizaiton] ^definition = "紹介先／元医療機関"
-* entry[organizaiton].search ..0
-* entry[organizaiton].request ..0
-* entry[organizaiton].response ..0
+* entry[organization].resource only JP_Organization_eClinicalSummary
+* entry[organization] ^short = "紹介先／元医療機関／文書作成機関／文書管理機関"
+* entry[organization] ^definition = "紹介先／元医療機関"
+* entry[organization].search ..0
+* entry[organization].request ..0
+* entry[organization].response ..0
 
-* entry[organizaitonFrom].resource only JP_Organization_eClinicalSummary_issuer
-* entry[organizaitonFrom] ^short = "紹介元医療機関／文書作成機関／文書管理機関"
-* entry[organizaitonFrom] ^definition = "紹介元医療機関"
-* entry[organizaitonFrom].search ..0
-* entry[organizaitonFrom].request ..0
-* entry[organizaitonFrom].response ..0
+//* entry[organizationFrom].resource only JP_Organization_eClinicalSummary_issuer
+//* entry[organizationFrom] ^short = "紹介元医療機関／文書作成機関／文書管理機関"
+//* entry[organizationFrom] ^definition = "紹介元医療機関"
+//* entry[organizationFrom].search ..0
+//* entry[organizationFrom].request ..0
+//* entry[organizationFrom].response ..0
 
 * entry[department].resource only JP_Organization_eClinicalSummary_department
 * entry[department] ^short = "紹介先／元医療機関／文書作成機関の診療科"

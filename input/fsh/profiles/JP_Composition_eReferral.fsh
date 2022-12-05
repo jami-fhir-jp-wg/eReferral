@@ -205,12 +205,12 @@ and authorDepartment 0..1 MS
 * section[referralToSection].entry  ^slicing.discriminator.path = "resolve()"
 * section[referralToSection].entry  ^slicing.rules = #open
 * section[referralToSection].entry contains
-    referralToOrganizaiton  1..1 MS
+    referralToOrganization  1..1 MS
     and referralToDepartment    0..1 MS
     and referralToDoctor    0..1 MS
-* section[referralToSection].entry[referralToOrganizaiton] only Reference(JP_Organization_eClinicalSummary)
-* section[referralToSection].entry[referralToOrganizaiton] ^short = "紹介先医療機関"
-* section[referralToSection].entry[referralToOrganizaiton] ^definition = "紹介先医療機関"
+* section[referralToSection].entry[referralToOrganization] only Reference(JP_Organization_eClinicalSummary)
+* section[referralToSection].entry[referralToOrganization] ^short = "紹介先医療機関"
+* section[referralToSection].entry[referralToOrganization] ^definition = "紹介先医療機関"
 * section[referralToSection].entry[referralToDepartment] only Reference(JP_Organization_eClinicalSummary_department)
 * section[referralToSection].entry[referralToDepartment] ^short = "紹介先医療機関の診療科"
 * section[referralToSection].entry[referralToDepartment] ^definition = "紹介先医療機関の診療科"
@@ -261,12 +261,12 @@ and authorDepartment 0..1 MS
 * section[referralFromSection].entry  ^slicing.discriminator.path = "resolve()"
 * section[referralFromSection].entry  ^slicing.rules = #open
 * section[referralFromSection].entry contains
-    referralFromOrganizaiton  1..1 MS
+    referralFromOrganization  1..1 MS
     and referralFromDepartment    0..1 MS
     and referralFromDoctor    0..1 MS
-* section[referralFromSection].entry[referralFromOrganizaiton] only Reference(JP_Organization_eClinicalSummary_issuer)
-* section[referralFromSection].entry[referralFromOrganizaiton] ^short = "紹介元医療機関"
-* section[referralFromSection].entry[referralFromOrganizaiton] ^definition = "紹介元医療機関"
+* section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eClinicalSummary_issuer)
+* section[referralFromSection].entry[referralFromOrganization] ^short = "紹介元医療機関"
+* section[referralFromSection].entry[referralFromOrganization] ^definition = "紹介元医療機関"
 * section[referralFromSection].entry[referralFromDepartment] only Reference(JP_Organization_eClinicalSummary_department)
 * section[referralFromSection].entry[referralFromDepartment] ^short = "紹介元医療機関の診療科"
 * section[referralFromSection].entry[referralFromDepartment] ^definition = "紹介元医療機関の診療科"

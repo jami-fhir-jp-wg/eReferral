@@ -64,7 +64,7 @@ Description: "処方を発行した医療機関の情報　JP_Organizationの派
 * address.postalCode ^definition = "郵便番号。３桁-４桁。\r\n例）　\"123-4567\""
 
 Profile: JP_Organization_eClinicalSummary_issuer
-Parent: JP_Organization
+Parent: JP_Organization_eClinicalSummary
 Id: JP-Organization-eClinicalSummary-issuer
 Description: "処方を発行した医療機関の情報　JP_Organizationの派生プロファイル"
 * obeys checkPhoneNumberExists
