@@ -111,7 +111,9 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 
 * date ^definition = "このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。\r\n午前0時を\"24:00\"と記録することはできないため\"00:00\"と記録すること。　\r\n例：\"2020_08_21T12:28:21+09:00\""
 * date 1..1 MS
-
+* section ^slicing.discriminator.type = #profile
+* section ^slicing.discriminator.path = "resolve()"
+* section ^slicing.rules = #open
 
 * author ^short = "文書作成責任者と文書作成機関とへの参照。"
 * author ^definition = "文書作成責任者を表すPractitionerリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
@@ -261,11 +263,7 @@ and authorDepartment 0..1 MS
     referralFromOrganizaiton  1..1 MS
     and referralFromDepartment    0..1 MS
     and referralFromDoctor    0..1 MS
-<<<<<<< HEAD
 * section[referralFromSection].entry[referralFromOrganizaiton] only Reference(JP_Organization_eClinicalSummary_issuer)
-=======
-* section[referralFromSection].entry[referralFromOrganizaiton] only Reference(JP_Organization_eClinicalSummary)
->>>>>>> 186263ac49f6059a27ea1e63a5bb21d7690cf088
 * section[referralFromSection].entry[referralFromOrganizaiton] ^short = "紹介元医療機関"
 * section[referralFromSection].entry[referralFromOrganizaiton] ^definition = "紹介元医療機関"
 * section[referralFromSection].entry[referralFromDepartment] only Reference(JP_Organization_eClinicalSummary_department)
