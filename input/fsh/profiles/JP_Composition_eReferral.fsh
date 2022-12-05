@@ -123,7 +123,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 and authorOrganization 1..1 MS
 and authorDepartment 0..1 MS
 * author[authorPractitioner] only  Reference(JP_Practitioner_eClinicalSummary)
-* author[authorOrganization] only  Reference(JP_Organization_eClinicalSummary_issuer)
+* author[authorOrganization] only  Reference(JP_Organization_eClinicalSummary)
 * author[authorDepartment] only  Reference(JP_Organization_eClinicalSummary_department)
 
 * title 1..1 MS
@@ -264,7 +264,8 @@ and authorDepartment 0..1 MS
     referralFromOrganization  1..1 MS
     and referralFromDepartment    0..1 MS
     and referralFromDoctor    0..1 MS
-* section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eClinicalSummary_issuer)
+//* section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eClinicalSummary_issuer)
+* section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eClinicalSummary)
 * section[referralFromSection].entry[referralFromOrganization] ^short = "紹介元医療機関"
 * section[referralFromSection].entry[referralFromOrganization] ^definition = "紹介元医療機関"
 * section[referralFromSection].entry[referralFromDepartment] only Reference(JP_Organization_eClinicalSummary_department)

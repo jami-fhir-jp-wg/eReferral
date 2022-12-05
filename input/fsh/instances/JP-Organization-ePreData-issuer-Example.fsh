@@ -2,7 +2,7 @@ Instance: JP-Organization-eReferral-issuer-Example
 InstanceOf: Organization
 Usage: #example
 Description: "発行の医療機関　 Organizationリソースのインスタンス例"
-* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral_issuer"
+* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Organization_eReferral"
 * extension[0].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_Organization_PrefectureNo"
 * extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.21"
 * extension[=].valueIdentifier.value = "13"
