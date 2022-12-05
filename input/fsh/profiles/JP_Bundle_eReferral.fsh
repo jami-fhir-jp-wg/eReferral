@@ -27,14 +27,9 @@ Description: "診療情報提供書のための文書 Bundleリソース"
 * entry contains
     composition 1..1 MS  // 文書構成情報
 and patient 1..1 MS  //  患者情報
-<<<<<<< HEAD
 and authorisedAuthor 1..1 MS
 and organizaiton 1..* MS
 and organizaitonFrom 1..* MS
-=======
-and eferralDoctorAndauthorisedAuthor 1..2 MS
-and organizaiton 2..* MS
->>>>>>> 186263ac49f6059a27ea1e63a5bb21d7690cf088
 and department 0..* MS
 and departmentOfissuer  0..* MS
 //and referralDoctor 1..* MS
@@ -85,7 +80,6 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[patient].request ..0
 * entry[patient].response ..0
 
-<<<<<<< HEAD
 * entry[authorisedAuthor] ^short = "正当な権限があって文書を作成した個人の情報"
 * entry[authorisedAuthor] ^definition = "正当な権限があって文書を作成した個人を表すPractitionerリソースで記述する。\r\nauthorisedAuthorRole要素が参照するPractitionerRoleから参照される。"
 * entry[authorisedAuthor].fullUrl 1.. MS
@@ -100,29 +94,12 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[authorisedAuthor].response ..0
 
 * entry[organizaiton].resource only JP_Organization_eClinicalSummary
-=======
-* entry[eferralDoctorAndauthorisedAuthor] ^short = "正当な権限があって文書を作成した個人や紹介先／元医師の情報"
-* entry[eferralDoctorAndauthorisedAuthor] ^definition = "正当な権限があって文書を作成した個人や紹介先／元医師を表すPractitionerリソースで記述する。\r\nauthorisedAuthorRole要素が参照するPractitionerRoleから参照される。"
-* entry[eferralDoctorAndauthorisedAuthor].fullUrl 1.. MS
-* entry[eferralDoctorAndauthorisedAuthor].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
-* entry[eferralDoctorAndauthorisedAuthor].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
-* entry[eferralDoctorAndauthorisedAuthor].resource 1.. MS
-* entry[eferralDoctorAndauthorisedAuthor].resource only  JP_Practitioner_eClinicalSummary_author
-* entry[eferralDoctorAndauthorisedAuthor].resource ^short = "Practitionerリソースのインスタンス本体"
-* entry[eferralDoctorAndauthorisedAuthor].resource ^definition = "Practitionerリソースのインスタンス本体。"
-* entry[eferralDoctorAndauthorisedAuthor].search ..0
-* entry[eferralDoctorAndauthorisedAuthor].request ..0
-* entry[eferralDoctorAndauthorisedAuthor].response ..0
-
-* entry[organizaiton].resource only  JP_Organization_eClinicalSummary
->>>>>>> 186263ac49f6059a27ea1e63a5bb21d7690cf088
 * entry[organizaiton] ^short = "紹介先／元医療機関／文書作成機関／文書管理機関"
 * entry[organizaiton] ^definition = "紹介先／元医療機関"
 * entry[organizaiton].search ..0
 * entry[organizaiton].request ..0
 * entry[organizaiton].response ..0
 
-<<<<<<< HEAD
 * entry[organizaitonFrom].resource only JP_Organization_eClinicalSummary_issuer
 * entry[organizaitonFrom] ^short = "紹介元医療機関／文書作成機関／文書管理機関"
 * entry[organizaitonFrom] ^definition = "紹介元医療機関"
@@ -133,11 +110,6 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[department].resource only JP_Organization_eClinicalSummary_department
 * entry[department] ^short = "紹介先／元医療機関／文書作成機関の診療科"
 * entry[department] ^definition = "紹介先／元医療機関／文書作成機関の診療科"
-=======
-* entry[department].resource only  JP_Organization_eClinicalSummary_department
-* entry[department] ^short = "紹介先文書作成機関の診療科"
-* entry[department] ^definition = "紹介先文書作成機関の診療科"
->>>>>>> 186263ac49f6059a27ea1e63a5bb21d7690cf088
 * entry[department].search ..0
 * entry[department].request ..0
 * entry[department].response ..0

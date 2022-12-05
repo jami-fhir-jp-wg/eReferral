@@ -115,7 +115,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 
 * author ^short = "文書作成責任者と文書作成機関とへの参照。"
 * author ^definition = "文書作成責任者を表すPractitionerリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
-<<<<<<< HEAD
 * author contains
     authorPractitioner 1..1 MS 
 and authorOrganization 1..1 MS
@@ -123,9 +122,6 @@ and authorDepartment 0..1 MS
 * author[authorPractitioner] = Reference(JP_Practitioner_eClinicalSummary)
 * author[authorOrganization] = Reference(JP_Organization_eClinicalSummary_issuer)
 * author[authorDepartment] = Reference(JP_Organization_eClinicalSummary_department)
-=======
-* author only Reference(JP_Organization_eClinicalSummary or JP_Practitioner_eClinicalSummary or JP_Organization_eClinicalSummary_department)
->>>>>>> 186263ac49f6059a27ea1e63a5bb21d7690cf088
 
 * title 1..1 MS
 * title = "診療情報提供書" (exactly)
