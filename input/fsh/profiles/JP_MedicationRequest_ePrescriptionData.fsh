@@ -15,9 +15,6 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * identifier[requestIdentifier]  MS
 
 
-
-
-
 * medication[x] ^definition = "医薬品コードと医薬品名称。coding要素を繰り返すことでHOT9 やYJコードなど複数のコード体系で医薬品コード並記することが可能。\r\n本仕様では、処方オーダ時に選択または入力し、実際に処方箋に印字される文字列を必ずtext要素に格納した上で、それをコード化した情報を1個以上のcoding 要素に記述する。\r\n日本では同じ用法の複数の薬剤をひとつの処方区分とすることがある。複数の薬剤を表記するMedication Resourceのインスタンスを参照するか、codeableConceptとして、薬品コードと処方の詳細な内容を示すか既知の処方リストの中から特定の処方を選択するための属性を表すResourceにリンクされている。"
 * medication[x] MS
 

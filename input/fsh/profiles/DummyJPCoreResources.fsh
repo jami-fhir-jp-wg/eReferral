@@ -38,10 +38,21 @@ Parent:			JP_Immunization
 Id:             JP-Immunization-eClinicalSummary
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Immunization_eClinicalSummary"
 
+Profile:        JP_ImagingStudy_Radiology_eClinicalSummary
+Parent:			JP_ImagingStudy_Radiology
+Id:             JP-ImagingStudy-Radiology-eClinicalSummary
+* ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eClinicalSummary"
+
 Profile:        JP_MedicationStatement
 Parent:			MedicationStatement
 Id:             JP-MedicationStatement
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationStatement"
+
+Profile:        JP_MedicationStatement_eClinicalSummary
+Parent:			JP_MedicationStatement
+Id:             JP-MedicationStatement-eClinicalSummary
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_MedicationStatement_eClinicalSummary"
+
 
 Profile:        JP_Procedure_eClinicalSummary
 Parent:			JP_Procedure
@@ -65,6 +76,11 @@ Parent:			Device
 Id:             JP-Device
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Device"
 
+Profile:        JP_Device_eClinicalSummary
+Parent:			JP_Device
+Id:             JP-Device-eClinicalSummary
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Device_eClinicalSummary"
+
 
 Profile:        JP_Consent
 Parent:			Consent
@@ -81,21 +97,31 @@ Parent:			ResearchSubject
 Id:             JP-ResearchSubject
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchSubject"
 
+Profile:        JP_ResearchSubject_eClinicalSummary
+Parent:			JP_ResearchSubject
+Id:             JP-ResearchSubject-eClinicalSummary
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ResearchSubject_eClinicalSummary"
+
 Profile:        JP_ResearchStudy
 Parent:			ResearchStudy
 Id:             JP-ResearchStudy
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchStudy"
 
+Profile:        JP_ResearchStudy_eClinicalSummary
+Parent:			JP_ResearchStudy
+Id:             JP-ResearchStudy-
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ResearchStudy_eClinicalSummary"
 
-Profile:        JP_ResearchSubject_eClinicalSummary
-Parent:			JP_ResearchSubject
-Id:             JP-ResearchSubject-eClinicalSummary
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_JResearchSubject_eClinicalSummary"
 
 Profile:        JP_RelatedPerson
 Parent:			RelatedPerson
 Id:             JP-RelatedPerson
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_RelatedPerson"
+
+Profile:        JP_RelatedPerson_eClinicalSummary
+Parent:			JP_RelatedPerson
+Id:             JP-RelatedPerson-eClinicalSummary
+* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_RelatedPerson_eClinicalSummary"
 
 Profile:        JP_Binary
 Parent:			Binary

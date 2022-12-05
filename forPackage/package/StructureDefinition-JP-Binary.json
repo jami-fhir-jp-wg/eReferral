@@ -1,0 +1,39 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Binary",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Binary",
+  "version": "0.9.1",
+  "name": "JP_Binary",
+  "status": "active",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Binary",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Binary",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Binary",
+        "path": "Binary"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "JP-PractitionerRole-eReferral-author-Example",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_PractitionerRole_eReferral_author"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://exapmleHospital.jp/IdSystem/hisUserRoleId",
+      "value": "702"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/JP-Practitioner-eReferral-author-Example"
+  },
+  "organization": {
+    "reference": "Organization/JP-Organization-eReferral-issuer-Example"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "JPR10000",
+          "system": "http://jpfhir.jp/fhir/core/CodeSystem/JP_PractitionerRole_CS",
+          "display": "医師"
+        }
+      ]
+    }
+  ]
+}

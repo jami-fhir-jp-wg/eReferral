@@ -1,0 +1,122 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-Organization-eClinicalSummary-department",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Entities"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department",
+  "version": "0.9.1",
+  "name": "JP_Organization_eClinicalSummary_department",
+  "status": "active",
+  "description": "医療機関の診療科情報　JP_Organizationの派生プロファイル",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "constraint": [
+          {
+            "key": "checkOrganizationType0",
+            "severity": "error",
+            "human": "【診療部門コード(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept'))が正しい】",
+            "expression": "(type[0].coding.where(system='http://terminology.hl7.org/CodeSystem/organization-type' and code='dept')).exists()",
+            "source": "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
+          },
+          {
+            "key": "checkOrganizationType1",
+            "severity": "error",
+            "human": "【診療科コード(type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51'))が存在する】",
+            "expression": "(type[1].exists().not()) or ((type[1].coding.where(system='urn:oid:1.2.392.100495.20.2.51' )).exists())",
+            "source": "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
+          }
+        ]
+      },
+      {
+        "id": "Organization.text",
+        "path": "Organization.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。"
+      },
+      {
+        "id": "Organization.text.status",
+        "path": "Organization.text.status",
+        "definition": "固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。"
+      },
+      {
+        "id": "Organization.text.div",
+        "path": "Organization.text.div",
+        "definition": "本リソースの構造化情報から生成したテキスト表現をいれてもよい。\\\\r\\\\nXHTML形式。"
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "short": "診療科の名称",
+        "definition": "医療文書などに印刷、または画面に表示する際に用いられる診療科の名称。\r\n必ずしも正式い名称でなく、略称でも差し支えまい。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.partOf.reference",
+        "path": "Organization.partOf.reference",
+        "short": "この診療科が所属する医療機関の情報",
+        "definition": "Bundleリソースに格納される、処方医療機関を表すOrganizationリソースのfullUrl要素に指定されるUUIDを指定",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}
