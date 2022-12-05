@@ -28,7 +28,8 @@ Description: "診療情報提供書のための文書 Bundleリソース"
     composition 1..1 MS  // 文書構成情報
 and patient 1..1 MS  //  患者情報
 and authorisedAuthor 1..1 MS
-and organizaiton 2..* MS
+and organizaiton 1..* MS
+and organizaitonFrom 1..* MS
 and department 0..* MS
 and referralDoctor 1..* MS
 and cdaDocument 0..1 MS
@@ -84,7 +85,7 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[authorisedAuthor].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[authorisedAuthor].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
 * entry[authorisedAuthor].resource 1.. MS
-* entry[authorisedAuthor].resource only JP_Practitioner
+* entry[authorisedAuthor].resource only JP_Practitioner_eClinicalSummary
 * entry[authorisedAuthor].resource ^short = "Practitionerリソースのインスタンス本体"
 * entry[authorisedAuthor].resource ^definition = "Practitionerリソースのインスタンス本体。"
 * entry[authorisedAuthor].search ..0
@@ -97,6 +98,13 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[organizaiton].search ..0
 * entry[organizaiton].request ..0
 * entry[organizaiton].response ..0
+
+* entry[organizaitonFrom].resource only JP_Organization_eClinicalSummary_issuer
+* entry[organizaitonFrom] ^short = "紹介元医療機関／文書作成機関／文書管理機関"
+* entry[organizaitonFrom] ^definition = "紹介元医療機関"
+* entry[organizaitonFrom].search ..0
+* entry[organizaitonFrom].request ..0
+* entry[organizaitonFrom].response ..0
 
 * entry[department].resource only JP_Organization_eClinicalSummary_department
 * entry[department] ^short = "紹介先／元医療機関／文書作成機関の診療科"
