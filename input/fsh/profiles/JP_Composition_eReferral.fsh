@@ -111,9 +111,10 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 
 * date ^definition = "このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。\r\n午前0時を\"24:00\"と記録することはできないため\"00:00\"と記録すること。　\r\n例：\"2020_08_21T12:28:21+09:00\""
 * date 1..1 MS
-* section ^slicing.discriminator.type = #profile
-* section ^slicing.discriminator.path = "resolve()"
-* section ^slicing.rules = #open
+
+* author ^slicing.discriminator.type = #profile
+* author ^slicing.discriminator.path = "resolve()"
+* author ^slicing.rules = #open
 
 * author ^short = "文書作成責任者と文書作成機関とへの参照。"
 * author ^definition = "文書作成責任者を表すPractitionerリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
@@ -121,9 +122,9 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
     authorPractitioner 1..1 MS 
 and authorOrganization 1..1 MS
 and authorDepartment 0..1 MS
-* author[authorPractitioner] = Reference(JP_Practitioner_eClinicalSummary)
-* author[authorOrganization] = Reference(JP_Organization_eClinicalSummary_issuer)
-* author[authorDepartment] = Reference(JP_Organization_eClinicalSummary_department)
+* author[authorPractitioner] only  Reference(JP_Practitioner_eClinicalSummary)
+* author[authorOrganization] only  Reference(JP_Organization_eClinicalSummary_issuer)
+* author[authorDepartment] only  Reference(JP_Organization_eClinicalSummary_department)
 
 * title 1..1 MS
 * title = "診療情報提供書" (exactly)
