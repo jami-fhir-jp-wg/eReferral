@@ -30,8 +30,8 @@ and patient 1..1 MS  //  患者情報
 and practitioners 1..2 MS
 and organization 2..2 MS
 //and organizationFrom 1..* MS
-and department 0..* MS
-and departmentOfissuer  0..* MS
+and department 0..2 MS
+//and departmentOfissuer  0..* MS
 //and referralDoctor 1..* MS
 //and cdaDocument 0..1 MS
 and referralEncounter 0..2 MS
@@ -114,13 +114,14 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 * entry[department].request ..0
 * entry[department].response ..0
 
+/*
 * entry[departmentOfissuer].resource only  JP-Organization-eClinicalSummary-departmentOfissuer
 * entry[departmentOfissuer] ^short = "紹介元文書作成機関の診療科"
 * entry[departmentOfissuer] ^definition = "紹介元文書作成機関の診療科"
 * entry[departmentOfissuer].search ..0
 * entry[departmentOfissuer].request ..0
 * entry[departmentOfissuer].response ..0
-
+*/
 //* entry[referralDoctor].resource only  JP_Practitioner_eClinicalSummary
 //* entry[referralDoctor] ^short = "紹介先／元医師"
 //* entry[referralDoctor] ^definition = "紹介先／元医師"

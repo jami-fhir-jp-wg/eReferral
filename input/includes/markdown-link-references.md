@@ -103,8 +103,8 @@
 [JP-MedReq-ePreData-Example-zenzou02per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou02per03.html
 [JP-MedReq-ePreData-Example-zenzou03per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou03per03.html
 [JP-Organization-ePreData-coveragePayer-Example]: Organization-JP-Organization-ePreData-coveragePayer-Example.html
-[JP-Organization-ePreData-departmentOfIssuer-Example]: Organization-JP-Organization-ePreData-departmentOfIssuer-Example.html
-[JP-Organization-ePreData-departmentOfIssuer-ExampleType2]: Organization-JP-Organization-ePreData-departmentOfIssuer-ExampleType2.html
+[JP-Organization-ePreData-department-Example]: Organization-JP-Organization-ePreData-department-Example.html
+[JP-Organization-ePreData-department-ExampleType2]: Organization-JP-Organization-ePreData-department-ExampleType2.html
 [JP-Organization-ePreData-issuer-Example]: Organization-JP-Organization-ePreData-issuer-Example.html
 [JP-Organization-ePreData-publicPayer-Example]: Organization-JP-Organization-ePreData-publicPayer-Example.html
 [JP-Patient-ePreData-Example]: Patient-JP-Patient-ePreData-Example.html
@@ -130,8 +130,8 @@
 [JP-MedReq-ePreData-Example-zenzou02per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou02per03.html
 [JP-MedReq-ePreData-Example-zenzou03per03]: MedicationRequest-JP-MedReq-ePreData-Example-zenzou03per03.html
 [JP-Organization-ePreData-coveragePayer-Example]: Organization-JP-Organization-ePreData-coveragePayer-Example.html
-[JP-Organization-ePreData-departmentOfIssuer-Example]: Organization-JP-Organization-ePreData-departmentOfIssuer-Example.html
-[JP-Organization-ePreData-departmentOfIssuer-ExampleType2]: Organization-JP-Organization-ePreData-departmentOfIssuer-ExampleType2.html
+[JP-Organization-ePreData-department-Example]: Organization-JP-Organization-ePreData-department-Example.html
+[JP-Organization-ePreData-department-ExampleType2]: Organization-JP-Organization-ePreData-department-ExampleType2.html
 [JP-Organization-ePreData-issuer-Example]: Organization-JP-Organization-ePreData-issuer-Example.html
 [JP-Organization-ePreData-publicPayer-Example]: Organization-JP-Organization-ePreData-publicPayer-Example.html
 [JP-Patient-ePreData-Example]: Patient-JP-Patient-ePreData-Example.html

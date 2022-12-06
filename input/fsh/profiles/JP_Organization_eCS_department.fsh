@@ -34,9 +34,11 @@ Description: "医療機関の診療科情報　JP_Organizationの派生プロフ
 * partOf.reference ^short = "この診療科が所属する医療機関の情報"
 * partOf.reference ^definition = "Bundleリソースに格納される、処方医療機関を表すOrganizationリソースのfullUrl要素に指定されるUUIDを指定"
 
+/*
 Profile: JP_Organization_eClinicalSummary_departmentOfIssuer
 Parent: JP_Organization_eClinicalSummary_department
 Id: JP-Organization-eClinicalSummary-departmentOfissuer
 Description: "医療文書を発行した医療機関の診療科情報　JP_Organizationの派生プロファイル"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_departmentOfIssuer"
 * ^status = #active
+*/
