@@ -58,11 +58,7 @@ jobs:
         tag: 'latest'
         path: .
         file: publisher.jar
-        
-    - name: Run filepp by file pre proccessor converting egg to egg.fsh
-      run: | 
-        while read -r f; do echo "converting $f to $f.fsh"; filepp  -m for.pm -m  bigdef.pm $f >$f.fsh; done < <(find ./ -name *.egg -mindepth 1)
-    
+
     - name: Download Japanese version of hl7.fhir.core package
       uses: wei/wget@v1
       with:
@@ -100,5 +96,5 @@ jobs:
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
     - name: rsync remote-site-deploy
-      run: echo ${{ secrets.JAMIWG_WEBPATH }}; rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete ./output ./fsh-generated ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+      run: echo ${{ secrets.JAMIWG_WEBPATH }}; rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete ./output/* ./fsh-generated ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
 
