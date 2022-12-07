@@ -46,10 +46,6 @@ jobs:
     - name: Install Jekyll
       run: |
         sudo apt-get install jekyll
-    - name: Download filepp
-      run: |
-        sudo apt-get install filepp
-
 
     - name: Download IG Publisher
       uses: Legion2/download-release-action@v2.1.0
