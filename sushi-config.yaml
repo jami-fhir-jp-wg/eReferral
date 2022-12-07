@@ -6,22 +6,22 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: eReferral
 canonical: http://jpfhir.jp/fhir/eReferral
-name: "HL7 Japan-JAMIeReferralImplementationGuide"
-title: "HL7 JJapan-JAMI eReferral ImplementationGuide"
-description: "HL 7Japan-JAMI eReferral ImplementationGuide"
+name: "HL7Japan_JAMIeReferralImplementationGuide"
+title: "HL7 Japan-JAMI eReferral ImplementationGuide"
+description: "HL7 Japan-JAMI eReferral ImplementationGuide"
 status: draft # draft | active | retired | unknown 
 version: 0.9.2
+date: 2022-12-07
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
-copyrightYear: 2022+
-
+copyrightYear: Kazuhiko Ohe@JAMI 2022+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 #  https://www.hl7.org/fhir/valueset-spdx-license.html
-# jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 # https://www.hl7.org/fhir/valueset-jurisdiction.html 
 publisher:
   name: Kazuhiko Ohe@JAMI
   url: http://jpfhir.jp
   # email: test@example.org
+jurisdiction: 'urn:iso:std:iso:3166#JP'
 
 dependencies:
   jp-core.r4:
@@ -30,72 +30,21 @@ dependencies:
     uri: http://jpfhir.jp/fhir/core/ImplementationGuide/jp-core.r4
     version: 1.1.1-snap
 
-
-# The dependencies property corresponds to IG.dependsOn. The key is the
-# package id and the value is the version (or dev/current). For advanced
-# use cases, the value can be an object with keys for id, uri, and version.
-#
-# dependencies:
-#   hl7.fhir.us.core: 3.1.0
-#   hl7.fhir.us.mcode:
-#     id: mcode
-#     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
-#     version: 1.0.0
-#
-#
-# The pages property corresponds to IG.definition.page. SUSHI can
-# auto-generate the page list, but if the author includes pages in
-# this file, it is assumed that the author will fully manage the
-# pages section and SUSHI will not generate any page entries.
-# The page file name is used as the key. If title is not provided,
-# then the title will be generated from the file name.  If a
-# generation value is not provided, it will be inferred from the
-# file name extension.  Any subproperties that are valid filenames
-# with supported extensions (e.g., .md/.xml) will be treated as
-# sub-pages. 
-#
+#----------------------------------------
+# ページタイトル名称設定
+#----------------------------------------
 
 pages:
   index.md:
     title: 診療情報提供書HL7&reg; FHIR&reg;記述仕様書 第1版
   eReferralTables.md:
     title: 各表一覧
-
-#   index.md:
-#     title: Example Home
-#   implementation.xml:
-#   examples.xml:
-#     title: Examples Overview
-#     simpleExamples.xml:
-#     complexExamples.xml:
-#
-#
-# The parameters property represents IG.definition.parameter. Rather
-# than a list of code/value pairs (as in the ImplementationGuide
-# resource), the code is the YAML key. If a parameter allows repeating
-# values, the value in the YAML should be a sequence/array. For a
-# partial list of allowed parameters see:
-# https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
-#
-# parameters:
-#   excludettl: true
-#   validation: [allow-any-extensions, no-broken-links]
-#
-# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
-# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
-# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
-# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
-# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
-# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
-# │ property below.                                                                                │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-#menu:
-#  Home: index.html
-#  Artifacts: artifacts.html
-
+#-----------------------------------------
+# メニュー設定
+#-----------------------------------------
 menu:
   Home: index.html
-  Tables: eReferralTables.html
+#  Tables: eReferralTables.html
   Artifacts: artifacts.html
 
 #-----------------------------------------
@@ -127,6 +76,8 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   excludeexample: 'false'
   generate: #what does this do - todo: remove and see
     - json
+  no-validate:
+    - '*/hl7.fhir.jp.core'
   special-url:
     - http://jpfhir.jp/fhir/CCLIX/StructureDefinition/JP_Bundle_CCLIX
     - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral

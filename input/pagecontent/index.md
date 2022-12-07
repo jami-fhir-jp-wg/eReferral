@@ -1,93 +1,16 @@
-<style type="text/css">
-
-table {
-  border: solid 1px black;
-  border-collapse: collapse;
-}
- 
-table td {
-  border: solid 1px black;
-
-}
-
-table th {
-  border: solid 1px black;
-}
-   h1 {
-      counter-reset: chapter;
-    }
-
-    h2 {
-      counter-reset: sub-chapter;
-    }
-
-    h3 {
-      counter-reset: section;
-    }
-
-    h4 {
-      counter-reset: sub-section;
-    }
-
-    h5 {
-      counter-reset: composite;
-    }
-
-    h6 {
-      counter-reset: sub-composite;
-    }
-
-    h1:before {
-      color: black;
-      counter-increment: bchapter;
-      content:  " ";
-    }
-
-    h2:before {
-      color: black;
-      counter-increment: chapter;
-      content: counter(chapter) ". ";
-    }
-
-    h3:before {
-      color: black;
-      counter-increment: sub-chapter;
-      content: counter(chapter) "."counter(sub-chapter) ". ";
-    }
-
-
-    h4:before {
-      color: black;
-      counter-increment: section;
-      content: counter(chapter) "."counter(sub-chapter) "."counter(section) " ";
-    }
-
-    h5:before {
-      color: black;
-      counter-increment: sub-section;
-      content: counter(chapter) "."counter(sub-chapter) "."counter(section) "."counter(sub-section) " ";
-    }
-
-    h6:before {
-      color: black;
-      counter-increment: sub-sub-section;
-      content: "　　"counter(sub-sub-section) "）";
-    }
-
-</style>
 
 日本医療情報学会　2021年10月Ver.1.0.2(2022.2.24)
 日本HL7協会　2021年10月
 
-#診療情報提供書HL7FHIR記述仕様第1版
+##診療情報提供書HL7FHIR記述仕様第1版
 
-##本仕様書の位置づけ
+###本仕様書の位置づけ
 この仕様書は、HL7FHIR（以下、単に「FHIR」という）に準拠した診療情報提供書の記述仕様を記述した文書であり、令和2年度厚生労働行政推進調査事業費補助金令和2年度厚生労働科学特別研究事業「診療情報提供書,診療情報提供書等の電子化医療文書の相互運用性確保のための標準規格の開発研究」(課題番号20ⅭＡ2013）（以下、単に「R2厚生科研研究班」という）の成果物を、その作成者らが編集したものである。
 以下では本仕様書という。
 本仕様書は、厚生労働省標準HS008「診療情報提供書（医療機関への紹介状）（日本HL7協会）」（以下、「診療情報提供書CDA規約」、もしくは単に「CDA規約」という）を参考にして、FHIRに準拠した記述仕様として作成されたものであり、電子化に伴う新たな診療情報提供書様式のあり方を再検討して作成されたものではない。
 また、本仕様書の作成にあたって、ベースとした仕様には、FHIRR4に修正を加えたVer.4.0.1(Oct-30,2019)を採用しているが、それ自体がNormative（標準）として確定した仕様となっていないものを多く含んでいる。そのため、元となるFHIR仕様が変更されることがあるが、本仕様書の明示的な改版時まではその変更の影響を受けないものとする。
 
-##参照する仕様等
+###参照する仕様等
 本仕様書は、以下の仕様等を参照して作成されている。
 HL7FHIRR4Ver.4.0.1[[http://hl7.org/fhir/index.html](http://hl7.org/fhir/index.html)]　本仕様書ではFHIR基底仕様という。
 厚生労働省標準HS008「診療情報提供書（医療機関への紹介状）」（日本HL7協会）[[http://www.hl7.jp/intro/std/HL7J-CDA-005.pdf](http://www.hl7.jp/intro/std/HL7J-CDA-005.pdf)]
