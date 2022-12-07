@@ -597,7 +597,7 @@ urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センタ�
 
 ## 　リソース記述に関する表（診療情報提供書・退院時サマリー 共通）
 [表全体](eReferralTables.html)
-
+**目次**
 [表1　　AllergyIntoleranceリソース　アレルギー情報](eReferralTables.html#tbl-1)
 [表2　　Binaryリソース　 バイナリーデータ情報](eReferralTables.html#tbl-2)
 [表3　　Bundleリソース　文書情報](eReferralTables.html#tbl-3)
