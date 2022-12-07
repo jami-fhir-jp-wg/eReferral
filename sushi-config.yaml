@@ -95,7 +95,7 @@ pages:
 
 menu:
   Home: index.html
-  リソースTables: eReferralTables.html
+  Tables: eReferralTables.html
   Artifacts: artifacts.html
 
 #-----------------------------------------
