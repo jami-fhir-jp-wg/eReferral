@@ -110,25 +110,25 @@ content: "　　"counter(sub-sub-section) "）";
 |resourceType| |||||"AllergyIntolerance" |**AllergyIntolerance**リソースであることを示す |
 |meta| |||1..1|Meta| | |
 ||profile|||1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_AllergyIntolerance_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。|
-|text| |||0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。 |
+|text| |||0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。 |
 ||status |||1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div|||1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。 |
 |identifier| |||0..1\*|Identifier| |このアレルギー情報に付番されたID |
-||system |||1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier " | |
+||system |||1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier" | |
 ||value|||1..1||"1311234567-2020-00123456" |アレルギー情報IDの文字列。値は例示。 |
-|clinicalStatus| |||0..1|CodeableConcept |"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"<br>"active"|臨床的状態のステータス。コード表はFHIR準拠表で暫定値。active \| inactive \| resolved現存、非現存、解消 |
-|verificationStatus| |||0..1|CodeableConcept |"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"<br>"confirmed" |入力された臨床的状態に対する検証状況を示す。確からしさと考えられる。コード表はFHIR準拠表で暫定値。unconfirmed \| confirmed \| refuted \| entered-in-error未確認、確認ずみ、否定、エラー |
-|type| |||0..1|code| "allergy" |副反応の生理的なメカニズムの種類（アレルギーによるものか不耐性によるものかどうか）。コード表："http://hl7.org/fhir/allergy-intolerance-type"allergy \| intoleranceアレルギー反応、不耐性反応|
-|category| |||0..1\*|code|"food" |特定された原因物質のカテゴリ。コード表："http://hl7.org/fhir/allergy-intolerance-category"food \| medication \| environment \| biologic食物、医薬品、環境、生物学的 |
-|cliticality | |||0..\* |code|"high" |潜在的な臨床的危険性、致命度。コード表："http://hl7.org/fhir/allergy-intolerance-criticality"low \| high \| unable-to-assess低、高、評価不能 |
-|code| |||1..1|CodeableConcept |http://jpfhir.jp/fhir<br>/AllergyIntolerance/CodeSystem/allergy-substance"J7F7311990"<br>"牛乳・乳製品（詳細不明）"|アレルギー・不耐反応の対象物の情報。jpfhir.jpでのallergy-substanceコード表のコードを使用する。 |
+|clinicalStatus| |||0..1|CodeableConcept |"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"<br>"active"|臨床的状態のステータス。コードで記述する場合にはsyetem値は固定値。clinicalStatus.text のみで記述することもできる。。active \| inactive \| resolved現存、非現存、解消 |
+|verificationStatus| |||0..1|CodeableConcept |"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"<br>"confirmed" |入力された臨床的状態に対する検証状況を示す。確からしさと考えられる。コードで記述する場合にはsystem値は固定値。verificationStatus.text のみで記述することもできる。。unconfirmed \| confirmed \| refuted \| entered-in-error未確認、確認ずみ、否定、エラー |
+|type| |||0..1|code| "allergy" |副反応の生理的なメカニズムの種類（アレルギーによるものか不耐性によるものかどうか）。記述する場合は、コード表："http://hl7.org/fhir/allergy-intolerance-type"allergy \| intoleranceアレルギー反応、不耐性反応|
+|category| |||0..1\*|code|"food" |特定された原因物質のカテゴリ。記述を可能な限り推奨する。コード表："http://hl7.org/fhir/allergy-intolerance-category"food \| medication \| environment \| biologic食物、医薬品、環境、生物学的 |
+|cliticality | |||0..\* |code|"high" |潜在的な臨床的危険性、致命度。記述する場合は、コード表："http://hl7.org/fhir/allergy-intolerance-criticality"low \| high \| unable-to-assess低、高、評価不能 |
+|code| |||1..1|CodeableConcept |http://jpfhir.jp/fhir<br>/core/CodeSystem/JP_JfagyFoodAllergen_CS  "J7F7311990"<br>"牛乳・乳製品（詳細不明）"|アレルギー・不耐反応の対象物の情報。jp-coreで定めるallergy-substanceコード表のコードを推奨する。コード化できない場合には、code.text のみで記述する。code.textは必須である。<br>使用するコード表（推奨）：<br>http://jpfhir.jp/fhir/core/CodeSystem/JP_JfagyFoodAllergen_CS 　（食物アレルギー）http://jpfhir.jp/fhir/core/CodeSystem/JP_JfagyMedicationAllergen_CS　（医薬品アレルギー）http://jpfhir.jp/fhir/core/CodeSystem/JP_JfagyNonFoodNonMedicationAllergen_CS　（その他のアレルギー）<br>のいずれかを使用できる。|
 |patient | |||1..1|Reference(Patient)|"urn: ....." |対象となる患者リソースへの参照。 |
 |encounter | |||0..1|Reference (Encounter) |"urn: ....." |このアレルギ情報が確認され記録された受診情報（入院詳細情報または外来受診情報）への参照.Encounterリソースのインスタンスを参照することでよい。 |
 |(onset) | ||||（dateTime、Age、Period、Range、string）のいずれかの型をとる。| |このアレルギー・不耐性状態が同定された時期。5通りのいずれかの要素（onsetDateTime、onseAge、onsetPeriod、onsetRange、onsetString）ひとつを選択して、それにより記述する。複数を選択はできない。onset要素は記述しないで、直接onsetDateTime要素のレベルを記述する。|
 ||onsetDateTime|||0..1|dateTime| |日付または日時。年や年月だけでもよい。例：2018, 1973-06, 1905-08-23, 2015-02-07T13:28:17+09:00。時刻に24:00 の使用はできない。 |
 ||onseAge|||0..1|Age | |年齢。患者の申告による、状態が出現し始めた年齢。 |
 || |value |||decimal |"50" |年齢の値。 |
-|| |comparator|||code|"&gt;="|&lt; 、 &lt;=、 &gt;= 、 &gt;　のいずれか。要素valueの値の解釈方法。例では、「50歳以上で」と記述したい場合には、&gt;= を記述する。 |
+|| |comparator|||code|"&gt;="|要素valueの値の解釈方法。<br>等しい場合には、= は不要。そうでない指定をしたい場合には、&lt; 、 &lt;=、 &gt;= 、 &gt;　のいずれか。<br>例では、「50歳以上で」と記述したい場合には、&gt;= を記述する。 |
 || |unit|||string|"歳" |単位表現 |
 || |system|||uri |"http://unitsofmeasure.org"|単位体系 UCUMコード体系。固定値。|
 || |code|||code|"a"|単位体系における単位コード。コードと意味min：minutesh：hoursd：dayswk：weeksmo：monthsa：years |
@@ -157,12 +157,12 @@ content: "　　"counter(sub-sub-section) "）";
 ||time |||0..1|dateTime| |この追加的な情報が作成された日時。 |
 ||text |||1..1|markdown| |追加的な情報の内容。markdown形式のテキストが使用できる。データとして1Mバイト以内であること。 |
 |reaction| |||0..\* |BackboneElement | |対象物質に暴露したことに関連した有害反応の情報 |
-||substance|||0..1|CodeableConcept |http://jpfhir.jp/fhir<br>/AllergyIntolerance/CodeSystem/allergy-substance "J7F7311154"<br>"モッツァレラチーズ" |有害反応イベントの原因であると考えられる特定の物質（または医薬品）。jpfhir.jpでのallergy-substanceコード表のコードを使用する。注：特定の反応の物質は、リスクの原因として特定された物質とは異なる場合があるが、それと一貫性がある必要がある。例えば、「reaction.substance」の物質は、**AllergyIntolerance** .code要素と比べて、より具体的な物質（例えば、ブランド薬）または特定された物質を含む複合製品であり得る。 **AllergyIntolerance** .code要素の記述（アレルギー・不耐反応の対象物の情報要素）のみを処理して「reaction.substance」の情報を無視しても、臨床的に安全でなければならない。このリソースを受信して処理するシステムが、もし「reaction.substance」と**AllergyIntolerance** .code要素の記述物質との意味的な包含関係を処理できないのであれば、システムはこの「reaction.substance」要素を無視しなければならない。|
+||substance|||0..1|CodeableConcept |http://jpfhir.jp/fhir<br>/core/CodeSystem/JP_JfagyFoodAllergen_CS<br> "J7F7311154"<br>"モッツァレラチーズ" |有害反応イベントの原因であると考えられる特定の物質（または医薬品）。jp-coreで定めるallergy-substanceコード表のコードの使用で表現できる場合にはその使用を推奨する。<br>注：特定の反応の物質は、リスクの原因として特定された物質とは異なる場合があるが、それと一貫性がある必要がある。例えば、「reaction.substance」の物質は、**AllergyIntolerance** .code要素と比べて、より具体的な物質（例えば、ブランド薬）または特定された物質を含む複合製品であり得る。 **AllergyIntolerance** .code要素の記述（アレルギー・不耐反応の対象物の情報要素）のみを処理して「reaction.substance」の情報を無視しても、臨床的に安全でなければならない。このリソースを受信して処理するシステムが、もし「reaction.substance」と**AllergyIntolerance** .code要素の記述物質との意味的な包含関係を処理できないのであれば、システムはこの「reaction.substance」要素を無視しなければならない。|
 ||manifestation|||1..\* |CodeableConcept |"urn:oid:1.2.392.200119.4.101.6"<br>"B0EF"<br>"持続腹痛"<br>"長く続く腹部の痛み" |アレルギー反応に関連する症状や所見。system値はMEDIS標準病名マスター病名交換用コードを使用する場合の例示。"BOEF"は、MEDIS標準病名マスター病名交換用コードで"持続腹痛"のコード。"持続腹痛"はそのテキスト記述の例。 |
 ||description|||0..1|string|"チーズを食べて1時間後から激しい腹痛と下痢がながく続いた。"|イベントの全体的な記述。 |
 ||onset|||0..1|dateTime|"2010-01-02" |関連する症状や所見が見られた日時。 |
 ||severity |||0..1|code|"severe" |反応の激しさ程度。コード表：http://hl7.org/fhir/reaction-event-severitymild \| moderate \| severe軽度、中等度、強度|
-||exposureRoute|||0..1|CodeableConcept |"urn:oid:1.2.392.200250.2.2.20.40"<br>"10"<br>"内服経口"<br>"経口摂取" |物質の摂取経路の情報。JAMI標準用法の投与経路コード表を使用する。 |
+||exposureRoute|||0..1|CodeableConcept |"urn:oid:1.2.392.200250.2.2.20.40"<br>"10"<br>"内服経口"<br>"経口摂取" |物質の摂取経路の情報。JAMI標準用法の投与経路コード表（JAMI 用法コード表基本用法2桁コードに相当）を使用する。 |
 ||note |||0..\* || |他のフィールドで記述できないイベントに関するテキスト記述 |
 || |author||0..1|| |記載者の情報 |
 || ||authorString|0..1|string|"患者の母親" |記載者氏名などの文字列。必ずしも氏名でなくてもよい。 |
@@ -267,7 +267,7 @@ Bundleリソース
 ||value| | |1..1||"1311234567-2020-00123456" |情報IDの文字列。値は例示。 |
 |status| | | |1..1|code|"active" |プランのステータス。コード表："http://hl7.org/fhir/request-status"draft \| active \| on-hold \| revoked \| completed \| entered-in-error \| unknown　など。案、有効、保留、取消、完了、エラー、不明|
 |intent| | | |1..1|code|"plan" |趣旨区分。コード表："http://hl7.org/fhir/request-intent"proposal \| plan \| order \| option提案\|計画\|指示\|オプション入院時または退院時の方針では、内容によりいずれにもなりうるので、適切なコードを適宜選択して使用する。|
-|category| | | |0..1\*|CodeableConcept |"http://jpfhir.jp/fhir<br>/CarePlan/CodeSystem/category"<br>"hospital-plan"または"discharge-plan"|プランのタイプ"hospital-plan"(入院中のプラン)、または"discharge-plan"(退院時のプラン)のいずれか固定値。|
+|category| | | |0..1\*|CodeableConcept |"http://jpfhir.jp/fhir<br>/code/CodeSystem/care-plan-category"<br>"hospital-plan"または"discharge-plan"|プランのタイプ"hospital-plan"(入院中のプラン)、または"discharge-plan"(退院時のプラン)のいずれか固定値。|
 |title | | | |1..1|string|入院時方針"、または"退院時の方針"|プランの標題名称。 |
 |description | | | |1..1|string| |プランのサマリー。ここに具体的な内容を叙述的に記述する。 |
 |subject | | | |1..1|Reference(Patient)| |患者を表す**Patient**リソースへの参照。|
@@ -334,13 +334,13 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |type| | | |1..1|CodeableConcept||文書区分コード|
 ||coding | | |1..1\*|Coding |||
 || |system | |1..1|uri|"http://jpfhir.jp/fhir<br>/Common/CodeSystem/doc-typecodes" |文書区分コードのコード体系を識別するUR（LOINCコードベース）。固定値 |
-|| |code | |1..1|code |"18842-5"　｜"57133-1"|文書区分コード。退院時サマリー："18842-5"、診療情報提供書＼："57133-1"を指定。固定値。|
+|| |code | |1..1|code |"18842-5"|文書区分コード。退院時サマリー："18842-5"、診療情報提供書＼："57133-1"を指定。固定値。|
 || |display| |0..1|string |"退院時サマリー"|文書区分コードの表示名。|
 |category| | | |1..1\*|CodeableConcept||文書クラス（カテゴリー）|
 ||coding | | |1..1\*|Coding |||
 || |system | |1..1|uri|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/CodeSystem/eClinicalSummary-category" |文書クラスのコード体系を識別するURI。固定値。 |
-|| |code | |1..1|code |"18842-5"｜"57133-1"|文書カテゴリコード。退院時サマリー："18842-5"、診療情報提供書：　"57133-1"を指定。|
-|| |display| |0..1|string |"退院時サマリー"｜”診療情報提供書”|コードの表示名|
+|| |code | |1..1|code |"18842-5"|文書カテゴリコード。退院時サマリー："18842-5"、診療情報提供書：　"57133-1"を指定。|
+|| |display| |0..1|string |"退院時サマリー"|コードの表示名|
 |subject | | | |1..1|Reference（Patient） ||患者情報を表す**Patient**リソースへの参照。 |
 ||reference| | |1..1|string |"urn:uuid:11f0a9a6-a91d-3aef-fc4e-069995b89c4f" |**Patient**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
 |encounter | | | |0..1|Reference(Encounter) ||この退院時サマリーを作成する元となった入院情報を表す**Encounter**リソースへの参照。表2に出現のEncounterと同一インスタンスを参照する。 |
@@ -349,7 +349,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |author| | | |2..2|Reference（Practioner\|Organizatoin） ||文書作成責任者を表す**Practitioner**リソースへの参照、および文書作成機関を表す**Organization**リソースへの参照の2つのReferenceを繰り返す。|
 ||reference| | |1..1|string |"urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc" |**Practitioner**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
 ||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
-|title | | | |1..1|string |"退院時サマリー"｜”診療情報提供書”|この文書の（人が読める）タイトル。固定値。|
+|title | | | |1..1|string |"退院時サマリー"|この文書の（人が読める）タイトル。固定値。|
 |custodian | | | |1..1|Reference(Organization)||文書の作成・修正を行い、文書の管理責任を持つ機関（**Organization**リソース）への参照。文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表す**Organization**リソースへの参照となる。文書作成機関とは異なる組織である場合は、文書作成機関とは別の**Organization**リソースで表現し、custodian要素からはその**Organization**リソースを参照する。|
 ||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |custodianに対応する**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
 |section | | | |0..1\*|DocumentRefrence |"CDA参照セクション" |退院時サマリー全体を記述した文書ファイルへの参照。既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"を除き、省略する。|
@@ -365,7 +365,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |Observation|"入院時社会歴セクション"<br>"socialHistorySection"||
 ||section| | |0..\* |Observation|"入院時身体所見セクション"<br>"admissinoPhysicalStatusSection"||
 ||section| | |0..\* |FamilyMemberHistory|"入院時家族歴セクション"<br>"familiyHistorySection" ||
-||section| | |1..\* |ClinicalImpression |"入院中経過セクション"<br>"hospitalCourseSection" ||
+||section| | |1..\* |DocumentReference |"入院中経過セクション"<br>"hospitalCourseSection" ||
 ||section| | |1..1\*|Encounter|"入院時または退院時の詳細セクション"<br>"dischargeDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
 ||section| | |0..\* |MedicationRequest ｜Bundle(電子処方箋) |"入院時または退院時の投薬指示セクション"<br>"dischargesMedicationSection" ||
 ||section| | |0..\* |CarePlan |"入院時または退院時の方針指示セクション"<br>"dischargeInstructionSection" ||
@@ -391,7 +391,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||profile| | |1..1\*| |"http://jpfhir.jp/fhir<br>/eReferral/StructureDefinition<br>/JP_Composition_eReferral" |本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |extension | | | |1..1\*|Extension| |文書バージョンを表す拡張「composition-clinicaldocument-versionNumber」。|
 ||url| | |1..1|uri|"http:// hl7.org/fhir/StructureDefinition<br>/composition-clinicaldocument-versionNumber"|拡張を識別するURL。固定値。 |
-||valueString| | |1..1|string |"1.0"|文書のバージョン番号を表す文字列。値は例示。|
+||valueString| | |1..1|string |"1"|文書のバージョン番号を表す文字列。値は例示。|
 |identifier| | | |1..1|Identifier | |この文書の文書ID。|
 ||system | | |1..1|uri|"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier"|文書IDの名前空間を表すURI。固定値。 |
 ||value| | |1..1|string |"1311234567-2020-00123456" |文書ID。値は例示。付番方法は本文を参照。|
@@ -399,47 +399,49 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |type| | | |1..1|CodeableConcept| |文書区分コード|
 ||coding | | |1..1\*|Coding | ||
 || |system | |1..1|uri|"http://jpfhir.jp/fhir<br>/Common/CodeSystem/doc-typecodes"|文書区分コードのコード体系を識別するUR（LOINCコードベース）。固定値 |
-|| |code | |1..1|code |"18842-5"　｜"57133-1" |文書区分コード。退院時サマリー："18842-5"、診療情報提供書＼："57133-1"を指定。固定値。|
-|| |display| |0..1|string |"退院時サマリー" |文書区分コードの表示名。|
+|| |code | |1..1|code |"57133-1" |文書区分コード。退院時サマリー："18842-5"、診療情報提供書＼："57133-1"を指定。固定値。|
+|| |display| |0..1|string |"診療情報提供書" |文書区分コードの表示名。|
 |category| | | |1..1\*|CodeableConcept| |文書クラス（カテゴリー）|
 ||coding | | |1..1\*|Coding | ||
 || |system | |1..1|uri|"http://jpfhir.jp/fhir<br>/Common/CodeSystem/doc-typecodes"|文書クラスのコード体系を識別するURI。固定値。 |
-|| |code | |1..1|code |"18842-5"｜"57133-1" |文書カテゴリコード。退院時サマリー："18842-5"、診療情報提供書：　"57133-1"を指定。|
-|| |display| |0..1|string |"退院時サマリー"｜”診療情報提供書” |コードの表示名|
+|| |code | |1..1|code |"57133-1" |文書カテゴリコード。退院時サマリー："18842-5"、診療情報提供書：　"57133-1"を指定。|
+|| |display| |0..1|string |”診療情報提供書” |コードの表示名|
 |subject | | | |1..1|Reference（Patient） | |患者情報を表す**Patient**リソースへの参照。 |
 ||reference| | |1..1|string |"urn:uuid:11f0a9a6-a91d-3aef-fc4e-069995b89c4f"|**Patient**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
-|encounter | | | |0..1|Reference(Encounter) | |この退院時サマリーを作成する元となった入院情報を表す**Encounter**リソースへの参照。表2に出現のEncounterと同一インスタンスを参照する。 |
+|encounter | | | |0..1|Reference(Encounter) | |この診療情報提供書が作成された受診時状況を表す**Encounter**リソースへの参照。表12に出現のEncounterと同一インスタンスを参照する。 |
 ||reference| | |1..1|string |"urn:uuid:12f0a9a6-a91d-8aef-d14e-069795b89c9f"|**Encounter**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
 |date| | | |1..1|dateTime |"2020-08-21T12:28:21+09:00"|このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。午前0時を"24:00"と記録することはできないため"00:00"と記録すること。|
-|author| | | |2..2|Reference（Practioner\|Organizatoin） | |文書作成責任者を表す**Practitioner**リソースへの参照、および文書作成機関を表す**Organization**リソースへの参照の2つのReferenceを繰り返す。|
-||reference| | |1..1|string |"urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"|**Practitioner**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
-||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720"|**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
-|title | | | |1..1|string |"退院時サマリー"｜”診療情報提供書” |この文書の（人が読める）タイトル。固定値。|
+|author| | | |2..2|Reference（Practioner\|Organizatoin） | |文書作成責任者を表す**Practitioner**リソースへの参照、および文書作成機関(必須)と診療科（任意）を表す最大２つの**Organization**リソースへの参照の合わせて最大３つのReferenceを繰り返す。|
+||reference| | |1..1|string |"urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"|文書作成責任者**Practitioner**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
+||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720"|文書作成機関**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
+||reference| | |1..1|string |"urn:uuid:...."|診療科**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は省略。 |
+|title | | | |1..1|string |”診療情報提供書” |この文書の（人が読める）タイトル。固定値。|
 |custodian | | | |1..1|Reference(Organization)| |文書の作成・修正を行い、文書の管理責任を持つ機関（**Organization**リソース）への参照。文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表す**Organization**リソースへの参照となる。文書作成機関とは異なる組織である場合は、文書作成機関とは別の**Organization**リソースで表現し、custodian要素からはその**Organization**リソースを参照する。|
 ||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720"|custodianに対応する**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
 |event | | | |1..1\*|BackboneElement| |診療情報提供書の発行イベントの情報|
 ||code | | |1..1\*|CodeableConcept| ||
-|| |text | |1..1|Coding |“診療情報提供書発行” |固定値。|
+|| |coding | |0..0*|Coding | |不要|
+|| |text | |1..1|string |“診療情報提供書発行” |固定値。|
 ||period | | |1..1|Period | ||
 || |start| |1..1|dateTime |"2020-08-21" |診療情報提供書発行日。ISO8601に準拠yyyy-mm-dd形式で記述する。 |
-|section | | | |1..1\*| |”紹介先情報セクション” |紹介先情報|
+|section | | | |1..1\*| |”紹介先情報セクション”<br>"referralToSection" |紹介先情報|
 ||entry| | |1..1\*|Organization | |紹介先医療機関|
 ||entry| | |0..1\*|Organization | |紹介先診療科|
 ||entry| | |0..1\*|Practitioner | |紹介先医師|
-|section | | | |1..1\*| |”紹介元情報セクション” |紹介元情報|
+|section | | | |1..1\*| |”紹介元情報セクション”<br>"referralFromSection" |紹介元情報|
 || | | |1..1\*|Organization | |紹介元医療機関|
 || | | |0..1\*|Organization | |紹介元診療科|
 || | | |0..1\*|Practitioner | |紹介元医師|
-|section | | | |0..1\*|DocumentRefrence |"CDA参照セクション"|既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"と"PDFセクション"を除き、出現してはならない。 |
-|section | | | |0..1\*|−|"構造情報セクション" |退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。|
+|section | | | |0..1\*|DocumentRefrence |"CDA参照セクション"<br>"cdaSection"|既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"と"PDFセクション"を除き、出現してはならない。 |
+|section | | | |0..1\*|−|"構造情報セクション"<br>"compositionSection" |退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。|
 ||section| | |1..1\*|Encounter|“紹介目的セクション"<br>"admissionDetailsSection”|紹介先に外来受診あるいは入院を意図した情報をその理由とともに記述する。|
 ||section| | |1..\* |Condition|“傷病名・主訴セクション"<br>"admissionDiagnosesSection”|現在の傷病名や主訴を記述する。|
 ||section| | |1..\* |Condition|“現病歴セクション“<br>“presentIllnessSection”|現在までの傷病名と経過を記述する。|
 ||section| | |1..\* |Condition|“既往歴セクション“<br>“pastIllnessSection” |過去の傷病名を記述する。|
-||section| | |1..\* |AllergyIntolerance |“アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection” |アレルギー情報を記述する。|
-||section| | |1..\* |FamilyMemberHistory|“家族歴セクション“<br>“familiyHistorySection“|家族歴を記述する。|
-||section| | |1..\* |Observation|“身体所見セクション“<br>“admissinoPhysicalStatusSection“ |現在の身体所見を記述する。|
-||section| | |1..\* |ConditionObservation |“感染症情報セクション"<br>"infectiousDiseaseInformationSection" |感染症の保有状況、および検査結果を記述する。|
+||section| | |0..\* |AllergyIntolerance |“アレルギー・不耐性反応セクション"<br>"allergiesIIntoleranceSection” |アレルギー情報を記述する。|
+||section| | |0..\* |FamilyMemberHistory|“家族歴セクション“<br>“familiyHistorySection“|家族歴を記述する。|
+||section| | |0..\* |Observation|“身体所見セクション“<br>“admissinoPhysicalStatusSection“ |現在の身体所見を記述する。|
+||section| | |0..\* |ConditionObservation |“感染症情報セクション"<br>"infectiousDiseaseInformationSection" |感染症の保有状況、および検査結果を記述する。|
 ||section| | |0..\* |Observation|“社会歴・生活習慣セクション“<br>“socialHistorySection“ |社会歴、生活歴を記述する。|
 ||section| | |0..\* |Immunization |“予防接種歴セクション“<br>“immunizationSection“|予防接種情報を記述する。|
 ||section| | |0..\* |Procedure|“手術セクション“<br>“surgucalProcedureSection“ |手術記録を記述する。|
@@ -465,18 +467,18 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |title| | |1..1|string |"入院時診断" |○○セクション名のうち○○の部分文字列を設定する。|
 |code | | |1..1|CodeableConcept| ||
 | |coding | |1..1|Coding | ||
-| | |system |1..1|uri|"http://jpfhir.jp/fhir<br>/ eClinicalSummary/CodeSystem/document-section"|文書のセクションコードシステムの固定値。|
-| | |code |1..1|code |"200"など。|「サマリー本体（ボディー部）でのセクション構成」のセクションコード。|
+| | |system |1..1|uri|"http://jpfhir.jp/fhir/ eClinicalSummary/CodeSystem/document-section"　 \|  "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"|文書のセクションコードシステムの固定値。<br>退院時サマリーの場合には、"http://jpfhir.jp/fhir/eClinicalSummary/CodeSystem/document-section"<br>診療情報提供書の場合には、"http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"|
+| | |code |1..1|code |"200"など。|「サマリー本体（ボディー部）でのセクション構成」または「診療情報提供書本体（ボディー部）でのセクション構成」のセクションコード。|
 | | |display|1..1|string |"入院時診断" |コード表におけるセクションコードに対応する文字列。|
 |text | | |1..1|Narrative| |このセクションに含められるすべてのテキスト（叙述的記述）表現。|
 | |status | |1..1|code |"additional" |このセクションに含められるすべてのentry要素による情報に加えて、それらで表現し尽くせていない情報も含めた完全な叙述表現であることを示す。 |
 | |div| |1..1|xhtml| |xhtml簡略形式に従った叙述記述データ。-FHIR仕様書より-html要素のコンテンツは、HTML 4.0標準の第7-11章と第15章で説明されている基本的なhtmlフォーマット要素、&lt;a&gt;要素（nameまたはhref）、画像、および内部に含まれるスタイルシートのみを含むXHTMLフラグメントです。XHTMLコンテンツには、ヘッド、ボディ、外部スタイルシート参照、スクリプト、フォーム、ベース/リンク/ xlink、フレーム、iframe、およびオブジェクトを含めることはできません。空白以外のコンテンツが含まれている必要があります。--|
-|entry| | |0..\* |Reference(Any) | |このセクションが含める情報リソースの参照のリスト。「表2サマリー本体（ボディー部）でのセクション構成」のFHIR リソース種別、多重度が適用される。セクションコード300のsectionにはentryは出現しない。 |
+|entry| | |0..\* |Reference(Any) | |このセクションが含める情報リソースの参照のリスト。「サマリー本体（ボディー部）でのセクション構成」または「診療情報提供書本体（ボディー部）でのセクション構成」のFHIR リソース種別、多重度が適用される。セクションコード300のsectionにはentryは出現しない。 |
 |emptyReason| | |0..1|CodeableConcept| |直前のentry要素が出現しない場合には、この要素は必須で、なぜentry要素が出現しないを記述する。|
 | |coding | |1..1|Coding | ||
 | | |system |1..1|uri|"http://terminology.hl7.org/CodeSystem/list-empty-reason"|コード表：http://hl7.org/fhir/valueset-list-empty-reason.html　を参照。 |
 | | |code |1..1|code |"unavilable"など。 |直前のentry要素が出現しない場合、特に他の明示的な事由を示せない場合には、"unavailable"としておく。セクションコード300のsectionにはentryは出現しないので、この場合にも"unavailable"を設定すること。|
-|section| | |0..1| | |sectionの下にsectionをネスト（階層化）する場合に使用する。セクションコード300のsectionには表2に示すネストするsectionが必ず出現する。|
+|section| | |0..1| | |sectionの下にsectionをネスト（階層化）する場合に使用する。セクションコード300のsectionにはサマリー本体（ボディー部）でのセクション構成」または「診療情報提供書本体（ボディー部）でのセクション構成」の表に示すネストするsectionが必ず出現する。|
 
 
 
@@ -505,7 +507,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||onsetDateTime|| ||dateTime||日付または日時。年や年月だけでもよい。例：2018, 1973-06, 1905-08-23, 2015-02-07T13:28:17+09:00。時刻に24:00 の使用はできない。|
 ||onsetAge || ||Age ||年齢。患者の申告による、状態が出現し始めた年齢。|
 || |value | ||decimal |"50"|年齢の値。|
-|| |comparator| ||code|"&gt;=" |&lt; 、 &lt;=、 &gt;= 、 &gt;　のいずれか。要素valueの値の解釈方法。例では、「50歳以上で」と記述したい場合には、&gt;= を記述する。|
+|| |comparator| ||code|"&gt;=" |要素valueの値の解釈方法。<br>等しい場合には、= は不要。そうでない指定をしたい場合には、&lt; 、 &lt;=、 &gt;= 、 &gt;　のいずれか。例では、「50歳以上で」と記述したい場合には、&gt;= を記述する。|
 || |unit| ||string|"歳"|単位表現|
 || |system| ||uri |"http://unitsofmeasure.org" |単位体系 UCUMコード体系。固定値。 |
 || |code| ||code|"a" |単位体系における単位コード。コードと意味min：minutesh：hoursd：dayswk：weeksmo：monthsa：years|
@@ -624,7 +626,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||status| | |1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div | | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
 |identifier|| | |0..1\*|Identifier| |この機器情報に付番されたID|
-||system| | |1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier " ||
+||system| | |1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier" ||
 ||value | | |1..1||"1311234567-2020-00123456" |機器情報IDの文字列。値は例示。|
 |udiCarrier|| | |0..\* |BacboneElement| |Unique Device Identifier(UDI)のバーコード文字列情報。 |
 ||deviceIdentifier| | |0..1|string| |UDIの必須固定部分の文字列。 |
@@ -673,12 +675,12 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型|値 |説明 |
 |resourceType| | | |||"DiagnostcReport"|**DiagnostcReport**リソースであることを示す|
 |meta| | | |1..1|Meta| | |
-||profile| | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DiagnosticReport_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile| | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/core<br>/StructureDefinition<br>/JP_DiagnosticReport_Common"|本文書のプロファイルを識別するURLを指定する。検査種別によって適切なプロファイルがJP-Coreで定義されている場合にはそれを使用する。値は固定。|
 |text| | | |0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。 |
 ||status | | |1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。 |
 |identifier| | | |0..1\*|Identifier| |この検査レポート情報に付番されたID |
-||system | | |1..1||" http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier "| |
+||system | | |1..1||" http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier"| |
 ||value| | |1..1||"1311234567-2020-00123456" |検査レポート情報IDの文字列。値は例示。 |
 |status| | | |1..1|code|"final"|検査・観察のステータス。コード表："http://hl7.org/fhir/diagnostic-report-status"registered：登録済・参照不可partial：部分的に報告preliminary：暫定報告final：最終報告amended：修正版corrected：訂正版appended：承認済みcancelled：取消しentered-in-error：エラーunknown：不明、|
 |category| | | |0..1\*|CodeableConcept |"http://terminology.hl7.org/CodeSystem/v2-0074" "CTH"|診断サービスの種類区分。【コード表：別表】http://hl7.org/fhir/valueset-diagnostic-service-sections.html|
@@ -730,7 +732,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 
 
-# <a id="tbl-12">**表12　　Encounterリソース　入院詳細情報**</a>
+# <a id="tbl-12">**表12　　Encounterリソース　受診時情報（診療情報提供書）/入院詳細情報(退院時サマリー)**</a>
 
 | || | |||||
 |-----|----------|--|--|-----|--------------|------------------------------|---------------------------------------------------------------------------------|
@@ -749,12 +751,12 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |classHistory || | |0..\* |||この入院期間までの外来受診履歴や入院履歴を記述したい場合にここに繰り返しで記述する。紹介先受診情報では不要。|
 | |class | | |1..1|Coding||受診イベントの分類|
 | ||system | |1..1|uri |"http://terminology. hl7.org/CodeSystem/v3-ActCode" |コード体系v3.ActEncounterCodeを識別するURI。固定値。|
-| ||code | |1..1||“IMP” または”AMB” |「IMP:入院(inpatient Encounter)」または、「AMB:外来受診(ambulatory)」退院時サマリーで退院時を記述する場合には"IMP"を使用する。|
+| ||code | |1..1||“IMP” または”AMB” |「IMP:入院(inpatient Encounter)」または、「AMB:外来受診(ambulatory)」退院時サマリーで退院時を記述する場合には"IMP"を使用する。<br>* INPではなくIMPであることに注意。|
 | ||display| |1..1||"入院"または"外来"||
-| |period| | |1..1||||
-| ||start| |1..1|dateTime|"2020-08-21"|上記イベントの開始日時|
+| |period| | |0..1||||
+| ||start| |1..1|dateTime|"2020-08-21"|上記イベントの開始日時。入院の場合には入院日、外来受診の場合には診療情報提供書の記載基準となった外来受診日に相当するがperiod要素自体は省略できる。|
 | ||end| |0..1|dateTime|"2020-08-24"|上記イベントの終了日時。入院の場合には退院日、外来受診の場合には不要。|
-|period || | |0..1|Priod ||入院期間　退院時サマリーでは必須。|
+|period || | |0..1|Priod ||入院期間を表す必要がある場合には必須。外来では必要な場合を除き省略可。|
 | |start | | |1..1|dateTime|"202-09-01" |この入院の入院日時|
 | |end | | |1..1|dateTime|"2020-09-18"|この入院の退院日時|
 |length || | |0..1|Duration||この入院の在院日数|
@@ -789,12 +791,12 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 # 
 
-# <a id="tbl-13">**表13　　FamiliMemberHistoryリソース　家族歴情報**</a>
+# <a id="tbl-13">**表13　　FamilyMemberHistoryリソース　家族歴情報**</a>
 
 |||||||| |
 |------|--------|-------|-------|------|----------|------------------------------|-------------------------------------------------------------------------------------------------------------------|
 |要素Lv1 |要素Lv2 |要素Lv3 |要素Lv4 |多重度|型|値|説明 |
-|resourceType||||||"FamiliMemberHistory" |**FamiliMemberHistory**リソースであることを示す|
+|resourceType||||||"FamilyMemberHistory" |**FamiliMemberHistory**リソースであることを示す|
 |meta||||1..1|Meta|| |
 ||profile |||1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_FamilyMemberHistory_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text||||0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
@@ -853,7 +855,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型 |値 |説明|
 |resourceType| | | || |"ImagingStudy" |**ImagingStudy**リソースであることを示す|
 |meta| | | |1..1|Meta | ||
-||profile| | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_ImagingStudy_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile| | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/core<br>/StructureDefinition<br>/JP_ImagingStudy_Radiology"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| | | |0..1|Narrative| |本リソースをテキストで表現したものを入れてもよい。|
 ||status | | |1..1|code |"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div| | |1..1|xhtml|&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
@@ -861,7 +863,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||system | | |1..1| |"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier"||
 ||value| | |1..1| |"1311234567-2020-00123456" |検査情報IDの文字列。値は例示。|
 |status| | | |1..1|code |"final"|検査結果のステータス。コード表："http://hl7.org/fhir/imagingstudy-status"registered \| available \| cancelled \| entered-in-error \| unknown　など。登録済み\|利用可能\|キャンセル済み\|エラー発生\|不明|
-|modality| | | |0..1\*|CodeableConcept|"urn:oid: 1.2.840.10008.6.1.19" "CT"<br>"Computed Tomography " |画像取得装置区分。コード表は以下を参照。http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html|
+|modality| | | |0..1\*|CodeableConcept|"urn:oid: 1.2.840.10008.6.1.19""CT"<br>"Computed Tomography" |画像取得装置区分。コード表は以下を参照。http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html|
 |subject | | | |1..1|Reference| |患者を表す**Patient**リソースへの参照。 |
 |encounter | | | |0..1|Reference(Encounter) | |検査・観察が実施された受診情報（外来受診情報または入院詳細情報）|
 |started | | | |0..1|dateTime | |検査開始（実施）日時|
@@ -953,7 +955,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |quantity|| |0..1|SimpleQuantity||調剤量|
 | ||value | |1..1|decimal |21|調剤量。値は例示。|
 | ||unit| |1..1|string|"錠"|単位文字列。値は例示。|
-| ||system| |1..1|uri |"urn:oid:1.2.392.200119.4.403.1"|医薬品単位略号を識別するURL。固定値。 |
+| ||system| |1..1|uri |"urn:oid:1.2.392.100495.20.2.101"|医薬品単位略号を識別するURL。固定値。 |
 | ||code| |1..1|code|"TAB" |医薬品単位略号。値は例示。|
 | |expectedSupplyDuration|| |0..1|Duration||調剤日数|
 | ||value | |1..1|decimal |7 |調剤日数。値は例示。|
@@ -1005,7 +1007,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | | ||code |1..1|code |"d"|日を意味する単位コード「d」。固定値。 |
 | |code || |1..1|CodeableConcept| |用法。JAMI標準用法コードを指定する。詳細は処方情報HL７FHIR記述仕様を参照。|
 | | |coding| |1..1\*|Coding | ||
-| | ||system |1..1|uri|"urn:oid:1.2.392.200250.2.2.20.20" |JAMI標準用法16桁コードを識別するURI。固定値。 |
+| | ||system |1..1|uri|"urn:oid:1.2.392.200250.2.2.20" |JAMI標準用法16桁コードを識別するURI。固定値。 |
 | | ||code |1..1|code |"1013044400000000" |JAMI標準用法コード。値は例示。|
 | | ||display|0..1|string |"内服・経口・１日３回朝昼夕食後" |JAMI標準用法コードの表示名。値は例示。|
 |asNeededBoolean| || |0..1|boolean| |頓用型の用法を指定する場合に"true"を指定する。詳細は処方情報HL７FHIR記述仕様を参照。|
@@ -1121,7 +1123,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |||code |1..1|code |"d" |日を意味する単位コード「d」。固定値。 |
 | |code|| |1..1|CodeableConcept||用法。JAMI標準用法コードを指定する。詳細は「4.9.3.2内服薬 １)用法」、及び、「4.9.3.3外用薬 １)用法」を参照。|
 | ||coding| |1..1\*|Coding |||
-| |||system |1..1|uri|"urn:oid:1.2.392.200250.2.2.20.20"|JAMI標準用法16桁コードを識別するURI。固定値。 |
+| |||system |1..1|uri|"urn:oid:1.2.392.200250.2.2.20"|JAMI標準用法16桁コードを識別するURI。固定値。 |
 | |||code |1..1|code |"1013044400000000"|JAMI標準用法コード。値は例示。|
 | |||display|0..1|string |"内服・経口・１日３回朝昼夕食後"|JAMI標準用法コードの表示名。値は例示。|
 |asNeededBoolean||| |0..1|boolean||頓用型の用法を指定する場合に"true"を指定する。詳細は「4.9.4.2頓用」を参照。 |
@@ -1174,7 +1176,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2 |要素Lv3 |要素Lv4|多重度|型|値|説明 |
 |resourceType||| |||"Observation" |**Observation**リソースであることを示す|
 |meta||| |1..1|Meta|| |
-||profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_ObservationCommon_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Observation_Common_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は、検査種別によってJP_Core v1.1の該当プロファイルに合わせる。|
 |text||| |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
 ||status|| |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div || |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |
@@ -1235,47 +1237,47 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||referenceRange|| |0..1\*|BackboneElement ||Observation. referenceRangeと同じ。|
 
 
-# <a id="tbl-19">**表19　　Organizationリソース　文書作成医療機関情報**</a>
+# <a id="tbl-19">**表19　　Organizationリソース　医療機関情報**</a>
 
 || ||||||
 |-------|-----|---|------|----------|----------------------------------|------------------------|
 |要素 Lv1|要素 Lv2 |要素 Lv3|多重度|型|値|説明|
 |resourceType| ||||"Organization"|**Organization**リソースであることを示す|
 |meta| ||1..1|Meta|||
-||profile||1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
-|text| ||0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
+||profile||1..1\*|canonical(StructureDefinition)|診療情報提供書や退院時サマリーの作成元、紹介元、紹介先、その他の場合は<br>"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+|text| ||0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。|
 ||status ||1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
-||div||1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; ||
+||div||1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。|
 |extension | ||0..1\*|Extension ||都道府県番号２桁。**Identifier**型の拡張「PrefectureNo」を使用。|
 ||url||1..1|uri |"http://jpfhir.jp/fhir<br>/core/Extension/StructureDefinition<br>/JP_Organization_PrefectureNo" |拡張を識別するURL。固定値。 |
-||valueIdentifier||1..1|Identifier|||
+||valueCoding||1..1|Identifier|||
 || |system|1..1|uri |"urn:oid:1.2.392.100495.20.3.21"|都道府県番号の名前空間を識別するURIを指定。固定値。 |
-|| |value |1..1|string|"13"|2桁にゼロパディングされた都道府県暗号。値は例示。 |
+|| |code |1..1|string|"13"|2桁にゼロパディングされた都道府県暗号。値は例示。 |
 |extension | ||0..1\*|Extension ||点数表コード１桁。**Identifier**型の拡張「OrganizationCategory」を使用。|
 ||url||1..1|uri |"http://jpfhir.jp/fhir<br>/core/Extension/StructureDefinition<br>/JP_Organization_InsuranceOrganizationCategory"|拡張を識別するURL。固定値。 |
-||valueIdentifier||1..1|Identifier|||
+||valueCoding||1..1|Identifier|||
 || |system|1..1|uri |"urn:oid:1.2.392.100495.20.3.22"|点数表番号の名前空間を識別するURIを指定。固定値。 |
-|| |value |1..1|string|"1" |点数表コード１桁「1：医科」、「3：歯科」。値は例示。|
+|| |code |1..1|string|"1" |点数表コード１桁「1：医科」、「3：歯科」。値は例示。|
 |extension | ||0..1\*|Extension ||保険医療機関番号７桁。**Identifier**型の拡張「OrganizationNo」を使用。|
 ||url||1..1|uri |"http://jpfhir.jp/fhir<br>/core/Extension/StructureDefinition<br>/JP_Organization_InsuranceOrganizationNo"|拡張を識別するURL。固定値。 |
 ||valueIdentifier||1..1|Identifier|||
 || |system|1..1|uri |"urn:oid:1.2.392.100495.20.3.23"|保険医療機関コードの名前空間を識別するURIを指定。固定値。 |
 || |value |1..1|string|"1234567" |保険医療機関番号７桁。値は例示。|
 |identifier| ||0..1\*|Identifier||保険医療機関番号10桁。|
-||system ||1..1|uri |"http://jpfhir.jp/fhir<br>/Common/CodeSystem/insurance-medical-nstitution-no" |保険医療機関番号10桁の名前空間を識別するURL。固定値。 |
+||system ||1..1|uri |"http://jpfhir.jp/fhir<br>/core/IdSystem/insurance-medical-nstitution-no" |保険医療機関番号10桁の名前空間を識別するURL。固定値。 |
 ||value||1..1|string|"1311234567"|保険医療機関番号10桁。値は例示。|
-|type| ||1..1\*|CodeableConcept ||施設種別|
+|type| ||0..1\*|CodeableConcept ||施設種別|
 ||coding ||1..1\*||||
 || |system|1..1|uri |"http://terminology.hl7.org/CodeSystem/organization-type" |施設種別を表すコード体系を識別するURI。固定値。 |
 || |code|1..1|code|"prov"|バリューセットOrganizationType から、医療機関を表すコードを指定。 |
 |name| ||1..1|string|"厚生労働省第一病院"|医療機関名称。値は例示。|
 |telecom | ||0..1\*|ContactPoint||医療機関電話番号|
-||system ||1..1|code|"phone" |固定値。|
+||system ||0..1|code|"phone" |固定値。|
 ||value||1..1|string|"0123-456-7890" |値は例示。|
 |address | ||0..1\*|Address ||医療機関住所|
 ||text ||1..1|string|"神奈川県横浜市港区１－２－３"|住所文字列。値は例示。郵便番号は含めない。|
-||postalCode ||1..1|string|"123-4567"|郵便番号。値は例示。|
-||country||1..1|string|"JP"|住所が国内の場合「JP」固定。|
+||postalCode ||0..1|string|"123-4567"|郵便番号。値は例示。|
+||country||0..1|string|"JP"|住所が国内の場合「JP」固定。|
 
 
 
@@ -1287,20 +1289,20 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2|要素Lv3|多重度|型|値|説明|
 |resourceType| | |||"Organization"|**Organization**リソースであることを示す|
 |meta| | |1..1|Meta|||
-||profile| |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eClinicalSummary_departmentOfIssuer"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
-|text| | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
+||profile| |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eClinicalSummary_department"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+|text| | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。|
 ||status | |1..1|code||固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
-||div| |1..1|xhtml |||
+||div| |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
 |type| | |1..1\*|CodeableConcept ||施設種別|
 ||coding | |1..1\*|Coding|||
 || |system |1..1|uri |"http://terminology.hl7.org/CodeSystem/organization-type" |施設種別を表すコード体系を識別するURI。固定値。 |
 || |code |1..1|code|"dept"|バリューセットOrganizationType(http://hl7.org/fhir/ValueSet/organization-type) から、診療科を表すコードを指定。固定値。 |
-|type| | |0..1\*|CodeableConcept ||診療科コード。コードで記述できる場合に記録してもよい。利用可能なコード体系の一例として、電子処方箋CDA記述仕様第1版の別表10診療科コード（urn:oid:1.2.392.100495.20.2.51）の例を示す。|
+|type| | |0..1\*|CodeableConcept ||診療科コード。コードで記述できる場合に記録してもよい。利用可能なコード体系の一例として、電子処方箋CDA記述仕様第1版の別表10診療科コード（urn:oid:1.2.392.100495.20.2.51）の例を示す。<br>SS-MIX2診療科コード（2桁または3桁）（urn:oid:1.2.392.200250.2.2.2）も使用できる。（これ以外のローカルコードでもよい）|
 ||coding | |1..1\*|coding|||
-|| |system |1..1|uri |"urn:oid:1.2.392.100495.20.2.51"|診療科コードのコード体系を識別するURI。値は例示。 |
+|| |system |1..1|uri |"urn:oid:1.2.392.100495.20.2.51"|診療科コードのコード体系を識別するURI。値は電子処方箋CDA記述仕様第1版の別表10診療科コードの例示。 |
 || |value|1..1|code|"01"|値は例示。|
 |name| | |1..1|string|"内科"|診療科名称。値は例示。|
-|partOf| | |1..1|Reference ||医療機関を表す**Organization**リソースへの参照。|
+|partOf| | |0..1|Reference ||医療機関を表す**Organization**リソースへの参照。|
 ||reference| |1..1|string|"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |医療機関を表す**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
 
 
@@ -1334,22 +1336,22 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |family| |1..1|string |トウキョウ|カナ氏名の姓。 |
 | |given | |1..1\*|string |タロウ|カナ氏名の名。ミミドルネームがある場合には、ミドルネーム、名の順で原則として全角空白をいれて連結する文字列とする。 |
 |telecom|| |0..\* |ContactPoint ||患者連絡先電話番号。複数を繰り返せる。 |
-| |system| |1..1|uri|"phone" |連絡手段 phone \| fax \| email \| pager \| url \| sms \| other |
+| |system| |0..1|uri|"phone" |連絡手段 phone \| fax \| email \| pager \| url \| sms \| other |
 | |value | |1..1|string |"090-9090-123"|電話番号 |
-| |use | |1..1|code |"home"|用途　home \| work \| temp \| old \| mobile|
+| |use | |0..1|code |"home"|用途　home \| work \| temp \| old \| mobile|
 | |rank| |0..1|positiveInt||連絡優先順位（1が最優先）|
 | |period| |0..1|Period ||連絡先がある時間帯や日時期間だけ有効な場合にその期間。 |
 | ||start|0..1|dateTime ||開始日時。 |
 | ||end|0..1|dateTime ||終了日時。 |
 |gender || |1..1|code |"male"|患者の性別。"male"または"female"。値は例示。 |
 |birthdate|| |1..1|dateTime |"1920-02-11"|患者の生年月日。ISO8601に準拠して"yyyy-mm-dd"形式。値は例示。|
-|address|| |0..1\*|Address||患者の住所。 |
+|address|| |1..1\*|Address||患者の住所。 |
 | |text| |1..1|string |"神奈川県横浜市港区１－２－３"|住所文字列。値は例示。郵便番号は含めない。 |
 | |line| |0..1|string |"１－２－３"|番地・通り名他。丁目、番地、通り名、マンション名、部屋番号、そのほか住所を構成するcityまでの部分以外のすべての文字列 |
 | |city| |0..1|string |"横浜市港区"|市町村郡名、区名、大字名など。丁目や番地などを除く。 |
 | |state | |0..1|string |"神奈川県"|都道府県名で、都道府県の文字を含む。例：東京都　など（「東京」ではなく）。 |
 | |postalCode| |1..1|string |"123-4567"|郵便番号。値は例示。 |
-| |country | |1..1|string |"JP"|居住地が国内の場合「JP」固定。 |
+| |country | |0..1|string |"JP"|居住地が国内の場合「JP」固定。 |
 |maritalStatus|| |0..1|codableConcept |uri="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"code="M"|婚姻状態A:結婚破棄、D:離婚、I:離婚調停中、L:別居中、M:結婚、S:未婚、T:同棲、U:現在結婚していない、W:寡婦 |
 |(multipleBirth)|| |0..1| ||多胎情報。以下の2つの要素のどちらか一方だけを使用すること。両方同時に出現してはならない。multipleBirth要素は出現しない。 |
 | |multipleBirthBoolean| |0..1|boolean|"true"|患者が多胎児のうちの一人である場合に true|
@@ -1376,7 +1378,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型|値|説明|
 |resourceType| | | |||"Practitioner"|**Practitioner**リソースであることを示す|
 |meta| | | |1..1|Meta|||
-||profile| | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Practitioner_eClinicalSummary_author"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile| | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Practitioner_eClinicalSummarys"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| | | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
 ||status | | |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; ||
@@ -1414,8 +1416,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||value| | |1..1| |"1311234567-2020-00123456" |情報IDの文字列。値は例示。 |
 |status| | | |1..1|code |"completed"|この治療処置情報の実施ステータス。コード表："http://hl7.org/fhir/event-status"preparation \| in-progress \| not-done \| on-hold \| stopped \| completed \| entered-in-error \| unknown準備中\|進行中\|未完了\|保留中\|停止\|完了\|エラー\|不明 |
 |statusReason| | | |0..1|CodeableConcept|text:"発熱のため延期"|中止や保留ステータスとなった理由。コード化せずテキストのみで記述する。 |
-|category| | | |0..1|CodeableConcept|"http://jpfhir.jp/fhir<br>/Procedure/CodeSystem/procedure-category"<br>"srg"<br>"手術処置" |治療処置のカテゴリー。例）"srg"(手術処置)psy:精神心理療法 \| cns:カウンセリング \| edu:教育 \| srg:手術処置 \| 診断的処置 \| chp:理学的処置 \| scl:ソーシャルサービス処置。|
-|code| | | |1..1|CodeableConcept|"http://jpfhir.jp/fhir<br>/Procedure/CodeSystem/insurance-procedure-codeｓ"<br>"150165210"　"胃切除術（単純切除術)"|治療処置情報。保険診療対象の治療処置においてはレセプト電算コード（診療行為コード）を推奨する。さらに手術処置については、STEM7コードまたはK分類コードの併用を推奨する。コーディングせず、textだけ記述することも可能。 |
+|category| | | |0..1|CodeableConcept|"http://jpfhir.jp/fhir<br>/core/CodeSystem/JP_ProcedureCategory_CS"<br>"JPPCC004"<br>"外科的処置" |治療処置のカテゴリー。JP Core Procedure Category CodeSystemの使用を推奨する。<br>例）JPPCC001	精神療法<br>JPPCC002	カウンセリング<br>JPPCC003	教育<br>JPPCC004	外科的処置<br>JPPCC005	診断的処置<br>JPPCC006	カイロプラクティック<br>JPPCC007	社会サービス介入<br>|
+|code| | | |1..1|CodeableConcept|"http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureCodesMedical_CS"<br>"150165210"<br>"胃切除術（単純切除術)"|治療処置情報。保険診療対象の治療処置においては以下のレセプト電算コード（診療行為コード等）を推奨する。<br>さらに手術処置については、STEM7コードまたはK分類コードの併用を推奨する。<br>医科診療行為コード（レセ電算）：system= http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureCodesMedical_CS<br>歯科診療行為コード（レセ電算）：http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureCodesDental_CS<br>看護行為マスタ（MEDIS）: urn:oid:1.2.392.200119.4.701<br>STEM7コード:http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureCodesSTEM7_CS<br>コーディングせず、textだけ記述することも可能。|
 |subject | | | |1..1|Reference(Patient) | |患者を表す**Patient**リソースへの参照。|
 |encounter | | | |0..1|Reference(Encounter) | |対象となる治療処置が実施された入院詳細情報、または外来受診情報。 |
 |（performed） | | | |1..1|dateTime\|Period\|string\|Age\|Range | |治療処置を実施した時期を次の5つのいずれかひとつの要素で記述する。performed要素は記述しない。 |
@@ -1433,15 +1435,15 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |location| | | |0..1|Reference(Location)| |治療処置を実施した場所。 |
 |reasonCode| | | |0..\* |CodeableConcept| |治療処置を実施した理由。当面コード化せず、text だけに記述する。|
 |reasonReference | | | |0..\* |Reference(Condition \| Observation \| Procedure \| DiagnosticReport \| DocumentReference)| |治療処置を実施する根拠となった診療情報への参照。当面未使用。 |
-|bodySite| | | |0..\* |CodeableConcept|"urn:oid:1.2.392.200119.4.201.5"<br>"1244"<br>"腹部"<br>"腹部" |該当する状態が現れている解剖学的な場所を示す。system値はMEDIS標準病名マスター修飾語交換用コードを使用する場合の例示。"1244"は、MEDIS標準病名マスター修飾語交換用コードで"腹部"のコード。"腹部"はそのテキスト記述の例。手術操作の場合には、system値は外保連コード（STEM7）の先頭3桁コードを使用する。"http://jpfhir.jp/fhir<br>/Procedure/CodeSystem/procedure-site-codes"|
-|outcome | | | |0..1|CodeableConcept|"http://jpfhir.jp/fhir<br>/CodeSystem/Procedure-OutcomeCategory"<br>"success"|治療処置の結果カテゴリ。success: 成功unsuccess:不成功partialSuccess:部分的成功 |
+|bodySite| | | |0..\* |CodeableConcept|"urn:oid:1.2.392.200119.4.201.5"<br>"1244"<br>"腹部"<br>"腹部" |該当する状態が現れている解剖学的な場所を示す。system値はMEDIS標準病名マスター修飾語交換用コードを使用する場合の例示。"1244"は、MEDIS標準病名マスター修飾語交換用コードで"腹部"のコード。"腹部"はそのテキスト記述の例。手術操作の場合には、system値は外保連コード（STEM7）の先頭3桁コードを使用してもよい。system="http://jpfhir.jp/fhir/Common/CodeSystem/stem7-procedure-site-codes"|
+|outcome | | | |0..1|CodeableConcept|"http://jpfhir.jp/fhir<br>/core/CodeSystem/JP_ProcedureOutcome_CS"<br>" JPPOC001"|治療処置の結果カテゴリ。JP Core Procedure Outcome CodeSystem を使用推奨。<br>system="http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureOutcome_CS"<br>JPPOC001	成功<br>JPPOC002	不成功<br>JPPOC003	一部成功<br>|
 |report| | | |0..\* |Reference(DiagnosticReport \| DocumentReference \| Composition \| Bundle) | |治療処置の実施レポート情報への参照 |
 |complicaton | | | |0..\* |CodeableConcept|"urn:oid:1.2.392.200119.4.101.6"<br>"TVQ7"<br>"術後血腫"<br>"術後腹壁の血腫" |治療処置の伴う合併症。MEDIS標準病名マスター病名交換用コードを使用する場合の例示。"BOEF"は、MEDIS標準病名マスター病名交換用コードで"持続腹痛"のコード。"持続腹痛"はそのテキスト記述の例。コーディングせずtextだけでもよい。 |
 |complicationDetail| | | |0..\* |Reference(Condition) | |治療処置の実施後の合併症を記述する患者状態情報への参照。 |
 |followUp| | | |0..\* |CodeableConcept| |治療処置の実施後の経過観察や必要な術後処置（例えば抜糸や抜釘など）に関する記述。コーディングせず、textのみで記述する。 |
 |note| | | |0..\* |Annotation | |治療処置に関する追加的な叙述的記述。 |
 |focalDevice | | | |0..\* |BackboneElement| |治療処置で使用したり、埋め込んだり取り外されたりした医療機器の情報。 |
-||action | | |0..1|CodeableConcept|"http://jpfhir.jp/fhir<br>/CodeSystem/Procedure-action"<br>"2E2"<br>"処置−交換"<br>"CVカテーテル交換"|治療処置で当該機器の操作（取り外し、挿入など）。コーディングせず、textのみで記述してもよい。 |
+||action | | |0..1|CodeableConcept|"処置−交換"<br>"CVカテーテル交換"|治療処置で当該機器の操作（取り外し、挿入など）。コーディングせず、textのみで記述する。 |
 ||manipulated| | |0..1|Reference(Device)| |操作対象となった医療機器（器材）への参照。 |
 |usedReference | | | |0..\* |Reference(Device \| Medication \| Substance) | |治療処置中に使用された（主要な）医療器材や薬品。当面未使用。 |
 |usedCode| | | |0..\* |CodeableConcept| |治療処置中に使用された（主要な）医療器材や薬品のコード情報。未使用。 |
@@ -1537,7 +1539,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||status | | |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |
 |identifier| | | |0..1\*|Identifier||この情報に付番されたID |
-||system | | |1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier "|付番方法については「識別子名前空間一覧」を参照。値は例示。 |
+||system | | |1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier"|付番方法については「識別子名前空間一覧」を参照。値は例示。 |
 ||value| | |1..1||"1311234567-2020-00123456"|情報IDの文字列。値は例示。 |
 |status| | | |1..1|code|"on-study-intervention" |臨床研究のステータス。コード表："http://hl7.org/fhir/event-status"i candidate \| eligible \| follow-up \| ineligible \| not-registered \| off-study \| on-study \| on-study-intervention \| on-study-observation \| pending-on-study \| potential-candidate \| screening \| withdrawn候補者\|適格基準者\|フォローアップ\|不適格\|未登録\|オフスタディ\|研究中\|研究中-介入試験\|研究中-観察研究\|中断中\|潜在的な候補者\|スクリーニング\|取りやめ者|
 |period| | | |0..1|Period||研究参加期間。 |
