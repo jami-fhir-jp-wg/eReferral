@@ -74,15 +74,14 @@ counter-increment: sub-sub-section;
 content: "　　"counter(sub-sub-section) "）";
 }
 
-</style>ｓ
-
+</style>
 
 # 診療情報提供書HL7FHIR記述仕様・退院時サマリー HL7 FHIR記述仕様の共通　名前空間識別子の一覧表<br>
 第1.1版 2022.12.10<br>
 
 ||||||||
 |--|--|--|--|--|--|--|
-| No. | 出現リソース              | 出現要素                                                             | データ型            | 項目名               | 変更状況           | 説明／値  |
+| No. | 出現リソース              | 出現要素                                                             | データ型            | 項目名               | V1からの変更状況           | 説明／値  |
 | 1   | 共通                  | identifier                                                       | Identifier      | 名前空間識別子           | jp-core　v1.1対応 | http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier                                                                                                                                                                                                                             |
 |     |                     |                                                                  |                 | 値リスト（列挙可能な数のもの）   |                |                                                                                                                                                                                                                                                                                             |
 |     |                     |                                                                  |                 | 設定値 例示　（Display名） |                | "1311234567-2020-00123456"                                                                                                                                                                                                                                                                  |
