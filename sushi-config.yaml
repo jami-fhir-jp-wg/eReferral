@@ -44,7 +44,7 @@ pages:
 #-----------------------------------------
 menu:
   Home: index.html
-#  Tables: eReferralTables.html
+  Tables: eReferralTables.html
   Artifacts: artifacts.html
 
 #-----------------------------------------

@@ -718,7 +718,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2 |要素Lv3|多重度|型|値 |説明|
 |resourceType|| |||"DocumentReference"|DocumentReferenceリソースであることを示す |
 |meta|| |1..1|Meta| ||
-||profile | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JPDocumentReference_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DocumentReference_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |status|| |1..1|code|"current"|"current" 固定|
 |description || |0..1|string|"退院時サマリー" |人が読むことのできる添付文書のタイトルなど。値は例示。|
 |content || |1..1\*|BackboneElement | |参照する文書|
@@ -924,7 +924,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1|要素Lv2 |要素Lv3 |要素Lv4|多重度|型|値|説明|
 |resourceType ||| |||"MedicationRequest" |**MedicationRequest**リソースであることを示す |
 |meta ||| |1..1|Meta|||
-| |profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eReferral/StructureDefinition<br>/JP_MedicationRequest_eReferral"|本文書のプロファイルを識別するURLを指定する。値は固定。処方情報FHIR記述仕様のProfileを使用する。|
+| |profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/ePrescription/StructureDefinition<br>/JP_MedicationRequest_ePrescriptionData"|本文書のプロファイルを識別するURLを指定する。値は固定。処方情報FHIR記述仕様のProfileを使用する。|
 |text ||| |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
 | |status|| |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 | |div || |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; ||
@@ -980,7 +980,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |------|--------|----|--|------|-----|------------------------------------|--------------------------------------------------|
 |要素 Lv1 |要素 Lv2 |要素 Lv3|要素Lv4|多重度|型 |値 |説明|
 |extension| || |0..1\*|Extension| |投与開始日を明示したい場合に使用する拡張「PeriodOfUse」。詳細は処方情報HL７FHIR記述仕様を参照。 |
-| |url|| |1..1\*|uri|"http://jpfhir.jp/fhir<br>/core/Extension/StructureDefinition<br>/JP_MedicationRequest_DosageInstruction_PeriodOfUse"|拡張を識別するURL。固定値。 |
+| |url|| |1..1\*|uri|"http://jpfhir.jp/fhir<br>/core/Extension/StructureDefinition<br>/JP_MedicationDosage_PeriodOfUse"|拡張を識別するURL。固定値。 |
 | |valuePeriod|| |1..1|Period | |投与期間を表す|
 | | |start | |1..1|dateTime |"2020-08-21" |処方期間の開始日|
 |extension| || |0..1\*|Extension| |隔日投与など、服用開始日から終了日までの日数と実投与日数が異なる場合に、実投与日数を明示したい場合に使用する拡張 「UsageDuration」。詳細は処方情報HL７FHIR記述仕様を参照。|
@@ -1378,7 +1378,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型|値|説明|
 |resourceType| | | |||"Practitioner"|**Practitioner**リソースであることを示す|
 |meta| | | |1..1|Meta|||
-||profile| | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Practitioner_eClinicalSummarys"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile| | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Practitioner_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| | | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
 ||status | | |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; ||
