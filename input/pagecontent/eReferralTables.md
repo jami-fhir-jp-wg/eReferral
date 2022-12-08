@@ -326,7 +326,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||profile| | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eDischargeSummary/StructureDefinition<br>/JP_Composition_eDischargeSummary"|本リソースのプロファイルを識別するURLを指定する。値は固定。 |
 |extension | | | |1..1\*|Extension||文書バージョンを表す拡張「composition-clinicaldocument-versionNumber」。|
 ||url| | |1..1|uri|"http:// hl7.org/fhir/StructureDefinition<br>/composition-clinicaldocument-versionNumber" |拡張を識別するURL。固定値。 |
-||valueString| | |1..1|string |"1.0" |文書のバージョン番号を表す文字列。値は例示。|
+||valueString| | |1..1|string |"1" |文書のバージョン番号を表す文字列。値は例示。|
 |identifier| | | |1..1|Identifier ||この文書の文書ID。|
 ||system | | |1..1|uri|"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier" |文書IDの名前空間を表すURI。固定値。 |
 ||value| | |1..1|string |"1311234567-2020-00123456"|文書ID。値は例示。付番方法は本文を参照。|
