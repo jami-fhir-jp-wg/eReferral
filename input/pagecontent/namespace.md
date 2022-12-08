@@ -1,10 +1,87 @@
+<style type="text/css">
 
+table {
+border: solid 1px black;
+border-collapse: collapse;
+}
+ 
+table td {
+border: solid 1px black;
+
+}
+
+table th {
+border: solid 1px black;
+}
+ h1 {
+counter-reset: chapter;
+}
+
+h2 {
+counter-reset: sub-chapter;
+}
+
+h3 {
+counter-reset: section;
+}
+
+h4 {
+counter-reset: sub-section;
+}
+
+h5 {
+counter-reset: composite;
+}
+
+h6 {
+counter-reset: sub-composite;
+}
+
+h1:before {
+color: black;
+counter-increment: bchapter;
+content:" ";
+}
+
+h2:before {
+color: black;
+counter-increment: chapter;
+content: counter(chapter) ". ";
+}
+
+h3:before {
+color: black;
+counter-increment: sub-chapter;
+content: counter(chapter) "."counter(sub-chapter) ". ";
+}
+
+
+h4:before {
+color: black;
+counter-increment: section;
+content: counter(chapter) "."counter(sub-chapter) "."counter(section) " ";
+}
+
+h5:before {
+color: black;
+counter-increment: sub-section;
+content: counter(chapter) "."counter(sub-chapter) "."counter(section) "."counter(sub-section) " ";
+}
+
+h6:before {
+color: black;
+counter-increment: sub-sub-section;
+content: "　　"counter(sub-sub-section) "）";
+}
+
+</style>
 
 
 # 診療情報提供書HL7FHIR記述仕様・退院時サマリー HL7 FHIR記述仕様の共通　名前空間識別子の一覧表<br>
 第１版 2022.12.10<br>
+
 ||||||||
-|---|---|---|---|---|---|---|
+|--|--|--|--|--|--|--|
 | No. | 出現リソース              | 出現要素                                                             | データ型            | 項目名               | 変更状況           | 説明／値  |
 | 1   | 共通                  | identifier                                                       | Identifier      | 名前空間識別子           | jp-core　v1.1対応 | http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier                                                                                                                                                                                                                             |
 |     |                     |                                                                  |                 | 値リスト（列挙可能な数のもの）   |                |                                                                                                                                                                                                                                                                                             |
