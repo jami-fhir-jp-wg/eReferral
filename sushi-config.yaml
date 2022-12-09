@@ -48,8 +48,8 @@ pages:
 menu:
   Home:
     全文:  index.html
-    本仕様書の位置づけ: index.html#sec-1
-    参照する仕様等: index.html#sec-2
+    本仕様書の位置づけ: index.html#本仕様書の位置づけ
+    参照する仕様等: index.html#参照する仕様等
   リソース表:
     全表: eReferralTables.html
     表1 AllergyIntoleranceリソースアレルギー情報: eReferralTables.html#tbl-1
