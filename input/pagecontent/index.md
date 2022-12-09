@@ -92,8 +92,9 @@ table th {
 本仕様書は、以下の仕様等を参照して作成されている。
 HL7FHIRR4Ver.4.0.1[[http://hl7.org/fhir/index.html](http://hl7.org/fhir/index.html)]　本仕様書ではFHIR基底仕様という。
 厚生労働省標準HS008「診療情報提供書（医療機関への紹介状）」（日本HL7協会）[[http://www.hl7.jp/intro/std/HL7J-CDA-005.pdf](http://www.hl7.jp/intro/std/HL7J-CDA-005.pdf)]
+<br>[→top](#top)
 
-## 文書データの表現形式<h5 href="#top">TOP</h5>
+## 文書データの表現形式
 ### ファイル形式
 ファイル形式は、JSON形式（JavaScriptObjectNotation：RFC8259、IETFSTD90、ECMA-4042ndedition）とする。
 ファイル名を有するファイルを作成する場合には、特に送受信施設間で別の取り決めがない限り、.jsonの拡張子を末尾に付与するものとする。
