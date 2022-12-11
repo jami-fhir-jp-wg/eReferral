@@ -52,8 +52,8 @@ menu:
     2.参照する仕様等: index.html#参照する仕様等
     3.文書データの表現形式: index.html#文書データの表現形式
     4./4.1全体構造: index.html#全体構造
-    4.2FHIRDocument: index.html#FHIRDocument
-    4.3/4.4Compositionリソース: index.html#Compositionリソース
+    4.2FHIRDocument: index.html#fhirdocument
+    4.3/4.4Compositionリソース: index.html#compositionリソース
     4.5紹介目的セクション: index.html#紹介目的セクション
     4.6傷病名・主訴セクション: index.html#傷病名・主訴セクション
     4.7現病歴セクション: index.html#現病歴セクション
@@ -78,7 +78,7 @@ menu:
     4.26備考・連絡情報セクション: index.html#備考・連絡情報セクション
     4.27セクションから直接参照されないリソース: index.html#セクションから直接参照されないリソース
     5.データタイプ: index.html#データタイプ
-    6.名前空間と識別ＩＤ: index.html#名前空間と識別ＩＤ
+    6.名前空間と識別ＩＤ: index.html#名前空間と識別id
     7.仕様策定メンバー: index.html#仕様策定メンバー
     8.謝辞: index.html#謝辞
   リソース表:
