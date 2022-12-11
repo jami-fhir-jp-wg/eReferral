@@ -51,37 +51,36 @@ menu:
     1.本仕様書の位置づけ: index.html#本仕様書の位置づけ
     2.参照する仕様等: index.html#参照する仕様等
     3.文書データの表現形式: index.html#文書データの表現形式
-    4./4.1 全体構造: index.html#全体構造
-    4.2 FHIRDocument: index.html##FHIRDocument
-    4.3 Compositionリソース: index.html#Compositionリソース
-    4.4 Compositionリソースから各リソースへの参照: index.html#Compositionリソースから各リソースへの参照
-    4.5 紹介目的セクション: index.html#紹介目的セクション
-    4.6 傷病名・主訴セクション: index.html#傷病名・主訴セクション
-    4.7 現病歴セクション: index.html#現病歴セクション
-    4.8 既往歴セクション: index.html#既往歴セクション
-    4.9 アレルギー・不耐性反応セクション: index.html#アレルギー・不耐性反応セクション
-    4.10 家族歴セクション: index.html#家族歴セクション
-    4.11 身体所見セクション: index.html#身体所見セクション
-    4.12 感染症情報セクション: index.html#感染症情報セクション
-    4.13 社会歴・生活習慣セクション: index.html#社会歴・生活習慣セクション
-    4.14 予防接種歴セクション: index.html#予防接種歴セクション
-    4.15 手術セクション: index.html#手術セクション
-    4.16 輸血歴セクション: index.html#輸血歴セクション
-    4.17 処置セクション: index.html#処置セクション
-    4.18 投薬指示セクション: index.html#投薬指示セクション
-    4.19 検査結果セクション: index.html#検査結果セクション
-    4.20 臨床経過セクション: index.html#臨床経過セクション
-    4.21 診療方針指示セクション: index.html#診療方針指示セクション
-    4.22 医療機器セクション: index.html#医療機器セクション
-    4.23 事前指示セクション: index.html#事前指示セクション
-    4.24 臨床研究参加セクション: index.html#臨床研究参加セクション
-    4.25 添付情報セクション: index.html#添付情報セクション
-    4.26 備考・連絡情報セクション: index.html#備考・連絡情報セクション
-    4.27 セクションから直接参照されないリソース: index.html#セクションから直接参照されないリソース
-    5. データタイプ: index.html#データタイプ
-    6. 名前空間と識別ＩＤ: index.html#名前空間と識別ＩＤ
-    7. 仕様策定メンバー: index.html#仕様策定メンバー
-    8. 謝辞: index.html#謝辞
+    4./4.1全体構造: index.html#全体構造
+    4.2FHIRDocument: index.html#FHIRDocument
+    4.3/4.4Compositionリソース: index.html#Compositionリソース
+    4.5紹介目的セクション: index.html#紹介目的セクション
+    4.6傷病名・主訴セクション: index.html#傷病名・主訴セクション
+    4.7現病歴セクション: index.html#現病歴セクション
+    4.8既往歴セクション: index.html#既往歴セクション
+    4.9アレルギー・不耐性反応セクション: index.html#アレルギー・不耐性反応セクション
+    4.10家族歴セクション: index.html#家族歴セクション
+    4.11身体所見セクション: index.html#身体所見セクション
+    4.12感染症情報セクション: index.html#感染症情報セクション
+    4.13社会歴・生活習慣セクション: index.html#社会歴・生活習慣セクション
+    4.14予防接種歴セクション: index.html#予防接種歴セクション
+    4.15手術セクション: index.html#手術セクション
+    4.16輸血歴セクション: index.html#輸血歴セクション
+    4.17処置セクション: index.html#処置セクション
+    4.18投薬指示セクション: index.html#投薬指示セクション
+    4.19検査結果セクション: index.html#検査結果セクション
+    4.20臨床経過セクション: index.html#臨床経過セクション
+    4.21診療方針指示セクション: index.html#診療方針指示セクション
+    4.22医療機器セクション: index.html#医療機器セクション
+    4.23事前指示セクション: index.html#事前指示セクション
+    4.24臨床研究参加セクション: index.html#臨床研究参加セクション
+    4.25添付情報セクション: index.html#添付情報セクション
+    4.26備考・連絡情報セクション: index.html#備考・連絡情報セクション
+    4.27セクションから直接参照されないリソース: index.html#セクションから直接参照されないリソース
+    5.データタイプ: index.html#データタイプ
+    6.名前空間と識別ＩＤ: index.html#名前空間と識別ＩＤ
+    7.仕様策定メンバー: index.html#仕様策定メンバー
+    8.謝辞: index.html#謝辞
   リソース表:
     全表: eReferralTables.html
     表1 AllergyIntoleranceリソースアレルギー情報: eReferralTables.html#tbl-1
