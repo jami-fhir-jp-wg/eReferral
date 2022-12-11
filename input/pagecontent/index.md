@@ -93,7 +93,7 @@ table th {
 HL7FHIRR4Ver.4.0.1[[http://hl7.org/fhir/index.html](http://hl7.org/fhir/index.html)]　本仕様書ではFHIR基底仕様という。
 厚生労働省標準HS008「診療情報提供書（医療機関への紹介状）」（日本HL7協会）[[http://www.hl7.jp/intro/std/HL7J-CDA-005.pdf](http://www.hl7.jp/intro/std/HL7J-CDA-005.pdf)]
 
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ## 文書データの表現形式
@@ -105,7 +105,7 @@ HL7FHIRR4Ver.4.0.1[[http://hl7.org/fhir/index.html](http://hl7.org/fhir/index.ht
 ###符号化形式
 文字符号化形式は、UTF-8（ISO/IEC10646　UCSTransformationFormat8）とする。ネットワーク上で直接データを送受信することを想定し、バイト順マーク（BOM：byteordermark：UTF-8では0xEF0xBB0xBF）を先頭に付与しないものとする。
 
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ## 診療情報提供書FHIR記述の全体構造
@@ -137,7 +137,7 @@ Bundleリソースは、複数のFHIRリソースの集合を、あるコンテ�
 本仕様書で必須とした項目は、診療情報提供書の記載内容として必要となる項目であるため必ず指定すること。逆に、FHIRリソースで定義されている任意要素で、本仕様書に記載していない要素は、JSONインスタンス中に出現してはならない。
 なお、本仕様書の表で出現するデータタイプのうち、基本データタイプについては、5章で説明している。
 
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### FHIRDocument
@@ -196,7 +196,7 @@ entryの最初のresourceは、先に述べたように、構成リソース一�
 
 以下では、まずentryの値である各リソースについて詳述する。
 
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### Compositionリソース
@@ -276,7 +276,7 @@ Patientリソースの仕様は次の表で示す。
 
 ＜[表21　　Patientリソース　患者情報](eReferralTables.html#tbl-21)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 #### Composition.encounter要素
@@ -285,7 +285,7 @@ Patientリソースの仕様は次の表で示す。
 Encounterリソースの仕様は次の表で示す。
 
 ＜[表12　　Encounterリソース 受診時情報（診療情報提供書）/入院詳細情報(退院時サマリー)＞](eReferralTables.html#tbl-12)＞
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -308,13 +308,13 @@ Practionerリソース、Organizationリソースの仕様はそれぞれ次の�
 文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表すOrganizationリソースのリソースIDである"urn:uuid: ..... "　を記述することにより内部参照する。
 文書作成機関とは異なる組織である場合は、文書作成機関とは別のOrganizationリソースで記述し、custodian要素からはそのOrganizationリソースのリソースIDである"urn:uuid: ..... "　を記述することにより内部参照する。
 必須要素である。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
 #### Composition.event要素
 この診療情報提供書文書の発行イベントが発生した日時を記述するため本要素を記述する。具体的には、Composition.event.preiod.start要素に"yyyy-mm-dd"の形式で診療情報提供書文書の発行日付を格納する。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -326,7 +326,7 @@ Practionerリソース、Organizationリソースの仕様はそれぞれ次の�
 Compositionの直下には、紹介先医療機関と紹介元医療機関の情報を保持する2つのセクションと、診療情報提供書文書の内容を異なる2つの形態のいずれかで格納するためにどちらか一方を選択して使用するCDA参照セクションと構造情報セクション、およびどの形態においても使うことのある添付情報セクション、PDFセクションの計6つのsectionが子要素として存在している。
 これらのうちCDA参照セクションは既存のCDA規約にもとづいてすでに十分に構造化されたXMLファイルを有していて、それをそのまま包み込むことによって、FHIRドキュメント作成になるべくコストを割きたくない場合を想定して、それぞれ用意されている。
 以下では、各セクションの使い方について説明する。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -352,7 +352,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 　このセクションは必須である。
 
 紹介元医療機関、紹介元診療科、紹介元医師の情報記述は紹介先情報と同一仕様である。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -366,7 +366,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 この要素が出現した場合、必要があって「添付情報セクション」を作成する場合と、本文書データをPDFファイルでも送付する場合に「PDFセクション」を作成する場合を除き、他のすべてのセクションを出現させないものとする。
 本文書データを受領して利用する側は、「CDA参照セクション」が存在し、情報が格納または参照されている場合には、「CDA参照セクション」の情報、存在する場合には「添付情報セクション」との2つのセクションの情報を、完結した本文書データとして利用しなければならない。「PDFセクション」が存在する場合にはその情報を表示用や印刷用に使用することができる。もし他に「構造情報セクション」の情報が存在したとしても、無視する必要がある。
 なお、文書管理情報（ヘッダ部）の情報は、この仕様にもとづいて作成し、Compositionリソースの要素に格納しなければならない。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -384,7 +384,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 
 それぞれの子セクションには、以降で説明するFHIRリソースへの参照が1個以上格納されるが、これらの構造的記述では十分に表現できない情報があって、そのセクション全体の情報を叙述的（もしくはプレーンテキストやHTML）に記述した情報を格納するには、**Composition.section.section.text**要素に簡略xhtml形式（1MB以内のサイズ）で記述できる。
 従って、診療情報提供書情報を、以降で説明する各セクションに構造化することはできるものの、FHIRリソースで構造的に記述することができない場合には、そのセクションの情報は、そのセクションの**Composition.section.section.text**要素に記述し、Composition.section.emptyReason要素に"unavailable"を意味するコード情報を格納することとする。これにより、FHIRリソースに対応した構造化情報がないことが明示的に示され、利用側は、そのセクションについては**Composition.section.section.text**要素の叙述的記述（もしくはプレーンテキストやHTML）を利用する。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -403,7 +403,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 |現在の処方|投薬指示セクション|特になし。|
 |備考|備考・連絡情報セクション|本セクションは構造情報セクション<br>の子セクションではなく、構造情報<br>セクションと同列のセクションである<br>が、便宜上、本表に記載した。|
 
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -414,7 +414,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 ＜[表12　　Encounterリソース　入院詳細情報](eReferralTables.html#tbl-12)＞　（再掲）
 
 Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -437,7 +437,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 ### 既往歴セクション
 傷病名・主訴セクションと同様である。
 セクションコード：370
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -450,7 +450,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 このコード表は、医薬品以外のアレルゲンにコードをアサインして策定したJFAGYコードと、医薬品（YJコードまたはWHO-ATCコードまたは厚労省一般医薬品コード）のいずれかのコードを使用できる新たなコード体系JPFHIRアレルゲンコード表である。
 
 ＜表1　　AllergyIntoleranceリソース　アレルギー情報＞
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 家族歴セクション
@@ -460,7 +460,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 
 ＜[表13　　FamiliMemberHistoryリソース　家族歴情報](eReferralTables.html#tbl-13)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 身体所見セクション
@@ -470,7 +470,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 
 ＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-16)＞　
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 感染症情報セクション
@@ -480,7 +480,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 
 ＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 社会歴・生活習慣セクション
@@ -489,7 +489,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 仕様は次の表である。
 
 ＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞（再掲）
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 予防接種歴セクション
@@ -510,7 +510,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 note要素に叙述的記述はできるが、entry.textに記述してもよい。
 ＜[表23　　Procedureリソース　　入院中治療処置情報](eReferralTables.html#tbl-23)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 投薬指示セクション
@@ -525,7 +525,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 なお、処方情報HL7 FHIR記述仕様にもとづいた処方箋文書（Bundleリソースインスタンス）を直接参照する方法でも記述できる。
 その場合、entryでの参照はそのひとつのBundleリソースインスタンスだけとなる。
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 検査結果セクション
@@ -537,7 +537,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 ＜[表14　　ImagingStudyリソース　画像検査実施情報](eReferralTables.html#tbl-14)＞
 ＜[表10　　DiagnosticReportリソース　診断報告書情報](eReferralTables.html#tbl-10)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 臨床経過セクション
@@ -547,7 +547,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 仕様は次の表に示す。
 
 ＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 診療方針指示セクション
@@ -558,7 +558,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 
 ＜[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-04)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 医療機器セクション
@@ -578,7 +578,7 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 
 ＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-07)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 臨床研究参加セクション
@@ -601,7 +601,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 ＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞
 ＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-02)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### 備考・連絡情報セクション
@@ -611,7 +611,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 
 ＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞（再掲）
 ＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-02)＞（再掲）
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ### セクションから直接参照されないリソース
@@ -619,7 +619,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 なお、間接的参照のリソースであっても、本仕様書の主題である診療情報提供書文書としてはそれを使用して情報を記述する必要性がないか低いと判断されたものは、本仕様書では取り上げない。
 必要な場合には、FHIRのホームページで公開されているリソースのプロファイル記述などを参照されたい。
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ####　Organizationリソース
@@ -630,7 +630,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 ＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞（再掲）
 ＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞（再掲）
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ####　RelatedPersonリソース
@@ -639,7 +639,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 
 ＜[表24　　RelatedPersonリソース　　患者関係者情報](eReferralTables.html#tbl-24)＞
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 
@@ -681,14 +681,14 @@ urn:oid:1.2.392.100495.20.x：厚生労働省退院時サマリーCDA記述仕�
 urn:oid:1.2.392.200250.2.x：（一社）日本医療情報学会管理のOID表（日本医療情報学会　「医療情報の標準化に関する情報・資料など」[http://jami.jp/jamistd/](http://jami.jp/jamistd/)　より　「JAMIが管理するOID表」　）
 urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センター](https://www.medis.or.jp/)が管理するOID表
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ## 仕様策定メンバー
 ・令和２年度厚生労働科学特別研究事業[「診療情報提供書,退院時サマリー等の電子化医療文書の相互運用性確保のための標準規格の開発研究」研究班](https://std.jpfhir.jp/)（研究代表者：大江和彦（東京大学））
 ・河添悦昌、星本弘之、永島里美（JPFHIRアレルゲンコード表とJFAGYアレルギーコードの策定）
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 ## 謝辞
@@ -696,7 +696,7 @@ urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センタ�
 ・SWG1：㈱ファインデックス　宮川力、㈱ケーアイエス　小西由貴範、東京大学　三谷知広、SWG2：キヤノンメディカルシステムズ㈱　塩川康成、㈱ケーアイエス　田中教子、平山照幸、SWG3：日本HL7協会　檀原一之、東京大学　土井俊祐、インターシステムズジャパン㈱　上中進太郎、SWG4：東京大学　河添悦昌、山口大学　石田博、SWG5：国立保健医療科学院　小林慎治、日本アイ・ビー・エム㈱　木村雅彦、SWG6：東京大学　今井健、国立病院機構　堀口裕正、SWG-SSMIX：㈱SBS情報システム　中根賢、㈱NTTデータ東海　沼野武志
 ・木村英善、他：退院時サマリーCDA文書のFHIRへの移植の評価,医療情報学、39(3),143-153,2019.
 <br>
-<br>[→topへ](#top)<br>
+<br>[→topへ](index.html)<br>
 
 
 

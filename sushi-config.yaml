@@ -52,7 +52,7 @@ menu:
     2.参照する仕様等: index.html#参照する仕様等
     3.文書データの表現形式: index.html#文書データの表現形式
     4./4.1 全体構造: index.html#全体構造
-    4.2 FHIRDocument: #FHIRDocument
+    4.2 FHIRDocument: index.html##FHIRDocument
     4.3 Compositionリソース: index.html#Compositionリソース
     4.4 Compositionリソースから各リソースへの参照: index.html#Compositionリソースから各リソースへの参照
     4.5 紹介目的セクション: index.html#紹介目的セクション
