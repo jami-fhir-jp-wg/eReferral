@@ -47,7 +47,7 @@ pages:
 #-----------------------------------------
 menu:
   Home:
-    全文:  index.html
+    全文: index.html
     1.本仕様書の位置づけ: index.html#本仕様書の位置づけ
     2.参照する仕様等: index.html#参照する仕様等
     3.文書データの表現形式: index.html#文書データの表現形式
@@ -87,15 +87,35 @@ menu:
     表1 AllergyIntoleranceリソースアレルギー情報: eReferralTables.html#tbl-1
     表2 Binaryリソースバイナリーデータ情報: eReferralTables.html#tbl-2
     表3_Bundleリソース 文書情報: eReferralTables.html#tbl-3
-    表4_CarePlanリソース 診療方針指示情報:   eReferralTables.html#tbl-4
-    表5_Compositionリソース 文書構成情報:   eReferralTables.html#tbl-5
-    表5-1_Compositionリソース (退院時サマリー):   eReferralTables.html#tbl-5-1
-    表5-2_Compositionリソース (診療情報提供書):   eReferralTables.html#tbl-5-2
-    表5-3_Composition_sectionの情報構造:   eReferralTables.html#tbl-5-3
-    表6_Conditionリソース 患者状態情報:   eReferralTables.html#tbl-6
-    表7	Consentリソース 同意情報:   eReferralTables.html#tbl-7
-    表8	DeviceUseStatementリソース 医療機器使用歴情報:   eReferralTables.html#tbl-8
-    表9	Deviceリソース 医療機器情報:   eReferralTables.html#tbl-9
+    表4 CarePlanリソース 診療方針指示情報: eReferralTables.html#tbl-4
+    表5 Compositionリソース 文書構成情報: eReferralTables.html#tbl-5
+    表5-1 Compositionリソース (退院時サマリー): eReferralTables.html#tbl-5-1
+    表5-2 Compositionリソース (診療情報提供書): eReferralTables.html#tbl-5-2
+    表5-3 Composition_sectionの情報構造: eReferralTables.html#tbl-5-3
+    表6 Conditionリソース 患者状態情報: eReferralTables.html#tbl-6
+    表7	Consentリソース 同意情報: eReferralTables.html#tbl-7
+    表8	DeviceUseStatementリソース 医療機器使用歴情報: eReferralTables.html#tbl-8
+    表9	Deviceリソース 医療機器情報: eReferralTables.html#tbl-9
+    表10 DiagnosticReportリソース 診断報告書情報: eReferralTables.html#tbl-10
+    表11 DocumentReferenceリソース 文書参照情報: eReferralTables.html#tbl-11
+    表12 Encounterリソース 入院詳細情報: eReferralTables.html#tbl-12
+    表13 FamiliMemberHistoryリソース 家族歴情報: eReferralTables.html#tbl-13
+    表14 ImagingStudyリソース 画像検査実施情報: eReferralTables.html#tbl-14
+    表15 Immunizationリソース ワクチン接種情報: eReferralTables.html#tbl-15
+    表16 MedicationRequestリソース 処方依頼情報: eReferralTables.html#tbl-16
+    表16-1 MedicationRequest.dosageInstruction  処方情報の用法指示情報: eReferralTables.html#tbl-16-1
+    表16-2 Extension （InstructionForDispense） 調剤指示拡張情報: eReferralTables.html#tbl-16-2
+    表17 MedicationStatementリソース  服薬情報: eReferralTables.html#tbl-17
+    表17-1 MedicationStatement dosage 処方依頼情報の服薬用法情報: eReferralTables.html#tbl-17-1
+    表18 Observationリソース  検査・観察情報: eReferralTables.html#tbl-18
+    表19 Organizationリソース 文書作成医療機関情報: eReferralTables.html#tbl-19
+    表20 Organizationリソース 診療科情報: eReferralTables.html#tbl-20
+    表21 Patientリソース 患者情報: eReferralTables.html#tbl-21
+    表22 Practitionerリソース  文書作成責任者情報/文書法的責任者情報: eReferralTables.html#tbl-22
+    表23 Procedureリソース  入院中治療処置情報: eReferralTables.html#tbl-23
+    表24 RelatedPersonリソース  患者関係者情報: eReferralTables.html#tbl-24
+    表25 ResearchStudyリソース  研究対象情報: eReferralTables.html#tbl-25
+    表26 ResearchSubjectリソース  研究対象情報: eReferralTables.html#tbl-26
   名前空間一覧: namespace.html
   Artifacts: artifacts.html
 
