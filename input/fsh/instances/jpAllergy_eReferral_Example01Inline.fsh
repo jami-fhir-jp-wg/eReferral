@@ -6,7 +6,7 @@ Instance: alg1ReferralExample01Inline
 InstanceOf: JP_AllergyIntolerance
 Usage: #inline
 
-Description: "allergyeferralExample01 診療情報提供書　アレルギー例1"
+Description: "allergyeferralExample01 診療情報提供書　アレルギー例1　サバ"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 
@@ -30,10 +30,10 @@ Description: "allergyeferralExample01 診療情報提供書　アレルギー例
 * code.text = "サバ"
 
 // * patient.reference = "jppatientExample01Inline"
-* patient.reference = "urn:uuid:e37cac19-9da9-492d-8810-0b7028b2e7e5"
+* patient.reference = "urn:uuid:0a48a4bf-0d87-4efb-aafd-d45e0842a4dd"
 
 // * encounter.reference = "encounterReferralExample01Inline"
-* encounter.reference = "urn:uuid:aafd328b-f5f1-4d82-97df-1e3912b7b83a"
+* encounter.reference = "urn:uuid:7cad1f19-3435-451d-9a71-a81b61f3358e"
 
 //100on_アレルギ時期日時(ARGdate,ARGtime)
 //100on_アレルギ時期日(ARGdate)
@@ -48,7 +48,7 @@ Instance: alg1ReferralExample02Inline
 InstanceOf: JP_AllergyIntolerance
 Usage: #inline
 
-Description: "allergyeferralExample01 診療情報提供書　アレルギー例1"
+Description: "allergyeferralExample01 診療情報提供書　アレルギー例1　キーウイ"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 
@@ -72,10 +72,10 @@ Description: "allergyeferralExample01 診療情報提供書　アレルギー例
 * code.text = "キーウイ"
 
 // * patient.reference = "jppatientExample01Inline"
-* patient.reference = "urn:uuid:e37cac19-9da9-492d-8810-0b7028b2e7e5"
+* patient.reference = "urn:uuid:0a48a4bf-0d87-4efb-aafd-d45e0842a4dd"
 
 // * encounter.reference = "encounterReferralExample01Inline"
-* encounter.reference = "urn:uuid:aafd328b-f5f1-4d82-97df-1e3912b7b83a"
+* encounter.reference = "urn:uuid:7cad1f19-3435-451d-9a71-a81b61f3358e"
 
 //100on_アレルギ時期日時(ARGdate,ARGtime)
 //100on_アレルギ時期日(ARGdate)

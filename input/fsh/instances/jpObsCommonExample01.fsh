@@ -4,7 +4,7 @@ Instance: psobsCommonExample01
 InstanceOf: JP_Observation_Common
 Usage: #example
   
-Description: "ObservationCommon検査結果　例"
+Description: "ObservationCommon検査結果　現症例"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common"
 

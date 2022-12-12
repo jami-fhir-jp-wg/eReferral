@@ -6,7 +6,7 @@ Instance: ccourseReferralExample01Inline
 InstanceOf: JP_DocumentReference
 Usage: #inline
 
-Description: "ccourseReferralExample01 診療情報提供書　経過記録文書例"
+Description: "ccourseReferralExample01 診療情報提供書　臨床経過記録文書参照例"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary"
 * status = #current

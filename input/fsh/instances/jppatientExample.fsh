@@ -29,7 +29,7 @@ Instance: jppatientExample01
 InstanceOf: JP_Patient
 Usage: #example
   
-Description: "JPPatient患者FHIR　例"
+Description: "JPPatient患者情報　例"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient"
 

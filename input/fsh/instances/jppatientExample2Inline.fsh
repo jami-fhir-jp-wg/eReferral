@@ -29,7 +29,7 @@ Instance: jppatientExample02Inline
 InstanceOf: JP_Patient
 Usage: #inline
 
-Description: "JPPatient患者FHIR　例"
+Description: "JPPatient患者情報（田中"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient"
 

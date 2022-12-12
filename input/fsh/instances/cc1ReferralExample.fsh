@@ -6,7 +6,7 @@ Instance: cc1ReferralExample01
 InstanceOf: JP_Condition
 Usage: #example
   
-Description: "conditionReferralExample01 診療情報提供書　主訴例"
+Description: "conditionReferralExample01 診療情報提供書　主訴例　上腹部痛 "
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary"
 
@@ -29,7 +29,7 @@ Instance: cc2ReferralExample01
 InstanceOf: JP_Condition
 Usage: #example
   
-Description: "conditionReferralExample01 診療情報提供書　主訴例"
+Description: "conditionReferralExample01 診療情報提供書　主訴例　腰痛"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary"
 
