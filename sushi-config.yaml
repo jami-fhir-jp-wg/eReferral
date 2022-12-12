@@ -13,14 +13,15 @@ status: draft # draft | active | retired | unknown
 version: 1.1.0-rc
 date: 2022-12-10
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
-copyrightYear: Kazuhiko Ohe@JAMI/HL7 Japan 2022+
+copyrightYear: 2022+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 #  https://www.hl7.org/fhir/valueset-spdx-license.html
 # https://www.hl7.org/fhir/valueset-jurisdiction.html 
 publisher:
-  name: Kazuhiko Ohe@JAMI/HL7 Japan
+  name: Kazuhiko Ohe@JAMI/HL7Japan and The University of Tokyo
   url: http://jpfhir.jp
-  # email: test@example.org
+  email: office@hlfhir.jp
+copyright: Copyright HL7Japan and Japan Association of Medical Informatics (JAMI), CC(Creative Commons license) BY-ND CC表示・改変禁止
 jurisdiction: 'urn:iso:std:iso:3166#JP'
 
 dependencies:
@@ -115,11 +116,11 @@ menu:
     表25 ResearchStudyリソース  研究対象情報: eReferralTables.html#tbl-25
     表26 ResearchSubjectリソース  研究対象情報: eReferralTables.html#tbl-26
   名前空間一覧: namespace.html
-  Artifacts: 
+  Artifacts:
     Structures Resource Profiles: artifacts.html#structures-resource-profiles
     Structures Extension Definitions: artifacts.html#structures-extension-definitions
-    Terminology: Value Sets: artifacts.html#terminology-value-sets
-    Terminology: Code Systems: artifacts.html#terminology-code-systems
+    Terminology Value Sets: artifacts.html#terminology-value-sets
+    Terminology Code Systems: artifacts.html#terminology-code-systems
     Example Instances: artifacts.html#example-example-instances
 
 #-----------------------------------------
