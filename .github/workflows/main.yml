@@ -86,10 +86,22 @@ jobs:
         : # 
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
+
+    - name: prepare gtz files for upload to remote site
+      run: | 
+        cd fsh-generated
+        mv resources package
+        tar czf eReferral-0.9.2.tgz package
+        cd ..
+        tar czf output.tgz output
+                
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
     - name: rsync remote-site-deploy
-      run: echo ${{ secrets.JAMIWG_WEBPATH }}; rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete ./output ./fsh-generated ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+      run: |
+        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output.tgz eReferral-0.9.2.tgz ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; tar xzf output.tgz; '
+
 
