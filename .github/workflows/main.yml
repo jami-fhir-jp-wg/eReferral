@@ -92,9 +92,10 @@ jobs:
         cd fsh-generated
         mv resources package
         tar czf eReferral-0.9.2.tgz package
+        mv eReferral-0.9.2.tgz ../eReferral-0.9.2.tgz
         cd ..
         tar czf output.tgz output
-                
+
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
       env:
