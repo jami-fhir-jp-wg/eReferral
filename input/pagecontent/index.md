@@ -76,7 +76,6 @@ table th {
 
 </style>
 
-{% include markdown-link-references.md %}
 
 <a id="top"></a>日本HL7協会 日本医療情報学会　2021年10月承認 　改訂Ver. 1.1.0 (2022.12) 
 
