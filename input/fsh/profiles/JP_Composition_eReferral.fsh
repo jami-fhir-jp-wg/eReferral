@@ -163,6 +163,7 @@ and authorDepartment 0..1 MS
     and compositionSection     0..1 MS // 構造情報セクション   compositionSection
 	and attachmentSection    0..*    MS  //  添付情報セクション	attachmentSection
     and remarksCommunication    0..*    MS  //  備考・連絡情報セクション	remarksCommunicationSection
+    and pdfSection    0..*    MS  //  PDFセクション	pdfSection
 // CDA参照セクションと構造情報セクションは、どちらか一方だけが出現する。制約条件の記述が必要。
 //
 * section[referralToSection] ^short = "紹介先情報セクション"
@@ -407,7 +408,42 @@ and authorDepartment 0..1 MS
 * section[remarksCommunication].entry ^definition = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunication].emptyReason ..0
 * section[remarksCommunication].section ..0
-////
+//
+//
+* section[pdfSection] ^short = "PDFセクション"
+* section[pdfSection] ^definition = "PDFセクション"
+* section[pdfSection].title 1.. MS
+* section[pdfSection].title = "PDF" (exactly)
+* section[pdfSection].title ^short = "セクションタイトル"
+* section[pdfSection].title ^definition = "セクションタイトル。固定値。"
+* section[pdfSection].code 1.. MS
+* section[pdfSection].code ^short = "セクション区分コード"
+* section[pdfSection].code ^definition = "セクション区分コード"
+* section[pdfSection].code.coding 1..1 MS
+* section[pdfSection].code.coding.system 1.. MS
+* section[pdfSection].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section" (exactly)
+* section[pdfSection].code.coding.system ^short = "セクション区分コードのコード体系"
+* section[pdfSection].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
+* section[pdfSection].code.coding.code 1.. MS
+* section[pdfSection].code.coding.code = #230 (exactly)
+* section[pdfSection].code.coding.code ^short = "セクション区分のコード値"
+* section[pdfSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
+* section[pdfSection].code.coding.display = "PDFセクション" (exactly)
+* section[pdfSection].code.coding.display ^short = "セクション区分コードの表示名"
+* section[pdfSection].code.coding.display ^definition = "セクション区分コードの表示名。"
+* section[pdfSection].code.coding.display MS
+* section[pdfSection].code.coding.userSelected ..0
+* section[pdfSection].code.text ..0
+* section[pdfSection].text ..0 
+* section[pdfSection].mode ..0
+* section[pdfSection].orderedBy ..0
+* section[pdfSection].entry 1..1
+* section[pdfSection].entry only Reference(DocumentReference)
+* section[pdfSection].entry ^short = "PDFファイルへの参照"
+* section[pdfSection].entry ^definition = "PDFファイルへの参照"
+* section[pdfSection].emptyReason ..0
+* section[pdfSection].section ..0
+////////
 * section[compositionSection] ^short = "構造情報セクション"
 * section[compositionSection] ^definition = "構造情報セクション"
 * section[compositionSection].title 1.. MS

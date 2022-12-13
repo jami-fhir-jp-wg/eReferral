@@ -1,7 +1,7 @@
 {
     "name": "jp-ereferral",
-    "version": "0.9.2-diff",
-    "description": "JP-eReferral V0.9.2 for release",
+    "version": "0.9.3-diff",
+    "description": "JP-eReferral V0.9.3 for release",
     "author": "JAMI NeXEHRS FHIR IGWG",
     "fhirVersions": [
         "4.0.1"

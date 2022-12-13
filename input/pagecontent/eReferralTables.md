@@ -347,12 +347,16 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||reference| | |1..1|string |"urn:uuid:12f0a9a6-a91d-8aef-d14e-069795b89c9f" |**Encounter**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
 |date| | | |1..1|dateTime |"2020-08-21T12:28:21+09:00" |このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。午前0時を"24:00"と記録することはできないため"00:00"と記録すること。|
 |author| | | |2..2|Reference（Practioner\|Organizatoin） ||文書作成責任者を表す**Practitioner**リソースへの参照、および文書作成機関を表す**Organization**リソースへの参照の2つのReferenceを繰り返す。|
-||reference| | |1..1|string |"urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc" |**Practitioner**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
-||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
+||reference| | |1..1|string |"urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc" |作成者**Practitioner**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
+||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |医療機関**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
+||reference| | |0..1|string |"urn:uuid:..." |診療科**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。 |
 |title | | | |1..1|string |"退院時サマリー"|この文書の（人が読める）タイトル。固定値。|
 |custodian | | | |1..1|Reference(Organization)||文書の作成・修正を行い、文書の管理責任を持つ機関（**Organization**リソース）への参照。文書作成機関と同一の組織の場合、custodian要素からは文書作成機関を表す**Organization**リソースへの参照となる。文書作成機関とは異なる組織である場合は、文書作成機関とは別の**Organization**リソースで表現し、custodian要素からはその**Organization**リソースを参照する。|
 ||reference| | |1..1|string |"urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720" |custodianに対応する**Organization**リソースのfullUrl要素に指定されるUUIDを指定。値は例示。|
-|section | | | |0..1\*|DocumentRefrence |"CDA参照セクション" |退院時サマリー全体を記述した文書ファイルへの参照。既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"を除き、省略する。|
+|event | | | |1..1\*|BackboneElement| |退院時サマリーの対象となった入院期間の情報|
+||period | | |1..1|Period | ||
+|| |start| |1..1|dateTime |"2020-08-21" |入院日。ISO8601に準拠yyyy-mm-dd形式で記述する。 |
+|| |end| |1..1|dateTime |"2020-09-02" |退院日。ISO8601に準拠yyyy-mm-dd形式で記述する。 ||section | | | |0..1\*|DocumentRefrence |"CDA参照セクション" |退院時サマリー全体を記述した文書ファイルへの参照。既存の厚労省標準CDA規約で作成されたXMLファイルをそのまま参照したい場合、この要素を使用する。他の場所に保存されているFHIRドキュメントを参照する場合にもこの要素を用いる。この要素が出現した場合、以降のセクションは、"添付情報セクション"を除き、省略する。|
 |section | | | |0..1\*|−|"構造情報セクション"|退院時サマリーをFHIRリソースの組み合わせにより記述する場合にこのセクションを記述する。|
 ||section| | |1..1\*|Encounter|"入院詳細セクション"<br>"admissionDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
 ||section| | |1..\* |Condition|"入院時診断セクション"<br>"admissionDiagnosesSection" ||
@@ -367,7 +371,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |FamilyMemberHistory|"入院時家族歴セクション"<br>"familiyHistorySection" ||
 ||section| | |1..\* |DocumentReference |"入院中経過セクション"<br>"hospitalCourseSection" ||
 ||section| | |1..1\*|Encounter|"入院時または退院時の詳細セクション"<br>"dischargeDetailsSection" |Encounterはすべてこのインスタンスと同一インスタンスを参照する。 |
-||section| | |0..\* |MedicationRequest ｜Bundle(電子処方箋) |"入院時または退院時の投薬指示セクション"<br>"dischargesMedicationSection" ||
+||section| | |1..\* |Condition |"退院時診断セクション"<br>"dischargeDiagnosesSection" ||
+||section| | |0..\* |MedicationRequest ｜Bundle(電子処方箋) |"入院時または退院時の投薬指示セクション"<br>"dischargeMedicationSection" ||
 ||section| | |0..\* |CarePlan |"入院時または退院時の方針指示セクション"<br>"dischargeInstructionSection" ||
 ||section| | |0..\* |Observation|"入院時または退院時の身体所見セクション"<br>"dischargePhysicalSection"||
 ||section| | |0..\* |Procedure|"入院中治療セクション"<br>"hospitalProcedureSection"||
@@ -376,8 +381,8 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |Immunization |"予防接種歴セクション"<br>"immunizationSection" ||
 ||section| | |0..\* |Consent|"事前指示セクション"<br>"advanceDirectiveSection" ||
 ||section| | |0..\* |ResearchSubject|"臨床研究参加セクション"<br>"researchParticipationSection"||
-|section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"AttachmentSection" |添付情報ファイルがある場合にここの格納または参照情報を設定する。|
-|section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"PDFSection" |文書情報全体を表示または印刷するためのPDFファイルがある場合にここの格納または参照情報を設定する。 |
+|section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"attachmentSection" |添付情報ファイルがある場合にここの格納または参照情報を設定する。|
+|section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"pdfSection" |文書情報全体を表示または印刷するためのPDFファイルがある場合にここの格納または参照情報を設定する。 |
 
 
 
@@ -454,8 +459,9 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||section| | |0..\* |DeviceUseStatement |“医療機器セクション“<br>“medicalDeviceSection“ |使用中の医療機器（デバイス）の情報を記述する。|
 ||section| | |0..\* |Consent|“事前指示セクション“<br>“advanceDirectiveSection“|事前指示を（アドヴァンスディレクティブ）があれば記述する。|
 ||section| | |0..\* |ResearchSubject|“臨床研究参加セクション“<br>“researchParticipationSection“ |臨床研究への参加状況を記述する。|
-|section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"AttachmentSection"|添付情報ファイルがある場合にここの格納または参照情報を設定する。|
-|section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"PDFSection"|文書情報全体を表示または印刷するためのPDFファイルがある場合にここの格納または参照情報を設定する。 |
+|section | | | |0..\* |DocumentReference \| Binary |"添付情報セクション"<br>"attachmentSection"|添付情報ファイルがある場合にここに格納または参照情報を設定する。|
+|section | | | |0..\* |DocumentReference \| Binary |"備考・連絡情報セクション"<br>"remarksCommunicationSection"|備考・連絡情報がある場合にここに格納または参照情報を設定する。|
+|section | | | |0..\* |DocumentReference \| Binary |"PDFセクション"<br>"pdfSection"|文書情報全体を表示または印刷するためのPDFファイルがある場合にここに格納または参照情報を設定する。 |
 
 
 # <a id="tbl-5-3">**表5-3　Composition_sectionの情報構造**</a>
