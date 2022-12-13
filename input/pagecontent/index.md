@@ -111,7 +111,7 @@ HL7FHIRR4Ver.4.0.1[[http://hl7.org/fhir/index.html](http://hl7.org/fhir/index.ht
 FHIRでは、医療情報はFHIRリソースと呼ばれる単位で記述される。診療情報提供書は文書形式のデータの一種であり、また診療情報提供書文書本体に必要なら電子署名ができ、またそれを利用して改ざん検知及び否認防止ができることが必要であると考えられる。
 Bundleリソースは、複数のFHIRリソースの集合を、あるコンテクストに関する情報（この場合には、診療情報提供書の交付と取得に関する日付情報や発行者、発行機関情報など）とともにひとまとまりの情報にまとめあげたものを記述するのに使われるFHIRリソースであり、以下のような要素から構成される。あるシステムから別のシステムに診療情報提供書を送信する場合は、このBundleリソースの単位で行われる。
 
-![](media/image1.png)
+<img src="media/image1.png" width="60%"><br clear="all">
 図1 Bundleリソース（http://hl7.org/fhir/bundle.html）
 
 そして、このBundleリソースのtype要素（上図左段の2つめの要素）の値を"document"とすることにより、Bundleリソースのひとつのタイプである、FHIRDocumentを記述できる。
@@ -179,7 +179,6 @@ Bundleリソースは図のように、Compositionリソースにてセクショ
 　CDA参照セクションまたは構造情報セクションに意味のある情報を格納せずに、PDFセクションにPDFファイルだけを格納することは本仕様として許容されない。同様に、添付情報セクションや備考・連絡情報セクションだけに情報を格納することも本仕様として許容されない。
 
 ![](media/image2.png)
-
 
 Bundleリソース全体の構造を以下の表に示す。
 
@@ -273,7 +272,6 @@ Composition.identifier要素には、その医療機関が発行した診療情�
 Patientリソースの仕様は次の表で示す。
 
 ＜[表21　　Patientリソース　患者情報](eReferralTables.html#tbl-21)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -402,6 +400,8 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 |現在の処方|投薬指示セクション|特になし。|
 |備考|備考・連絡情報セクション|本セクションは構造情報セクション<br>の子セクションではなく、構造情報<br>セクションと同列のセクションである<br>が、便宜上、本表に記載した。|
 
+![](media/image3.png)
+[別紙様式11]
 <br>[→topへ](index.html)<br>
 
 
@@ -458,7 +458,6 @@ Conditionリソースを使用して記述できない場合には、テキス�
 仕様は次の表である。
 
 ＜[表13　　FamiliMemberHistoryリソース　家族歴情報](eReferralTables.html#tbl-13)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -468,7 +467,6 @@ Conditionリソースを使用して記述できない場合には、テキス�
 仕様は次の表である。
 
 ＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-16)＞　
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -478,7 +476,6 @@ Conditionリソースを使用して記述できない場合には、テキス�
 仕様は次の表である。
 
 ＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -508,7 +505,6 @@ Conditionリソースを使用して記述できない場合には、テキス�
 なお、診断のための検査手技の実施については、検査結果のセクションで記述する。
 note要素に叙述的記述はできるが、entry.textに記述してもよい。
 ＜[表23　　Procedureリソース　　入院中治療処置情報](eReferralTables.html#tbl-23)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -523,7 +519,6 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 記述方法の詳細は、処方情報HL7 FHIR記述仕様を参照のこと。
 なお、処方情報HL7 FHIR記述仕様にもとづいた処方箋文書（Bundleリソースインスタンス）を直接参照する方法でも記述できる。
 その場合、entryでの参照はそのひとつのBundleリソースインスタンスだけとなる。
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -535,7 +530,6 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 ＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
 ＜[表14　　ImagingStudyリソース　画像検査実施情報](eReferralTables.html#tbl-14)＞
 ＜[表10　　DiagnosticReportリソース　診断報告書情報](eReferralTables.html#tbl-10)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -556,7 +550,6 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 仕様は次の表である。
 
 ＜[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-04)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -576,7 +569,6 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 仕様を次の表に示す。
 
 ＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-07)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -599,7 +591,6 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 
 ＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞
 ＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-02)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -617,7 +608,6 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 各セクションのentry要素から直接参照されるリソースは、さらに別のリソースを参照する。ここではそれら、間接的参照のリソースのうち主要はリソースの仕様を記述する。、
 なお、間接的参照のリソースであっても、本仕様書の主題である診療情報提供書文書としてはそれを使用して情報を記述する必要性がないか低いと判断されたものは、本仕様書では取り上げない。
 必要な場合には、FHIRのホームページで公開されているリソースのプロファイル記述などを参照されたい。
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -628,7 +618,6 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 
 ＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞（再掲）
 ＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞（再掲）
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -637,7 +626,6 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 たとえば同意取得や第三者確認などで使用されることがある。仕様を次の表に示す。
 
 ＜[表24　　RelatedPersonリソース　　患者関係者情報](eReferralTables.html#tbl-24)＞
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -682,14 +670,12 @@ HL7FHIRで使用される基本データタイプ（PrimitiveTypes）につい�
 urn:oid:1.2.392.100495.20.x：厚生労働省退院時サマリーCDA記述仕様第１版（6付録２OID一覧）（[https://www.mhlw.go.jp/content/10800000/000342368.pdf](https://www.mhlw.go.jp/content/10800000/000342368.pdf)）に収載されているOID
 urn:oid:1.2.392.200250.2.x：（一社）日本医療情報学会管理のOID表（日本医療情報学会　「医療情報の標準化に関する情報・資料など」[http://jami.jp/jamistd/](http://jami.jp/jamistd/)　より　「JAMIが管理するOID表」　）
 urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センター](https://www.medis.or.jp/)が管理するOID表
-<br>
 <br>[→topへ](index.html)<br>
 
 
 ## 仕様策定メンバー
 ・令和２年度厚生労働科学特別研究事業[「診療情報提供書,退院時サマリー等の電子化医療文書の相互運用性確保のための標準規格の開発研究」研究班](https://std.jpfhir.jp/)（研究代表者：大江和彦（東京大学））
 ・河添悦昌、星本弘之、永島里美（JPFHIRアレルゲンコード表とJFAGYアレルギーコードの策定）
-<br>
 <br>[→topへ](index.html)<br>
 
 
@@ -697,7 +683,6 @@ urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センタ�
 本仕様書の作成にあたっては、日本HL7協会、[日本医療情報学会NeXEHRS研究会HL7FHIR日本実装検討WG](https://jpfhir.jp/)メンバー関係者、とりわけ以下のサブワーキンググループのリーダ、サブリーダの方々の検討内容、および以下の木村論文の内容を検討の参考にした。ここに謝辞を表する。
 ・SWG1：㈱ファインデックス　宮川力、㈱ケーアイエス　小西由貴範、東京大学　三谷知広、SWG2：キヤノンメディカルシステムズ㈱　塩川康成、㈱ケーアイエス　田中教子、平山照幸、SWG3：日本HL7協会　檀原一之、東京大学　土井俊祐、インターシステムズジャパン㈱　上中進太郎、SWG4：東京大学　河添悦昌、山口大学　石田博、SWG5：国立保健医療科学院　小林慎治、日本アイ・ビー・エム㈱　木村雅彦、SWG6：東京大学　今井健、国立病院機構　堀口裕正、SWG-SSMIX：㈱SBS情報システム　中根賢、㈱NTTデータ東海　沼野武志
 ・木村英善、他：退院時サマリーCDA文書のFHIRへの移植の評価,医療情報学、39(3),143-153,2019.
-<br>
 <br>[→topへ](index.html)<br>
 
 
