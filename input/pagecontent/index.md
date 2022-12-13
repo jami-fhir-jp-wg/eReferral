@@ -707,34 +707,34 @@ urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センタ�
 [表全体](eReferralTables.html)<br>
 **目次**<br>
 [表1　　AllergyIntoleranceリソース　アレルギー情報](eReferralTables.html#tbl-1)<br>
-[表2　　Binaryリソース　 バイナリーデータ情報](eReferralTables.html#tbl-2)<br>
-[表3　　Bundleリソース　文書情報](eReferralTables.html#tbl-3)<br>
-[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-4)<br>
-[表5	Compositionリソース　文書構成情報](eReferralTables.html#tbl-5)<br>
-[表5-1	Compositionリソース　(退院時サマリー)](eReferralTables.html#tbl-5-1)<br>
-[表5-2	Compositionリソース　(診療情報提供書)](eReferralTables.html#tbl-5-2)<br>
+[表2　Binaryリソース バイナリーデータ情報](eReferralTables.html#tbl-2)<br>
+[表3　Bundleリソース  文書情報](eReferralTables.html#tbl-3)<br>
+[表4　CarePlanリソース  診療方針指示情報](eReferralTables.html#tbl-4)<br>
+[表5	Compositionリソース 文書構成情報](eReferralTables.html#tbl-5)<br>
+[表5-1	Compositionリソース (退院時サマリー)](eReferralTables.html#tbl-5-1)<br>
+[表5-2	Compositionリソース (診療情報提供書)](eReferralTables.html#tbl-5-2)<br>
 [表5-3	Composition_sectionの情報構造](eReferralTables.html#tbl-5-3)<br>
 [表6	Conditionリソース　患者状態情報](eReferralTables.html#tbl-6)<br>
 [表7	Consentリソース　同意情報](eReferralTables.html#tbl-7)<br>
 [表8	DeviceUseStatementリソース　医療機器使用歴情報](eReferralTables.html#tbl-8)<br>
 [表9	Deviceリソース　医療機器情報](eReferralTables.html#tbl-9)<br>
 [表10	DiagnosticReportリソース　診断報告書情報](eReferralTables.html#tbl-10)<br>
-[表11	DocumentReferenceリソース　 文書参照情報](eReferralTables.html#tbl-11)<br>
+[表11	DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)<br>
 [表12	Encounterリソース　入院詳細情報](eReferralTables.html#tbl-12)<br>
 [表13	FamiliMemberHistoryリソース　家族歴情報](eReferralTables.html#tbl-13)<br>
 [表14	ImagingStudyリソース　画像検査実施情報](eReferralTables.html#tbl-14)<br>
 [表15	Immunizationリソース　ワクチン接種情報](eReferralTables.html#tbl-15)<br>
 [表16	MedicationRequestリソース　処方依頼情報](eReferralTables.html#tbl-16)<br>
-[表16-1	MedicationRequest．dosageInstruction  処方情報の用法指示情報](eReferralTables.html#tbl-16-1)<br>
+[表16-1	MedicationRequest.dosageInstruction  処方情報の用法指示情報](eReferralTables.html#tbl-16-1)<br>
 [表16-2	Extension　（InstructionForDispense） 調剤指示拡張情報](eReferralTables.html#tbl-16-2)<br>
-[表17	MedicationStatementリソース　　服薬情報](eReferralTables.html#tbl-17)<br>
-[表17-1	MedicationStatement dosage　処方依頼情報の服薬用法情報](eReferralTables.html#tbl-17-1)<br>
-[表18	Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)<br>
+[表17	MedicationStatementリソース　服薬情報](eReferralTables.html#tbl-17)<br>
+[表17-1	MedicationStatement.dosage　処方依頼情報の服薬用法情報](eReferralTables.html#tbl-17-1)<br>
+[表18	Observationリソース　検査・観察情報](eReferralTables.html#tbl-18)<br>
 [表19	Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)<br>
 [表20	Organizationリソース　診療科情報](eReferralTables.html#tbl-20)<br>
 [表21	Patientリソース　患者情報](eReferralTables.html#tbl-21)<br>
-[表22	Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)<br>
-[表23	Procedureリソース　　入院中治療処置情報](eReferralTables.html#tbl-23)<br>
-[表24	RelatedPersonリソース　　患者関係者情報](eReferralTables.html#tbl-24)<br>
-[表25	ResearchStudyリソース　　研究対象情報](eReferralTables.html#tbl-25)<br>
-[表26	ResearchSubjectリソース　　研究対象情報](eReferralTables.html#tbl-26)<br>
+[表22	Practitionerリソース　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)<br>
+[表23	Procedureリソース　入院中治療処置情報](eReferralTables.html#tbl-23)<br>
+[表24	RelatedPersonリソース　患者関係者情報](eReferralTables.html#tbl-24)<br>
+[表25	ResearchStudyリソース　研究対象情報](eReferralTables.html#tbl-25)<br>
+[表26	ResearchSubjectリソース　研究対象情報](eReferralTables.html#tbl-26)<br>
