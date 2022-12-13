@@ -10,8 +10,8 @@ name: "HL7Japan_JAMIeReferralImplementationGuide"
 title: "HL7 Japan-JAMI eReferral ImplementationGuide"
 description: "HL7 Japan-JAMI eReferral ImplementationGuide"
 status: active # draft | active | retired | unknown 
-version: 1.1.0-rc
-date: 2022-12-10
+version: 1.1.1-rc
+date: 2022-12-13
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
