@@ -116,13 +116,13 @@ menu:
     表25 ResearchStudyリソース  研究対象情報: eReferralTables.html#tbl-25
     表26 ResearchSubjectリソース  研究対象情報: eReferralTables.html#tbl-26
   名前空間一覧: namespace.html
+  更新履歴: update_history.html
   Artifacts:
     Structures Resource Profiles: artifacts.html#structures-resource-profiles
     Structures Extension Definitions: artifacts.html#structures-extension-definitions
     Terminology Value Sets: artifacts.html#terminology-value-sets
     Terminology Code Systems: artifacts.html#terminology-code-systems
     Example Instances: artifacts.html#example-example-instances
-  更新履歴: update_history.html
   
 #-----------------------------------------
 # IG 外部パラメータ設定
