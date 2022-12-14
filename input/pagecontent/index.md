@@ -77,7 +77,7 @@ table th {
 </style>
 
 
-<a id="top"></a>日本HL7協会 日本医療情報学会　2021年10月承認 　改訂Ver. 1.1.0 (2022.12) 
+<a id="top"></a>日本HL7協会 日本医療情報学会　2021年10月承認 　改訂Ver. 1.1.1 (2022.12.13) 
 
 # **診療情報提供書HL7FHIR記述仕様 第1版**
 ## 本仕様書の位置づけ
@@ -182,7 +182,7 @@ Bundleリソースは図のように、Compositionリソースにてセクショ
 
 Bundleリソース全体の構造を以下の表に示す。
 
-＜[表3　　Bundleリソース　文書情報](eReferralTables.html#tbl-03)＞
+＜[表3　　Bundleリソース　文書情報](eReferralTables.html#tbl-3)＞
 
 この表で示すように、documentタイプのBundleリソースでは、管理的な情報を格納する要素としてtimestamp、signatureなどがあり、文書自体の内容情報を格納する要素として、ひとつのentry要素（エントリリスト）がある。このentry要素の値には、複数のresource要素を含むブロックが繰り返される。
 この表では様々なentryが列挙されているが、先にも述べたように、entry要素自体は1度だけ出現し、その値がリストとなることに注意されたい。
@@ -199,7 +199,7 @@ entryの最初のresourceは、先に述べたように、構成リソース一�
 ### Compositionリソース
 Compositionリソースは、診療情報提供書FHIRdocumentにentryとして格納される複数のリソースのうちの最初に出現するもので、この文書全体の構成目次に相当する情報や、セクションの構成を記述したものである。
 診療情報提供書FHIRdocumentでの****Compositionリソースの仕様を次の表に示す。
-＜[表5-2　　Compositionリソース　診療情報提供書](eReferralTables.html#tbl-05)＞
+＜[表5-2　　Compositionリソース　診療情報提供書](eReferralTables.html#tbl-5)＞
 
 診療情報提供書は、あとで説明するように5つのセクション（CDA参照セクション、構造情報セクション、添付情報セクション、備考・連絡情報セクション、PDFセクション）から構成され、さらにそのうち構造情報セクションには子となるセクションが複数配置されている。
 Compositionリソースは患者や作成者など文書情報管理用の情報を記述するいわゆるヘッダ部、および診療情報提供書文書の本体内容を記述するボディー部から構成される。
@@ -318,7 +318,7 @@ Practionerリソース、Organizationリソースの仕様はそれぞれ次の�
 #### Composition.section要素
 すべてのComposition.section要素は、以下の構造をとる。
 
-＜[表5-3Composition_sectionの情報構造](eReferralTables.html#tbl-05-3)＞
+＜[表5-3Composition_sectionの情報構造](eReferralTables.html#tbl-5-3)＞
 
 Compositionの直下には、紹介先医療機関と紹介元医療機関の情報を保持する2つのセクションと、診療情報提供書文書の内容を異なる2つの形態のいずれかで格納するためにどちらか一方を選択して使用するCDA参照セクションと構造情報セクション、およびどの形態においても使うことのある添付情報セクション、PDFセクションの計6つのsectionが子要素として存在している。
 これらのうちCDA参照セクションは既存のCDA規約にもとづいてすでに十分に構造化されたXMLファイルを有していて、それをそのまま包み込むことによって、FHIRドキュメント作成になるべくコストを割きたくない場合を想定して、それぞれ用意されている。
@@ -421,7 +421,7 @@ Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状に
 
 Conditionリソースの仕様は次の表である。
 
-＜[表6　　Conditionリソース　患者状態情報](eReferralTables.html#tbl-06)＞
+＜[表6　　Conditionリソース　患者状態情報](eReferralTables.html#tbl-6)＞
 
 Conditionリソースを使用して記述できない場合には、テキストだけをComposition.section.section.text 要素に、xhtml形式で格納する。
 <br>
@@ -547,7 +547,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：420
 <br>仕様は次の表である。
 
-＜[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-04)＞
+＜[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-4)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -556,8 +556,8 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：810
 <br>仕様をそれぞれ次の表に示す。
 
-＜[表8　　DeviceUseStatementリソース　医療機器使用歴情報](eReferralTables.html#tbl-08)＞
-＜[表9　　Deviceリソース　医療機器情報](eReferralTables.html#tbl-09)＞
+＜[表8　　DeviceUseStatementリソース　医療機器使用歴情報](eReferralTables.html#tbl-8)＞
+＜[表9　　Deviceリソース　医療機器情報](eReferralTables.html#tbl-9)＞
 <br>
 
 ### 事前指示セクション
@@ -566,7 +566,7 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 <br>セクションコード：410
 <br>仕様を次の表に示す。
 
-＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-07)＞
+＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-7)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -577,7 +577,7 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 
 ＜[表26　　ResearchSubjectリソース　　研究対象情報](eReferralTables.html#tbl-26)＞
 ＜[表25　　ResearchStudyリソース　　研究対象情報](eReferralTables.html#tbl-25)＞
-＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-07)＞　（再掲）
+＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-7)＞　（再掲）
 
 ### 添付情報セクション
 添付情報は、DocumentReferenceリソース、またはBinaryリソースにより記述して格納する。
@@ -588,7 +588,7 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 DocumentReferenceリソース、およびBinaryリソースの仕様は次の表にそれぞれ示す。
 
 ＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞
-＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-02)＞
+＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-2)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -598,7 +598,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 <br>DocumentReferenceリソース、およびBinaryリソースの仕様は次の表にそれぞれ示す。
 
 ＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞（再掲）
-＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-02)＞（再掲）
+＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-2)＞（再掲）
 <br>[→topへ](index.html)<br>
 
 ### PDFセクション
@@ -606,7 +606,7 @@ Binaryリソースにより、文書全体のPDFファイルを格納する場�
 <br>セクションコード：290
 <br>Binaryリソースの仕様は次の表に示す。
 
-＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-02)＞（再掲）
+＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-2)＞（再掲）
 <br>[→topへ](index.html)<br>
 
 ### セクションから直接参照されないリソース
