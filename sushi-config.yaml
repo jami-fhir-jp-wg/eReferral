@@ -42,6 +42,8 @@ pages:
     title: リソース表 各表一覧
   namespace.md:
     title: 名前空間一覧
+  updateHistory.md:
+    title: 履歴情報
 
 #-----------------------------------------
 # メニュー設定
@@ -117,6 +119,7 @@ menu:
     表25 ResearchStudyリソース  研究対象情報: eReferralTables.html#tbl-25
     表26 ResearchSubjectリソース  研究対象情報: eReferralTables.html#tbl-26
   名前空間一覧: namespace.html
+  履歴情報: updateHistory.html
   Artifacts:
     Structures Resource Profiles: artifacts.html#structures-resource-profiles
     Structures Extension Definitions: artifacts.html#structures-extension-definitions
