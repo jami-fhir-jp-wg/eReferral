@@ -1,7 +1,7 @@
 Profile:        JP_AllergyIntolerance_eClinicalSummary
 Parent:			JP_AllergyIntolerance
 Id:             JP-AllergyIntolerance-eClinicalSummary
-Description:    "Dummy for JP-Core"
+Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 * ^status = #active
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"

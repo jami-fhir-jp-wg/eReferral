@@ -1,12 +1,14 @@
 Profile:        JP_CarePlan
 Parent:			CarePlan
 Id:             JP-CarePlan
+Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan"
 
 
 Profile:        JP_CarePlan_eClinicalSummary
 Parent:			JP_CarePlan
 Id:             JP-CarePlan-eClinicalSummary
+Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_CarePlan_eClinicalSummary"
 * ^status = #draft
 * text ^short = "本リソースをテキストで表現したものを入れてもよい。"
