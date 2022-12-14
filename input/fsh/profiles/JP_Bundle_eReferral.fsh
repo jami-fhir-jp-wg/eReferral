@@ -164,7 +164,7 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 
 * entry[documentReference].resource only  JP_DocumentReference_eClinicalSummary
 * entry[documentReference] ^short = "DocumentReferenceリソースを参照"
-* entry[documentReference] ^definition = "臨床経過を記述して参照する。"
+* entry[documentReference] ^definition = "DocumentReferenceリソースを参照"
 
 * entry[carePlan].resource only  JP_CarePlan_eClinicalSummary
 * entry[carePlan] ^short = "診療方針指示を記述したCarePlanリソースを参照"
@@ -205,4 +205,4 @@ and binaryData 0..* MS  // その他の添付バイナリーデータ
 
 * entry[binaryData].resource only  JP_Binary
 * entry[binaryData] ^short = "各種備考参照情報を記述したBinaryリソースを参照"
-* entry[binaryData] ^definition = "各種備考参照情報を記述して参照する。"
+* entry[binaryData] ^definition = "各種備考参照情報をBinaryリソースで記述して参照する。"
