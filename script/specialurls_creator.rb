@@ -51,6 +51,7 @@ fillUrl("StructureDefinition", sb, true)
 fillUrl("CapabilityStatement", sb)
 fillUrl("SearchParameter", sb)
 fillUrl("CodeSystem", sb)
+fillUrl("ValueSet", sb)
 
 Dir.chdir('../..')  ##カレントディレクトリ移動(project配下)
 
