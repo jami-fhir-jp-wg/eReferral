@@ -29,7 +29,7 @@
       "coding": [
         {
           "code": "JP",
-          "system": "urn:iso:std:iso:3166"
+          "system": "urn:iso:std:iso:3166-2"
         }
       ]
     }

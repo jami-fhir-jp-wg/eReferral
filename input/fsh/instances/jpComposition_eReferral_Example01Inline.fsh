@@ -162,7 +162,7 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].entry[=].type = "AllergyIntolerance"
 * section[=].section[=].entry[=].display = "アレルギー・不耐性反応"
 // * section[=].section[=].entry[+].reference = "alg1ReferralExample01Inline"
-* section[=].section[=].entry[+].reference = "urn:uuid:711b07ae-d20b-40b0-9aa9-c7f1981409e6"
+* section[=].section[=].entry[+].reference = "urn:uuid:5a1aae74-f720-415a-ba15-a6c8b5d4c5a1"
 * section[=].section[=].entry[=].type = "AllergyIntolerance"
 * section[=].section[=].entry[=].display = "アレルギー・不耐性反応"
 

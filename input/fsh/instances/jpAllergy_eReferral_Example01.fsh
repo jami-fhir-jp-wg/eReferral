@@ -29,7 +29,7 @@ Description: "allergyeferralExample01 診療情報提供書　アレルギー例
 //070on_アレルギ物質コード名称JFAGY(ARGcode,ARGname)
 * code.text = "サバ"
 
-* patient.reference = "Patinet/jppatientExample01"
+* patient.reference = "Patient/jppatientExample01"
 
 * encounter.reference = "Encounter/encounterReferralExample01"
 
@@ -69,9 +69,9 @@ Description: "allergyeferralExample01 診療情報提供書　アレルギー例
 //070on_アレルギ物質コード名称JFAGY(ARGcode,ARGname)
 * code.text = "キーウイ"
  
-* patient.reference = "jppatientExample01"
+* patient.reference = "Patient/jppatientExample01"
 
-* encounter.reference = "encounterReferralExample01"
+* encounter.reference = "Encounter/encounterReferralExample01"
 
 //100on_アレルギ時期日時(ARGdate,ARGtime)
 //100on_アレルギ時期日(ARGdate)
