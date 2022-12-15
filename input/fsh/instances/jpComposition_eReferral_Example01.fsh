@@ -26,7 +26,7 @@ Description: "構成情報サンプル　composition"
 * type = $doc-typecodes#57133-1 "診療情報提供書"
 * category = $doc-typecodes#57133-1 "診療情報提供書"
  
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 * subject.type = "Patient"
 * subject.display = "患者リソースPatient"
  

@@ -18,7 +18,7 @@ Description: "conditionReferralExample01 診療情報提供書　既往歴例1"
 
 * code[+].text = "狭心症"
 
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 
 // 2018 2020-08-21
 // ATGtime 12:12:20
@@ -43,7 +43,7 @@ Description: "conditionReferralExample01 診療情報提供書　既往歴例2"
 
 * code[+].text = "左前腕骨折"
 
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 
 // 2019 2020-08-21
 // ATGtime 12:12:20

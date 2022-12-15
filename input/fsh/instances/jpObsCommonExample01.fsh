@@ -16,7 +16,7 @@ Description: "ObservationCommon検査結果　現症例"
 
 * code.text = "腹部所見"
 
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 
 * valueString = "上腹部圧痛あり、その他特に所見なし。"
 
@@ -37,7 +37,7 @@ Description: "ObservationCommon検査結果　例"
 
 * code.text = "腹部所見"
 
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 
 * valueString = "上腹部圧痛あり、その他特に所見なし。"
 

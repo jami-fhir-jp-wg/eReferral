@@ -18,7 +18,7 @@ Description: "conditionReferralExample01 診療情報提供書　主訴例　上
 
 * code[+].text = "上腹部痛"
 
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 
 // 2022-06-09 2020-08-21
 // ATGtime 12:12:20
@@ -41,7 +41,7 @@ Description: "conditionReferralExample01 診療情報提供書　主訴例　腰
 
 * code[+].text = "腰痛"
 
-* subject.reference = "jppatientExample01"
+* subject.reference = "Patient/jppatientExample01"
 
 // 2022-05 2020-08-21
 // ATGtime 12:12:20
