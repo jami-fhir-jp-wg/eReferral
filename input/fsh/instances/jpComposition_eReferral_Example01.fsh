@@ -30,7 +30,7 @@ Description: "構成情報サンプル　composition"
 * subject.type = "Patient"
 * subject.display = "患者リソースPatient"
  
-* encounter.reference = "encounterReferralExample01"
+* encounter.reference = "Encounter/encounterReferralExample01"
 * encounter.type = "Encounter"
 * encounter.display = "受診Encounterリソース"
  
@@ -38,14 +38,14 @@ Description: "構成情報サンプル　composition"
 // ATGtime 12:12:20
 * date = "2020-08-21T12:12:20+09:00"
  
-* author[0].reference = "referralFromPractitionerExample01"
+* author[0].reference = "Practitioner/referralFromPractitionerExample01"
 * author[=].type = "Practitioner"
 * author[=].display = "紹介状作成者PractitionerRoleリソース"
-* author[+].reference = "referralFromOrganizationExample01"
+* author[+].reference = "Organization/referralFromOrganizationExample01"
 * author[=].type = "Organization"
 * author[=].display = "紹介状作成機関Organizationリソース"
 * title = "診療情報提供書"
-* custodian.reference = "referralFromOrganizationExample01"
+* custodian.reference = "Organization/referralFromOrganizationExample01"
 * custodian.type = "Organization"
 * custodian.display = "紹介状交付責任機関Organizationリソース"
  
@@ -56,17 +56,17 @@ Description: "構成情報サンプル　composition"
 * section[=].code = $referral-section#910 "紹介先情報セクション"
 * section[=].text.status = #additional
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">東京第一テスト病院</div>"
-* section[=].entry[+].reference = "referralToOrganizationExample01"
+* section[=].entry[+].reference = "Organization/referralToOrganizationExample01"
 * section[=].entry[=].type = "Organization"
 * section[=].entry[=].display = "紹介先医療機関"
 
  
-* section[=].entry[+].reference = "referralToOrganizationDeptExample01"
+* section[=].entry[+].reference = "Organization/referralToOrganizationDeptExample01"
 * section[=].entry[=].type = "Organization"
 * section[=].entry[=].display = "紹介先診療科"
 
  
-* section[=].entry[+].reference = "referralToPractitionerExample01"
+* section[=].entry[+].reference = "Practitioner/referralToPractitionerExample01"
 * section[=].entry[=].type = "Practitioner"
 * section[=].entry[=].display = "紹介先医師"
 
@@ -75,17 +75,17 @@ Description: "構成情報サンプル　composition"
 * section[=].code = $referral-section#920 "紹介元情報セクション"
 * section[=].text.status = #additional
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">港診療所</div>"
-* section[=].entry[+].reference = "referralFromOrganizationExample01"
+* section[=].entry[+].reference = "Organization/referralFromOrganizationExample01"
 * section[=].entry[=].type = "Organization"
 * section[=].entry[=].display = "紹介元医療機関"
 
  
-* section[=].entry[+].reference = "referralFromOrganizationDeptExample01"
+* section[=].entry[+].reference = "Organization/referralFromOrganizationDeptExample01"
 * section[=].entry[=].type = "Organization"
 * section[=].entry[=].display = "紹介元診療科"
 
  
-* section[=].entry[+].reference = "referralFromPractitionerExample01"
+* section[=].entry[+].reference = "Practitioner/referralFromPractitionerExample01"
 * section[=].entry[=].type = "Practitioner"
 * section[=].entry[=].display = "紹介元医師"
 
@@ -96,7 +96,7 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].code = $referral-section#950 "紹介目的セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">腹痛精査お願いします。</div>"
-* section[=].section[=].entry[+].reference = "purposeReferralExample01"
+* section[=].section[=].entry[+].reference = "Encounter/purposeReferralExample01"
 * section[=].section[=].entry[=].type = "Encounter"
 * section[=].section[=].entry[=].display = "紹介目的"
 
@@ -105,10 +105,10 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].code = $referral-section#340 "傷病名・主訴セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">上腹部痛、腰痛</div>"
-* section[=].section[=].entry[+].reference = "cc1ReferralExample01"
+* section[=].section[=].entry[+].reference = "Condition/cc1ReferralExample01"
 * section[=].section[=].entry[=].type = "Condition"
 * section[=].section[=].entry[=].display = "傷病名・主訴"
-* section[=].section[=].entry[+].reference = "cc2ReferralExample01"
+* section[=].section[=].entry[+].reference = "Condition/cc2ReferralExample01"
 * section[=].section[=].entry[=].type = "Condition"
 * section[=].section[=].entry[=].display = "傷病名・主訴"
 
@@ -117,7 +117,7 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].code = $referral-section#360 "現病歴セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">２０２２年６月上旬から夜食後に時々上腹部痛があり、だんだんひどくなっている。他に目立った症状なし。</div>"
-* section[=].section[=].entry[+].reference = "piReferralExample01"
+* section[=].section[=].entry[+].reference = "Condition/piReferralExample01"
 * section[=].section[=].entry[=].type = "Condition"
 * section[=].section[=].entry[=].display = "現病歴"
 
@@ -127,10 +127,10 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">2018年　狭心症　２ヶ月治療で軽快。2019年　交通事故で左前腕骨折　３ヶ月ギプス固定。</div>"
 //  Reference(JP_Condition) 既往歴
-* section[=].section[=].entry[+].reference = "ph1ReferralExample01"
+* section[=].section[=].entry[+].reference = "Condition/ph1ReferralExample01"
 * section[=].section[=].entry[=].type = "Condition"
 * section[=].section[=].entry[=].display = "既往歴"
-* section[=].section[=].entry[+].reference = "ph2ReferralExample01"
+* section[=].section[=].entry[+].reference = "Condition/ph2ReferralExample01"
 * section[=].section[=].entry[=].type = "Condition"
 * section[=].section[=].entry[=].display = "既往歴"
 
@@ -140,10 +140,10 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">サバ　キーウイ</div>"
 //  Reference(JP_Condition) アレルギー
-* section[=].section[=].entry[+].reference = "alg1ReferralExample01"
+* section[=].section[=].entry[+].reference = "AllergyIntolerance/alg1ReferralExample01"
 * section[=].section[=].entry[=].type = "AllergyIntolerance"
 * section[=].section[=].entry[=].display = "アレルギー・不耐性反応"
-* section[=].section[=].entry[+].reference = "alg1ReferralExample02"
+* section[=].section[=].entry[+].reference = "AllergyIntolerance/alg1ReferralExample02"
 * section[=].section[=].entry[=].type = "AllergyIntolerance"
 * section[=].section[=].entry[=].display = "アレルギー・不耐性反応"
 
@@ -160,7 +160,7 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">腹部所見：上腹部圧痛あり、その他特に所見なし。</div>"
 //  Reference(JP_Observation_Common) 身体所見
-* section[=].section[=].entry[+].reference = "psobsCommonExample01"
+* section[=].section[=].entry[+].reference = "Observation/psobsCommonExample01"
 * section[=].section[=].entry[=].type = "Observation"
 * section[=].section[=].entry[=].display = "身体所見"
 
@@ -177,7 +177,7 @@ Description: "構成情報サンプル　composition"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">添付参照</div>"
 //  Reference(JP_DocumentReference) 臨床経過
-* section[=].section[=].entry[+].reference = "ccourseReferralExample01"
+* section[=].section[=].entry[+].reference = "DocumentReference/ccourseReferralExample01"
 * section[=].section[=].entry[=].type = "DocumentReference"
 * section[=].section[=].entry[=].display = "臨床経過"
 
