@@ -206,6 +206,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:oid:1.2.392.200250.2.2.20.22
     - urn:oid:1.2.392.200250.2.2.20.32
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes
+    - http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
     - http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section
@@ -229,6 +230,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:oid:1.2.392.100495.20.2.62
     - urn:oid:1.2.392.100495.20.2.12
     - urn:oid:1.2.392.100495.20.2.41
+    - http://jpfhir.jp/fhir/CarePlan/ValueSet/category
     - http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreDispenseInstruction
     - http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode
     - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-medicationcode
