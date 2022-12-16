@@ -64,7 +64,7 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 * dosageInstruction[+].text = "内服・経口・１日３回朝昼夕食後"
 
 //080on_処方開始日(ARGdate)
-* dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration"
+* dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDosage_UsageDuration"
 * dosageInstruction[=].extension[=].valueDuration = 7 'd' "日"
 
 //100or_処方補足用法(ARGusageauxcode,ARGusageauxname)
@@ -84,7 +84,7 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 * dosageInstruction[=].doseAndRate.rateRatio.numerator = 3 urn:oid:1.2.392.100495.20.2.101#TAB "錠"
 * dosageInstruction[=].doseAndRate.rateRatio.denominator = 1 'd' "日"
 
-* dispenseRequest.quantity = 21 urn:oid:1.2.392.100495.20.2.101#21code "21name"
+* dispenseRequest.quantity = 21 urn:oid:1.2.392.100495.20.2.101#TAB "錠"
 
 * dispenseRequest.expectedSupplyDuration = 7 'd' "日"
 
