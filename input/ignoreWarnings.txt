@@ -12,3 +12,4 @@ The Implementation Guide contains no examples for this profile
 Code System URI 'urn:iso:std:iso:3166' is unknown so the code cannot be validated
 The markdown contains content that appears to be an embedded HTML tag*
 The markdown contains content that appears to be an embedded HTML tag starting at 'Th'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour
+The link 'StructureDefinition-jp-organization.html#医療機関コード１０桁' for "こちらのリンク" cannot be resolved
