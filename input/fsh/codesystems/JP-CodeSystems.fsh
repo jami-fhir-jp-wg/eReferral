@@ -1,3 +1,15 @@
+CodeSystem: JP_codeSystem_carePlanCategory
+Id: jp-codeSystem-carePlanCategory
+Description: "CarePlan カテゴリー　hospital-plan または discharge-plan"
+* ^url = "http://jpfhir.jp/fhir/CarePlan/CodeSystem/category"
+* ^title = "codeSystem CarePlane Category"
+* ^status = #active
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #hospital-plan  "入院計画"
+* #discharge-plan "退院時計画"
+
 // 別表１	文書区分コード	OID:	1.2.392.100495.20.2.11
 CodeSystem: MHLW_codeSystem_ePreCDA_documentCategory_tbl01
 Id: mhlw-codeSystem-ePreCDA-documentCategory-tbl011
@@ -6,7 +18,6 @@ Description: "厚労省電子処方CDA規格別表１ 文書区分コード"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-documentCategory"
 * ^title = "厚労省電子処方CDA規格別表１"
 * ^status = #active
-* ^experimental = false
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
@@ -21,7 +32,6 @@ Description: "厚労省電子処方CDA規格別表2 セクション区分コー�
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-sectionCategory"
 * ^title = "厚労省電子処方CDA規格別表2"
 * ^status = #active
-* ^experimental = false
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
@@ -40,7 +50,6 @@ Description: "厚労省電子処方CDA規格別表3  剤形区分コード"
 // * ^valueSet = "http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-ePreCDA-drugsageForm"
 * ^title = "厚労省電子処方CDA規格別表3"
 * ^status = #active
-* ^experimental = false
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
