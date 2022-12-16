@@ -104,7 +104,7 @@ Id:             JP-Consent
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent"
 * identifier
-  * ^example[+].label = "General"
+  * ^example[0].label = "General"
   * ^example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
   * ^example[=].valueIdentifier.value = "123456"
 
@@ -114,7 +114,7 @@ Id:             JP-Consent-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Consent_eClinicalSummary"
 * identifier
-  * ^example[+].label = "General"
+  * ^example[0].label = "General"
   * ^example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
   * ^example[=].valueIdentifier.value = "123456"
 
