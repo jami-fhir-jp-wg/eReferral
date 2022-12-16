@@ -95,7 +95,7 @@ Description: "紹介先医療機関の診療科情報　例"
 
 * name = "循環器内科"
 
-* partOf.reference = "referralToOrganizationDeptExample01"
+* partOf.reference = "Organization/referralToOrganizationDeptExample01"
 
 //--------------
 Instance: referralToPractitionerExample01

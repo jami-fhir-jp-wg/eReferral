@@ -90,6 +90,6 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 
 //300on_処方後発変更可()
 * substitution.allowedCodeableConcept = urn:oid:1.2.392.100495.20.2.41#1 "変更不可"
-* substitution.reason.text = ""
+* substitution.reason.text = "患者が希望せず"
 
 

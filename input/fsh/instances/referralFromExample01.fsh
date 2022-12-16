@@ -96,7 +96,7 @@ Description: "紹介元医療機関の診療科情報　例"
 
 * name = "眼科"
 
-* partOf.reference = "referralFromOrganizationDeptExample01"
+* partOf.reference = "Organization/referralFromOrganizationDeptExample01"
 
 //--------------
 Instance: referralFromPractitionerExample01
