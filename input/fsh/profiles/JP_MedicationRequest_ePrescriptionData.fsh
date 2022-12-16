@@ -96,12 +96,14 @@ Description: "処方オーダ情報　JP_MedicationRequestの派生プロファ�
 * dispenseRequest.quantity.code MS
 * dispenseRequest.expectedSupplyDuration.value ^definition = "調剤日数。\r\n例）１日３錠で７日分の場合、この要素には 7が設定される。"
 * dispenseRequest.expectedSupplyDuration.value MS
-* substitution.allowed[x].coding.system ^definition = "後発品変更不可コードを識別するURI。固定値。\r\n厚生労働省電子処方箋CDA規格第１版　別表８ 後発品変更不可コード 　OID: 1.2.392.100495.20.2.41"
-* substitution.allowed[x].coding.system MS
-* substitution.allowed[x].coding.code ^definition = "後発品変更不可コード。\r\n不可の場合には1を設定する。\r\n厚生労働省電子処方箋CDA規格第１版　別表８ 後発品変更不可コード 　\r\n0 変更可　（省略可）\r\n1 後発品変更不可\r\n2 剤形変更不可\r\n3 含量規格変更不可"
-* substitution.allowed[x].coding.code MS
-* substitution.allowed[x].coding.display ^definition = "後発品変更不可コード表示名。\r\n0 変更可\r\n1 後発品変更不可\r\n2 剤形変更不可\r\n3 含量規格変更不可"
-* substitution.allowed[x].coding.display MS
+* substitution.allowed[x] only CodeableConcept
+* substitution.allowedCodeableConcept from $JP_MedicationSubstitutionNotAllowedReason_VS (preferred)
+* substitution.allowedCodeableConcept.coding.system ^definition = "後発品変更不可コードを識別するURI。固定値。\r\n厚生労働省電子処方箋CDA規格第１版　別表８ 後発品変更不可コード 　OID: 1.2.392.100495.20.2.41"
+* substitution.allowedCodeableConcept.coding.system MS
+* substitution.allowedCodeableConcept.coding.code ^definition = "後発品変更不可コード。\r\n不可の場合には1を設定する。\r\n厚生労働省電子処方箋CDA規格第１版　別表８ 後発品変更不可コード 　\r\n0 変更可　（省略可）\r\n1 後発品変更不可\r\n2 剤形変更不可\r\n3 含量規格変更不可"
+* substitution.allowedCodeableConcept.coding.code MS
+* substitution.allowedCodeableConcept.coding.display ^definition = "後発品変更不可コード表示名。\r\n0 変更可\r\n1 後発品変更不可\r\n2 剤形変更不可\r\n3 含量規格変更不可"
+* substitution.allowedCodeableConcept.coding.display MS
 * substitution.reason ^definition = "オーダー情報では、後発品変更不可の理由。"
 * substitution.reason MS
 * substitution.reason.text ^definition = "理由を表す文字列。\r\n例）　\"患者からの強い要望により\""
