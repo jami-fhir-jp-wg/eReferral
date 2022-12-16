@@ -103,18 +103,20 @@ Parent:			Consent
 Id:             JP-Consent
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent"
-* identifier.example[+].label = "General"
-* identifier.example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
-* identifier.example[=].valueIdentifier.value = "123456"
+* identifier
+  * ^example[+].label = "General"
+  * ^example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
+  * ^example[=].valueIdentifier.value = "123456"
 
 Profile:        JP_Consent_eClinicalSummary
 Parent:			JP_Consent
 Id:             JP-Consent-eClinicalSummary
 Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Consent_eClinicalSummary"
-* identifier.example[+].label = "General"
-* identifier.example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
-* identifier.example[=].valueIdentifier.value = "123456"
+* identifier
+  * ^example[+].label = "General"
+  * ^example[=].valueIdentifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"
+  * ^example[=].valueIdentifier.value = "123456"
 
 Profile:        JP_ResearchSubject
 Parent:			ResearchSubject
