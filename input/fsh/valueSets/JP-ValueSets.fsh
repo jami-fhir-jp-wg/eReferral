@@ -1,14 +1,11 @@
 ValueSet:  JP_valueSet_carePlanCategory
-Id:   JP-JP_valueSet_documentTypeCode-carePlanCategory
+Id:   JP-valueSet-carePlanCategory
 Description: "CarePlan カテゴリー　hospital-plan または discharge-plan"
 * ^url = "http://jpfhir.jp/fhir/CarePlan/ValueSet/category"
 * ^title = "valueSet"
 * ^status = #active
 * ^experimental = false
-* include codes from system urn:oid:1.2.392.100495.20.2.61
-
-* category ^definition = "hospital-plan または discharge-plan"
-* category.coding from http://jpfhir.jp/fhir/CarePlan/ValueSet/category
+* include codes from system http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
 
 // 
 ValueSet: JP_valueSet_documentTypeCode
@@ -18,7 +15,6 @@ Description: "FHIR文書の文書区分（医療文書全般）"
 * ^url = "http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes"
 * ^title = "valueSet"
 * ^status = #active
-* ^experimental = false
 * ^experimental = false
 * include codes from system http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes
 /*
