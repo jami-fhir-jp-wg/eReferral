@@ -15,4 +15,4 @@ The markdown contains content that appears to be an embedded HTML tag*
 The markdown contains content that appears to be an embedded HTML tag starting at 'Th'. This will (or SHOULD) be escaped by the presentation layer. The content should be checked to confirm that this is the desired behaviour
 The link 'StructureDefinition-jp-organization.html#医療機関コード１０桁' for "こちらのリンク" cannot be resolved
 # Consent リソースのStructureDefinitionに潜在的問題
-if identifier.system is ''urn:ietf:rfc:3986'', then the identifier.value must be a full URI (e.g. start with a scheme)
+%urn:ietf:rfc:3986%
