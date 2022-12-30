@@ -2,4 +2,5 @@ cp package.json package/; cp fsh-generated/resources/*.json package/;gtar czf jp
 
 target=Patient-JP-Patient-ePreData-Example.json;　　
 profile=JP_Patient_ePrescriptionData;
-java -jar ../work/validatorJPFHIR.jar fsh-generated/resources/$target -version 4.0.1 -ig jp-core.draft1#1.1.0-beta -ig package.tgz -profile http://jpfhir.jp/fhir/ePrescription/StructureDefinition/$profile -html-output outout.html
+#java -jar ../work/validatorJPFHIR.jar fsh-generated/resources/$target -version 4.0.1 -ig jp-core.draft1#1.1.0-beta -ig package.tgz -profile http://jpfhir.jp/fhir/ePrescription/StructureDefinition/$profile -html-output outout.html
+java -jar work/validator_cli.jar eReferral/fsh-generated/package/StructureDefinition-*.json   -version 4.0.1 -ig jp-core.r4#1.1.1-rc  -ig jp-eterminology#1.0.0.tgz -tx https://tx.jpfhir.jp:8081  -html-output outout.html
