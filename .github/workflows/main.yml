@@ -22,7 +22,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: true
-        
+
+    - name: move eClinicalSummary fsh files to input directory
+      run: |
+        mkdir -p input/fsh/eClinicalSummary/
+        mv eClinicalSummary/fsh/* input/fsh/eClinicalSummary/
+        mv eClinicalSummary/aliases-eclinicalsummary.fsh input/fsh/eClinicalSummary/
+        mv eClinicalSummary/pagecontent/* input/pagecontent/
     - name: makedir ./output
       run: | 
         mkdir output
