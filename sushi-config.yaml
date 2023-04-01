@@ -4,7 +4,6 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-
 id: eReferral
 canonical: http://jpfhir.jp/fhir/eReferral
 name: "HL7Japan_JAMIeReferralImplementationGuide"
