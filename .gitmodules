@@ -1,3 +1,0 @@
-[submodule "input/eClinicalSummary"]
-	path = input/eClinicalSummary
-	url = https://github.com/jami-fhir-jp-wg/eClinicalSummary.git
