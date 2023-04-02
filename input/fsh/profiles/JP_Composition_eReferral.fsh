@@ -58,7 +58,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * identifier.system ^definition = "文書リソースIDの名前空間を表すURI。固定値。"
 * identifier.value 1.. MS
 * identifier.value ^short = "文書リソースID"
-* identifier.value ^definition = """その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。\r\n
+* identifier.value ^definition = "その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。\r\n
 施設固有のID設定方式を用いて構わないが、Identifier型のvalue要素に、保険医療機関番号（10桁）、発行年（4桁）、施設内において発行年内で一意となる番号（8桁）をハイフン(“-“：U+002D)で連結した文字列を指定する方法を本仕様では具体的として採用している。\r\n
 例：”1311234567-2020-00123456\r\n 
 施設内文書番号が、異なる文書種別同士で重複するシステムの場合には、さらに文書区分コードなどを挿入して区別できることが望ましい。""”
@@ -591,9 +591,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[problemSection].entry 0..* MS
 * section[compositionSection].section[problemSection].entry only Reference(JP_Condition)
 * section[compositionSection].section[problemSection].entry ^short = "必須。傷病名・主訴を１個以上必ず記述する。"
-* section[compositionSection].section[problemSection].entry ^definition = """傷病名・主訴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。
-    フリーテキストでしか記述できない場合には、Condition.code.text に記述する。
-    """
+* section[compositionSection].section[problemSection].entry ^definition = "傷病名・主訴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。フリーテキストでしか記述できない場合には、Condition.code.text に記述する。"
 * section[compositionSection].section[problemSection].emptyReason ..1 MS
 * section[compositionSection].section[problemSection].section ..0
 //
@@ -637,10 +635,10 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[presentIllnessSection].entry 0..* MS
 * section[compositionSection].section[presentIllnessSection].entry only Reference(JP_Condition)
 * section[compositionSection].section[presentIllnessSection].entry ^short = "必須。現病歴として記述すべき疾患に関する現在にいたる経過歴を１個以上必ず記述したConditionリソースを参照する。"
-* section[compositionSection].section[presentIllnessSection].entry ^definition = """フリーテキストでしか記述できない場合には、それをCondition.code.text 
+* section[compositionSection].section[presentIllnessSection].entry ^definition = "フリーテキストでしか記述できない場合には、それをCondition.code.text 
                                                                             およびCodition.noteに記述したConditionリソースを参照する。
                                                                             疾患ごとに分けて現病歴を記述できる場合には、それぞれをひとつのConditionリソースで記述して参照する。
-                                                                            """
+                                                                            "
 * section[compositionSection].section[presentIllnessSection].emptyReason ..0
 * section[compositionSection].section[presentIllnessSection].section ..0
 ////
@@ -683,12 +681,12 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[pastIllnessSection].entry 0..* MS
 * section[compositionSection].section[pastIllnessSection].entry only Reference(JP_Condition)
 * section[compositionSection].section[pastIllnessSection].entry ^short = "既往歴をConditionリソースに記述して参照する。"
-* section[compositionSection].section[pastIllnessSection].entry ^definition = """既往歴をConditionリソースに記述して参照する。
+* section[compositionSection].section[pastIllnessSection].entry ^definition = "既往歴をConditionリソースに記述して参照する。
                                                                 1つの既往疾患につき1つのConditionリソースで記述されたものを参照する。
                                                                 記述すべき既往疾患が存在しないことを明示的に記述する（「既往特になし」など）場合にはentry要素は出現せず、emptyReasonにnilknownを記述する。
                                                                 既往疾患情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
-                                                                """
+                                                                "
 * section[compositionSection].section[pastIllnessSection].emptyReason ..1
 * section[compositionSection].section[pastIllnessSection].section ..0
 ////
@@ -731,12 +729,12 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[allergiesIIntoleranceSection].entry 0..* MS
 * section[compositionSection].section[allergiesIIntoleranceSection].entry only Reference(JP_AllergyIntolerance)
 * section[compositionSection].section[allergiesIIntoleranceSection].entry ^short = "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照"
-* section[compositionSection].section[allergiesIIntoleranceSection].entry ^definition = """アレルギー・不耐性反応情報を記述して参照する。
+* section[compositionSection].section[allergiesIIntoleranceSection].entry ^definition = "アレルギー・不耐性反応情報を記述して参照する。
                                                                 1つの既往疾患につき1つのAllergyIntoleranceリソースで記述されたものを参照する。
                                                                 記述すべきアレルギー・不耐性反応情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 アレルギー・不耐性反応情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。                                                                
-                                                                """
+                                                                "
 * section[compositionSection].section[allergiesIIntoleranceSection].emptyReason ..1
 * section[compositionSection].section[allergiesIIntoleranceSection].section ..0
 ////
@@ -779,12 +777,12 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[familiyHistorySection].entry 0..* MS
 * section[compositionSection].section[familiyHistorySection].entry only Reference(JP_FamilyMemberHistory)
 * section[compositionSection].section[familiyHistorySection].entry ^short = "家族歴情報を記述したFamilyMemberHistoryリソースを参照"
-* section[compositionSection].section[familiyHistorySection].entry ^definition = """家族歴情報情報を記述して参照する。
+* section[compositionSection].section[familiyHistorySection].entry ^definition = "家族歴情報情報を記述して参照する。
                                                                 1つの家族歴につき1つのFamilyMemberHistoryリソースで記述されたものを参照する。
                                                                 記述すべき家族歴情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 家族歴情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
-                                                                """
+                                                                "
 * section[compositionSection].section[familiyHistorySection].emptyReason ..1
 * section[compositionSection].section[familiyHistorySection].section ..0
 ////
@@ -827,12 +825,12 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry 0..* MS
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[admissinoPhysicalStatusSection].entry ^short = "身体所見を記述したObservationリソースを参照"
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry ^definition = """身体所見を記述して参照する。
+* section[compositionSection].section[admissinoPhysicalStatusSection].entry ^definition = "身体所見を記述して参照する。
                                                                 1つの身体所見につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき身体所見が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 身体所見を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
-                                                                """
+                                                                "
 * section[compositionSection].section[admissinoPhysicalStatusSection].emptyReason ..1
 * section[compositionSection].section[admissinoPhysicalStatusSection].section ..0
 ////
@@ -875,12 +873,12 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry 0..* MS
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^short = "感染症情報を記述したObservationリソースを参照"
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry ^definition = """感染症情報を記述して参照する。
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry ^definition = "感染症情報を記述して参照する。
                                                                 1つの感染症情報につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき感染症情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 感染症情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
-                                                                """
+                                                                "
 * section[compositionSection].section[infectiousDiseaseInformationSection].emptyReason ..1
 * section[compositionSection].section[infectiousDiseaseInformationSection].section ..0
 ////
@@ -923,13 +921,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[socialHistorySection].entry 0..* MS
 * section[compositionSection].section[socialHistorySection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[socialHistorySection].entry ^short = "社会歴・生活習慣情報を記述したObservationリソースを参照"
-* section[compositionSection].section[socialHistorySection].entry ^definition = """社会歴・生活習慣情報を記述して参照する。
+* section[compositionSection].section[socialHistorySection].entry ^definition = "社会歴・生活習慣情報を記述して参照する。
                                                                 1つの社会歴・生活習慣につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき社会歴・生活習慣情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 社会歴・生活習慣情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[socialHistorySection].emptyReason ..1
 * section[compositionSection].section[socialHistorySection].section ..0
 ////
@@ -972,13 +970,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[immunizationSection].entry 0..* MS
 * section[compositionSection].section[immunizationSection].entry only Reference(JP_Immunization)
 * section[compositionSection].section[immunizationSection].entry ^short = "予防接種歴情報を記述したImmunizationリソースを参照"
-* section[compositionSection].section[immunizationSection].entry ^definition = """予防接種歴情報を記述して参照する。
+* section[compositionSection].section[immunizationSection].entry ^definition = "予防接種歴情報を記述して参照する。
                                                                 1つの予防接種歴情報につき1つのImmunizationリソースで記述されたものを参照する。
                                                                 記述すべき予防接種歴情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 予防接種歴情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[immunizationSection].emptyReason ..1
 * section[compositionSection].section[immunizationSection].section ..0
 ////
@@ -1021,13 +1019,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[surgicalProcedureSection].entry 0..* MS
 * section[compositionSection].section[surgicalProcedureSection].entry only Reference(JP_Procedure)
 * section[compositionSection].section[surgicalProcedureSection].entry ^short = "手術情報を記述したProcedureリソースを参照"
-* section[compositionSection].section[surgicalProcedureSection].entry ^definition = """手術情報を記述して参照する。
+* section[compositionSection].section[surgicalProcedureSection].entry ^definition = "手術情報を記述して参照する。
                                                                 1つの手術情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき手術情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 手術情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[surgicalProcedureSection].emptyReason ..1
 * section[compositionSection].section[surgicalProcedureSection].section ..0
 ////
@@ -1070,13 +1068,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[bloodInfusionProcedureSection].entry 0..* MS
 * section[compositionSection].section[bloodInfusionProcedureSection].entry only Reference(JP_Procedure)
 * section[compositionSection].section[bloodInfusionProcedureSection].entry ^short = "輸血歴情報を記述したProcedureリソースを参照"
-* section[compositionSection].section[bloodInfusionProcedureSection].entry ^definition = """輸血歴情報を記述して参照する。
+* section[compositionSection].section[bloodInfusionProcedureSection].entry ^definition = "輸血歴情報を記述して参照する。
                                                                 1つの輸血歴情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき輸血歴情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 輸血歴情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[bloodInfusionProcedureSection].emptyReason ..1
 * section[compositionSection].section[bloodInfusionProcedureSection].section ..0
 ////
@@ -1119,13 +1117,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[treatmentProcedureSection].entry 0..* MS
 * section[compositionSection].section[treatmentProcedureSection].entry only Reference(JP_Procedure)
 * section[compositionSection].section[treatmentProcedureSection].entry ^short = "処置情報を記述したProcedureリソースを参照"
-* section[compositionSection].section[treatmentProcedureSection].entry ^definition = """処置情報を記述して参照する。
+* section[compositionSection].section[treatmentProcedureSection].entry ^definition = "処置情報を記述して参照する。
                                                                 1つの処置情報につき1つのProcedureリソースで記述されたものを参照する。
                                                                 記述すべき処置情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 処置情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[treatmentProcedureSection].emptyReason ..1
 * section[compositionSection].section[treatmentProcedureSection].section ..0
 ////
@@ -1168,13 +1166,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicationSection].entry 0..* MS
 * section[compositionSection].section[medicationSection].entry only Reference(JP_MedicationRequest_ePrescriptionData)
 * section[compositionSection].section[medicationSection].entry ^short = "投薬指示情報を記述したMedicationRequestリソースを参照"
-* section[compositionSection].section[medicationSection].entry ^definition = """投薬指示情報を記述して参照する。
+* section[compositionSection].section[medicationSection].entry ^definition = "投薬指示情報を記述して参照する。
                                                                 1つの投薬指示情報につき1つのMedicationRequestリソースで記述されたものを参照する。
                                                                 記述すべき投薬指示情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 投薬指示情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[medicationSection].emptyReason ..1
 * section[compositionSection].section[medicationSection].section ..0
 ////
@@ -1217,13 +1215,13 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[examsStudySection].entry 0..* MS
 * section[compositionSection].section[examsStudySection].entry only Reference(JP_Observation_Common)
 * section[compositionSection].section[examsStudySection].entry ^short = "検査結果情報を記述したObservationリソースを参照"
-* section[compositionSection].section[examsStudySection].entry ^definition = """検査結果情報を記述して参照する。
+* section[compositionSection].section[examsStudySection].entry ^definition = "検査結果情報を記述して参照する。
                                                                 1つの検査結果情報につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき検査結果情報が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 検査結果情報を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                               """
+                                                               "
 * section[compositionSection].section[examsStudySection].emptyReason ..1
 * section[compositionSection].section[examsStudySection].section ..0
 ////
@@ -1266,10 +1264,10 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalCourseSection].entry 1..* MS
 * section[compositionSection].section[clinicalCourseSection].entry only Reference(JP_DocumentReference)
 * section[compositionSection].section[clinicalCourseSection].entry ^short = "必須。臨床経過を記述したDocumentReferenceリソースを参照"
-* section[compositionSection].section[clinicalCourseSection].entry ^definition = """臨床経過を記述して参照する。
+* section[compositionSection].section[clinicalCourseSection].entry ^definition = "臨床経過を記述して参照する。
                                                                 1つ以上のDocumentReferenceリソースで記述されたものを参照する。
                                                                 診療情報提供書では臨床経過の記述は常に必要である。
-                                                                """
+                                                                "
 * section[compositionSection].section[clinicalCourseSection].emptyReason ..0
 * section[compositionSection].section[clinicalCourseSection].section ..0
 ////
@@ -1312,11 +1310,11 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalInstructionSection].entry 0..* MS
 * section[compositionSection].section[clinicalInstructionSection].entry only Reference(JP_CarePlan)
 * section[compositionSection].section[clinicalInstructionSection].entry ^short = "診療方針指示を記述したCarePlanリソースを参照"
-* section[compositionSection].section[clinicalInstructionSection].entry ^definition = """診療方針指示を記述して参照する。
+* section[compositionSection].section[clinicalInstructionSection].entry ^definition = "診療方針指示を記述して参照する。
                                                                 1つの指示をひとつのCarePlanリソースで記述されたものを参照する。
                                                                 記述すべき診療方針指示が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[clinicalInstructionSection].emptyReason ..1
 * section[compositionSection].section[clinicalInstructionSection].section ..0
 ////
@@ -1359,11 +1357,11 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicalDeviceSection].entry 0..* MS
 * section[compositionSection].section[medicalDeviceSection].entry only Reference(JP_DeviceUseStatement)
 * section[compositionSection].section[medicalDeviceSection].entry ^short = "医療機器情報を記述したDocumentReferenceリソースを参照"
-* section[compositionSection].section[medicalDeviceSection].entry ^definition = """医療機器情報を記述して参照する。
+* section[compositionSection].section[medicalDeviceSection].entry ^definition = "医療機器情報を記述して参照する。
                                                                 1つの医療機器情報をひとつのDeviceUseStatementリソースで記述されたものを参照する。
                                                                 記述すべき医療機器情報が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[medicalDeviceSection].emptyReason ..1
 * section[compositionSection].section[medicalDeviceSection].section ..0
 ////
@@ -1406,11 +1404,11 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[advanceDirectiveSection].entry 0..* MS
 * section[compositionSection].section[advanceDirectiveSection].entry only Reference(JP_Consent)
 * section[compositionSection].section[advanceDirectiveSection].entry ^short = "事前指示を記述したConcentリソースを参照"
-* section[compositionSection].section[advanceDirectiveSection].entry ^definition = """事前指示を記述して参照する。
+* section[compositionSection].section[advanceDirectiveSection].entry ^definition = "事前指示を記述して参照する。
                                                                 1つの指示をひとつのConsentリソースで記述されたものを参照する。
                                                                 記述すべき事前指示が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[advanceDirectiveSection].emptyReason ..1
 * section[compositionSection].section[advanceDirectiveSection].section ..0
 ////
@@ -1453,11 +1451,11 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[researchParticipationSection].entry 0..* MS
 * section[compositionSection].section[researchParticipationSection].entry only Reference(JP_ResearchSubject)
 * section[compositionSection].section[researchParticipationSection].entry ^short = "臨床研究参加情報を記述したDocumentReferenceリソースを参照"
-* section[compositionSection].section[researchParticipationSection].entry ^definition = """臨床研究参加情報を記述して参照する。
+* section[compositionSection].section[researchParticipationSection].entry ^definition = "臨床研究参加情報を記述して参照する。
                                                                 1つの臨床研究参加情報をひとつのResearchSubjectリソースで記述されたものを参照する。
                                                                 記述すべき臨床研究参加情報が特にないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 記述すべき情報が特にない場合であって、そのことを明示的に記述する必要もない場合には、このサブセクションを出現させない。
-                                                                """
+                                                                "
 * section[compositionSection].section[researchParticipationSection].emptyReason ..1
 * section[compositionSection].section[researchParticipationSection].section ..0
 //
