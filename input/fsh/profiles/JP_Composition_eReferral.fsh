@@ -547,9 +547,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[referralPurposeSection].entry 0..1 MS
 * section[compositionSection].section[referralPurposeSection].entry only Reference(JP_Encounter)
 * section[compositionSection].section[referralPurposeSection].entry ^short = "必須。紹介先で予定している受診を記述したEncounterリソースを参照"
-* section[compositionSection].section[referralPurposeSection].entry ^definition =  """紹介先で予定している受診を記述したEncounterリソースを参照。
-    Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。
-    そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。"""
+* section[compositionSection].section[referralPurposeSection].entry ^definition = "紹介先で予定している受診を記述したEncounterリソースを参照。Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。"
 * section[compositionSection].section[referralPurposeSection].emptyReason ..1 MS
 * section[compositionSection].section[referralPurposeSection].section ..0
 //
