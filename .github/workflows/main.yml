@@ -10,7 +10,9 @@ on:
       - '.github/workflows/main.yml'
   pull_request:
     branches: [ develop1.0 ]
-    
+  repository_dispatch:
+    types: [update]
+
 jobs:
   turn:
     runs-on: ubuntu-latest
