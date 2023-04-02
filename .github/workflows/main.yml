@@ -22,10 +22,12 @@ jobs:
         ruby-version: ['3.0']
     environment: SSH_PORT_JPFHIR  # JAMI WG アップロードサイトに関するアクセス情報の環境名
     steps:
-    - uses: actions/checkout@v2
+      - run: echo "${{ toJSON(github.event.client_payload) }}"
+      - uses: actions/checkout@v2
       with:
         ref: ${{ github.event.client_payload.ref }}
         submodules: true
+      - run: echo "${{ toJSON(github.event.client_payload) }}"
 
     - name: move eClinicalSummary fsh files to input directory
       run: |
