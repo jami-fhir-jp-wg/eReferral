@@ -6,7 +6,7 @@ Description: "診療情報提供書のための文書 Bundleリソース"
 * ^status = #active
 * . ^short = "診療情報提供書のための文書 Bundleリソース"
 * . ^definition = "診療情報提供書のための文書 Bundleリソース"
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 * meta.profile 1.. MS
 * meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
 

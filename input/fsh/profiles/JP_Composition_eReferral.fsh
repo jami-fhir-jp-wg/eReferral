@@ -36,7 +36,7 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * obeys checkExist-CDASection-or-CompositionSection
 * ^url = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
 * ^status = #active
-* meta.lastUpdate 1.. MS
+* meta.lastUpdated 1.. MS
 * meta.profile 1.. MS
 * meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
 
