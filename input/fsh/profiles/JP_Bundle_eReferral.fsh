@@ -30,14 +30,14 @@ Description: "診療情報提供書のための文書 Bundleリソース"
 * entry contains
     composition 1..1 MS  // 文書構成情報
 and patient 1..1 MS  //  患者情報
-and practitioners 1..2 MS
-and organization 2..2 MS
+and practitioners 1.. MS
+and organization 1.. MS
 //and organizationFrom 1..* MS
-and department 0..2 MS
+and department 0.. MS
 //and departmentOfissuer  0..* MS
 //and referralDoctor 1..* MS
 //and cdaDocument 0..1 MS
-and referralEncounter 0..2 MS
+and referralEncounter 1.. MS
 and problem 1..* MS
 and allergy 0..* MS
 and familyHistory 0..* MS

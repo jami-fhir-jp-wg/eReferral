@@ -45,7 +45,6 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * extension ^slicing.rules = #open
 * extension contains $composition-clinicaldocument-versionNumber named version 1..1
 * extension[version] ^short = "文書バージョンを表す拡張"
-* extension[version] ^min = 0
 * extension[version] 1..1 MS
 * extension[version].url 1..1 MS
 * extension[version].value[x] ^short = "文書のバージョン番号を表す文字列。"
@@ -59,8 +58,11 @@ Description:  "処方情報のリソース構成情報と文書日付に関す�
 * identifier.system ^definition = "文書リソースIDの名前空間を表すURI。固定値。"
 * identifier.value 1.. MS
 * identifier.value ^short = "文書リソースID"
-* identifier.value ^definition = "その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。\r\n施設固有のID設定方式を用いて構わないが、Identifier型のvalue要素に、保険医療機関番号（10桁）、発行年（4桁）、施設内において発行年内で一意となる番号（8桁）をハイフン(“-“：U+002D)で連結した文字列を指定する方法を本仕様では具体的として採用している。\r\n例：”1311234567-2020-00123456”
-"
+* identifier.value ^definition = """その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。\r\n
+施設固有のID設定方式を用いて構わないが、Identifier型のvalue要素に、保険医療機関番号（10桁）、発行年（4桁）、施設内において発行年内で一意となる番号（8桁）をハイフン(“-“：U+002D)で連結した文字列を指定する方法を本仕様では具体的として採用している。\r\n
+例：”1311234567-2020-00123456\r\n 
+施設内文書番号が、異なる文書種別同士で重複するシステムの場合には、さらに文書区分コードなどを挿入して区別できることが望ましい。""”
+
 * status = #final (exactly)
 * status ^short = "この文書のステータス。"
 * status ^definition = "この文書のステータス。\r\n仕様上は、preliminary | final | amended | entered_in_error　のいずれかを設定できるが、医療機関から登録される段階では、\"final\" でなければならない。"
