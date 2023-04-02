@@ -7,12 +7,9 @@ on:
     paths:
       - 'sushi-config.yaml'
       - 'input/**'
-      - 'eClinicalSummary/*'
       - '.github/workflows/main.yml'
   pull_request:
     branches: [ develop1.0 ]
-  repository_dispatch:
-    types: [update]
     
 jobs:
   turn:
@@ -22,9 +19,10 @@ jobs:
         ruby-version: ['3.0']
     environment: SSH_PORT_JPFHIR  # JAMI WG アップロードサイトに関するアクセス情報の環境名
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: true
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+
     - name: move eClinicalSummary fsh files to input directory
       run: |
         mkdir -p input/fsh/eClinicalSummary/
