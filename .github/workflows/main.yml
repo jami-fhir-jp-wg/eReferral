@@ -23,10 +23,9 @@ jobs:
     environment: SSH_PORT_JPFHIR  # JAMI WG アップロードサイトに関するアクセス情報の環境名
     steps:
       - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.client_payload.ref }}
-        submodules: true
-      - run: echo "${{ toJSON(github.event.client_payload) }}"
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+          submodules: true
 
     - name: move eClinicalSummary fsh files to input directory
       run: |
