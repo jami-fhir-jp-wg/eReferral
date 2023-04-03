@@ -74,6 +74,7 @@ jobs:
       env:
         PACKAGE: jp-core.r4#1.1.1-snap
         PACKAGECORE: hl7.fhir.r4.core#4.0.1
+        VERSION: 0.9.4
       run: | 
         mkdir input-cache
         mv ./publisher.jar ./input-cache
@@ -102,10 +103,11 @@ jobs:
       run: | 
         cd fsh-generated
         mv resources package
-        tar czf eReferral-0.9.3.tgz package
-        mv eReferral-0.9.3.tgz ../eReferral-0.9.3.tgz
+        tar czf eReferral-$VERSION.tgz package
+        mv eReferral-$VERSION.tgz ../eReferral-$VERSION.tgz
         cd ..
-        tar czf output.tgz output
+        mv output output_$VERSION
+        tar czf output_$VERSION.tgz output_$VERSION
 
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
@@ -113,7 +115,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
     - name: rsync remote-site-deploy
       run: |
-        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output.tgz eReferral-0.9.3.tgz ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
-        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; tar xzf output.tgz; '
+        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output_$VERSION.tgz eReferral-$VERSION.tgz ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; tar xzf output_$VERSION.tgz; '
 
 
