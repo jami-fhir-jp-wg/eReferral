@@ -74,7 +74,6 @@ jobs:
       env:
         PACKAGE: jp-core.r4#1.1.1-snap
         PACKAGECORE: hl7.fhir.r4.core#4.0.1
-        VERSION: 0.9.4
       run: | 
         mkdir input-cache
         mv ./publisher.jar ./input-cache
@@ -99,23 +98,34 @@ jobs:
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
 
-    - name: prepare gtz files for upload to remote site
-      run: | 
-        cd fsh-generated
-        mv resources package
-        tar czf eReferral-$VERSION.tgz package
-        mv eReferral-$VERSION.tgz ../eReferral-$VERSION.tgz
-        cd ..
-        mv output output_$VERSION
-        tar czf output_$VERSION.tgz output_$VERSION
 
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
       env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_TO_JPFHIR }}
-    - name: rsync remote-site-deploy
-      run: |
-        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output_$VERSION.tgz eReferral-$VERSION.tgz ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
-        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; tar xzf output_$VERSION.tgz; '
 
+    - name: prepare gtz files for upload to remote site
+      env:
+        VERSION: 0.9.4
+      run: | 
+        : # -- diff パッケージの作成
+        cd fsh-generated
+        mv resources package
+        tar czf jp-ereferral-$VERSION-diff.tgz package
+        mv jp-ereferral-$VERSION-diff.tgz ../jp-ereferral-$VERSION-diff.tgz
+        cd ..
+        : # -- diff パッケージとoutputディレクトリをアップロード
+        mv output output_$VERSION
+        tar czf output_$VERSION.tgz output_$VERSION
+        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output_$VERSION.tgz jp-ereferral-$VERSION-diff.tgz  ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; tar xzf output_$VERSION.tgz; '
+        : # -- snapshot パッケージの作成してアップロード
+        sushi -s .
+        cd fsh-generated
+        mv resources package
+        cp ../forPackage/package.json_jpreferral_$VERSION-snap package/package.json
+        tar czf jp-ereferral-$VERSION-snap.tgz package
+        mv jp-ereferral-$VERSION-snap.tgz ../jp-ereferral-$VERSION-snap.tgz
+        cd ..
+        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" jp-ereferral-$VERSION-snap.tgz  ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
 
