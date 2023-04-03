@@ -77,7 +77,7 @@ table th {
 </style>
 
 # 改訂履歴　（新しい順）
-## 2023.3.31	Ver.1.1.2	
+## 2023.03.31	Ver.1.1.2	
 ### JP-Core V1.1/V1.1.1 対応漏れを修正
 　- Patientりソース、RelatedPersonりソース　のname.useは"official"だけではなく、"usual"も使用可能とした。
 　- Patientりソース、RelatedPersonりソースのname.text の姓と名は全角空白ではなく半角空白1文字で連結する。
