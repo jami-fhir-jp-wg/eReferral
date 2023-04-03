@@ -98,7 +98,6 @@ jobs:
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
 
-
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
       env:
@@ -111,16 +110,15 @@ jobs:
         : # -- diff パッケージの作成
         cd fsh-generated
         mv resources package
+        cp ../forPackage/package.json_jpreferral_$VERSION-diff package/package.json
         tar czf jp-ereferral-$VERSION-diff.tgz package
         mv jp-ereferral-$VERSION-diff.tgz ../jp-ereferral-$VERSION-diff.tgz
         cd ..
         : # -- diff パッケージとoutputディレクトリをアップロード
         mv output output_$VERSION
-        echo "1 "$VERSION 
         tar czf output_$VERSION.tgz output_$VERSION
-        echo "2 "$VERSION
         rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" output_$VERSION.tgz jp-ereferral-$VERSION-diff.tgz  ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
-        echo "3 "$VERSION
+        : # -- VERSION環境変数を次の行の中でも再定義してください。
         ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'VERSION=0.9.4; cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; rm -rf output_$VERSION; tar xzf output_$VERSION.tgz; '
         : # -- snapshot パッケージの作成してアップロード
         sushi -s .
