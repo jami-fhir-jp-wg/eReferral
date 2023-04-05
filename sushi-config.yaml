@@ -38,7 +38,7 @@ dependencies:
 pages:
   index.md:
     title: 診療情報提供書HL7 FHIR 記述仕様書 第1版 V1.1.2
-  eReferralTables.md:
+  eClinicalSummaryTables.md:
     title: リソース表 各表一覧
   namespace.md:
     title: 名前空間一覧
@@ -85,39 +85,39 @@ menu:
     7.仕様策定メンバー: index.html#仕様策定メンバー
     8.謝辞: index.html#謝辞
   リソース表:
-    全表: eReferralTables.html
-    表1 AllergyIntoleranceリソースアレルギー情報: eReferralTables.html#tbl-1
-    表2 Binaryリソースバイナリーデータ情報: eReferralTables.html#tbl-2
-    表3_Bundleリソース 文書情報: eReferralTables.html#tbl-3
-    表4 CarePlanリソース 診療方針指示情報: eReferralTables.html#tbl-4
-    表5 Compositionリソース 文書構成情報: eReferralTables.html#tbl-5
-    表5-1 Compositionリソース (退院時サマリー): eReferralTables.html#tbl-5-1
-    表5-2 Compositionリソース (診療情報提供書): eReferralTables.html#tbl-5-2
-    表5-3 Composition_sectionの情報構造: eReferralTables.html#tbl-5-3
-    表6 Conditionリソース 患者状態情報: eReferralTables.html#tbl-6
-    表7	Consentリソース 同意情報: eReferralTables.html#tbl-7
-    表8	DeviceUseStatementリソース 医療機器使用歴情報: eReferralTables.html#tbl-8
-    表9	Deviceリソース 医療機器情報: eReferralTables.html#tbl-9
-    表10 DiagnosticReportリソース 診断報告書情報: eReferralTables.html#tbl-10
-    表11 DocumentReferenceリソース 文書参照情報: eReferralTables.html#tbl-11
-    表12 Encounterリソース 入院詳細情報: eReferralTables.html#tbl-12
-    表13 FamiliMemberHistoryリソース 家族歴情報: eReferralTables.html#tbl-13
-    表14 ImagingStudyリソース 画像検査実施情報: eReferralTables.html#tbl-14
-    表15 Immunizationリソース ワクチン接種情報: eReferralTables.html#tbl-15
-    表16 MedicationRequestリソース 処方依頼情報: eReferralTables.html#tbl-16
-    表16-1 MedicationRequest.dosageInstruction  処方情報の用法指示情報: eReferralTables.html#tbl-16-1
-    表16-2 Extension （InstructionForDispense） 調剤指示拡張情報: eReferralTables.html#tbl-16-2
-    表17 MedicationStatementリソース  服薬情報: eReferralTables.html#tbl-17
-    表17-1 MedicationStatement dosage 処方依頼情報の服薬用法情報: eReferralTables.html#tbl-17-1
-    表18 Observationリソース  検査・観察情報: eReferralTables.html#tbl-18
-    表19 Organizationリソース 文書作成医療機関情報: eReferralTables.html#tbl-19
-    表20 Organizationリソース 診療科情報: eReferralTables.html#tbl-20
-    表21 Patientリソース 患者情報: eReferralTables.html#tbl-21
-    表22 Practitionerリソース  文書作成責任者情報/文書法的責任者情報: eReferralTables.html#tbl-22
-    表23 Procedureリソース  入院中治療処置情報: eReferralTables.html#tbl-23
-    表24 RelatedPersonリソース  患者関係者情報: eReferralTables.html#tbl-24
-    表25 ResearchStudyリソース  研究対象情報: eReferralTables.html#tbl-25
-    表26 ResearchSubjectリソース  研究対象情報: eReferralTables.html#tbl-26
+    全表: eClinicalSummaryTables.html
+    表1 AllergyIntoleranceリソースアレルギー情報: eClinicalSummaryTables.html#tbl-1
+    表2 Binaryリソースバイナリーデータ情報: eClinicalSummaryTables.html#tbl-2
+    表3_Bundleリソース 文書情報: eClinicalSummaryTables.html#tbl-3
+    表4 CarePlanリソース 診療方針指示情報: eClinicalSummaryTables.html#tbl-4
+    表5 Compositionリソース 文書構成情報: eClinicalSummaryTables.html#tbl-5
+    表5-1 Compositionリソース (退院時サマリー): eClinicalSummaryTables.html#tbl-5-1
+    表5-2 Compositionリソース (診療情報提供書): eClinicalSummaryTables.html#tbl-5-2
+    表5-3 Composition_sectionの情報構造: eClinicalSummaryTables.html#tbl-5-3
+    表6 Conditionリソース 患者状態情報: eClinicalSummaryTables.html#tbl-6
+    表7	Consentリソース 同意情報: eClinicalSummaryTables.html#tbl-7
+    表8	DeviceUseStatementリソース 医療機器使用歴情報: eClinicalSummaryTables.html#tbl-8
+    表9	Deviceリソース 医療機器情報: eClinicalSummaryTables.html#tbl-9
+    表10 DiagnosticReportリソース 診断報告書情報: eClinicalSummaryTables.html#tbl-10
+    表11 DocumentReferenceリソース 文書参照情報: eClinicalSummaryTables.html#tbl-11
+    表12 Encounterリソース 入院詳細情報: eClinicalSummaryTables.html#tbl-12
+    表13 FamiliMemberHistoryリソース 家族歴情報: eClinicalSummaryTables.html#tbl-13
+    表14 ImagingStudyリソース 画像検査実施情報: eClinicalSummaryTables.html#tbl-14
+    表15 Immunizationリソース ワクチン接種情報: eClinicalSummaryTables.html#tbl-15
+    表16 MedicationRequestリソース 処方依頼情報: eClinicalSummaryTables.html#tbl-16
+    表16-1 MedicationRequest.dosageInstruction  処方情報の用法指示情報: eClinicalSummaryTables.html#tbl-16-1
+    表16-2 Extension （InstructionForDispense） 調剤指示拡張情報: eClinicalSummaryTables.html#tbl-16-2
+    表17 MedicationStatementリソース  服薬情報: eClinicalSummaryTables.html#tbl-17
+    表17-1 MedicationStatement dosage 処方依頼情報の服薬用法情報: eClinicalSummaryTables.html#tbl-17-1
+    表18 Observationリソース  検査・観察情報: eClinicalSummaryTables.html#tbl-18
+    表19 Organizationリソース 文書作成医療機関情報: eClinicalSummaryTables.html#tbl-19
+    表20 Organizationリソース 診療科情報: eClinicalSummaryTables.html#tbl-20
+    表21 Patientリソース 患者情報: eClinicalSummaryTables.html#tbl-21
+    表22 Practitionerリソース  文書作成責任者情報/文書法的責任者情報: eClinicalSummaryTables.html#tbl-22
+    表23 Procedureリソース  入院中治療処置情報: eClinicalSummaryTables.html#tbl-23
+    表24 RelatedPersonリソース  患者関係者情報: eClinicalSummaryTables.html#tbl-24
+    表25 ResearchStudyリソース  研究対象情報: eClinicalSummaryTables.html#tbl-25
+    表26 ResearchSubjectリソース  研究対象情報: eClinicalSummaryTables.html#tbl-26
   名前空間一覧: namespace.html
   履歴情報: updateHistory.html
   Artifacts:
@@ -238,125 +238,3 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-medicationcode-gs1-14
     - http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuranceCategory
 
-# ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
-# │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
-# │  resource. These properties are less commonly needed than those above.                         │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-#
-# Those who need more control or want to add additional details to the contact values can use
-# contact directly and follow the format outlined in the ImplementationGuide resource and
-# ContactDetail.
-#
-# contact:
-#   - name: Bob Smith
-#     telecom:
-#       - system: email # phone | fax | email | pager | url | sms | other
-#         value: bobsmith@example.org
-#         use: work
-#
-#
-# The global property corresponds to the IG.global property, but it
-# uses the type as the YAML key and the profile as its value. Since
-# FHIR does not explicitly disallow more than one profile per type,
-# neither do we; the value can be a single profile URL or an array
-# of profile URLs.
-#
-# global:
-#   Patient: http://example.org/fhir/StructureDefinition/my-patient-profile
-#   Encounter: http://example.org/fhir/StructureDefinition/my-encounter-profile
-#
-#
-# The resources property corresponds to IG.definition.resource.
-# SUSHI can auto-generate all of the resource entries based on
-# the FSH definitions and/or information in any user-provided
-# JSON or XML resource files. If the generated entries are not
-# sufficient or complete, however, the author can add entries
-# here. If the reference matches a generated entry, it will
-# replace the generated entry. If it doesn't match any generated
-# entries, it will be added to the generated entries. The format
-# follows IG.definition.resource with the following differences:
-#   * use IG.definition.resource.reference.reference as the YAML key
-#   * specify "omit" to omit a FSH-generated resource from the
-#     resource list.
-#   * groupingId can be used, but top-level groups syntax may be a
-#     better option (see below).
-# The following are simple examples to demonstrate what this might
-# look like:
-#
-# resources:
-#   Patient/my-example-patient:
-#     name: My Example Patient
-#     description: An example Patient
-#     exampleBoolean: true
-#   Patient/bad-example: omit
-#
-#
-# Groups can control certain aspects of the IG generation.  The IG
-# documentation recommends that authors use the default groups that
-# are provided by the templating framework, but if authors want to
-# use their own instead, they can use the mechanism below.  This will
-# create IG.definition.grouping entries and associate the individual
-# resource entries with the corresponding groupIds.
-#
-# groups:
-#   GroupA:
-#     name: Group A
-#     description: The Alpha Group
-#     resources:
-#     - StructureDefinition/animal-patient
-#     - StructureDefinition/arm-procedure
-#   GroupB:
-#     name: Group B
-#     description: The Beta Group
-#     resources:
-#     - StructureDefinition/bark-control
-#     - StructureDefinition/bee-sting
-#
-#
-# The ImplementationGuide resource defines several other properties
-# not represented above. These properties can be used as-is and
-# should follow the format defined in ImplementationGuide:
-# * date
-# * meta
-# * implicitRules
-# * language
-# * text
-# * contained
-# * extension
-# * modifierExtension
-# * experimental
-# * useContext
-# * copyright
-# * packageId
-#
-# 
-# ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮
-# │  The flags below configure aspects of how SUSHI processes FSH.                                 │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-# The FSHOnly flag indicates if only FSH resources should be exported.
-# If set to true, no IG related content will be generated.
-# The default value for this property is false.
-# 
-# FSHOnly: false
-#
-# 
-# When set to true, the "short" and "definition" field on the root element of an Extension will
-# be set to the "Title" and "Description" of that Extension. Default is true.
-# 
-# applyExtensionMetadataToRoot: true
-#
-#
-# The instanceOptions property is used to configure certain aspects of how SUSHI processes instances.
-# See the individual option definitions below for more detail.
-#
-# instanceOptions:
-#   Determines for which types of Instances SUSHI will automatically set meta.profile
-#   if InstanceOf references a profile:
-#
-#   setMetaProfile: always # always | never | inline-only | standalone-only
-#
-#
-#   Determines for which types of Instances SUSHI will automatically set id
-#   if InstanceOf references a profile:
-#
-#   setId: always # always | standalone-only
