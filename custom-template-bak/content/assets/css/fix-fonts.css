@@ -1,4 +1,5 @@
 /* Remove TOC box */
+
 .markdown-toc {
   display: none;
 }
@@ -105,6 +106,24 @@ h4 {
 
 h3 + h4 {
   margin-top: 0;
+}
+
+h5 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  line-height: 1.2em;
+  font-size: 2.2rem;
+  margin-top: 2rem;
+}
+
+h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  line-height: 1.2em;
+  font-size: 2.2rem;
+  margin-top: 2rem;
 }
 
 div.mapping {
