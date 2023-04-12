@@ -29,8 +29,12 @@ dependencies:
   jp-core.r4:
 # uri: http://jpfhir.jp/fhir/core/jp-core.draft1
 # to avoid warning message "The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole"
+<<<<<<< HEAD
 #    uri: http://jpfhir.jp/fhir/core/ImplementationGuide/jp-core.r4
     url: https://jpfhir.jp/fhir/core/1.1.1
+=======
+    uri: https://jpfhir.jp/fhir/core/1.1.1/
+>>>>>>> 4464f5d1105dc055b21107be6e6597fc1c633897
     version: 1.1.1-snap
 
 #----------------------------------------
