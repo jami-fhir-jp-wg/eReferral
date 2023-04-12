@@ -29,7 +29,8 @@ dependencies:
   jp-core.r4:
 # uri: http://jpfhir.jp/fhir/core/jp-core.draft1
 # to avoid warning message "The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole"
-    uri: http://jpfhir.jp/fhir/core/ImplementationGuide/jp-core.r4
+#    uri: http://jpfhir.jp/fhir/core/ImplementationGuide/jp-core.r4
+    url: https://jpfhir.jp/fhir/core/1.1.1
     version: 1.1.1-snap
 
 #----------------------------------------
@@ -185,7 +186,6 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_MedicationStatement_eClinicalSummary
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationStatement
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common_eClinicalSummary
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary
