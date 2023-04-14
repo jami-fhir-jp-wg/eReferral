@@ -186,6 +186,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_MedicationStatement_eClinicalSummary
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationStatement
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common_eClinicalSummary
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department
     - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary
