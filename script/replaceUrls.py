@@ -23,5 +23,3 @@ with open(sys.argv[1], "r") as f:
             print(line)
         else:
             print(line)
-            # 標準エラー
-            # sys.stderr.write(line)
