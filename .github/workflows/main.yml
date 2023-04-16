@@ -108,6 +108,7 @@ jobs:
         for file in StructureDefinition-*.html
         do
           echo $file
+          python --version
           python ../script/replaceUrls.py $file 1.1.1 >$file
         done   
         cd ..

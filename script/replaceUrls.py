@@ -10,7 +10,9 @@
 import sys
 
 with open(sys.argv[1], "r") as f:
+    sys.stderr.println("sys.argv[1]="+sys.argv[1]+" sys.argv[2]="+sys.argv[2])
     for line in f:
+        sys.stderr.write(line)
         if "https://simplifier.net/resolve?scope=jp-core.r4@1.1.1" in line:
             sys.stderr.write(line)
             line = line.replace("https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/",
