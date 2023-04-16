@@ -97,7 +97,6 @@ jobs:
         unset DISPLAY
         : # 
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
-
     - name: replace url of html files referring base package
       run:  |
         : # https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common"
