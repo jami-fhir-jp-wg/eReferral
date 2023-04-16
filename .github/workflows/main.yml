@@ -109,7 +109,7 @@ jobs:
         do
           echo $file
           python --version
-          python ../script/replaceUrls.py $file 1.1.1 >$file
+          python ../script/replaceUrls.py $file 1.1.1 >$file".2"
         done   
         cd ..
     - name: ssh key generate
