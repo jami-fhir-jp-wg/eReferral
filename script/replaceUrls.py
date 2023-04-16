@@ -10,9 +10,9 @@
 import sys
 import re
 with open(sys.argv[1], "r") as f:
-    print("sys.argv[1]="+sys.argv[1]+" sys.argv[2]="+sys.argv[2], file=sys.stderr)
+#    print("sys.argv[1]="+sys.argv[1]+" sys.argv[2]="+sys.argv[2], file=sys.stderr)
     escapedVersion = sys.argv[2].replace(".","\.")
-    print(escapedVersion)
+#    print(escapedVersion)
 
     for line in f:
 #        sys.stderr.write(line)
@@ -20,12 +20,12 @@ with open(sys.argv[1], "r") as f:
 #            sys.stderr.write(line)
             m = re.search('https:\/\/simplifier\.net\/resolve\?scope=jp-core\.r4@' + escapedVersion + '-snap&amp;canonical=http:\/\/jpfhir\.jp\/fhir\/core\/StructureDefinition\/(.*?)">(.*)$',line)
             if m :
-                print("m.group(1)="+m.group(1),file=sys.stderr)
-                print("m.group(2)="+m.group(2),file=sys.stderr)
+#                print("m.group(1)="+m.group(1),file=sys.stderr)
+#                print("m.group(2)="+m.group(2),file=sys.stderr)
                 profileUrl = m.group(1).lower().replace("_","-")+".html"
-            line = line.replace("https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/"+m.group(1),
+                line = line.replace("https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/"+m.group(1),
                                  "https://jpfhir.jp/fhir/core/"+sys.argv[2]+"/StructureDefinition-"+profileUrl)
-
+            else:
+                print(line)
+        else:
             print(line)
-#        else:
-#            print(line)
