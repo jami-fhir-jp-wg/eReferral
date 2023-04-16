@@ -8,6 +8,7 @@ on:
       - 'sushi-config.yaml'
       - 'input/**'
       - '.github/workflows/main.yml'
+      - 'script/*.py'
   pull_request:
     branches: [ develop1.0 ]
   repository_dispatch:
@@ -106,6 +107,7 @@ jobs:
         cd output
         for file in StructureDefinition-*.html
         do
+          echo $file
           python ../script/replaceUrls.py $file 1.1.1 >$file
         done   
         cd ..
