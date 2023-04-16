@@ -98,6 +98,17 @@ jobs:
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
         : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
 
+    - name: replace url of html files referring base package
+      : # https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common"
+      : # ↓
+      : #　https://jpfhir.jp/fhir/core/1.1.1/StructureDefinition-jp-observation-common.html
+      run:  |
+        cd output
+        for file in *.html
+        do
+          echo $file|sed -e 's/https:\/\/simplifier.net\/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=//' | sed -e 's/http:\/\/jpfhir.jp\/fhir\/core\/StructureDefinition\///' | tr '[:upper:]' '[:lower:]' |sed -e 's/_/-/g' | sed -e 's/$/.html/' | sed -e 's/^/https:\/\/jpfhir.jp\/fhir\/core\/1.1.1\/StructureDefinition-/'
+        done   
+        cd ..
     - name: ssh key generate
       run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key; ls -l key
       env:
