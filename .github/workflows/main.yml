@@ -97,7 +97,6 @@ jobs:
         unset DISPLAY
         : # 
         java -Xmx4G -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini  -tx https://tx.jpfhir.jp:8081
-        : # java -Djava.awt.headless=true -jar ./input-cache/publisher.jar -ig ig.ini
 
     - name: replace url of html files referring base package
       run:  |
