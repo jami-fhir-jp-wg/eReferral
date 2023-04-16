@@ -106,9 +106,8 @@ jobs:
         cd output
         for file in StructureDefinition-*.html
         do
-          echo $file
-          python --version
           python ../script/replaceUrls.py $file 1.1.1 >$file".2.html"
+          mv $file".2.html" $file
         done   
         cd ..
     - name: ssh key generate
