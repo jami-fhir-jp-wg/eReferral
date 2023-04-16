@@ -25,7 +25,6 @@ with open(sys.argv[1], "r") as f:
                 profileUrl = m.group(1).lower().replace("_","-")+".html"
                 line = line.replace("https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/"+m.group(1),
                                  "https://jpfhir.jp/fhir/core/"+sys.argv[2]+"/StructureDefinition-"+profileUrl)
-            else:
-                print(line)
+            print(line)
         else:
             print(line)
