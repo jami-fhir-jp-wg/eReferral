@@ -486,10 +486,10 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section ^slicing.rules = #open
 
 * section[compositionSection].section   contains 
-        referralPurposeSection  1..1    MS  // 紹介目的セクション referralPurposeSection
-    and problemSection    1..1    MS  // 傷病名・主訴セクション   problemSection
-    and presentIllnessSection     1..1    MS  // 現病歴セクション presentIllnessSection
-    and pastIllnessSection    1..1    MS  // 既往歴セクション pastIllnessSection
+        referralPurposeSection  0..1    MS  // 紹介目的セクション referralPurposeSection
+    and problemSection    0..1    MS  // 傷病名・主訴セクション   problemSection
+    and presentIllnessSection     0..1    MS  // 現病歴セクション presentIllnessSection
+    and pastIllnessSection    0..1    MS  // 既往歴セクション pastIllnessSection
     and allergiesIIntoleranceSection      0..1    MS  // アレルギー・不耐性反応セクション allergiesIIntoleranceSection
     and familiyHistorySection     0..1    MS  // 家族歴セクション familiyHistorySection
     and admissinoPhysicalStatusSection    0..1    MS  // 身体所見セクション   admissinoPhysicalStatusSection
@@ -501,7 +501,7 @@ and authorDepartment 0..1 MS
 	and treatmentProcedureSection     0..1    MS  //  処置セクション	treatmentProcedureSection
 	and medicationSection     0..1    MS  //  投薬指示セクション	medicationSection
 	and examsStudySection     0..1    MS  //  検査結果セクション	examsStudySection 
-	and clinicalCourseSection     1..1    MS  //  臨床経過セクション	clinicalCourseSection
+	and clinicalCourseSection     0..1    MS  //  臨床経過セクション	clinicalCourseSection
 	and clinicalInstructionSection    0..1    MS  //  診療方針指示セクション	clinicalInstructionSection
 	and medicalDeviceSection      0..1    MS  //  医療機器セクション	medicalDeviceSection
 	and advanceDirectiveSection   0..1    MS  //  事前指示セクション	advanceDirectiveSection
