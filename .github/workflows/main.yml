@@ -1,4 +1,4 @@
-name: Ohe-testing
+name: Ohe-build
 
 on:
   push:
