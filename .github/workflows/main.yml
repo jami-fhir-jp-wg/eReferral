@@ -116,7 +116,7 @@ jobs:
 
     - name: prepare gtz files for upload to remote site
       env:
-        VERSION: 0.9.4
+        VERSION: 0.9.5
       run: | 
         : # -- diff パッケージの作成
         cd fsh-generated
@@ -130,7 +130,7 @@ jobs:
         tar czf output_$VERSION.tgz output_$VERSION
         rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" output_$VERSION.tgz jp-ereferral-$VERSION-diff.tgz  ${{ secrets.JAMIWG_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
         : # -- VERSION環境変数を次の行の中でも再定義してください。
-        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'VERSION=0.9.4; cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; rm -rf output_$VERSION; tar xzf output_$VERSION.tgz; '
+        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_WEBHOST }}   'VERSION=0.9.5; cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; rm -rf output_$VERSION; tar xzf output_$VERSION.tgz; '
         : # -- snapshot パッケージの作成してアップロード
         sushi -s .
         cd fsh-generated

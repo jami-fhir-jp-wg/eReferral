@@ -13,9 +13,9 @@ rm -rf forPackage/package
 mkdir -p forPackage/package
 cp -r fsh-generated/package-diff  forPackage/package
 cd forPackage
-cp package.json_jpreferral_0.9.4-diff package/package.json
+cp package.json_jpreferral_0.9.5-diff package/package.json
 gtar czf package.tgz package
-mv package.tgz jp-ereferral-0.9.4-diff.tgz
+mv package.tgz jp-ereferral-0.9.5-diff.tgz
 cd ~/GitHub/eReferral
 #-- snapshot パッケージの作成
 sushi -s .
@@ -24,9 +24,9 @@ rm -rf forPackage/package
 mkdir -p forPackage/package
 cp -r fsh-generated/package-snap  forPackage/package
 cd forPackage
-cp package.json_jpreferral_0.9.4-snap package/package.json
+cp package.json_jpreferral_0.9.5-snap package/package.json
 gtar czf package.tgz package
-mv package.tgz jp-ereferral-0.9.4-snap.tgz
+mv package.tgz jp-ereferral-0.9.5-snap.tgz
 #-- 共通りソースプロファイルをもとに戻す
 mkdir -p input/fsh/eClinicalSummary/
 rm -f input/fsh/eClinicalSummary/*
