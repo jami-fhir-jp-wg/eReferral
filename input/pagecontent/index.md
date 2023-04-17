@@ -288,10 +288,10 @@ Encounterリソースの仕様は次の表で示す。
 
 Practionerリソース、Organizationリソースの仕様はそれぞれ次の表で示す。
 
-＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞
-＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞
+＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞<br>
+＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞<br>
 ＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
-<br>
+
 
 #### Composition.custodian要素
 この診療情報提供書文書の作成・修正を行い、文書の管理責任を持つ機関を表す。
@@ -330,7 +330,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 　紹介先の診療科を記述したい場合には、加えて診療科をOrganizationリソースで記述し、そのインスタンスへの参照を本セクションのentry要素リストに記述する。
 　それぞれの仕様を次の表に示す。文書作成に関わる情報となっているが共通仕様であり、必須要素以外の記述は不要である。
 
-＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞
+＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞<br>
 ＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
 
 　また、紹介先の医師の情報も記述したい場合には、加えて医師情報をPractitionerリソースで記述し、そのインスタンスへの参照を本セクションのentry要素リストに記述する。
