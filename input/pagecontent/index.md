@@ -181,7 +181,7 @@ Bundleリソースは図のように、Compositionリソースにてセクショ
 
 Bundleリソース全体の構造を以下の表に示す。
 
-＜[表3　　Bundleリソース　文書情報](eReferralTables.html#tbl-3)＞
+＜[表3　　Bundleリソース　文書情報](eClinicalSummaryTables.html#tbl-3)＞
 
 この表で示すように、documentタイプのBundleリソースでは、管理的な情報を格納する要素としてtimestamp、signatureなどがあり、文書自体の内容情報を格納する要素として、ひとつのentry要素（エントリリスト）がある。このentry要素の値には、複数のresource要素を含むブロックが繰り返される。
 この表では様々なentryが列挙されているが、先にも述べたように、entry要素自体は1度だけ出現し、その値がリストとなることに注意されたい。
@@ -198,7 +198,7 @@ entryの最初のresourceは、先に述べたように、構成リソース一�
 ### Compositionリソース
 Compositionリソースは、診療情報提供書FHIRdocumentにentryとして格納される複数のリソースのうちの最初に出現するもので、この文書全体の構成目次に相当する情報や、セクションの構成を記述したものである。
 診療情報提供書FHIRdocumentでの****Compositionリソースの仕様を次の表に示す。
-＜[表5-2　　Compositionリソース　診療情報提供書](eReferralTables.html#tbl-5)＞
+＜[表5-2　　Compositionリソース　診療情報提供書](eClinicalSummaryTables.html#tbl-5)＞
 
 診療情報提供書は、あとで説明するように5つのセクション（CDA参照セクション、構造情報セクション、添付情報セクション、備考・連絡情報セクション、PDFセクション）から構成され、さらにそのうち構造情報セクションには子となるセクションが複数配置されている。
 Compositionリソースは患者や作成者など文書情報管理用の情報を記述するいわゆるヘッダ部、および診療情報提供書文書の本体内容を記述するボディー部から構成される。
@@ -266,7 +266,7 @@ Composition.identifier要素には、その医療機関が発行した診療情�
 必須要素である。
 Patientリソースの仕様は次の表で示す。
 
-＜[表21　　Patientリソース　患者情報](eReferralTables.html#tbl-21)＞
+＜[表21　　Patientリソース　患者情報](eClinicalSummaryTables.html#tbl-21)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -275,7 +275,7 @@ Patientリソースの仕様は次の表で示す。
 任意要素である。
 Encounterリソースの仕様は次の表で示す。
 
-＜[表12　　Encounterリソース 受診時情報（診療情報提供書）/入院詳細情報(退院時サマリー)＞](eReferralTables.html#tbl-12)＞
+＜[表12　　Encounterリソース 受診時情報（診療情報提供書）/入院詳細情報(退院時サマリー)＞](eClinicalSummaryTables.html#tbl-12)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -288,9 +288,9 @@ Encounterリソースの仕様は次の表で示す。
 
 Practionerリソース、Organizationリソースの仕様はそれぞれ次の表で示す。
 
-＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞<br>
-＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞<br>
-＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
+＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eClinicalSummaryTables.html#tbl-22)＞<br>
+＜[表19　　Organizationリソース　文書作成医療機関情報](eClinicalSummaryTables.html#tbl-19)＞<br>
+＜[表20　　Organizationリソース　診療科情報](eClinicalSummaryTables.html#tbl-20)＞
 
 
 #### Composition.custodian要素
@@ -312,7 +312,7 @@ Practionerリソース、Organizationリソースの仕様はそれぞれ次の�
 #### Composition.section要素
 すべてのComposition.section要素は、以下の構造をとる。
 
-＜[表5-3Composition_sectionの情報構造](eReferralTables.html#tbl-5-3)＞
+＜[表5-3Composition_sectionの情報構造](eClinicalSummaryTables.html#tbl-5-3)＞
 
 Compositionの直下には、紹介先医療機関と紹介元医療機関の情報を保持する2つのセクションと、診療情報提供書文書の内容を異なる2つの形態のいずれかで格納するためにどちらか一方を選択して使用するCDA参照セクションと構造情報セクション、およびどの形態においても使うことのある添付情報セクション、PDFセクションの計6つのsectionが子要素として存在している。
 これらのうちCDA参照セクションは既存のCDA規約にもとづいてすでに十分に構造化されたXMLファイルを有していて、それをそのまま包み込むことによって、FHIRドキュメント作成になるべくコストを割きたくない場合を想定して、それぞれ用意されている。
@@ -330,13 +330,13 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 　紹介先の診療科を記述したい場合には、加えて診療科をOrganizationリソースで記述し、そのインスタンスへの参照を本セクションのentry要素リストに記述する。
 　それぞれの仕様を次の表に示す。文書作成に関わる情報となっているが共通仕様であり、必須要素以外の記述は不要である。
 
-＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞<br>
-＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞
+＜[表19　　Organizationリソース　文書作成医療機関情報](eClinicalSummaryTables.html#tbl-19)＞<br>
+＜[表20　　Organizationリソース　診療科情報](eClinicalSummaryTables.html#tbl-20)＞
 
 　また、紹介先の医師の情報も記述したい場合には、加えて医師情報をPractitionerリソースで記述し、そのインスタンスへの参照を本セクションのentry要素リストに記述する。
 　Practitionerリソースの仕様を次の表に示す。作成者情報となっているが共通仕様である。
 
-＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)＞（再掲）
+＜[表22　　Practitionerリソース　　文書作成責任者情報/文書法的責任者情報](eClinicalSummaryTables.html#tbl-22)＞（再掲）
 　
 2）紹介元情報セクション
 　<br>セクションコード：910
@@ -401,7 +401,7 @@ Compositionの直下には、紹介先医療機関と紹介元医療機関の情
 紹介先で予定している受診を記述したEncounterリソースを参照する。
 <br>セクションコード：950
 
-＜[表12　　Encounterリソース　入院詳細情報](eReferralTables.html#tbl-12)＞　（再掲）
+＜[表12　　Encounterリソース　入院詳細情報](eClinicalSummaryTables.html#tbl-12)＞　（再掲）
 
 Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。
 <br>[→topへ](index.html)<br>
@@ -414,7 +414,7 @@ Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状に
 
 Conditionリソースの仕様は次の表である。
 
-＜[表6　　Conditionリソース　患者状態情報](eReferralTables.html#tbl-6)＞
+＜[表6　　Conditionリソース　患者状態情報](eClinicalSummaryTables.html#tbl-6)＞
 
 Conditionリソースを使用して記述できない場合には、テキストだけをComposition.section.section.text 要素に、xhtml形式で格納する。
 <br>
@@ -448,7 +448,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 <br>セクションコード：550
 <br>仕様は次の表である。
 
-＜[表13　　FamiliMemberHistoryリソース　家族歴情報](eReferralTables.html#tbl-13)＞
+＜[表13　　FamiliMemberHistoryリソース　家族歴情報](eClinicalSummaryTables.html#tbl-13)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -457,7 +457,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 <br>セクションコード：610
 <br>仕様は次の表である。
 
-＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-16)＞　
+＜[表18　　Observationリソース　　検査・観察情報](eClinicalSummaryTables.html#tbl-16)＞　
 <br>[→topへ](index.html)<br>
 
 
@@ -466,7 +466,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 <br>セクションコード：520
 <br>仕様は次の表である。
 
-＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
+＜[表18　　Observationリソース　　検査・観察情報](eClinicalSummaryTables.html#tbl-18)＞　（再掲）
 <br>[→topへ](index.html)<br>
 
 
@@ -475,7 +475,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 <br>セクションコード：640
 <br>仕様は次の表である。
 
-＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞（再掲）
+＜[表18　　Observationリソース　　検査・観察情報](eClinicalSummaryTables.html#tbl-18)＞（再掲）
 <br>[→topへ](index.html)<br>
 
 
@@ -484,7 +484,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 <br>セクションコード：640
 <br>仕様を次の表に示す。
 
-＜[表15　　Immunizationリソース　ワクチン接種情報](eReferralTables.html#tbl-15)＞
+＜[表15　　Immunizationリソース　ワクチン接種情報](eClinicalSummaryTables.html#tbl-15)＞
 <br>
 
 ### 手術セクション
@@ -495,7 +495,7 @@ Conditionリソースを使用して記述できない場合には、テキス�
 治療・処置・手術等（投薬を除く）は、すべてProcedureリソースを使用して記述する。
 なお、診断のための検査手技の実施については、検査結果のセクションで記述する。
 note要素に叙述的記述はできるが、entry.textに記述してもよい。
-＜[表23　　Procedureリソース　　入院中治療処置情報](eReferralTables.html#tbl-23)＞
+＜[表23　　Procedureリソース　　入院中治療処置情報](eClinicalSummaryTables.html#tbl-23)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -504,8 +504,8 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：430
 <br>仕様は次の表である。
 
-＜[表16　　MedicationRequestリソース　処方依頼情報](eReferralTables.html#tbl-16)＞
-＜[表16-1MedicationRequestdosageInstruction　処方情報の用法指示情報](eReferralTables.html#tbl-16-1)＞
+＜[表16　　MedicationRequestリソース　処方依頼情報](eClinicalSummaryTables.html#tbl-16)＞
+＜[表16-1MedicationRequestdosageInstruction　処方情報の用法指示情報](eClinicalSummaryTables.html#tbl-16-1)＞
 
 記述方法の詳細は、処方情報HL7 FHIR記述仕様を参照のこと。
 なお、処方情報HL7 FHIR記述仕様にもとづいた処方箋文書（Bundleリソースインスタンス）を直接参照する方法でも記述できる。
@@ -518,9 +518,9 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：620
 <br>仕様はそれぞれ次の表に示すの表に示す。
 
-＜[表18　　Observationリソース　　検査・観察情報](eReferralTables.html#tbl-18)＞　（再掲）
-＜[表14　　ImagingStudyリソース　画像検査実施情報](eReferralTables.html#tbl-14)＞
-＜[表10　　DiagnosticReportリソース　診断報告書情報](eReferralTables.html#tbl-10)＞
+＜[表18　　Observationリソース　　検査・観察情報](eClinicalSummaryTables.html#tbl-18)＞　（再掲）
+＜[表14　　ImagingStudyリソース　画像検査実施情報](eClinicalSummaryTables.html#tbl-14)＞
+＜[表10　　DiagnosticReportリソース　診断報告書情報](eClinicalSummaryTables.html#tbl-10)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -530,7 +530,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：330
 <br>仕様は次の表に示す。
 
-＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞
+＜[表11DocumentReferenceリソース　文書参照情報](eClinicalSummaryTables.html#tbl-11)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -540,7 +540,7 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：420
 <br>仕様は次の表である。
 
-＜[表4　　CarePlanリソース　診療方針指示情報](eReferralTables.html#tbl-4)＞
+＜[表4　　CarePlanリソース　診療方針指示情報](eClinicalSummaryTables.html#tbl-4)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -549,8 +549,8 @@ note要素に叙述的記述はできるが、entry.textに記述してもよい
 <br>セクションコード：810
 <br>仕様をそれぞれ次の表に示す。
 
-＜[表8　　DeviceUseStatementリソース　医療機器使用歴情報](eReferralTables.html#tbl-8)＞
-＜[表9　　Deviceリソース　医療機器情報](eReferralTables.html#tbl-9)＞
+＜[表8　　DeviceUseStatementリソース　医療機器使用歴情報](eClinicalSummaryTables.html#tbl-8)＞
+＜[表9　　Deviceリソース　医療機器情報](eClinicalSummaryTables.html#tbl-9)＞
 <br>
 
 ### 事前指示セクション
@@ -559,7 +559,7 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 <br>セクションコード：410
 <br>仕様を次の表に示す。
 
-＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-7)＞
+＜[表7　　Consentリソース　同意情報](eClinicalSummaryTables.html#tbl-7)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -568,9 +568,9 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 <br>セクションコード：830
 <br>仕様を次の表に示す。
 
-＜[表26　　ResearchSubjectリソース　　研究対象情報](eReferralTables.html#tbl-26)＞
-＜[表25　　ResearchStudyリソース　　研究対象情報](eReferralTables.html#tbl-25)＞
-＜[表7　　Consentリソース　同意情報](eReferralTables.html#tbl-7)＞　（再掲）
+＜[表26　　ResearchSubjectリソース　　研究対象情報](eClinicalSummaryTables.html#tbl-26)＞
+＜[表25　　ResearchStudyリソース　　研究対象情報](eClinicalSummaryTables.html#tbl-25)＞
+＜[表7　　Consentリソース　同意情報](eClinicalSummaryTables.html#tbl-7)＞　（再掲）
 
 ### 添付情報セクション
 添付情報は、DocumentReferenceリソース、またはBinaryリソースにより記述して格納する。
@@ -580,8 +580,8 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 また複数の外部ファイルがある場合には、たとえば厚生労働省標準HS009のIHE統合プロファイル「可搬型医用画像」で規定しているIHE:PDI方式に準拠したフォルダ構成で各ファイルを格納した上でZIP形式などでアーカイブしてひとつのファイルとして、それを外部参照するとよい。
 DocumentReferenceリソース、およびBinaryリソースの仕様は次の表にそれぞれ示す。
 
-＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞
-＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-2)＞
+＜[表11DocumentReferenceリソース　文書参照情報](eClinicalSummaryTables.html#tbl-11)＞
+＜[表2　　Binaryリソース　バイナリーデータ情報](eClinicalSummaryTables.html#tbl-2)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -590,8 +590,8 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 <br>セクションコード：220
 <br>DocumentReferenceリソース、およびBinaryリソースの仕様は次の表にそれぞれ示す。
 
-＜[表11DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)＞（再掲）
-＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-2)＞（再掲）
+＜[表11DocumentReferenceリソース　文書参照情報](eClinicalSummaryTables.html#tbl-11)＞（再掲）
+＜[表2　　Binaryリソース　バイナリーデータ情報](eClinicalSummaryTables.html#tbl-2)＞（再掲）
 <br>[→topへ](index.html)<br>
 
 ### PDFセクション
@@ -599,7 +599,7 @@ Binaryリソースにより、文書全体のPDFファイルを格納する場�
 <br>セクションコード：290
 <br>Binaryリソースの仕様は次の表に示す。
 
-＜[表2　　Binaryリソース　バイナリーデータ情報](eReferralTables.html#tbl-2)＞（再掲）
+＜[表2　　Binaryリソース　バイナリーデータ情報](eClinicalSummaryTables.html#tbl-2)＞（再掲）
 <br>[→topへ](index.html)<br>
 
 ### セクションから直接参照されないリソース
@@ -613,8 +613,8 @@ Binaryリソースにより、文書全体のPDFファイルを格納する場�
 また、機関のなかの部門についても、機関の中の機関と見做すことで同じOrganizationリソースを使用して記述できる。たとえば診療科の記述はOrganizationリソースを使用して記述する。
 <br>仕様は次の表に示す。この仕様では文書作成医療機関を想定して表が作成されているが、これに限らず他の施設、機関にも適用できる。
 
-＜[表19　　Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)＞（再掲）
-＜[表20　　Organizationリソース　診療科情報](eReferralTables.html#tbl-20)＞（再掲）
+＜[表19　　Organizationリソース　文書作成医療機関情報](eClinicalSummaryTables.html#tbl-19)＞（再掲）
+＜[表20　　Organizationリソース　診療科情報](eClinicalSummaryTables.html#tbl-20)＞（再掲）
 <br>[→topへ](index.html)<br>
 
 
@@ -622,7 +622,7 @@ Binaryリソースにより、文書全体のPDFファイルを格納する場�
 患者の関係者（親族や同居者、あるいは友人なども含む）のリソースとしてRelatedPersonリソースが参照される。
 たとえば同意取得や第三者確認などで使用されることがある。仕様を次の表に示す。
 
-＜[表24　　RelatedPersonリソース　　患者関係者情報](eReferralTables.html#tbl-24)＞
+＜[表24　　RelatedPersonリソース　　患者関係者情報](eClinicalSummaryTables.html#tbl-24)＞
 <br>[→topへ](index.html)<br>
 
 
@@ -685,37 +685,37 @@ urn:oid:1.2.392.200119.4.x:（一財）[医療情報システム開発センタ�
 
 
 ## リソース記述に関する表 診療情報提供書・退院時サマリー 共通
-[表全体](eReferralTables.html)<br>
+[表全体](eClinicalSummaryTables.html)<br>
 **目次**<br>
-[表1　　AllergyIntoleranceリソース　アレルギー情報](eReferralTables.html#tbl-1)<br>
-[表2　Binaryリソース バイナリーデータ情報](eReferralTables.html#tbl-2)<br>
-[表3　Bundleリソース  文書情報](eReferralTables.html#tbl-3)<br>
-[表4　CarePlanリソース  診療方針指示情報](eReferralTables.html#tbl-4)<br>
-[表5	Compositionリソース 文書構成情報](eReferralTables.html#tbl-5)<br>
-[表5-1	Compositionリソース (退院時サマリー)](eReferralTables.html#tbl-5-1)<br>
-[表5-2	Compositionリソース (診療情報提供書)](eReferralTables.html#tbl-5-2)<br>
-[表5-3	Composition_sectionの情報構造](eReferralTables.html#tbl-5-3)<br>
-[表6	Conditionリソース　患者状態情報](eReferralTables.html#tbl-6)<br>
-[表7	Consentリソース　同意情報](eReferralTables.html#tbl-7)<br>
-[表8	DeviceUseStatementリソース　医療機器使用歴情報](eReferralTables.html#tbl-8)<br>
-[表9	Deviceリソース　医療機器情報](eReferralTables.html#tbl-9)<br>
-[表10	DiagnosticReportリソース　診断報告書情報](eReferralTables.html#tbl-10)<br>
-[表11	DocumentReferenceリソース　文書参照情報](eReferralTables.html#tbl-11)<br>
-[表12	Encounterリソース　入院詳細情報](eReferralTables.html#tbl-12)<br>
-[表13	FamiliMemberHistoryリソース　家族歴情報](eReferralTables.html#tbl-13)<br>
-[表14	ImagingStudyリソース　画像検査実施情報](eReferralTables.html#tbl-14)<br>
-[表15	Immunizationリソース　ワクチン接種情報](eReferralTables.html#tbl-15)<br>
-[表16	MedicationRequestリソース　処方依頼情報](eReferralTables.html#tbl-16)<br>
-[表16-1	MedicationRequest.dosageInstruction  処方情報の用法指示情報](eReferralTables.html#tbl-16-1)<br>
-[表16-2	Extension　（InstructionForDispense） 調剤指示拡張情報](eReferralTables.html#tbl-16-2)<br>
-[表17	MedicationStatementリソース　服薬情報](eReferralTables.html#tbl-17)<br>
-[表17-1	MedicationStatement.dosage　処方依頼情報の服薬用法情報](eReferralTables.html#tbl-17-1)<br>
-[表18	Observationリソース　検査・観察情報](eReferralTables.html#tbl-18)<br>
-[表19	Organizationリソース　文書作成医療機関情報](eReferralTables.html#tbl-19)<br>
-[表20	Organizationリソース　診療科情報](eReferralTables.html#tbl-20)<br>
-[表21	Patientリソース　患者情報](eReferralTables.html#tbl-21)<br>
-[表22	Practitionerリソース　文書作成責任者情報/文書法的責任者情報](eReferralTables.html#tbl-22)<br>
-[表23	Procedureリソース　入院中治療処置情報](eReferralTables.html#tbl-23)<br>
-[表24	RelatedPersonリソース　患者関係者情報](eReferralTables.html#tbl-24)<br>
-[表25	ResearchStudyリソース　研究対象情報](eReferralTables.html#tbl-25)<br>
-[表26	ResearchSubjectリソース　研究対象情報](eReferralTables.html#tbl-26)<br>
+[表1　　AllergyIntoleranceリソース　アレルギー情報](eClinicalSummaryTables.html#tbl-1)<br>
+[表2　Binaryリソース バイナリーデータ情報](eClinicalSummaryTables.html#tbl-2)<br>
+[表3　Bundleリソース  文書情報](eClinicalSummaryTables.html#tbl-3)<br>
+[表4　CarePlanリソース  診療方針指示情報](eClinicalSummaryTables.html#tbl-4)<br>
+[表5	Compositionリソース 文書構成情報](eClinicalSummaryTables.html#tbl-5)<br>
+[表5-1	Compositionリソース (退院時サマリー)](eClinicalSummaryTables.html#tbl-5-1)<br>
+[表5-2	Compositionリソース (診療情報提供書)](eClinicalSummaryTables.html#tbl-5-2)<br>
+[表5-3	Composition_sectionの情報構造](eClinicalSummaryTables.html#tbl-5-3)<br>
+[表6	Conditionリソース　患者状態情報](eClinicalSummaryTables.html#tbl-6)<br>
+[表7	Consentリソース　同意情報](eClinicalSummaryTables.html#tbl-7)<br>
+[表8	DeviceUseStatementリソース　医療機器使用歴情報](eClinicalSummaryTables.html#tbl-8)<br>
+[表9	Deviceリソース　医療機器情報](eClinicalSummaryTables.html#tbl-9)<br>
+[表10	DiagnosticReportリソース　診断報告書情報](eClinicalSummaryTables.html#tbl-10)<br>
+[表11	DocumentReferenceリソース　文書参照情報](eClinicalSummaryTables.html#tbl-11)<br>
+[表12	Encounterリソース　入院詳細情報](eClinicalSummaryTables.html#tbl-12)<br>
+[表13	FamiliMemberHistoryリソース　家族歴情報](eClinicalSummaryTables.html#tbl-13)<br>
+[表14	ImagingStudyリソース　画像検査実施情報](eClinicalSummaryTables.html#tbl-14)<br>
+[表15	Immunizationリソース　ワクチン接種情報](eClinicalSummaryTables.html#tbl-15)<br>
+[表16	MedicationRequestリソース　処方依頼情報](eClinicalSummaryTables.html#tbl-16)<br>
+[表16-1	MedicationRequest.dosageInstruction  処方情報の用法指示情報](eClinicalSummaryTables.html#tbl-16-1)<br>
+[表16-2	Extension　（InstructionForDispense） 調剤指示拡張情報](eClinicalSummaryTables.html#tbl-16-2)<br>
+[表17	MedicationStatementリソース　服薬情報](eClinicalSummaryTables.html#tbl-17)<br>
+[表17-1	MedicationStatement.dosage　処方依頼情報の服薬用法情報](eClinicalSummaryTables.html#tbl-17-1)<br>
+[表18	Observationリソース　検査・観察情報](eClinicalSummaryTables.html#tbl-18)<br>
+[表19	Organizationリソース　文書作成医療機関情報](eClinicalSummaryTables.html#tbl-19)<br>
+[表20	Organizationリソース　診療科情報](eClinicalSummaryTables.html#tbl-20)<br>
+[表21	Patientリソース　患者情報](eClinicalSummaryTables.html#tbl-21)<br>
+[表22	Practitionerリソース　文書作成責任者情報/文書法的責任者情報](eClinicalSummaryTables.html#tbl-22)<br>
+[表23	Procedureリソース　入院中治療処置情報](eClinicalSummaryTables.html#tbl-23)<br>
+[表24	RelatedPersonリソース　患者関係者情報](eClinicalSummaryTables.html#tbl-24)<br>
+[表25	ResearchStudyリソース　研究対象情報](eClinicalSummaryTables.html#tbl-25)<br>
+[表26	ResearchSubjectリソース　研究対象情報](eClinicalSummaryTables.html#tbl-26)<br>
