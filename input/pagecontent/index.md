@@ -208,10 +208,8 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 
 **文書管理情報（ヘッダ部）**
 
-
-|||||||
-|---|--------------------|--------------------------|---------|-------------------------------------|-------------------------|
 |No.|情報名称|Composition<br>リソースの要素|必須/任意|対応する<br>CDA診療情報提供書<br>規約の要素名|参照先の<br>FHIR<br>リソース種別|
+|---|--------------------|--------------------------|---------|-------------------------------------|-------------------------|
 |1|患者情報|subject|必須|患者情報|Patient|
 |2|受診情報|encounter|任意|―|Encounter|
 |3|作成・編集日時|date|必須|―|―|
@@ -225,15 +223,12 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 
 **診療情報提供書****本体（ボディー部）****でのセクション構成（構造情報セクションの下のセクション）**
 
-
-
-|||||||
+|セクシ<br>ョン<br>コード|セクション名（日本語）<br>セクション名（英語）|必須/<br>任意|対応する<br>CDA<br>診療情報<br>提供書規約<br>の要素名|section.entry<br>参照先のFHIR<br>リソース種別|section.<br>entryの<br>多重度|
 |--|--|---|--|--|--|
-|セクシ<br>ョン<br>コード|セクション名（日本語）<br>セクション名（英語）|必須/<br>任意|対応する<br>CDA<br>診療情報<br>提供書規約<br>の要素名|section.entry<br>参照先のFHIR<br>リソース種別|section.<br>entryの<br>多重度||
-|910|紹介先情報<br>セクション<br>referralToSection|必須|紹介元|Organization<br>Practitioner|1..3||
-|920|紹介元情報<br>セクション<br>referra<br>lFromSection|必須|紹介元|Organization<br>Practitioner<br>PractitionerRole|1..3||
-|200|CDA参照<br>セクション<br>cdaSection|CDAと<br>いずれか<br>必須|該当なし|DocumentRefrence<br>(CDA規約文書<br>ファイルに限る)|1..1||
-|300|構造情報<br>セクション<br>referral<br>ToSection|CDAと<br>いずれか<br>必須|該当なし|−|1..1||
+|910|紹介先情報<br>セクション<br>referralToSection|必須|紹介元|Organization<br>Practitioner|1..3|
+|920|紹介元情報<br>セクション<br>referra<br>lFromSection|必須|紹介元|Organization<br>Practitioner<br>PractitionerRole|1..3|
+|200|CDA参照<br>セクション<br>cdaSection|CDAと<br>いずれか<br>必須|該当なし|DocumentRefrence<br>(CDA規約文書<br>ファイルに限る)|1..1|
+|300|構造情報<br>セクション<br>referral<br>ToSection|CDAと<br>いずれか<br>必須|該当なし|−|1..1|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;950|紹介目的セクション<br>referralPurposeSection|任意|目的|Encounter|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;340|傷病名・主訴セクション<br>problemSection|任意|傷病名・主訴|Condition|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;360|現病歴セクション<br>presentIllnessSection|任意|現病歴・診断・<br>名称|Condition|0..*|
@@ -254,9 +249,9 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 |&nbsp;&nbsp;&nbsp;\|&nbsp;810|医療機器セクション<br>medicalDeviceSection|任意	|−|DeviceUseStatement|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;410|事前指示セクション<br>advanceDirectiveSection|任意	|−|Consent|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;830|臨床研究参加セクション<br>researchParticipationSection|任意	|−|ResearchSubject|0..*|
-|210|添付情報<br>セクション<br>attachment<br>Section|任意|添付書類|DocumentReference<br>\|Binary|0..\*|0..*|
-|220|備考・<br>連絡情報<br>セクション<br>remarks<br>Communicaton<br>Section|任意|備考・連絡事項|Binary|0..\*|0..*|
-|230|PDFセクション<br>pdfSection|任意|文書全体のPDFデータ|Binary|0..\*|0..*|
+|210|添付情報<br>セクション<br>attachment<br>Section|任意|添付書類|DocumentReference<br>\|Binary|0..\*|
+|220|備考・<br>連絡情報<br>セクション<br>remarks<br>Communicaton<br>Section|任意|備考・連絡事項|Binary|0..\*|
+|230|PDFセクション<br>pdfSection|任意|文書全体のPDFデータ|Binary|0..\*|
 
 
 Composition.identifier要素には、その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。
