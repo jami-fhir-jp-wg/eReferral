@@ -115,7 +115,8 @@ Bundleリソースは、複数のFHIRリソースの集合を、あるコンテ�
 図1 Bundleリソース（http://hl7.org/fhir/bundle.html）
 
 そして、このBundleリソースのtype要素（上図左段の2つめの要素）の値を"document"とすることにより、Bundleリソースのひとつのタイプである、FHIRDocumentを記述できる。
-そこで、本仕様書では、診療情報提供書文書ひとつを、FHIRにおけるBundleリソースのひとつのタイプであるFHIRDocumentにより記述することとする。[[http://hl7.org/fhir/documents.html](http://hl7.org/fhir/documents.html)]
+そこで、本仕様書では、診療情報提供書文書ひとつを、FHIRにおけるBundleリソースのひとつのタイプであるFHIRDocumentにより記述することとする。<br>
+[[http://hl7.org/fhir/documents.html](http://hl7.org/fhir/documents.html)]
 
 以降の章では、診療情報提供書を構成するFHIRリソースの記述仕様を、次の項目に従って共通の表形式で記述する。
 
@@ -198,7 +199,9 @@ entryの最初のresourceは、先に述べたように、構成リソース一�
 ### Compositionリソース
 Compositionリソースは、診療情報提供書FHIRdocumentにentryとして格納される複数のリソースのうちの最初に出現するもので、この文書全体の構成目次に相当する情報や、セクションの構成を記述したものである。
 診療情報提供書FHIRdocumentでの****Compositionリソースの仕様を次の表に示す。
-＜[表5-2　　Compositionリソース　診療情報提供書](eClinicalSummaryTables.html#tbl-5)＞
+
+＜[表5　　Compositionリソース　全般説明](eClinicalSummaryTables.html#tbl-5)＞
+＜[表5-2　　Compositionリソース　診療情報提供書](eClinicalSummaryTables.html#tbl-5-2)＞
 
 診療情報提供書は、あとで説明するように5つのセクション（CDA参照セクション、構造情報セクション、添付情報セクション、備考・連絡情報セクション、PDFセクション）から構成され、さらにそのうち構造情報セクションには子となるセクションが複数配置されている。
 Compositionリソースは患者や作成者など文書情報管理用の情報を記述するいわゆるヘッダ部、および診療情報提供書文書の本体内容を記述するボディー部から構成される。
