@@ -407,7 +407,7 @@ and authorDepartment 0..1 MS
 * section[remarksCommunicationSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[remarksCommunicationSection].mode ..0
 * section[remarksCommunicationSection].orderedBy ..0
-* section[remarksCommunicationSection].entry 1..1
+* section[remarksCommunicationSection].entry 0..1
 * section[remarksCommunicationSection].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
 * section[remarksCommunicationSection].entry ^short = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunicationSection].entry ^definition = "備考・連絡情報バイナリファイルへの参照"
