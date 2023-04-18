@@ -9,7 +9,7 @@ Alias: $referral-section = http://jpfhir.jp/fhir/eReferral/CodeSystem/document-s
 
 
 
-Instance: compositionReferralExample01
+Instance: CompositionReferralExample01
 InstanceOf: Composition
 Usage: #example
 
