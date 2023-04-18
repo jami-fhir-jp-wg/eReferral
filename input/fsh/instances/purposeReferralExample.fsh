@@ -20,13 +20,10 @@ Description: "Encounterリソース　（診療情報提供書　紹介目的テ
 * reasonCode[+].text = "腹痛精査お願いします。"
 
 
-
-
 Instance: encounterReferralExample01
 InstanceOf: JP_Encounter
 Usage: #example
   
-Description: "encounterReferralExample01 外来受診　例"
 Description: "Encounterリソース　（診療情報提供書　外来受診）"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
