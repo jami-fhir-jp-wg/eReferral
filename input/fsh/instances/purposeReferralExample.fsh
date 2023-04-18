@@ -4,8 +4,7 @@ Instance: purposeReferralExample01
 InstanceOf: JP_Encounter
 Usage: #example
   
-Description: "encounterReferralExample01 診療情報提供書での紹介目的　例"
-
+Description: "Encounterリソース　（診療情報提供書　紹介目的テキスト）"
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
@@ -28,6 +27,7 @@ InstanceOf: JP_Encounter
 Usage: #example
   
 Description: "encounterReferralExample01 外来受診　例"
+Description: "Encounterリソース　（診療情報提供書　外来受診）"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 

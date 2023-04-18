@@ -13,7 +13,7 @@ Instance: compositionReferralExample01
 InstanceOf: Composition
 Usage: #example
 
-Description: "構成情報サンプル　composition"
+Description: "Compositionリソース　（診療情報提供書　構成情報）"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"

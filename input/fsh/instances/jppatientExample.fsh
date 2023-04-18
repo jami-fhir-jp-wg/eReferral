@@ -29,7 +29,7 @@ Instance: jppatientExample01
 InstanceOf: JP_Patient
 Usage: #example
   
-Description: "JPPatient患者情報　例"
+Description: "Patientリソース　（診療情報提供書　患者情報）"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"

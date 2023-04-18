@@ -6,7 +6,7 @@ Instance: ccourseReferralExample01
 InstanceOf: JP_DocumentReference
 Usage: #example
   
-Description: "ccourseReferralExample01 診療情報提供書　臨床経過記録文書参照例"
+Description: "DocumentReferenceリソース　（診療情報提供書　臨床経過）"
 
 * meta.lastUpdated = 2023-03-31T00:00:00+09:00
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary"

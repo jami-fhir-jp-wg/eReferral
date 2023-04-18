@@ -3,8 +3,7 @@ Instance: bundleReferralExample01
 InstanceOf: Bundle
 Usage: #example
 
-Description: "bundleReferralExample01 診療情報提供書Bundle"
-
+Description: "■ Bundleリソース　（診療情報提供書　全体）"
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"

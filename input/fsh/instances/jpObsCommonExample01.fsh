@@ -4,7 +4,7 @@ Instance: psobsCommonExample01
 InstanceOf: JP_Observation_Common
 Usage: #example
   
-Description: "ObservationCommon検査結果　現症例"
+Description: "Observationリソース　（診療情報提供書　腹部所見テキスト）"
 
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common"
 
@@ -25,7 +25,7 @@ Instance: obsCommonExample01
 InstanceOf: JP_Observation_Common
 Usage: #example
   
-Description: "ObservationCommon検査結果　例"
+Description: "Observationリソース　（診療情報提供書　現症　腹部所見テキスト）"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"

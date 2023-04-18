@@ -7,7 +7,7 @@ Instance: piReferralExample01
 InstanceOf: JP_Condition
 Usage: #example
   
-Description: "conditionReferralExample01 診療情報提供書　現病歴例"
+Description: "Conditionリソース　（診療情報提供書　既往歴テキスト　上腹部痛）"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"

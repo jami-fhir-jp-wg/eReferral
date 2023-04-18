@@ -39,7 +39,7 @@ Instance: referralFromOrganizationExample01
 InstanceOf: JP_Organization
 Usage: #example
 
-Description: "紹介元医療機関情報　例"
+Description: "Organizationリソース　（診療情報提供書　紹介元　医療機関情報）"
 
 // 002r_ValidationProfile(ARGmetaprofile)
 //* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_issuer"
@@ -84,7 +84,7 @@ Instance: referralFromOrganizationDeptExample01
 InstanceOf: JP_Organization
 Usage: #example
 
-Description: "紹介元医療機関の診療科情報　例"
+Description: "Organizationリソース　（診療情報提供書　紹介元　診療科情報）"
 
 //002or_ValidationProfile(ARGmetaprofile)
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
@@ -105,7 +105,7 @@ Instance: referralFromPractitionerExample01
 InstanceOf: JP_Practitioner
 Usage: #example
 
-Description: "紹介元医療機関の医師情報　例"
+Description: "Organizationリソース　（診療情報提供書　紹介元　医師情報）"
 
 // 002or_ValidationProfile(ARGmetaprofile) 
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary"
