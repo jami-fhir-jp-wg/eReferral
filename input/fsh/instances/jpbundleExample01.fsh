@@ -5,6 +5,8 @@ Usage: #example
 
 Description: "bundleReferralExample01 診療情報提供書Bundle"
 
+
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/documentInstance-identifier"

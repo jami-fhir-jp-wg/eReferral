@@ -6,6 +6,8 @@ Usage: #inline
 
 Description: "encounterReferralExample01 診療情報提供書での紹介目的　例　腹痛精査お願い"
 
+
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"

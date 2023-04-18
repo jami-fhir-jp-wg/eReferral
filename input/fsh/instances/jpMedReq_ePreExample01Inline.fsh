@@ -38,6 +38,8 @@ Usage: #inline
 
 Description: "内服　処方例１件　MedicationRequestリソースのインスタンス例"
 
+
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest"
 
 

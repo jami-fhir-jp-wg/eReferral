@@ -31,6 +31,8 @@ Usage: #inline
 
 Description: "JPPatient患者　例"
 
+
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient"
 
 * identifier.system = "urn:oid:1.2.392.200119.6.102.11234567890"

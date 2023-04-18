@@ -41,6 +41,8 @@ Usage: #inline
 Description: "紹介先医療機関情報　例"
 
 // 002or_ValidationProfile(ARGmetaprofile)
+
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
 
 //

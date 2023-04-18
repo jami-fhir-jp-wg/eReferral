@@ -8,6 +8,7 @@ Usage: #example
   
 Description: "conditionReferralExample01 診療情報提供書　主訴例　上腹部痛"
 
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
