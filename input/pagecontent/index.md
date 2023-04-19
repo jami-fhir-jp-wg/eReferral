@@ -246,7 +246,8 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 |&nbsp;&nbsp;&nbsp;\|&nbsp;720|処置セクション<br>procedureSection|任意|処置|Procedure|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;430|投薬指示セクション<br>medicationSection|任意|現在の処方・<br>現投薬情報|<br>MedicationRequest<br>｜Bundle<br>(電子処方箋)|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;620|検査結果セクション<br>studySection|任意	|検査結果|Observation<br>\|ImagingStudy<br>\|DiagnosticReport|0..*|
-|&nbsp;&nbsp;&nbsp;\|&nbsp;330|臨床経過セクション<br>clinicalCourseSection|任意	|−|ClinicalImpression|0..*|
+|&nbsp;&nbsp;&nbsp;\|&nbsp;330|臨床経過セクション<br>clinicalCourseSection|任意	|−|DocumentRefer
+ence|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;420|診療方針指示セクション<br>clinicalInstructionSection|任意	|−|CarePlan|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;810|医療機器セクション<br>medicalDeviceSection|任意	|−|DeviceUseStatement|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;410|事前指示セクション<br>advanceDirectiveSection|任意	|−|Consent|0..*|
