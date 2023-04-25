@@ -231,9 +231,9 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 |920|紹介元情報<br>セクション<br>referra<br>lFromSection|必須|紹介元|Organization<br>Practitioner<br>PractitionerRole|1..3|
 |200|CDA参照<br>セクション<br>cdaSection|CDAと<br>いずれか<br>必須|該当なし|DocumentRefrence<br>(CDA規約文書<br>ファイルに限る)|1..1|
 |300|構造情報<br>セクション<br>referral<br>ToSection|CDAと<br>いずれか<br>必須|該当なし|−|1..1|
-|&nbsp;&nbsp;&nbsp;\|&nbsp;950|紹介目的セクション<br>referralPurposeSection|任意|目的|Encounter|0..*|
-|&nbsp;&nbsp;&nbsp;\|&nbsp;340|傷病名・主訴セクション<br>problemSection|任意|傷病名・主訴|Condition|0..*|
-|&nbsp;&nbsp;&nbsp;\|&nbsp;360|現病歴セクション<br>presentIllnessSection|任意|現病歴・診断・<br>名称|Condition|0..*|
+|&nbsp;&nbsp;&nbsp;\|&nbsp;950|紹介目的セクション<br>referralPurposeSection|必須*注|目的|Encounter|0..*|
+|&nbsp;&nbsp;&nbsp;\|&nbsp;340|傷病名・主訴セクション<br>problemSection|必須*注|傷病名・主訴|Condition|0..*|
+|&nbsp;&nbsp;&nbsp;\|&nbsp;360|現病歴セクション<br>presentIllnessSection|必須*注|現病歴・診断・<br>名称|Condition|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;370|既往歴セクション<br>pastIllnessSection|任意|既往歴|Condition|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;510|アレルギー・不耐性反応セクション<br>allergiesIIntoleranceSection|任意|アレルギー|AllergyIntolerance|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;550|家族歴セクション<br>familiyHistorySection|任意|家族歴|<br>FamilyMemberHistory|0..*|
@@ -256,6 +256,7 @@ ence|0..*|
 |220|備考・<br>連絡情報<br>セクション<br>remarks<br>Communicaton<br>Section|任意|備考・連絡事項|Binary|0..\*|
 |230|PDFセクション<br>pdfSection|任意|文書全体のPDFデータ|Binary|0..\*|
 
+*注：構造情報セクションが存在する場合のみ、当該セクションは必須という意味。
 
 Composition.identifier要素には、その医療機関が発行した診療情報提供書をその医療機関内において一意に識別するID（診療情報提供書番号）を設定する。
 施設固有のID設定方式を用いて構わないが、Identifier型のvalue要素に、保険医療機関番号（10桁）、発行年（4桁）、施設内において発行年内で一意となる番号（8桁）をハイフン("-"：U+002D)で連結した文字列を指定する方法を本仕様では具体的として採用している。

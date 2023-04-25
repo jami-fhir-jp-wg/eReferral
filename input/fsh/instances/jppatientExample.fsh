@@ -43,14 +43,14 @@ Description: "Patientリソース　（診療情報提供書　患者情報）"
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
 * name[=].extension.valueCode = #IDE
 * name[=].use = #official
-* name[=].text = "田中　太郎"
+* name[=].text = "田中 太郎"
 * name[=].family = "田中"
 * name[=].given = "太郎"
 
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
 * name[=].extension.valueCode = #SYL
 * name[=].use = #official
-* name[=].text = "タナカ　タロウ"
+* name[=].text = "タナカ タロウ"
 * name[=].family = "タナカ"
 * name[=].given = "タロウ"
 

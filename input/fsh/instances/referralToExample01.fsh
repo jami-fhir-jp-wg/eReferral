@@ -112,14 +112,14 @@ Description: "Organizationリソース　（診療情報提供書　紹介先　
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
 * name[=].extension.valueCode = #IDE
 * name[=].use = #official
-* name[=].text = "野口　英世丸"
+* name[=].text = "野口 英世丸"
 * name[=].family = "野口"
 * name[=].given = "英世丸"
 
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
 * name[=].extension.valueCode = #SYL
 * name[=].use = #official
-* name[=].text = "ノグチ　ヒデヨマル"
+* name[=].text = "ノグチ ヒデヨマル"
 * name[=].family = "ノグチ"
 * name[=].given = "ヒデヨマル"
 
