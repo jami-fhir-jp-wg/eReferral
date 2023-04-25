@@ -77,11 +77,18 @@ table th {
 </style>
 
 # 改訂履歴　（新しい順）
-## 2023.03.31	Ver.1.1.2	
+## 2023.04.25	Ver.1.1.3	
+  - 4.3　Compositionリソースを構成するセクションの表：　紹介目的セクション、傷病名・主訴セクション、現病歴セクションの必須記載に注意書きを追加。既往歴セクションの必須を任意に修正。
+  - 表３ Bundleリソース：　Bundle.signature の説明を補足。
+  - 表5.2　紹介目的セクション、傷病名・主訴セクション、現病歴セクション の多重度の最小値を1に修正（この欄は、親の構造情報セクションが存在する場合の記載であるため）。
+  - 表18 Observationリソース： meta.profile の説明から固定値の記載を削除し、実際には格納する検査カテゴリに合わせた値を設定する記載を追加。
+
+## 2023.03.21	Ver.1.1.2	  
 ### JP-Core V1.1/V1.1.1 対応漏れを修正
-　- Patientりソース、RelatedPersonりソース　のname.useは"official"だけではなく、"usual"も使用可能とした。
-　- Patientりソース、RelatedPersonりソースのname.text の姓と名は全角空白ではなく半角空白1文字で連結する。
-　- Bundleりソース、Compositionりソース以外のリソースで、meta.lastUpdated要素を必須として追加。同じくmeta.profileを必須から任意に変更し説明を補足。
+　- Patientリソース、RelatedPersonリソース　のname.useは"official"だけではなく、"usual"も使用可能とした。
+　- Patientリソース、RelatedPersonリソースのname.text の姓と名は全角空白ではなく半角空白1文字で連結する。
+##### Bundleリソース、Compositionリソース以外のリソースで、meta.lastUpdated要素を必須として追加。
+##### 同じくmeta.profileを必須から任意に変更し説明を補足。
 　- Bundle.entry のEncounter の多重度を1..1から0..* に変更。
 
 ## 2022.12.10	Ver.1.1	主な箇所に限り記載
