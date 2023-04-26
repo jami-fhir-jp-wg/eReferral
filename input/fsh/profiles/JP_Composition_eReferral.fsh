@@ -364,7 +364,7 @@ and authorDepartment 0..1 MS
 * section[attachmentSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[attachmentSection].mode ..0
 * section[attachmentSection].orderedBy ..0
-* section[attachmentSection].entry 1..1
+* section[attachmentSection].entry 1..*
 * section[attachmentSection].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
 * section[attachmentSection].entry ^short = "添付情報ファイルへの参照"
 * section[attachmentSection].entry ^definition = "添付情報ファイルへの参照"
@@ -442,7 +442,7 @@ and authorDepartment 0..1 MS
 * section[pdfSection].text ..0 
 * section[pdfSection].mode ..0
 * section[pdfSection].orderedBy ..0
-* section[pdfSection].entry 1..1
+* section[pdfSection].entry 1..*
 * section[pdfSection].entry only Reference(DocumentReference)
 * section[pdfSection].entry ^short = "PDFファイルへの参照"
 * section[pdfSection].entry ^definition = "PDFファイルへの参照"
@@ -1260,7 +1260,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalCourseSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
 * section[compositionSection].section[clinicalCourseSection].mode ..0
 * section[compositionSection].section[clinicalCourseSection].orderedBy ..0
-* section[compositionSection].section[clinicalCourseSection].entry 1..* MS
+* section[compositionSection].section[clinicalCourseSection].entry 0..* MS
 * section[compositionSection].section[clinicalCourseSection].entry only Reference(JP_DocumentReference)
 * section[compositionSection].section[clinicalCourseSection].entry ^short = "必須。臨床経過を記述したDocumentReferenceリソースを参照"
 * section[compositionSection].section[clinicalCourseSection].entry ^definition = "臨床経過を記述して参照する。
