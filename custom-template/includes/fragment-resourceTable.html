@@ -31,14 +31,6 @@
     </tr>
 {% endif %}
 
-
-{%if site.data.resources[resource_].igversion %}
-    <tr>
-      <td><i>IG build Ver.</i></td>
-      <td>{{site.data.resources[resource_].igversion | markdownify}}</td>
-    </tr>
-{% endif %}
-
 <tr>
   <td><i>Status</i></td>
   <td>{{site.data.resources[resource_].status.status}}
