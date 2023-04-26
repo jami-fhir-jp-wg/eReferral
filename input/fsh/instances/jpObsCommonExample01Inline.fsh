@@ -6,6 +6,7 @@ Usage: #inline
 
 Description: "ObservationCommon検査結果　現症例"
 
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"

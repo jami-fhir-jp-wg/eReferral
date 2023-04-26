@@ -26,6 +26,7 @@ Usage: #example
   
 Description: "Encounterリソース　（診療情報提供書　外来受診）"
 
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"

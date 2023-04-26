@@ -49,6 +49,7 @@ Usage: #example
 
 Description: "AllergyIntoleranceリソース　（診療情報提供書　アレルギー　キーウイ）"
 
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"

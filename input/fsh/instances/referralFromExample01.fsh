@@ -87,6 +87,7 @@ Usage: #example
 Description: "Organizationリソース　（診療情報提供書　紹介元　診療科情報）"
 
 //002or_ValidationProfile(ARGmetaprofile)
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
  
 // 
@@ -108,6 +109,7 @@ Usage: #example
 Description: "Organizationリソース　（診療情報提供書　紹介元　医師情報）"
 
 // 002or_ValidationProfile(ARGmetaprofile) 
+* meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary"
  
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
