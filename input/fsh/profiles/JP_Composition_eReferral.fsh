@@ -223,7 +223,7 @@ and authorDepartment 0..1 MS
 * section[referralToSection].entry[referralToDoctor] only Reference(JP_Practitioner_eClinicalSummary)
 * section[referralToSection].entry[referralToDoctor] ^short = "紹介先医師"
 * section[referralToSection].entry[referralToDoctor] ^definition = "紹介先医師"
-* section[referralToSection].emptyReason ..0
+* section[referralToSection].emptyReason ..1
 * section[referralToSection].section ..0
 //
 //
@@ -280,7 +280,7 @@ and authorDepartment 0..1 MS
 * section[referralFromSection].entry[referralFromDoctor] only Reference(JP_Practitioner_eClinicalSummary)
 * section[referralFromSection].entry[referralFromDoctor] ^short = "紹介元医師"
 * section[referralFromSection].entry[referralFromDoctor] ^definition = "紹介元医師"
-* section[referralFromSection].emptyReason ..0
+* section[referralFromSection].emptyReason ..1
 * section[referralFromSection].section ..0
 //
 //
@@ -323,7 +323,7 @@ and authorDepartment 0..1 MS
 * section[cdaSection].entry only Reference(DocumentReference)
 * section[cdaSection].entry ^short = "CDA規約文書ファイルへの参照"
 * section[cdaSection].entry ^definition = "CDA規約文書ファイルへの参照"
-* section[cdaSection].emptyReason ..0
+* section[cdaSection].emptyReason ..1
 * section[cdaSection].section ..0
 //
 //
@@ -368,7 +368,7 @@ and authorDepartment 0..1 MS
 * section[attachmentSection].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
 * section[attachmentSection].entry ^short = "添付情報ファイルへの参照"
 * section[attachmentSection].entry ^definition = "添付情報ファイルへの参照"
-* section[attachmentSection].emptyReason ..0
+* section[attachmentSection].emptyReason ..1
 * section[attachmentSection].section ..0
 //
 //
@@ -411,7 +411,7 @@ and authorDepartment 0..1 MS
 * section[remarksCommunicationSection].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
 * section[remarksCommunicationSection].entry ^short = "備考・連絡情報バイナリファイルへの参照"
 * section[remarksCommunicationSection].entry ^definition = "備考・連絡情報バイナリファイルへの参照"
-* section[remarksCommunicationSection].emptyReason ..0
+* section[remarksCommunicationSection].emptyReason ..1
 * section[remarksCommunicationSection].section ..0
 //
 //
@@ -446,7 +446,7 @@ and authorDepartment 0..1 MS
 * section[pdfSection].entry only Reference(DocumentReference)
 * section[pdfSection].entry ^short = "PDFファイルへの参照"
 * section[pdfSection].entry ^definition = "PDFファイルへの参照"
-* section[pdfSection].emptyReason ..0
+* section[pdfSection].emptyReason ..1
 * section[pdfSection].section ..0
 ////////
 * section[compositionSection] ^short = "構造情報セクション"
@@ -476,7 +476,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].text ..0 
 * section[compositionSection].mode ..0
 * section[compositionSection].orderedBy ..0
-* section[compositionSection].emptyReason ..0  MS
+* section[compositionSection].emptyReason ..1  MS
 //* section[compositionSection].emptyReason.coding    1..1    MS
 //* section[compositionSection].emptyReason.coding.system = "http://terminology.hl7.org/CodeSystem/list-empty-reason"
 //* section[compositionSection].emptyReason.coding.code = #unavilable (exactly)
@@ -638,7 +638,7 @@ and authorDepartment 0..1 MS
                                                                             およびCodition.noteに記述したConditionリソースを参照する。
                                                                             疾患ごとに分けて現病歴を記述できる場合には、それぞれをひとつのConditionリソースで記述して参照する。
                                                                             "
-* section[compositionSection].section[presentIllnessSection].emptyReason ..0
+* section[compositionSection].section[presentIllnessSection].emptyReason ..1
 * section[compositionSection].section[presentIllnessSection].section ..0
 ////
 * section[compositionSection].section[pastIllnessSection]
@@ -1267,7 +1267,7 @@ and authorDepartment 0..1 MS
                                                                 1つ以上のDocumentReferenceリソースで記述されたものを参照する。
                                                                 診療情報提供書では臨床経過の記述は常に必要である。
                                                                 "
-* section[compositionSection].section[clinicalCourseSection].emptyReason ..0
+* section[compositionSection].section[clinicalCourseSection].emptyReason ..1
 * section[compositionSection].section[clinicalCourseSection].section ..0
 ////
 * section[compositionSection].section[clinicalInstructionSection]
