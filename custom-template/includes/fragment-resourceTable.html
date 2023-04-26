@@ -24,10 +24,18 @@
     </tr>
 {% endif %}
 
+{%if site.data.resources[resource_].description %}
+    <tr>
+      <td><i>IG build</i></td>
+      <td>{{site.data.resources[resource_].description | markdownify}}</td>
+    </tr>
+{% endif %}
+
+
 {%if site.data.resources[resource_].igversion %}
     <tr>
       <td><i>IG build Ver.</i></td>
-      <td>{{site.data.resources[resource_].igversion| markdownify}}</td>
+      <td>{{site.data.resources[resource_].igversion | markdownify}}</td>
     </tr>
 {% endif %}
 
