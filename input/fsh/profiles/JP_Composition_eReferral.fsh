@@ -365,7 +365,7 @@ and authorDepartment 0..1 MS
 * section[attachmentSection].mode ..0
 * section[attachmentSection].orderedBy ..0
 * section[attachmentSection].entry 1..*
-* section[attachmentSection].entry only Reference(DocumentReference or Binary)  // あえてJP_を外している
+* section[attachmentSection].entry only Reference(DocumentReference or Binary or Bundle)  // あえてJP_を外している
 * section[attachmentSection].entry ^short = "添付情報ファイルへの参照"
 * section[attachmentSection].entry ^definition = "添付情報ファイルへの参照"
 * section[attachmentSection].emptyReason ..1
