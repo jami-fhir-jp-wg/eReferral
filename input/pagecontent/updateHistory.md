@@ -76,6 +76,7 @@ table th {
 
 </style>
 
+
 # 改訂履歴　（新しい順）
 ## 2023.04.27	Ver.1.1.4
   - セクション510 allergiesIIntoleranceSection　→ allergyIntoleranceSection　（スペルミス修正）
