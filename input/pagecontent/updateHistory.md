@@ -77,10 +77,15 @@ table th {
 </style>
 
 # 改訂履歴　（新しい順）
+## 2023.04.27	Ver.1.1.4
+  - セクション510 allergiesIIntoleranceSectio　→ allergyIntoleranceSection　（スペルミス修正）
+  - 表5-1、表5-2も同じ修正。
+  - 添付情報セクションのentryにBundleリソースも格納できるように追加。
 ## 2023.04.27	IGpackage 0.9.5 -> 0.9.6
   - 添付情報セクションのentryの多重度（max）を修正（1から*へ）
   - 臨床経過セクションのentryの多重度（mix）を修正（1から0へ）
   - サンプルインスタンスにlastUpdated要素がないものが多数あったので、lastUpdated要素を追加
+  - 添付情報セクションにBundleを追加。
 ## 2023.04.25	Ver.1.1.3	
   - 4.3　Compositionリソースを構成するセクションの表：　紹介目的セクション、傷病名・主訴セクション、現病歴セクションの必須記載に注意書きを追加。既往歴セクションの必須を任意に修正。
   - 表３ Bundleリソース：　Bundle.signature の説明を補足。
