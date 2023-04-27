@@ -235,7 +235,7 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 |&nbsp;&nbsp;&nbsp;\|&nbsp;340|傷病名・主訴セクション<br>problemSection|必須*注|傷病名・主訴|Condition|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;360|現病歴セクション<br>presentIllnessSection|必須*注|現病歴・診断・<br>名称|Condition|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;370|既往歴セクション<br>pastIllnessSection|任意|既往歴|Condition|0..*|
-|&nbsp;&nbsp;&nbsp;\|&nbsp;510|アレルギー・不耐性反応セクション<br>allergiesIIntoleranceSection|任意|アレルギー|AllergyIntolerance|0..*|
+|&nbsp;&nbsp;&nbsp;\|&nbsp;510|アレルギー・不耐性反応セクション<br>allergyIntoleranceSection|任意|アレルギー|AllergyIntolerance|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;550|家族歴セクション<br>familiyHistorySection|任意|家族歴|<br>FamilyMemberHistory|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;610|身体所見セクション<br>physicalStatusSection|任意|身体所見|Observation|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;520|感染症情報セクション<br>infectionInformationSection|任意|感染症|ConditionObservation|0..*|
