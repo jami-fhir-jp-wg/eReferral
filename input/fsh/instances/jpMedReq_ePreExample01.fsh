@@ -75,7 +75,7 @@ Description: "MedicationRequestリソース　（診療情報提供書　内服�
 * dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#1013044400000000 "内服・経口・１日３回朝昼夕食後"
 
 //130on_処方用法部位(ARGsitecode,ARGsite)
-* dosageInstruction[=].route = http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes#PO "口"
+* dosageInstruction[=].route = http://jpfhir.jp/fhir/core/CodeSystem/route-codes#PO "口"
 * dosageInstruction[=].method = urn:oid:1.2.392.200250.2.2.20.30#1 "内服"
 
 //150on_処方外用用法(ARGmethodcode,ARGmethodname)

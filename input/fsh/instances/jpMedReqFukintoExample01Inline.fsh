@@ -82,7 +82,7 @@ Description: "不均等投与1日用法の医薬品処方１件　MedicationRequ
 
 
 //130on_処方用法部位(ARGsitecode,ARGsite)
-* dosageInstruction[=].route = http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes#PO "口"
+* dosageInstruction[=].route = http://jpfhir.jp/fhir/core/CodeSystem/route-codes#PO "口"
 * dosageInstruction[=].method = urn:oid:1.2.392.200250.2.2.20.30#1 "内服"
 
 
