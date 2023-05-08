@@ -189,7 +189,7 @@ and authorDepartment 0..1 MS
 * section[referralToSection].code.coding.code = #910 (exactly)
 * section[referralToSection].code.coding.code ^short = "セクション区分のコード値"
 * section[referralToSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[referralToSection].code.coding.display = "紹介先情報セクション" (exactly)
+* section[referralToSection].code.coding.display = "紹介先情報セクション"
 * section[referralToSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[referralToSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[referralToSection].code.coding.display MS
@@ -245,7 +245,7 @@ and authorDepartment 0..1 MS
 * section[referralFromSection].code.coding.code = #920 (exactly)
 * section[referralFromSection].code.coding.code ^short = "セクション区分のコード値"
 * section[referralFromSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[referralFromSection].code.coding.display = "紹介元情報セクション" (exactly)
+* section[referralFromSection].code.coding.display = "紹介元情報セクション"
 * section[referralFromSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[referralFromSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[referralFromSection].code.coding.display MS
@@ -302,7 +302,7 @@ and authorDepartment 0..1 MS
 * section[cdaSection].code.coding.code = #200 (exactly)
 * section[cdaSection].code.coding.code ^short = "セクション区分のコード値"
 * section[cdaSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[cdaSection].code.coding.display = "CDA参照セクション" (exactly)
+* section[cdaSection].code.coding.display = "CDA参照セクション"
 * section[cdaSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[cdaSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[cdaSection].code.coding.display MS
@@ -347,7 +347,7 @@ and authorDepartment 0..1 MS
 * section[attachmentSection].code.coding.code = #210 (exactly)
 * section[attachmentSection].code.coding.code ^short = "セクション区分のコード値"
 * section[attachmentSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[attachmentSection].code.coding.display = "添付情報セクション" (exactly)
+* section[attachmentSection].code.coding.display = "添付情報セクション"
 * section[attachmentSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[attachmentSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[attachmentSection].code.coding.display MS
@@ -390,7 +390,7 @@ and authorDepartment 0..1 MS
 * section[remarksCommunicationSection].code.coding.code = #220 (exactly)
 * section[remarksCommunicationSection].code.coding.code ^short = "セクション区分のコード値"
 * section[remarksCommunicationSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[remarksCommunicationSection].code.coding.display = "備考・連絡情報セクション" (exactly)
+* section[remarksCommunicationSection].code.coding.display = "備考・連絡情報セクション"
 * section[remarksCommunicationSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[remarksCommunicationSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[remarksCommunicationSection].code.coding.display MS
@@ -433,7 +433,7 @@ and authorDepartment 0..1 MS
 * section[pdfSection].code.coding.code = #230 (exactly)
 * section[pdfSection].code.coding.code ^short = "セクション区分のコード値"
 * section[pdfSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[pdfSection].code.coding.display = "PDFセクション" (exactly)
+* section[pdfSection].code.coding.display = "PDFセクション"
 * section[pdfSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[pdfSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[pdfSection].code.coding.display MS
@@ -443,7 +443,7 @@ and authorDepartment 0..1 MS
 * section[pdfSection].mode ..0
 * section[pdfSection].orderedBy ..0
 * section[pdfSection].entry 1..*
-* section[pdfSection].entry only Reference(DocumentReference)
+* section[pdfSection].entry only Reference(DocumentReference or Binary)
 * section[pdfSection].entry ^short = "PDFファイルへの参照"
 * section[pdfSection].entry ^definition = "PDFファイルへの参照"
 * section[pdfSection].emptyReason ..1
@@ -467,7 +467,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].code.coding.code = #300 (exactly)
 * section[compositionSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].code.coding.display = "構造情報セクション" (exactly)
+* section[compositionSection].code.coding.display = "構造情報セクション"
 * section[compositionSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].code.coding.display MS
@@ -526,7 +526,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[referralPurposeSection].code.coding.code = #950 (exactly)
 * section[compositionSection].section[referralPurposeSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[referralPurposeSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[referralPurposeSection].code.coding.display = "紹介目的セクション" (exactly)
+* section[compositionSection].section[referralPurposeSection].code.coding.display = "紹介目的セクション"
 * section[compositionSection].section[referralPurposeSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[referralPurposeSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[referralPurposeSection].code.coding.display MS
@@ -570,7 +570,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[problemSection].code.coding.code = #340 (exactly)
 * section[compositionSection].section[problemSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[problemSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[problemSection].code.coding.display = "傷病名・主訴セクション" (exactly)
+* section[compositionSection].section[problemSection].code.coding.display = "傷病名・主訴セクション"
 * section[compositionSection].section[problemSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[problemSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[problemSection].code.coding.display MS
@@ -614,7 +614,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[presentIllnessSection].code.coding.code = #360 (exactly)
 * section[compositionSection].section[presentIllnessSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[presentIllnessSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[presentIllnessSection].code.coding.display = "現病歴セクション" (exactly)
+* section[compositionSection].section[presentIllnessSection].code.coding.display = "現病歴セクション"
 * section[compositionSection].section[presentIllnessSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[presentIllnessSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[presentIllnessSection].code.coding.display MS
@@ -660,7 +660,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[pastIllnessSection].code.coding.code = #370 (exactly)
 * section[compositionSection].section[pastIllnessSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[pastIllnessSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[pastIllnessSection].code.coding.display = "既往歴セクション" (exactly)
+* section[compositionSection].section[pastIllnessSection].code.coding.display = "既往歴セクション"
 * section[compositionSection].section[pastIllnessSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[pastIllnessSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[pastIllnessSection].code.coding.display MS
@@ -708,7 +708,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[allergiesIIntoleranceSection].code.coding.code = #510 (exactly)
 * section[compositionSection].section[allergiesIIntoleranceSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[allergiesIIntoleranceSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[allergiesIIntoleranceSection].code.coding.display = "アレルギー・不耐性反応セクション" (exactly)
+* section[compositionSection].section[allergiesIIntoleranceSection].code.coding.display = "アレルギー・不耐性反応セクション"
 * section[compositionSection].section[allergiesIIntoleranceSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[allergiesIIntoleranceSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[allergiesIIntoleranceSection].code.coding.display MS
@@ -756,7 +756,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[familiyHistorySection].code.coding.code = #550 (exactly)
 * section[compositionSection].section[familiyHistorySection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[familiyHistorySection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[familiyHistorySection].code.coding.display = "家族歴セクション" (exactly)
+* section[compositionSection].section[familiyHistorySection].code.coding.display = "家族歴セクション"
 * section[compositionSection].section[familiyHistorySection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[familiyHistorySection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[familiyHistorySection].code.coding.display MS
@@ -804,7 +804,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code = #610 (exactly)
 * section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display = "身体所見セクション" (exactly)
+* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display = "身体所見セクション"
 * section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display MS
@@ -852,7 +852,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.code = #520 (exactly)
 * section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.display = "感染症情報セクション" (exactly)
+* section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.display = "感染症情報セクション"
 * section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[infectiousDiseaseInformationSection].code.coding.display MS
@@ -900,7 +900,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[socialHistorySection].code.coding.code = #640 (exactly)
 * section[compositionSection].section[socialHistorySection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[socialHistorySection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[socialHistorySection].code.coding.display = "社会歴・生活習慣セクション" (exactly)
+* section[compositionSection].section[socialHistorySection].code.coding.display = "社会歴・生活習慣セクション"
 * section[compositionSection].section[socialHistorySection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[socialHistorySection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[socialHistorySection].code.coding.display MS
@@ -949,7 +949,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[immunizationSection].code.coding.code = #530 (exactly)
 * section[compositionSection].section[immunizationSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[immunizationSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[immunizationSection].code.coding.display = "予防接種歴セクション" (exactly)
+* section[compositionSection].section[immunizationSection].code.coding.display = "予防接種歴セクション"
 * section[compositionSection].section[immunizationSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[immunizationSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[immunizationSection].code.coding.display MS
@@ -998,7 +998,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[surgicalProcedureSection].code.coding.code = #730 (exactly)
 * section[compositionSection].section[surgicalProcedureSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[surgicalProcedureSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[surgicalProcedureSection].code.coding.display = "手術セクション" (exactly)
+* section[compositionSection].section[surgicalProcedureSection].code.coding.display = "手術セクション"
 * section[compositionSection].section[surgicalProcedureSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[surgicalProcedureSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[surgicalProcedureSection].code.coding.display MS
@@ -1047,7 +1047,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[bloodInfusionProcedureSection].code.coding.code = #740 (exactly)
 * section[compositionSection].section[bloodInfusionProcedureSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[bloodInfusionProcedureSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[bloodInfusionProcedureSection].code.coding.display = "輸血歴セクション" (exactly)
+* section[compositionSection].section[bloodInfusionProcedureSection].code.coding.display = "輸血歴セクション"
 * section[compositionSection].section[bloodInfusionProcedureSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[bloodInfusionProcedureSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[bloodInfusionProcedureSection].code.coding.display MS
@@ -1096,7 +1096,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[treatmentProcedureSection].code.coding.code = #720 (exactly)
 * section[compositionSection].section[treatmentProcedureSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[treatmentProcedureSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[treatmentProcedureSection].code.coding.display = "処置セクション" (exactly)
+* section[compositionSection].section[treatmentProcedureSection].code.coding.display = "処置セクション"
 * section[compositionSection].section[treatmentProcedureSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[treatmentProcedureSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[treatmentProcedureSection].code.coding.display MS
@@ -1145,7 +1145,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicationSection].code.coding.code = #430 (exactly)
 * section[compositionSection].section[medicationSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[medicationSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[medicationSection].code.coding.display = "投薬指示セクション" (exactly)
+* section[compositionSection].section[medicationSection].code.coding.display = "投薬指示セクション"
 * section[compositionSection].section[medicationSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[medicationSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[medicationSection].code.coding.display MS
@@ -1194,7 +1194,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[examsStudySection].code.coding.code = #620 (exactly)
 * section[compositionSection].section[examsStudySection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[examsStudySection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[examsStudySection].code.coding.display = "検査結果セクション" (exactly)
+* section[compositionSection].section[examsStudySection].code.coding.display = "検査結果セクション"
 * section[compositionSection].section[examsStudySection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[examsStudySection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[examsStudySection].code.coding.display MS
@@ -1243,7 +1243,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalCourseSection].code.coding.code = #330 (exactly)
 * section[compositionSection].section[clinicalCourseSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[clinicalCourseSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[clinicalCourseSection].code.coding.display = "臨床経過セクション" (exactly)
+* section[compositionSection].section[clinicalCourseSection].code.coding.display = "臨床経過セクション"
 * section[compositionSection].section[clinicalCourseSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[clinicalCourseSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[clinicalCourseSection].code.coding.display MS
@@ -1289,7 +1289,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[clinicalInstructionSection].code.coding.code = #420 (exactly)
 * section[compositionSection].section[clinicalInstructionSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[clinicalInstructionSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[clinicalInstructionSection].code.coding.display = "診療方針指示セクション" (exactly)
+* section[compositionSection].section[clinicalInstructionSection].code.coding.display = "診療方針指示セクション"
 * section[compositionSection].section[clinicalInstructionSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[clinicalInstructionSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[clinicalInstructionSection].code.coding.display MS
@@ -1336,7 +1336,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[medicalDeviceSection].code.coding.code = #810 (exactly)
 * section[compositionSection].section[medicalDeviceSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[medicalDeviceSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[medicalDeviceSection].code.coding.display = "医療機器セクション" (exactly)
+* section[compositionSection].section[medicalDeviceSection].code.coding.display = "医療機器セクション"
 * section[compositionSection].section[medicalDeviceSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[medicalDeviceSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[medicalDeviceSection].code.coding.display MS
@@ -1383,7 +1383,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[advanceDirectiveSection].code.coding.code = #410 (exactly)
 * section[compositionSection].section[advanceDirectiveSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[advanceDirectiveSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[advanceDirectiveSection].code.coding.display = "事前指示セクション" (exactly)
+* section[compositionSection].section[advanceDirectiveSection].code.coding.display = "事前指示セクション"
 * section[compositionSection].section[advanceDirectiveSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[advanceDirectiveSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[advanceDirectiveSection].code.coding.display MS
@@ -1430,7 +1430,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[researchParticipationSection].code.coding.code = #830 (exactly)
 * section[compositionSection].section[researchParticipationSection].code.coding.code ^short = "セクション区分のコード値"
 * section[compositionSection].section[researchParticipationSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[researchParticipationSection].code.coding.display = "臨床研究参加セクション" (exactly)
+* section[compositionSection].section[researchParticipationSection].code.coding.display = "臨床研究参加セクション"
 * section[compositionSection].section[researchParticipationSection].code.coding.display ^short = "セクション区分コードの表示名"
 * section[compositionSection].section[researchParticipationSection].code.coding.display ^definition = "セクション区分コードの表示名。"
 * section[compositionSection].section[researchParticipationSection].code.coding.display MS
