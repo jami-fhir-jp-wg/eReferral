@@ -1,5 +1,4 @@
 name: Ohe-build
-
 on:
   push:
     branches: 
@@ -13,7 +12,6 @@ on:
     branches: [ develop1.0 ]
   repository_dispatch:
     types: [update]
-
 jobs:
   turn:
     runs-on: ubuntu-latest

@@ -4,11 +4,12 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+
 id: eReferral
 canonical: http://jpfhir.jp/fhir/eReferral
 name: "HL7Japan_JAMIeReferralImplementationGuide"
-title: "HL7 Japan-JAMI eReferral ImplementationGuide"
-description: "0.9.6 (2023.04.27)"
+title: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
+description: "0.9.6 (2023.05.09)"
 status: active # draft | active | retired | unknown 
 version: 1.1.4
 date: 2023-04-27

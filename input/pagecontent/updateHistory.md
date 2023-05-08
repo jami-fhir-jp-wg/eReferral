@@ -76,9 +76,8 @@ table th {
 
 </style>
 
-
 # 改訂履歴　（新しい順）
-## 2023.05.09	IGpackage 0.9.5 (version変更せず)
+## 2023.05.09	IGpackage 0.9.6 (version変更せず)
   - Compositionリソース定義中のセクションのdisplay要素の値からexactlyを削除して、厳密一致でなくてもよいように変更した。
 
 ## 2023.04.27	Ver.1.1.4
