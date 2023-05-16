@@ -8,6 +8,8 @@ Description: "Loincコードのサブセットコード"
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
+* ^date = "2023-04-01T00:00:00+09:00"
+* ^version = "5.11"
 
 * #18748-4 "Diagnostic imaging study"
 * #11506-3 "Progress note"

@@ -9,7 +9,7 @@ id: eReferral
 canonical: http://jpfhir.jp/fhir/eReferral
 name: "HL7Japan_JAMIeReferralImplementationGuide"
 title: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
-description: "0.9.6 (2023.05.09)"
+description: "0.9.7 (2023.05.17)"
 status: active # draft | active | retired | unknown 
 version: 1.1.4
 date: 2023-04-27

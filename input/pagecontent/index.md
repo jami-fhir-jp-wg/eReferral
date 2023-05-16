@@ -251,7 +251,7 @@ Compositionリソースは患者や作成者など文書情報管理用の情報
 |&nbsp;&nbsp;&nbsp;\|&nbsp;810|医療機器セクション<br>medicalDeviceSection|任意	|−|DeviceUseStatement|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;410|事前指示セクション<br>advanceDirectiveSection|任意	|−|Consent|0..*|
 |&nbsp;&nbsp;&nbsp;\|&nbsp;830|臨床研究参加セクション<br>researchParticipationSection|任意	|−|ResearchSubject|0..*|
-|210|添付情報<br>セクション<br>attachment<br>Section|任意|添付書類|DocumentReference<br>\|Binary|0..\*|
+|210|添付情報<br>セクション<br>attachment<br>Section|任意|添付書類|DocumentReference<br>\|Binary<br>\|Bundle<br>|0..\*|
 |220|備考・<br>連絡情報<br>セクション<br>remarks<br>Communicaton<br>Section|任意|備考・連絡事項|Binary|0..\*|
 |230|PDFセクション<br>pdfSection|任意|文書全体のPDFデータ|Binary|0..\*|
 
@@ -577,7 +577,7 @@ Consent.scope要素に"adr"　を設定（AdvancedCareDirective）すると、�
 ＜[表7　　Consentリソース　同意情報](eClinicalSummaryTables.html#tbl-7)＞　（再掲）
 
 ### 添付情報セクション
-添付情報は、DocumentReferenceリソース、またはBinaryリソースにより記述して格納する。
+添付情報は、DocumentReferenceリソース、Bundleリソース、またはBinaryリソースにより記述して格納する。
 <br>セクションコード：210
 
 埋め込みデータとして本仕様にもとづいて記述されたBundleリソースのインスタンスデータの中に埋めこんでもよいが、画像や写真など独立したファイルになっている場合には、外部参照ファイルとして参照するようにurlだけを設定するほうがよい。
