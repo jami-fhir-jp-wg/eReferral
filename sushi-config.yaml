@@ -11,8 +11,8 @@ name: "HL7Japan_JAMIeReferralImplementationGuide"
 title: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
 description: "0.9.7 (2023.05.17)"
 status: active # draft | active | retired | unknown 
-version: 1.1.4
-date: 2023-04-27
+version: 1.1.5
+date: 2023-05-17
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
@@ -39,7 +39,7 @@ dependencies:
 
 pages:
   index.md:
-    title: 診療情報提供書HL7 FHIR 記述仕様書 第1版 V1.1.4
+    title: 診療情報提供書HL7 FHIR 記述仕様書 第1版 V1.1.5
   eClinicalSummaryTables.md:
     title: リソース表 各表一覧
   namespace.md:
