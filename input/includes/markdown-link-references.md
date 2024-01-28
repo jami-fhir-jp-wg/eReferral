@@ -16,44 +16,44 @@
 [HL7Japan_JAMIeReferralImplementationGuide]: ImplementationGuide-eReferral.html
 
 <!-- StructureDefinition: Profile, DataType -->
-[JP_Procedure_eClinicalSummary]: StructureDefinition-JP-Procedure-eClinicalSummary.html
+[JP_Procedure_eCS]: StructureDefinition-JP-Procedure-eCS.html
 [JP_ResearchSubject]: StructureDefinition-JP-ResearchSubject.html
-[JP_MedicationStatement_eClinicalSummary]: StructureDefinition-JP-MedicationStatement-eClinicalSummary.html
-[JP_Device_eClinicalSummary]: StructureDefinition-JP-Device-eClinicalSummary.html
-[JP_ResearchStudy_eClinicalSummary]: StructureDefinition-JP-ResearchStudy-.html
-[JP_AllergyIntolerance_eClinicalSummary]: StructureDefinition-JP-AllergyIntolerance-eClinicalSummary.html
-[JP_ImagingStudy_Radiology_eClinicalSummary]: StructureDefinition-JP-ImagingStudy-Radiology-eClinicalSummary.html
+[JP_MedicationStatement_eCS]: StructureDefinition-JP-MedicationStatement-eCS.html
+[JP_Device_eCS]: StructureDefinition-JP-Device-eCS.html
+[JP_ResearchStudy_eCS]: StructureDefinition-JP-ResearchStudy-.html
+[JP_AllergyIntolerance_eCS]: StructureDefinition-JP-AllergyIntolerance-eCS.html
+[JP_ImagingStudy_Radiology_eCS]: StructureDefinition-JP-ImagingStudy-Radiology-eCS.html
 [JP_DocumentReference]: StructureDefinition-JP-DocumentReference.html
-[JP_Practitioner_eClinicalSummary_author]: StructureDefinition-JP-Practitioner-eClinicalSummary-author.html
+[JP_Practitioner_eCS_author]: StructureDefinition-JP-Practitioner-eCS-author.html
 [JP_Binary]: StructureDefinition-JP-Binary.html
-[JP_FamilyMemberHistory]: StructureDefinition-JP-FamilyMemberHistory-eClinicalSummary.html
-[JP_DocumentReference_eClinicalSummary]: StructureDefinition-JP-DocumentReference-eClinicalSummary.html
-[JP_Consent_eClinicalSummary]: StructureDefinition-JP-Consent-eClinicalSummary.html
+[JP_FamilyMemberHistory]: StructureDefinition-JP-FamilyMemberHistory-eCS.html
+[JP_DocumentReference_eCS]: StructureDefinition-JP-DocumentReference-eCS.html
+[JP_Consent_eCS]: StructureDefinition-JP-Consent-eCS.html
 [JP_DeviceUseStatement]: StructureDefinition-JP-DeviceUseStatement.html
-[JP_PractitionerRole_eClinicalSummary_author]: StructureDefinition-JP-PractitionerRole-eClinicalSummary-author.html
+[JP_PractitionerRole_eCS_author]: StructureDefinition-JP-PractitionerRole-eCS-author.html
 [JP_MedicationStatement]: StructureDefinition-JP-MedicationStatement.html
 [JP_DocumentReference_CDAdocument]: StructureDefinition-JP-DocumentReference-CDAdocument.html
-[JP_Immunization_eClinicalSummary]: StructureDefinition-JP-Immunization-eClinicalSummary.html
+[JP_Immunization_eCS]: StructureDefinition-JP-Immunization-eCS.html
 [JP_CarePlan]: StructureDefinition-JP-CarePlan.html
-[JP_Organization_eClinicalSummary]: StructureDefinition-JP-Organization-eClinicalSummary.html
+[JP_Organization_eCS]: StructureDefinition-JP-Organization-eCS.html
 [JP_Bundle_eReferral]: StructureDefinition-JP-Bundle-eReferral.html
-[JP_Encounter_eClinicalSummary]: StructureDefinition-JP-Encounter-eClinicalSummary.html
-[JP_Practitioner_eClinicalSummary]: StructureDefinition-JP-Practitioner-eClinicalSummary.html
+[JP_Encounter_eCS]: StructureDefinition-JP-Encounter-eCS.html
+[JP_Practitioner_eCS]: StructureDefinition-JP-Practitioner-eCS.html
 [JP_Composition_eReferral]: StructureDefinition-JP-Composition-eReferral.html
-[JP_CarePlan_eClinicalSummary]: StructureDefinition-JP-CarePlan-eClinicalSummary.html
-[JP_DeviceUseStatement_eClinicalSummary]: StructureDefinition-JP-DeviceUseStatement-eClinicalSummary.html
+[JP_CarePlan_eCS]: StructureDefinition-JP-CarePlan-eCS.html
+[JP_DeviceUseStatement_eCS]: StructureDefinition-JP-DeviceUseStatement-eCS.html
 [JP_Device]: StructureDefinition-JP-Device.html
 [JP_ResearchStudy]: StructureDefinition-JP-ResearchStudy.html
-[JP_Patient_eClinicalSummary]: StructureDefinition-JP-Patient-eClinicalSummary.html
-[JP_Observation_Common_eClinicalSummary]: StructureDefinition-JP-Observation-eClinicalSummary.html
-[JP_Condition_eClinicalSummary]: StructureDefinition-JP-Condition-eClinicalSummary.html
-[JP_Organization_eClinicalSummary_department]: StructureDefinition-JP-Organization-eClinicalSummary-department.html
+[JP_Patient_eCS]: StructureDefinition-JP-Patient-eCS.html
+[JP_Observation_Common_eCS]: StructureDefinition-JP-Observation-eCS.html
+[JP_Condition_eCS]: StructureDefinition-JP-Condition-eCS.html
+[JP_Organization_eCS_department]: StructureDefinition-JP-Organization-eCS-department.html
 [JP_Consent]: StructureDefinition-JP-Consent.html
 [JP_MedicationRequest_ePrescriptionData]: StructureDefinition-JP-MedicationRequest-ePrescriptionData.html
-[JP_ResearchSubject_eClinicalSummary]: StructureDefinition-JP-ResearchSubject-eClinicalSummary.html
+[JP_ResearchSubject_eCS]: StructureDefinition-JP-ResearchSubject-eCS.html
 [JP_Immunization]: StructureDefinition-JP-Immunization.html
 [JP_RelatedPerson]: StructureDefinition-JP-RelatedPerson.html
-[JP_RelatedPerson_eClinicalSummary]: StructureDefinition-JP-RelatedPerson-eClinicalSummary.html
+[JP_RelatedPerson_eCS]: StructureDefinition-JP-RelatedPerson-eCS.html
 
 <!-- StructureDefinition: Extension -->
 [JP_Communication_CommunicationContent]: StructureDefinition-JP-Communication-CommunicationContent.html
@@ -64,7 +64,7 @@
 <!-- SearchParameter -->
 
 <!-- CodeSystem -->
-[Loinc_subset_forDocumentCode]: CodeSystem-jp-codeSystem-eClinicalSummary-document-code.html
+[Loinc_subset_forDocumentCode]: CodeSystem-jp-codeSystem-eCS-document-code.html
 [JP_codeSystem_eReferral_document_section]: CodeSystem-jp-codeSystem-eReferral-document-section.html
 
 <!-- ValueSet -->

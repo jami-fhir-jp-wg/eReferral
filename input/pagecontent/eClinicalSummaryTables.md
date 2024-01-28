@@ -110,7 +110,7 @@ content: "　　"counter(sub-sub-section) "）";
 |resourceType|||||"AllergyIntolerance" |**AllergyIntolerance**リソースであることを示す |
 |meta| |||1..1|Meta| | |
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile|||0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_AllergyIntolerance_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile|||0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eCS<br>/StructureDefinition<br>/JP_AllergyIntolerance_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text| |||0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。 |
 ||status |||1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div|||1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。 |
@@ -259,7 +259,7 @@ Bundleリソース
 |resourceType| | | |||"CarePlan" |**CarePlan**リソースであることを示す |
 |meta| | | |1..1|Meta| | |
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_CarePlan_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_CarePlan_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text| | | |0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。 |
 ||status | | |1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。 |
@@ -478,7 +478,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |title| | |1..1|string |"入院時診断" |○○セクション名のうち○○の部分文字列を設定する。|
 |code | | |1..1|CodeableConcept| ||
 | |coding | |1..1|Coding | ||
-| | |system |1..1|uri|"http://jpfhir.jp/fhir/ eClinicalSummary/CodeSystem/document-section"　 \|  "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"|文書のセクションコードシステムの固定値。<br>退院時サマリーの場合には、"http://jpfhir.jp/fhir/eClinicalSummary/CodeSystem/document-section"<br>診療情報提供書の場合には、"http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"|
+| | |system |1..1|uri|"http://jpfhir.jp/fhir/ eClinicalSummary/CodeSystem/document-section"　 \|  "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"|文書のセクションコードシステムの固定値。<br>退院時サマリーの場合には、"http://jpfhir.jp/fhir/eCS/CodeSystem/document-section"<br>診療情報提供書の場合には、"http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"|
 | | |code |1..1|code |"200"など。|「サマリー本体（ボディー部）でのセクション構成」または「診療情報提供書本体（ボディー部）でのセクション構成」のセクションコード。|
 | | |display|1..1|string |"入院時診断" |コード表におけるセクションコードに対応する文字列。|
 |text | | |1..1|Narrative| |このセクションに含められるすべてのテキスト（叙述的記述）表現。|
@@ -501,7 +501,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| || |||"Condition" |**Condition**リソースであることを示す |
 |meta| || |1..1|Meta|||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile|| |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Condition_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile|| |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eCS<br>/StructureDefinition<br>/JP_Condition_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| || |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
 ||status || |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div|| |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。|
@@ -568,7 +568,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |-------|------|--|--|------|----------------|----------------------------|--------------------------------------------------------|
 |resourceType || | || |"Consent" |**Consent**リソースであることを示す |
 |meta || | |1..1|Meta |||
-| |profile | | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Consent_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+| |profile | | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Consent_eCS"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text || | |0..1|Narrative||本リソースをテキストで表現したものを入れてもよい。|
 | |status| | |1..1|code |"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 | |div | | |1..1|xhtml|&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。|
@@ -601,7 +601,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType | || || |"DeviceUseStatement" |**DeviceUseStatement**リソースであることを示す|
 |meta | || |1..1|Meta | ||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-| |profile|| |0..*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DeviceUseStatement_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+| |profile|| |0..*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DeviceUseStatement_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text | || |0..1|Narrative| |本リソースをテキストで表現したものを入れてもよい。|
 | |status || |1..1|code |"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 | |div|| |1..1|xhtml|&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
@@ -632,7 +632,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |--------|------|--|--|------|----------|---------------------------|----------------------------------------------------------|
 |resourceType|| | |||"Device" |**Device**リソースであることを示す|
 |meta|| | |1..1|Meta| ||
-||profile | | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Device_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile | | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Device_eCS"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text|| | |0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。|
 ||status| | |1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div | | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
@@ -728,7 +728,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |-------|-----|------|------|----------|--------------------------------|-------------------------------|
 |resourceType|| |||"DocumentReference"|DocumentReferenceリソースであることを示す |
 |meta|| |1..1|Meta| ||
-||profile | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DocumentReference_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_DocumentReference_eCS"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |status|| |1..1|code|"current"|"current" 固定|
 |description || |0..1|string|"退院時サマリー" |人が読むことのできる添付文書のタイトルなど。値は例示。|
 |content || |1..1\*|BackboneElement | |参照する文書|
@@ -749,7 +749,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |-----|----------|--|--|-----|--------------|------------------------------|---------------------------------------------------------------------------------|
 |resourceType || | |||"Encounter" |**Encounter**リソースであることを示す |
 |meta || | |1..1|Meta|||
-| |profile | | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Encounter_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
+| |profile | | |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eCS<br>/StructureDefinition<br>/JP_Encounter_eCS"|本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |identifier || | |0..1\*|Identifier||この医療機関における入院管理番号|
 | |system| | |1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier" |付番方法については「識別子名前空間一覧」を参照。値は例示。|
 | |value | | |1..1||"1311234567-2020-00123456"|入院管理番号の文字列。値は例示。|
@@ -808,7 +808,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |------|--------|-------|-------|------|----------|------------------------------|-------------------------------------------------------------------------------------------------------------------|
 |resourceType||||||"FamilyMemberHistory" |**FamiliMemberHistory**リソースであることを示す|
 |meta||||1..1|Meta|| |
-||profile |||1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_FamilyMemberHistory_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile |||1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_FamilyMemberHistory_eCS"|本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text||||0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
 ||status|||1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div |||1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |
@@ -893,7 +893,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| | | |||"Immunization" |**Immunization**リソースであることを示す|
 |meta| | | |1..1|Meta| ||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Immunization_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Immunization_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| | | |0..1|Narrative | |本リソースをテキストで表現したものを入れてもよい。|
 ||status | | |1..1|code|"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
@@ -1089,7 +1089,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType | || |||"Condition" |**MedicationStatement**リソースであることを示す |
 |meta | || |1..1|Meta|||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-| |profile|| |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_MedicationStatement_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+| |profile|| |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_MedicationStatement_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text | || |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
 | |status || |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 | |div|| |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。|
@@ -1193,7 +1193,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |------|----------|-------|--|------|-----------------------------|----------------------------|---------------------------------------------------------------------------------------------------------------|
 |resourceType||| |||"Observation" |**Observation**リソースであることを示す|
 |meta||| |1..1|Meta|| |
-||profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Observation_Common_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。設定する値は、検査結果のカテゴリーごとにJP-Coreの該当プロファイルURLとすること。|
+||profile || |1..1\*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Observation_Common_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。設定する値は、検査結果のカテゴリーごとにJP-Coreの該当プロファイルURLとすること。|
 |text||| |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
 ||status|| |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div || |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |
@@ -1263,7 +1263,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| ||||"Organization"|**Organization**リソースであることを示す|
 |meta| ||1..1|Meta|||
 ||lastUpdated||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile||0..*|canonical(StructureDefinition)|診療情報提供書や退院時サマリーの作成元、紹介元、紹介先、その他の場合は<br>"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile||0..*|canonical(StructureDefinition)|診療情報提供書や退院時サマリーの作成元、紹介元、紹介先、その他の場合は<br>"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| ||0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。|
 ||status ||1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div||1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。|
@@ -1308,7 +1308,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| | |||"Organization"|**Organization**リソースであることを示す|
 |meta| | |1..1|Meta|||
 ||lastUpdated||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile| |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eClinicalSummary_department"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile| |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Organization_eCS_department"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。入れる場合には、以降のリソースからシステムにより自動生成されたものに限ること。|
 ||status | |1..1|code||固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div| |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。|
@@ -1332,7 +1332,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |---------|----------|----|------|-----------------|----------------------------|----------------------------------------------------------------------|
 |resourceType || || |"Patient" |**Patient**リソースであることを示す|
 |meta || |1..1|Meta || |
-| |profile | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Patient_eClinicalSummary"|本文書のプロファイルを識別するURLを指定する。値は固定。|
+| |profile | |1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Patient_eCS"|本文書のプロファイルを識別するURLを指定する。値は固定。|
 |identifier || |0..\* |Identifier ||医療機関における患者番号。その他の番号も繰り返しで記述してよい。 |
 | |system| |1..1| |"urn:oid:1.2.392.100495.20.3.51.11311234567"|付番方法については「識別子名前空間一覧」を参照。値は医療機関における患者番号を記述する場合の例示。 |
 | |value | |1..1| |"00000010"|患者番号の文字列。値は例示。 |
@@ -1394,7 +1394,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| | | |||"Practitioner"|**Practitioner**リソースであることを示す|
 |meta| | | |1..1|Meta|||
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Practitioner_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
+||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Practitioner_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。 |
 |text| | | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。|
 ||status | | |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。|
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; ||
@@ -1422,7 +1422,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| | | || |"Procedure"|**Procedure**リソースであることを示す|
 |meta| | | |1..1|Meta | | |
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile| | |0..*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Procedure_eClinicalSummary" |準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile| | |0..*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_Procedure_eCS" |準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text| | | |0..1|Narrative| |本リソースをテキストで表現したものを入れてもよい。 |
 ||status | | |1..1|code |"generated"|固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div| | |1..1|xhtml|&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt;|値は例示。 |
@@ -1471,7 +1471,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |-------|-----|----|------|--------|------------------------|----------------------------------------------------------------------|
 |resourceType|| |||"RelatedPerson"|**Related****P****erson**リソースであることを示す|
 |meta|| ||1..1|Meta | |
-||profile | ||1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_RelatedPerson_eClinicalSummary" |
+||profile | ||1..1\*|canonical(StructureDefinition) |"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_RelatedPerson_eCS" |
 |active|| |0..1|booleam | |この関係者情報が有効なときtrue。要素がなければ有効か無効かを利用者は考慮しない。 |
 |patient || |1..1|Reference(Patient)| |患者情報への参照。 |
 |relationship|| |1..1\*|CodeableConcept |"同居の友人" |患者との関係。Codingせず、text記述のみとする。 |
@@ -1521,7 +1521,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType | | | |||"ResearchStudy" |**ResearchStudy**リソースであることを示す|
 |meta | | | |1..1|Meta|| |
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-| |profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_ResearchStudy_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
+| |profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_ResearchStudy_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text | | | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
 | |status | | |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 | |div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |
@@ -1548,7 +1548,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |resourceType| | | |||"ResearchSubject" |**ResearchSubject**リソースであることを示す|
 |meta| | | |1..1|Meta|| |
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
-||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_ResearchSubject_eClinicalSummary"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
+||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/eClinicalSummary<br>/StructureDefinition<br>/JP_ResearchSubject_eCS"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。値は固定。|
 |text| | | |0..1|Narrative ||本リソースをテキストで表現したものを入れてもよい。 |
 ||status | | |1..1|code|"generated" |固定値。テキスト内容の全てがリソースのコンテンツから生成されたことを示す。 |
 ||div| | |1..1|xhtml |&lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;xxx&lt;/div&gt; |値は例示。 |

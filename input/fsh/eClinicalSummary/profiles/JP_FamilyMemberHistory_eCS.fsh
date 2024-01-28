@@ -1,8 +1,8 @@
-Profile:        JP_FamilyMemberHistory_eClinicalSummary
+Profile:        JP_FamilyMemberHistory_eCS
 Parent:			JP_FamilyMemberHistory
-Id:             JP-FamilyMemberHistory-eClinicalSummary
+Id:             JP-FamilyMemberHistory-eCS
 Description:    "Derived Profile from JP-Core"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_FamilyMemberHistory_eClinicalSummary"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_FamilyMemberHistory_eCS"
 * ^date = "2023-03-31"
 * meta.lastUpdated 1.. MS
 * status 1..1 MS

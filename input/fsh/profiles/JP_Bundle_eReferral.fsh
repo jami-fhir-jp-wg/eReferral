@@ -119,14 +119,14 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[department].response ..0
 
 /*
-* entry[departmentOfissuer].resource only  JP-Organization-eClinicalSummary-departmentOfissuer
+* entry[departmentOfissuer].resource only  JP-Organization-eCS-departmentOfissuer
 * entry[departmentOfissuer] ^short = "紹介元文書作成機関の診療科"
 * entry[departmentOfissuer] ^definition = "紹介元文書作成機関の診療科"
 * entry[departmentOfissuer].search ..0
 * entry[departmentOfissuer].request ..0
 * entry[departmentOfissuer].response ..0
 */
-//* entry[referralDoctor].resource only  JP_Practitioner_eClinicalSummary
+//* entry[referralDoctor].resource only  JP_Practitioner_eCS
 //* entry[referralDoctor] ^short = "紹介先／元医師"
 //* entry[referralDoctor] ^definition = "紹介先／元医師"
 
@@ -134,15 +134,15 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 //* entry[cdaDocument] ^short = "CDA規約文書ファイルへの参照"
 //* entry[cdaDocument] ^definition = "CDA規約文書ファイルへの参照"
 
-* entry[referralEncounter].resource only JP_Encounter_eClinicalSummary
+* entry[referralEncounter].resource only JP_Encounter_eCS
 * entry[referralEncounter] ^short = "紹介目的や受診時状況のEncounterリソースを参照"
 * entry[referralEncounter] ^definition = "紹介目的や受診時状況のEncounterリソースを参照。"
 
-* entry[problem].resource only  JP_Condition_eClinicalSummary
+* entry[problem].resource only  JP_Condition_eCS
 * entry[problem] ^short = "必須。傷病名・主訴／現病歴／既往歴を１個以上必ず記述する。"
 * entry[problem] ^definition = "必須。傷病名・主訴／現病歴／既往歴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。"
 
-* entry[allergy].resource only  JP_AllergyIntolerance_eClinicalSummary
+* entry[allergy].resource only  JP_AllergyIntolerance_eCS
 * entry[allergy] ^short = "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照"
 * entry[allergy] ^definition = "アレルギー・不耐性反応情報を記述して参照する。"
 
@@ -150,15 +150,15 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[familyHistory] ^short = "家族歴情報を記述したFamilyMemberHistoryリソースを参照"
 * entry[familyHistory] ^definition = "家族歴情報情報を記述して参照する。"
 
-* entry[observation].resource only  JP_Observation_Common_eClinicalSummary
+* entry[observation].resource only  JP_Observation_Common_eCS
 * entry[observation] ^short = "身体所見／感染症情報／社会歴・生活習慣情報／検査結果を記述したObservationリソースを参照"
 * entry[observation] ^definition = "身体所見／感染症情報／社会歴・生活習慣情報／検査結果を記述して参照する。"
 
-* entry[immunization].resource only  JP_Immunization_eClinicalSummary
+* entry[immunization].resource only  JP_Immunization_eCS
 * entry[immunization] ^short = "予防接種歴情報を記述したImmunizationリソースを参照"
 * entry[immunization] ^definition = "予防接種歴情報を記述して参照する。"
 
-* entry[procedure].resource only  JP_Procedure_eClinicalSummary
+* entry[procedure].resource only  JP_Procedure_eCS
 * entry[procedure] ^short = "手術処置/輸血歴情報/処置等を記述したProcedureリソースを参照"
 * entry[procedure] ^definition = "手術処置/輸血歴情報/処置等を記述して参照する。"
 
@@ -166,11 +166,11 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[medicationRequest] ^short = "処方情報を記述したMedicationStatementリソースを参照"
 * entry[medicationRequest] ^definition = "処方情報を記述して参照する。"
 
-* entry[documentReference].resource only  JP_DocumentReference_eClinicalSummary
+* entry[documentReference].resource only  JP_DocumentReference_eCS
 * entry[documentReference] ^short = "DocumentReferenceリソースを参照"
 * entry[documentReference] ^definition = "DocumentReferenceリソースを参照"
 
-* entry[carePlan].resource only  JP_CarePlan_eClinicalSummary
+* entry[carePlan].resource only  JP_CarePlan_eCS
 * entry[carePlan] ^short = "診療方針指示を記述したCarePlanリソースを参照"
 * entry[carePlan] ^definition = "診療方針指示を記述して参照する。"
 

@@ -5,11 +5,11 @@ Description:    "Derived Profile from JP-Core"
 * ^url = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan"
 
 
-Profile:        JP_CarePlan_eClinicalSummary
+Profile:        JP_CarePlan_eCS
 Parent:			JP_CarePlan
-Id:             JP-CarePlan-eClinicalSummary
+Id:             JP-CarePlan-eCS
 Description:    "Derived Profile from JP-Core"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_CarePlan_eClinicalSummary"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_CarePlan_eCS"
 * ^status = #active
 * ^date = "2023-03-31"
 

@@ -1,40 +1,91 @@
 //
-CodeSystem: JP_CCS_ObsLabResult_Uncoded_CS
-Id: jp-ccs-obslabresult-uncoded-cs
-Description: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(JLAC10)"
-* ^url = $JP_CCS_ObsLabResultUncoded_CS
-* ^title = "未コード化検体検査結果項目コード(JLAC10)"
+
+CodeSystem: JP_CLINS_BundleResourceType_CS
+Id: jp-clins-bundleresourcetype-cs
+Description: "CLINSでのBundleリソースに含まれる６情報リソースタイプをmeta要素に記述するためのコードセット"
+* ^url = $JP_CLINS_BundleResourceType_CS
+* ^title = "Bundleリソースに含まれる６情報リソースタイプ"
 * ^status = #active
-* ^experimental = false
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
-* #99999999999999999  "JLAC10 Uncoded"
+* #AllergyIntolerance
+* #Condition
+* #Observation
+* #MedicationRequest
 
-
-CodeSystem: JP_CCS_ObsLabResult_LocalUncoded_CS
-Id: jp-ccs-obslabresult-localuncoded-cs
-Description: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(Local)"
-* ^url = $JP_ObservationLabResultLocalUncoded_CS
-* ^title = "未コード化検体検査結果項目コード(Local)"
+CodeSystem: JP_CLINS_ObsLabResult_Uncoded_CS
+Id: jp-clins-obslabresult-uncoded-cs
+Description: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(JLAC10)"
+* ^url = $JP_CLINS_ObsLabResultUncoded_CS
+* ^title = "未標準化コード項目(JLAC)"
 * ^status = #active
 * ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #99999999999999999  "未標準化コード項目(JLAC)"
+
+CodeSystem: JP_CLINS_ObsLabResult_LocalUncoded_CS
+Id: jp-clins-obslabresult-localuncoded-cs
+Description: "検体検査結果項目で標準コードが割り当てられない場合に使用する未コード化コード(Local)"
+* ^url = $JP_ObservationLabResultLocalUncoded_CS
+* ^title = "未標準化コード項目(Local)"
+* ^status = #active
 * ^experimental = false
 * ^content = #complete
 * ^caseSensitive = false
 * #LUNCODED  "Locally Uncoded"
 
-CodeSystem: JP_CCS_ObsLabResult_JLAC10Unmethod_CS
-Id: jp-ccs-obslabresult-jlac10unmethod-cs
-Description: "未コード化測定法999を含むMEDIS臨床検査項目コードだけからなるCS"
-* ^url = $JP_CCS_ObsLabResult_JLAC10Unmethod_CS
-* ^title = "未コード化測定法999を含むMEDIS臨床検査項目コードだけからなるCS"
+CodeSystem: JP_eCS_MedicationCode_Nocoded_CS
+Id: jp-eCS-medicationcode-nocoded-cs
+Description: "医薬品コードで標準コードが割り当てられない場合に使用する未コード化コード"
+* ^url = $JP_eCS_MedicationCodeNocoded_CS
+* ^title = "医薬品未標準化コード項目"
 * ^status = #active
 * ^experimental = false
-* ^experimental = false
-* ^content = #partial
+* ^content = #complete
 * ^caseSensitive = false
-* #12345123451299912  "JLAC10 sample code"
+* #NOCODED  "標準コードなし"
+
+/*
+CodeSystem: JP_CLINS_ObsLabResult_LocalCode_CS
+Id: jp-clins-obslabresult-localcode-cs
+Description: "検体検査項目ローカルコード識別用CS"
+* ^url = $JP_ObservationLabResultLocal_CS
+* ^title = "検体検査項目ローカルコード識別用コードシステム"
+* ^status = #active
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #dummy "コード化ローカルコード"
+*/
+
+CodeSystem: JP_ehrshrs_indication_CS
+Id: jp-ehrshrs-indication-cs
+Description: "長期保存／未告知診療情報のためのフラグコード"
+* ^url = $JP_ehrshrs_indication_CS
+* ^title = "長期保存／未告知診療情報のためのフラグコード"
+* ^status = #active
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #LTS  "長期保存"
+* #UNINFORMED  "未告知"
+
+
+
+
+//$observation-subcategory-cs#infectionRelated http://jpfhir.jp/fhir/eCS/CodeSystem/observation-subcategory-cs
+CodeSystem: JP_Observation_SubCategory_CS
+Id: jp-observation-subcategory-cs
+Description: "感染症関連検査結果として検体検査結果を報告する場合のサブカテゴリで６情報で運用される"
+* ^url = $observation-subcategory-cs
+* ^title = "感染症関連検査結果として検体検査結果を報告する場合のサブカテゴリで６情報で運用される"
+* ^status = #active
+* ^experimental = false
+* ^content = #fragment
+* ^caseSensitive = false
+* #infectionRelated  "感染症関連検査結果"
 
 // from jpcore 2023-05-27
 CodeSystem: JP_SimpleObservationCategory_CS

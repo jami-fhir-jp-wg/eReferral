@@ -84,7 +84,7 @@ menu:
     8.謝辞: index.html#謝辞
   リソース表:
     全表: eClinicalSummaryTables.html
-    表1 AllergyIntoleranceリソースアレルギー情報: eClinicalSummaryTables.html#tbl-1
+    表1 AllergyIntoleranceリソースアレルギー情報: https://std.jpfhir.jp/stddoc/eCSTables.html#tbl-1
     表2 Binaryリソースバイナリーデータ情報: eClinicalSummaryTables.html#tbl-2
     表3_Bundleリソース 文書情報: eClinicalSummaryTables.html#tbl-3
     表4 CarePlanリソース 診療方針指示情報: eClinicalSummaryTables.html#tbl-4

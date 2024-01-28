@@ -1,6 +1,6 @@
 // Organizaionリース
 // JP_Organizaion
-// JP_Organization_eClinicalSummary_issuer
+// JP_Organization_eCS_issuer
 // 0E1mr_機関都道府県番号(ARGcode)
 // 0E2mr_機関区分(ARGcode)
 // 0E3mr_機関保険医療機関番号(ARGcode)
@@ -15,7 +15,7 @@
 // 080or_機関住所(ARGpostal,ARGtext)
 // Organizaionリース
 // JP_Organizaion
-// JP_Organization_eClinicalSummary_departmentOfIssuer
+// JP_Organization_eCS_departmentOfIssuer
 // 000mn_ExampleJPOrganizationDept_eCS(ARGinstancename)
 // 001mn_Description(ARGtxt)
 // 002or_ValidationProfile(ARGmetaprofile)
@@ -26,7 +26,7 @@
 // 040or_診療科所属医療機関参照(ARGrefresource)
 // Practitionerリース
 // JP_Practitioner
-// JP_Practitioner_eClinicalSummary_author
+// JP_Practitioner_eCS_author
 // 000mn_ExampleJPPractitioner_eCS(ARGinstancename)
 // 001mn_Description(ARGtxt)
 // 002or_ValidationProfile(ARGmetaprofile)
@@ -43,7 +43,7 @@ Description: "紹介先医療機関情報　例"
 // 002or_ValidationProfile(ARGmetaprofile)
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
 
 //
 //--------------
@@ -87,7 +87,7 @@ Description: "紹介先医療機関の診療科情報　例"
 
 //002or_ValidationProfile(ARGmetaprofile)
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department"
 
 //
 * type[+].coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
@@ -110,7 +110,7 @@ Description: "紹介先医療機関の医師情報　例"
 
 // 002or_ValidationProfile(ARGmetaprofile)
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS"
 
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
 * name[=].extension.valueCode = #IDE

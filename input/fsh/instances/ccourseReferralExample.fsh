@@ -1,6 +1,6 @@
 // DocumentReferenceリース
 // JP_DocumentReference
-// JP_DocumentReference_eClinicalSummary
+// JP_DocumentReference_eCS
 
 Instance: ccourseReferralExample01
 InstanceOf: JP_DocumentReference
@@ -9,7 +9,7 @@ Usage: #example
 Description: "DocumentReferenceリソース　（診療情報提供書　臨床経過）"
 
 * meta.lastUpdated = 2023-03-31T00:00:00+09:00
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_DocumentReference_eCS"
 * status = #current
 
 * type.coding.system = "http://loinc.org"

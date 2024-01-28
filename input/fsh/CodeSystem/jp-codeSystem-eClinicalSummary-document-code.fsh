@@ -1,6 +1,6 @@
 // 医療文書コード（Loinc系）
 CodeSystem: Loinc_subset_forDocumentCode
-Id: jp-codeSystem-eClinicalSummary-document-code
+Id: jp-codeSystem-eCS-document-code
 Description: "Loincコードのサブセットコード"
 * ^url = "http://loinc.org"
 * ^title = "Loincコードのサブセットコード"

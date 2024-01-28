@@ -1,8 +1,8 @@
-Profile: JP_Practitioner_eClinicalSummary_author
-Parent: JP_Practitioner_eClinicalSummary
-Id: JP-Practitioner-eClinicalSummary-author
+Profile: JP_Practitioner_eCS_author
+Parent: JP_Practitioner_eCS
+Id: JP-Practitioner-eCSauthor
 Description: "処方を作成した医師情報　JP_Practitionerの派生プロファイル"
-* ^url = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary_author"
+* ^url = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS_author"
 * ^status = #active
 * ^date = "2023-03-31"
 * meta.lastUpdated 1.. MS

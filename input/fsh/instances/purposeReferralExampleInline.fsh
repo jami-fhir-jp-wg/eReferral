@@ -1,4 +1,4 @@
-// Encounter_eClinicalSummary
+// Encounter_eCS
 //以下省略（診療情報提供書）
 Instance: purposeReferralExample01Inline
 InstanceOf: JP_Encounter
@@ -8,7 +8,7 @@ Description: "encounterReferralExample01 診療情報提供書での紹介目的
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value = "192837"
@@ -30,7 +30,7 @@ Usage: #inline
 Description: "encounterReferralExample01 外来受診歴　例"
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value = "192844"

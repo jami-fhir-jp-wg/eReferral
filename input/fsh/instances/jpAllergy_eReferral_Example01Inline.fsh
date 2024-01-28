@@ -1,4 +1,4 @@
-// Allergy_eClinicalSummary
+// Allergy_eCS
 // 030 verificationStatus
 //当面中略（診療情報提供書）
 
@@ -10,7 +10,7 @@ Description: "allergyeferralExample01 診療情報提供書　アレルギー例
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_AllergyIntolerance_eCS"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value = "102934701"
@@ -53,7 +53,7 @@ Usage: #inline
 Description: "allergyeferralExample01 診療情報提供書　アレルギー例1　キーウイ"
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_AllergyIntolerance_eCS"
 
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value = "102934701"

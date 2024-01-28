@@ -176,7 +176,7 @@ table th {
     - 表10 DiagnosticReport.meta.profile
         - http://jpfhir.jp/fhir/core/StructureDefinition/JP_DiagnosticReport_Commonに変更（JP-Core v1.1対応）
     - 表11 DocumentReference.meta.profile  
-        - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary に修正
+        - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_DocumentReference_eCS に修正
         - classHistory.period  cardinlityを1..1から0..1に変更
     - 表14 ImagingStudy.meta.profile
         - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology に変更（JP-Core v1.1対応）
@@ -188,9 +188,9 @@ table th {
     - 表16-1 MedicationRequest.dosageInstruction.timing.code.coding.system
         urn:oid:1.2.392.200250.2.2.20 に修正
     - 表17-1 MedicationStatement.dosage.timing.code.coding.system  urn:oid:1.2.392.200250.2.2.20に修正
-    - 表18 Observation.meta.profile http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common_eClinicalSummary （JP-Core v1.1対応し、適切な値を使うことを記載）
+    - 表18 Observation.meta.profile http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Observation_Common_eCS （JP-Core v1.1対応し、適切な値を使うことを記載）
     - 表19　Organization 医療機関情報
-        - Organization.meta.profile  http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary
+        - Organization.meta.profile  http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS
           に変更（発行元と先でprofileを同じにした）
         - Organization.extension.valueCoding  および同.code修正
         - Organization.type  cardinality を0..1 に修正
@@ -198,14 +198,14 @@ table th {
         - Organization.country    cardinality を0..1 に修正
     - 表20  Organization 診療科情報
         - Organization.meta.profile
-            - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department に変更（発行元と先でprofileを同じにした）
+            - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department に変更（発行元と先でprofileを同じにした）
         - Organization.partOf　cardinalityを0..1に変更
     - 表21　Patient　患者情報
         - Patient.telecom.system    cardinality を0..1 に修正　
         - Patient.telecom.use    cardinality を0..1 に修正
         - Patient.address.postalCode    cardinality を0..1 に修正
     - 表22 Practitioner 文書作成責任者情報／文書法的責任者情報
-        - meta.profile http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary に変更（発行元と先でprofileを同じにした）
+        - meta.profile http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS に変更（発行元と先でprofileを同じにした）
     - 表23 Procedure 入院中治療処置情報
         - Procedure.category カテゴリーのsystem値http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureCategory_CS に変更し、説明を変更（JP-Core v1.1対応）
         - Procedure.code system=http://jpfhir.jp/fhir/core/CodeSystem/JP_ProcedureCodesMedical_CSに変更し、説明を変更
