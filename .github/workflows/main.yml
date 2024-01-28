@@ -32,6 +32,7 @@ jobs:
     - name: move eClinicalSummary fsh files to input directory
       run: |
         mkdir -p input/fsh/eClinicalSummary/
+        rm -rf input/fsh/eClinicalSummary
         mv eClinicalSummary/input/fsh/* input/fsh/eClinicalSummary/
         mv eClinicalSummary/input/fsh/aliases-eclinicalsummary.fsh input/fsh/eClinicalSummary/
         mv eClinicalSummary/input/pagecontent/* input/pagecontent/
