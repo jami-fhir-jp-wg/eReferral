@@ -35,7 +35,7 @@ jobs:
         rm -rf input/fsh/eClinicalSummary
         mkdir -p input/fsh/eClinicalSummary
         mv eClinicalSummary/input/fsh/* input/fsh/eClinicalSummary/
-        mv eClinicalSummary/input/pagecontent/* input/pagecontent/
+        
     - name: makedir ./output
       run: | 
         mkdir output

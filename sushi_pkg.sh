@@ -4,9 +4,6 @@ cp -r ~/.fhir_sushiVersion ~/.fhir
 
 mkdir -p input/fsh/eClinicalSummary/
 cp -r eClinicalSummary/input/fsh/* input/fsh/eClinicalSummary/
-cp eClinicalSummary/input/fsh/aliases-eclinicalsummary.fsh input/fsh/eClinicalSummary/
-cp eClinicalSummary/input/pagecontent/* input/pagecontent/
-
 
 sushi -s .
 cd fsh-generated
