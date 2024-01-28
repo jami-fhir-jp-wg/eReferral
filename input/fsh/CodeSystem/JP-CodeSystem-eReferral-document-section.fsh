@@ -1,9 +1,9 @@
 // 診療情報提供書セクション区分コード
 CodeSystem: JP_codeSystem_eReferral_document_section
 Id: jp-codeSystem-eReferral-document-section
-Description: "処方セクション区分コード"
+Description: "診療情報提供書セクション区分コード"
 * ^url = "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section"
-* ^title = "処方セクション区分コード"
+* ^title = "診療情報提供書セクション区分コード"
 * ^status = #active
 * ^experimental = false
 * ^content = #complete
@@ -11,6 +11,7 @@ Description: "処方セクション区分コード"
 * #200	"CDA参照セクション" //  cdaSection
 * #210	"添付情報セクション"    //  attachmentSection
 * #220	"備考・連絡情報セクション"  //  remarksCommunicatonSection
+* #230	"PDFセクション" //  cdaSection
 * #300	"構造情報セクション"    //  compositionSection
 * #330	"臨床経過セクション"    // clinicalCourseSection
 * #340	"傷病名・主訴セクション"    //  problemSection

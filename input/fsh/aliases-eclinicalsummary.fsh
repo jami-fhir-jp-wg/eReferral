@@ -137,3 +137,6 @@ Alias: $JP_InstitutionNumber = http://jpfhir.jp/fhir/core/IdSystem/insurance-med
 
 // Idsystem
 Alias: $JP_ResourceInstanceIdentifier = http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier
+
+// 入院経路を表すコード情報。値は例示。コード表は一例（出典：厚労省DPC導入影響評価調査）
+Alias: $JP_admit-Source_CS = http://jpfhir.jp/fhir/Common/CodeSystem/admit-Source

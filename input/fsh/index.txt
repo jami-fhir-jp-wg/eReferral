@@ -140,7 +140,7 @@ jp-core-organization-address                                 Instance   instance
 jp-core-organization-identifier                              Instance   instances/jp-core-organization-identifier.fsh
 jp-core-organization-name                                    Instance   instances/jp-core-organization-name.fsh
 jp-core-patient-address-postalcode                           Instance   instances/jp-core-patient-address-postalcode.fsh
-jp-core-patient-birthdate                                    Instance   instances/jp-core-patient-birthdate.fsh
+jp-core-patient-birthDate                                    Instance   instances/jp-core-patient-birthDate.fsh
 jp-core-patient-family                                       Instance   instances/jp-core-patient-family.fsh
 jp-core-patient-gender                                       Instance   instances/jp-core-patient-gender.fsh
 jp-core-patient-given                                        Instance   instances/jp-core-patient-given.fsh

@@ -121,7 +121,7 @@ content: "　　"counter(sub-sub-section) "）";
 |verificationStatus| |||0..1|CodeableConcept |"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"<br>"confirmed" |入力された臨床的状態に対する検証状況を示す。確からしさと考えられる。コードで記述する場合にはsystem値は固定値。verificationStatus.text のみで記述することもできる。。unconfirmed \| confirmed \| refuted \| entered-in-error未確認、確認ずみ、否定、エラー |
 |type| |||0..1|code| "allergy" |副反応の生理的なメカニズムの種類（アレルギーによるものか不耐性によるものかどうか）。記述する場合は、コード表："http://hl7.org/fhir/allergy-intolerance-type"allergy \| intoleranceアレルギー反応、不耐性反応|
 |category| |||0..1\*|code|"food" |特定された原因物質のカテゴリ。記述を可能な限り推奨する。コード表："http://hl7.org/fhir/allergy-intolerance-category"food \| medication \| environment \| biologic食物、医薬品、環境、生物学的 |
-|cliticality | |||0..\* |code|"high" |潜在的な臨床的危険性、致命度。記述する場合は、コード表："http://hl7.org/fhir/allergy-intolerance-criticality"low \| high \| unable-to-assess低、高、評価不能 |
+|criticality | |||0..\* |code|"high" |潜在的な臨床的危険性、致命度。記述する場合は、コード表："http://hl7.org/fhir/allergy-intolerance-criticality"low \| high \| unable-to-assess低、高、評価不能 |
 |code| |||1..1|CodeableConcept |http://jpfhir.jp/fhir<br>/core/CodeSystem/JP_JfagyFoodAllergen_CS  "J7F7311990"<br>"牛乳・乳製品（詳細不明）"|アレルギー・不耐反応の対象物の情報。jp-coreで定めるallergy-substanceコード表のコードを推奨する。コード化できない場合には、code.text のみで記述する。code.textは必須である。<br>使用するコード表（推奨）：<br>http://jpfhir.jp/fhir/core/CodeSystem/JP_JfagyFoodAllergen_CS 　（食物アレルギー）http://jpfhir.jp/fhir/core/CodeSystem/JP_JfagyMedicationAllergen_CS　（医薬品アレルギー）http://jpfhir.jp/fhir/core/CodeSystem/JP_JfagyNonFoodNonMedicationAllergen_CS　（その他のアレルギー）<br>のいずれかを使用できる。|
 |patient | |||1..1|Reference(Patient)|"urn: ....." |対象となる患者リソースへの参照。 |
 |encounter | |||0..1|Reference (Encounter) |"urn: ....." |このアレルギ情報が確認され記録された受診情報（入院詳細情報または外来受診情報）への参照.Encounterリソースのインスタンスを参照することでよい。 |
@@ -683,7 +683,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 
 |要素Lv1 |要素Lv2|要素Lv3|要素Lv4|多重度|型|値 |説明 |
 |--------|-------|--|--|------|------------------|--------------------------------|---------------------------------------------------------------------------------|
-|resourceType| | | |||"DiagnostcReport"|**DiagnostcReport**リソースであることを示す|
+|resourceType| | | |||"DiagnosticReport"|**DiagnosticReport**リソースであることを示す|
 |meta| | | |1..1|Meta| | |
 ||lastUpdated|||1..1|instant| |最終更新日時。YYYY-MM-DDThh:mm:ss.sss+zz:zz (例. 2015-02-07T13:28:17.239+09:00)|
 ||profile| | |0..*|canonical(StructureDefinition)|"http://jpfhir.jp/fhir<br>/core<br>/StructureDefinition<br>/JP_DiagnosticReport_Common"|準拠しているプロファイルを受信側に通知したい場合には、本文書のプロファイルを識別するURLを指定する。検査種別によって適切なプロファイルがJP-Coreで定義されている場合にはそれを使用する。値は固定。|
@@ -713,7 +713,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||link | | |1..1|Reference(Media)| |画像ソース情報への参照 |
 |conclusion| | | |0..1|string| |臨床診断（解釈）の叙述的な記述。 |
 |conclusionCode| | | |0..\* |CodeableConcept |"urn:oid:1.2.392.200119.4.101.6"<br>"E48A"<br>"胃癌" |臨床診断（解釈）、所見のコード表現。system値はMEDIS標準病名マスター病名交換用コードを使用する場合の例示。" E48A"は、MEDIS標準病名マスター病名交換用コードで"胃癌"のコード。|
-|presentationForm| | | |0..\* |Attachment| |診断レポートそのもののデータを添付情報として格納する。 |
+|presentedForm| | | |0..\* |Attachment| |診断レポートそのもののデータを添付情報として格納する。 |
 ||contentType| | |0..\* |code| |データのMime typeコード。|
 ||data | | |0..\* |base64Binary| |データを埋め込む場合、base64形式でここに埋め込む。データを埋め込まず、次の要素urlで参照する方式でもよい。|
 ||url| | |0..\* |url | |データを取得できるURL|
@@ -1361,7 +1361,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | ||start|0..1|dateTime ||開始日時。 |
 | ||end|0..1|dateTime ||終了日時。 |
 |gender || |1..1|code |"male"|患者の性別。"male"または"female"。値は例示。 |
-|birthdate|| |1..1|dateTime |"1920-02-11"|患者の生年月日。ISO8601に準拠して"yyyy-mm-dd"形式。値は例示。|
+|birthDate|| |1..1|dateTime |"1920-02-11"|患者の生年月日。ISO8601に準拠して"yyyy-mm-dd"形式。値は例示。|
 |address|| |1..1\*|Address||患者の住所。 |
 | |text| |1..1|string |"神奈川県横浜市港区１－２－３"|住所文字列。値は例示。郵便番号は含めない。 |
 | |line| |0..1|string |"１－２－３"|番地・通り名他。丁目、番地、通り名、マンション名、部屋番号、そのほか住所を構成するcityまでの部分以外のすべての文字列 |
@@ -1381,7 +1381,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 | |gender| |0..1|code |"male"|関係者の性別情報。"male"または"female"。 |
 | |organizaton | |0..1|Reference(Organization)||関係者に関係のある組織情報（たとえば勤務先など）への参照 |
 | |period| |0..1|Period ||関係者の連絡可能な時間帯（患者の連絡先情報のtelecom.periodの記述構造を参照のこと） |
-|commucation|| |0..1\*|BackboneElement||患者とコミュニケーションをとる際に使用する優先言語（日本語以外で明記したい場合に使用する） |
+|communication|| |0..1\*|BackboneElement||患者とコミュニケーションをとる際に使用する優先言語（日本語以外で明記したい場合に使用する） |
 | |language| |1..1|CodeableConcept|"urn:ietf:bcp:47"<br>"ja" |言語のコード記述。ja:日本語、en:英語、zh:中国語、ko:韓国語、fr:フランス語、など。[http://hl7.org/fhir/valueset-languages.html](http://hl7.org/fhir/valueset-languages.html)参照。|
 |generalPractitioner|| |0..\* |Reference(Organization \| Practitioner \| PractitionerRole)|Reference(Organization) |患者が自身で選択したかかりつけ医またはかかりつけ医療機関への参照 |
 
@@ -1500,7 +1500,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 |||start|0..1|dateTime| |開始日時。 |
 |||end|0..1|dateTime| |終了日時。 |
 |gender|| |1..1|code|"male" |関係者の性別。"male"または"female"または"unknown"。値は例示。|
-|birthdate || |1..1|dateTime|"1920-02-11" |関係者の生年月日。ISO8601に準拠して"yyyy-mm-dd"形式。値は例示。|
+|birthDate || |1..1|dateTime|"1920-02-11" |関係者の生年月日。ISO8601に準拠して"yyyy-mm-dd"形式。値は例示。|
 |address || |0..\* |Address | |関係者の住所。 |
 ||text| |1..1|string|"神奈川県横浜市港区１－２－３" |住所文字列。値は例示。郵便番号は含めない。 |
 ||line| |0..1|string|"１－２－３" |番地・通り名他。丁目、番地、通り名、マンション名、部屋番号、そのほか住所を構成するcityまでの部分以外のすべての文字列 |
@@ -1509,7 +1509,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||postalCode| |1..1|string|"123-4567" |郵便番号。値は例示。 |
 ||country | |1..1|string|"JP" |居住地が国内の場合「JP」固定。 |
 |period|| |0..1|Period| |関係者と患者との関係が有効である（あった）期間。 |
-|commucation || |0..1\*|BackboneElement | |関係者とコミュニケーションをとる際に使用する優先言語（日本語以外で明記したい場合に使用する）。 |
+|communication || |0..1\*|BackboneElement | |関係者とコミュニケーションをとる際に使用する優先言語（日本語以外で明記したい場合に使用する）。 |
 ||language| |1..1|CodeableConcept |" urn:ietf:bcp:47"<br>"ja" |言語のコード記述。ja:日本語、en:英語、zh:中国語、ko:韓国語、fr:フランス語、など。[http://hl7.org/fhir/valueset-languages.html](http://hl7.org/fhir/valueset-languages.html)参照。|
 
 <br><br><br>

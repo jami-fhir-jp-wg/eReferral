@@ -600,7 +600,7 @@ DocumentReferenceリソース、およびBinaryリソースの仕様は次の表
 
 ### PDFセクション
 Binaryリソースにより、文書全体のPDFファイルを格納する場合に用いる。
-<br>セクションコード：290
+<br>セクションコード：230
 <br>Binaryリソースの仕様は次の表に示す。
 
 ＜[表2　　Binaryリソース　バイナリーデータ情報](eClinicalSummaryTables.html#tbl-2)＞（再掲）
