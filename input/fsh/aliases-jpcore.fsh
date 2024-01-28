@@ -3,6 +3,8 @@
 Alias: $FHIRJPCoreImplementationGuide = http://jpfhir.jp/fhir/core/ImplementationGuide/hl7.fhir.jp.core
 
 // StructureDefinition: Profile, DataType
+Alias: $composition-clinicaldocument-versionNumber = http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber
+
 Alias: $JP_AllergyIntolerance = http://jpfhir.jp/fhir/core/StructureDefinition/JP_AllergyIntolerance
 Alias: $JP_Condition = http://jpfhir.jp/fhir/core/StructureDefinition/JP_Condition
 Alias: $JP_Coverage = http://jpfhir.jp/fhir/core/StructureDefinition/JP_Coverage

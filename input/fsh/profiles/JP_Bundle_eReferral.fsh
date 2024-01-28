@@ -77,7 +77,7 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[patient].fullUrl ^short = "埋め込まれているPatientリソースを一意に識別するためのUUID"
 * entry[patient].fullUrl ^definition = "埋め込まれているPatientリソースを一意に識別するためのUUID。"
 * entry[patient].resource 1.. MS
-* entry[patient].resource only JP_Patient_eClinicalSummary  // 患者情報エントリ Composition.subject
+* entry[patient].resource only JP_Patient_eCS  // 患者情報エントリ Composition.subject
 * entry[patient].resource ^short = "Patientリソースのインスタンス本体"
 * entry[patient].resource ^definition = "Patientリソースのインスタンス本体。"
 * entry[patient].search ..0
@@ -90,28 +90,28 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[practitioners].fullUrl ^short = "埋め込まれているPractitionerリソースを一意に識別するためのUUID"
 * entry[practitioners].fullUrl ^definition = "埋め込まれているPractitionerリソースを一意に識別するためのUUID。"
 * entry[practitioners].resource 1.. MS
-* entry[practitioners].resource only JP_Practitioner_eClinicalSummary
+* entry[practitioners].resource only JP_Practitioner_eCS
 * entry[practitioners].resource ^short = "Practitionerリソースのインスタンス本体"
 * entry[practitioners].resource ^definition = "Practitionerリソースのインスタンス本体。"
 * entry[practitioners].search ..0
 * entry[practitioners].request ..0
 * entry[practitioners].response ..0
 
-* entry[organization].resource only JP_Organization_eClinicalSummary
+* entry[organization].resource only JP_Organization_eCS
 * entry[organization] ^short = "紹介先／元医療機関／文書作成機関／文書管理機関"
 * entry[organization] ^definition = "紹介先／元医療機関"
 * entry[organization].search ..0
 * entry[organization].request ..0
 * entry[organization].response ..0
 
-//* entry[organizationFrom].resource only JP_Organization_eClinicalSummary_issuer
+//* entry[organizationFrom].resource only JP_Organization_eCS_issuer
 //* entry[organizationFrom] ^short = "紹介元医療機関／文書作成機関／文書管理機関"
 //* entry[organizationFrom] ^definition = "紹介元医療機関"
 //* entry[organizationFrom].search ..0
 //* entry[organizationFrom].request ..0
 //* entry[organizationFrom].response ..0
 
-* entry[department].resource only JP_Organization_eClinicalSummary_department
+* entry[department].resource only JP_Organization_eCS_department
 * entry[department] ^short = "紹介先／元医療機関／文書作成機関の診療科"
 * entry[department] ^definition = "紹介先／元医療機関／文書作成機関の診療科"
 * entry[department].search ..0

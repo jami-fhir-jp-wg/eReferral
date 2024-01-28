@@ -103,5 +103,5 @@ File.open(linkpage,"w") do |fw|
   putMarkdownLink("ValueSet", fw)
   putMarkdownLinkInc("Example",fw)
   putMarkdownLinkInc("example",fw)
-
+  putMarkdownLinkInc("Invariant",fw)
 end 

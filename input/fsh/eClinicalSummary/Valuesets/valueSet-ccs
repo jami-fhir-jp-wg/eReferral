@@ -1,0 +1,38 @@
+ValueSet:  JP_Specimen_JLAC10_SpecimenCode_VS
+Id:   jp-specimen-jlac10-specimencode-vs
+Description: "未コード化コードを含むJLAC10検体材料コードvalueSet"
+* ^url = $JP_Specimen_JLAC10_SpecimenCode_VS
+* ^title = "未コード化コードを含むJLAC10検体材料コードvalueSet"
+* ^status = #active
+* ^experimental = false
+* include codes from system $JP_Specimen_JLAC10_SpecimenCode_CS
+
+ValueSet:  JP_CCS_ObsLabResult_JLAC10wUncoded_VS
+Id:   jp-ccs-obslabresult-jlac10wuncoded-vs
+Description: "未コード化検体検査結果項目コードを含むMEDIS臨床検査項目コードvalueSet"
+* ^url = $JP_CCS_ObsLabResultUncoded_VS
+* ^title = "未コード化検体検査結果項目コードを含むMEDIS臨床検査項目コードvalueSet"
+* ^status = #active
+* ^experimental = false
+* include codes from system $JP_ObservationLabResultCode_CS  // MEDIS臨床検査項目コードJLAC10 17桁
+* include codes from system $JP_CCS_ObsLabResultUncoded_CS#99999999999999999  // 未コード化検体検査結果項目コード 17桁
+
+ValueSet:  JP_CCS_ObsLabResult_JLAC10Unmethod_VS
+Id:   jp-ccs-obslabresult-jlac10unmethod-vs
+Description: "未コード化測定法999を含むMEDIS臨床検査項目コードだけからなるvalueSet"
+* ^url = $JP_CCS_ObsLabResult_JLAC10Unmethod_VS
+* ^title = "未コード化検体検査結果項目コードを含むMEDIS臨床検査項目コードvalueSet"
+* ^status = #active
+* ^experimental = false
+* include codes from system $JP_CCS_ObsLabResult_JLAC10Unmethod_CS  // 測定法999を含むMEDIS臨床検査項目コード
+
+
+ValueSet: JP_SimpleObservationCategory_VS
+Id: jp-simpleobservationcategory-vs
+Title: "JP Core Simple Observation Category ValueSet"
+Description: "JP Coreにて定義したObservationリソースに関する分類の値セット"
+* ^url = $JP_SimpleObservationCategory_VS
+* ^status = #active
+* ^experimental = false
+* ^date = "2023-04-18"
+* include codes from system $JP_SimpleObservationCategory_CS

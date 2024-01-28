@@ -23,14 +23,6 @@
       <td>{{site.data.resources[resource_].title | markdownify}}</td>
     </tr>
 {% endif %}
-
-{%if site.data.resources[resource_].description %}
-    <tr>
-      <td><i>IG build</i></td>
-      <td>{{site.data.resources[resource_].description | markdownify}}</td>
-    </tr>
-{% endif %}
-
 <tr>
   <td><i>Status</i></td>
   <td>{{site.data.resources[resource_].status.status}}

@@ -3,28 +3,37 @@
 #    ↓
 # https://jpfhir.jp/fhir/core/1.1.1/StructureDefinition-jp-observation-common.html
 # その後、その行を出力する。
-# また、文字列"simpifier"が含まれない行については、そのまま出力する。
+# また、文字列"simpifier"ではじまる上のポターンが含まれない行については、そのまま出力する。
 # なお、入力ファイルは、コマンドライン引数で指定する。
-# 例：python test2.py input.txt
+# 例：python test2.py input.html
 
-import sys
 import re
-with open(sys.argv[1], "r") as f:
-#    print("sys.argv[1]="+sys.argv[1]+" sys.argv[2]="+sys.argv[2], file=sys.stderr)
-    escapedVersion = sys.argv[2].replace(".","\.")
-#    print(escapedVersion)
+import sys
 
+with open(sys.argv[1], "r") as f:
     for line in f:
 #        sys.stderr.write(line)
-        if "https://simplifier.net/resolve?scope=jp-core.r4@1.1.1" in line:
-#            sys.stderr.write(line)
-            m = re.search('https:\/\/simplifier\.net\/resolve\?scope=jp-core\.r4@' + escapedVersion + '-snap&amp;canonical=http:\/\/jpfhir\.jp\/fhir\/core\/StructureDefinition\/(.*?)">(.*)$',line)
-            if m :
-#                print("m.group(1)="+m.group(1),file=sys.stderr)
-#                print("m.group(2)="+m.group(2),file=sys.stderr)
-                profileUrl = m.group(1).lower().replace("_","-")+".html"
-                line = line.replace("https://simplifier.net/resolve?scope=jp-core.r4@1.1.1-snap&amp;canonical=http://jpfhir.jp/fhir/core/StructureDefinition/"+m.group(1),
-                                 "https://jpfhir.jp/fhir/core/"+sys.argv[2]+"/StructureDefinition-"+profileUrl)
-            print(line)
+# 次のようなパターンを見つけて、canonical= 値の部分だけに置き換える：https://simplifier.net/resolve?canonical=http%3A%2F%2Fjpfhir.jp%2Ffhir%2Fcore%2FValueSet%2FJP_MedicationSubstitutionNotAllowedReason_VS&scope=jpfhir-terminology@1.1.1
+
+        if "https://simplifier.net/resolve?" in line:
+#            print(line, end="")
+            m1 = re.finditer('https:\/\/simplifier\.net\/resolve\?scope=(.*?)(&.*?canonical=)',line)
+            m2 = re.finditer('https:\/\/simplifier\.net\/resolve\?canonical=(.*?)(&.*?scope=.*?)"',line)
+            if m1 :
+                for mm in m1:
+#                    print("mm1=",mm.group(1))
+                    scope = mm.group(1)
+                    canonicalHeader = mm.group(2)
+                    line = line.replace('https://simplifier.net/resolve?scope='+scope + canonicalHeader,'', 1)
+            elif m2 :
+                for mm in m2:
+                    canonical = mm.group(1)
+                    scope = mm.group(2)
+                    line = line.replace('https://simplifier.net/resolve?canonical='+canonical+scope,canonical, 1)
+            else:
+                print(line, end="")
+                continue
+            print(line, end="")
         else:
-            print(line)
+            print(line, end="")
+            continue

@@ -106,7 +106,7 @@ jobs:
         cd /home/runner/.fhir
         mkdir -p packages/$JPTerminologyCOREdir
         mv /home/runner/.fhir/work/package /home/runner/.fhir/packages/$JPTerminologyCOREdir
-        mv /home/runner/work/eCheckupReport/eCheckupReport/packages_snapshot/$JPCOREtgzjp /home/runner/.fhir/work/
+        mv /home/runner/work/eReferral/eReferral/packages_snapshot/$JPCOREtgzjp /home/runner/.fhir/work/
         cd /home/runner/.fhir/work
         tar xzf $JPCOREtgzjp
         mkdir -p /home/runner/.fhir/packages/$JPCOREdir
@@ -153,8 +153,8 @@ jobs:
         cd fsh-generated
         mv resources package
         cp ../forPackageRelease/package-diff.json package/package.json
-        tar czf jp-eCheckupReport-package-diff.tgz package
-        cp jp-eCheckupReport-package-diff.tgz ../forPackageRelease/jp-eCheckupReport.r4-${{ env.release_version }}.tgz
+        tar czf jp-eReferral-package-diff.tgz package
+        cp jp-eReferral-package-diff.tgz ../forPackageRelease/jp-eReferral.r4-${{ env.release_version }}.tgz
         
     - name: generate snapshot package using sushi -s command       
       run: |
@@ -165,9 +165,9 @@ jobs:
         cp fsh-generated-snap/resources/*.json forPackageRelease/snapshot/package/
         cp forPackageRelease/package-snap.json forPackageRelease/snapshot/package/package.json
         cd forPackageRelease/snapshot
-        tar czf jp-eCheckupReport-package-snap.tgz package
+        tar czf jp-eReferral-package-snap.tgz package
         cd ..
-        cp snapshot/jp-eCheckupReport-package-snap.tgz jp-eCheckupReport.r4-${{ env.release_version }}-snap.tgz
+        cp snapshot/jp-eReferral-package-snap.tgz jp-eReferral.r4-${{ env.release_version }}-snap.tgz
         cd ..
 
     - name: ssh key generate
@@ -177,5 +177,5 @@ jobs:
 
     - name: rsync remote-site-deploy
       run: |
-        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output.tgz  forPackageRelease/jp-eCheckupReport.r4-${{ env.release_version }}.tgz forPackageRelease/jp-eCheckupReport.r4-${{ env.release_version }}-snap.tgz ${{ secrets.JAMIWG_USERID_AT_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eCheckup/ --exclude .htaccess
-        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_USERID_AT_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eCheckup/ ; tar xzf output.tgz'
+        rsync -auzrv -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT_JPFHIR }}" --delete output.tgz  forPackageRelease/jp-eReferral.r4-${{ env.release_version }}.tgz forPackageRelease/jp-eReferral.r4-${{ env.release_version }}-snap.tgz ${{ secrets.JAMIWG_USERID_AT_WEBHOST }}:${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ --exclude .htaccess
+        ssh -i key  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no  -p ${{ secrets.SSH_PORT_JPFHIR }} ${{ secrets.JAMIWG_USERID_AT_WEBHOST }}   'cd ${{ secrets.JAMIWG_WEBPATH }}/jpfhir.jp/fhir/eReferral/ ; tar xzf output.tgz'

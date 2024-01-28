@@ -12,26 +12,24 @@ title: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
 description: "0.9.7 (2023.05.17)"
 status: active # draft | active | retired | unknown 
 version: 1.1.5
-date: 2023-05-17
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 #  https://www.hl7.org/fhir/valueset-spdx-license.html
 # https://www.hl7.org/fhir/valueset-jurisdiction.html 
 publisher:
-  name: Kazuhiko Ohe@JAMI/HL7Japan and The University of Tokyo
+  name: Kazuhiko Ohe@JAMI/HL7Japan, and The University of Tokyo, and HL7 International
   url: http://jpfhir.jp
   email: office@hlfhir.jp
-copyright: Copyright HL7Japan and Japan Association of Medical Informatics (JAMI), CC(Creative Commons license) BY-ND CC表示・改変禁止
-jurisdiction: 'urn:iso:std:iso:3166#JP'
-
+copyright: Copyright JAMI 
+jurisdiction: 'urn:iso:std:iso:3166-2#JP'
 dependencies:
   jp-core.r4:
-# uri: http://jpfhir.jp/fhir/core/jp-core.draft1
-# to avoid warning message "The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole"
-#    uri: http://jpfhir.jp/fhir/core/ImplementationGuide/jp-core.r4
-    url: http://jpfhir.jp/fhir/core/1.1.1/ImplementationGuide/jp-core.r4
-    version: 1.1.1-snap
+    uri: http://jpfhir.jp/fhir/core/1.1.2/ImplementationGuide/
+    version: 1.1.2
+  jpfhir-terminology.r4:
+    uri: http://jpfhir.jp/fhir//jpfhir-terminology.r4/ImplementationGuide/
+    version: 1.1.1
 
 #----------------------------------------
 # ページタイトル名称設定
@@ -42,10 +40,8 @@ pages:
     title: 診療情報提供書HL7 FHIR 記述仕様書 第1版 V1.1.5
   eClinicalSummaryTables.md:
     title: リソース表 各表一覧
-  namespace.md:
-    title: 名前空間一覧
-  updateHistory.md:
-    title: 履歴情報
+  history.md:
+    title: 改訂履歴
 
 #-----------------------------------------
 # メニュー設定
