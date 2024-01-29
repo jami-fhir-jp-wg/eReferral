@@ -3,7 +3,7 @@
 //当面中略（診療情報提供書）
 
 Instance: alg1ReferralExample01
-InstanceOf: JP_AllergyIntolerance
+InstanceOf: JP_AllergyIntolerance_eCS
 Usage: #example
 
 Description: "AllergyIntoleranceリソース　（診療情報提供書　アレルギー　サバ）"
