@@ -3,6 +3,8 @@ rm -r ~/.fhir
 cp -r ~/.fhir_sushiVersion ~/.fhir
 
 mkdir -p input/fsh/eClinicalSummary/
+rm -rf input/fsh/eClinicalSummary/
+mkdir -p input/fsh/eClinicalSummary/
 cp -r eClinicalSummary/input/fsh/* input/fsh/eClinicalSummary/
 
 sushi -s .
@@ -21,4 +23,5 @@ cp jp-eReferral.r4.tgz ../pkgValidation
 cd ..
 rm -r ~/.fhir
 cp -r ~/.fhir.validation ~/.fhir
+rm -rf input/fsh/eClinicalSummary/
 #rm -rf fsh-generated
