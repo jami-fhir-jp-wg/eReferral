@@ -221,6 +221,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:oid:1.2.392.200250.2.2.20.22
     - urn:oid:1.2.392.200250.2.2.20.32
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes
+    - http://jpfhir.jp/fhir/Common/CodeSystem/admit-Source
     - http://jpfhir.jp/fhir/clins/CodeSystem/BundleResourceType_CS
     - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_CoreLabo_CS
     - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_InfectionLabo_CS
