@@ -47,7 +47,9 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 * identifier[rpNumber].value = "1"
 * identifier[orderInRp].system = "urn:oid:1.2.392.100495.20.3.82"
 * identifier[orderInRp].value = "1"
-* status = #active
+* identifier[requestIdentifier].system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
+* identifier[requestIdentifier].value = "1311234567-2020-00123456"
+
 * intent = #order
 
 * medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ"
@@ -74,6 +76,7 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 * dosageInstruction[=].timing.repeat.boundsDuration = 7 'd' "日"
 
 * dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#1013044400000000 "内服・経口・１日３回朝昼夕食後"
+* dosageInstruction[=].timing.code.text = "内服・経口・１日３回朝昼夕食後"
 
 //130on_処方用法部位(ARGsitecode,ARGsite)
 * dosageInstruction[=].route = http://jpfhir.jp/fhir/core/CodeSystem/route-codes#PO "口"

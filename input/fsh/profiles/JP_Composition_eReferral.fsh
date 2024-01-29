@@ -545,7 +545,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[referralPurposeSection].mode ..0
 * section[compositionSection].section[referralPurposeSection].orderedBy ..0
 * section[compositionSection].section[referralPurposeSection].entry 0..1 MS
-* section[compositionSection].section[referralPurposeSection].entry only Reference(JP_Encounter)
+* section[compositionSection].section[referralPurposeSection].entry only Reference(JP_Encounter_eCS)
 * section[compositionSection].section[referralPurposeSection].entry ^short = "必須。紹介先で予定している受診を記述したEncounterリソースを参照"
 * section[compositionSection].section[referralPurposeSection].entry ^definition = "紹介先で予定している受診を記述したEncounterリソースを参照。Encounter.reasonCodeに紹介する理由を記述するが、疾患や症状にもとづく診療紹介の場合には、その症状や疾患のコードあるいはテキストを記述する。そうでない場合には、コード化にかかわらずEncounter.reasonCode.textに紹介理由もtext形式で記述する。"
 * section[compositionSection].section[referralPurposeSection].emptyReason ..1 MS
@@ -589,7 +589,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[problemSection].mode ..0
 * section[compositionSection].section[problemSection].orderedBy ..0
 * section[compositionSection].section[problemSection].entry 0..* MS
-* section[compositionSection].section[problemSection].entry only Reference(JP_Condition)
+* section[compositionSection].section[problemSection].entry only Reference(JP_Condition_eCS)
 * section[compositionSection].section[problemSection].entry ^short = "必須。傷病名・主訴を１個以上必ず記述する。"
 * section[compositionSection].section[problemSection].entry ^definition = "傷病名・主訴を１個以上必ず記述する。1つにつき1つのConditionで記述されたものを参照する。フリーテキストでしか記述できない場合には、Condition.code.text に記述する。"
 * section[compositionSection].section[problemSection].emptyReason ..1 MS
@@ -633,7 +633,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[presentIllnessSection].mode ..0
 * section[compositionSection].section[presentIllnessSection].orderedBy ..0
 * section[compositionSection].section[presentIllnessSection].entry 0..* MS
-* section[compositionSection].section[presentIllnessSection].entry only Reference(JP_Condition)
+* section[compositionSection].section[presentIllnessSection].entry only Reference(JP_Condition_eCS)
 * section[compositionSection].section[presentIllnessSection].entry ^short = "必須。現病歴として記述すべき疾患に関する現在にいたる経過歴を１個以上必ず記述したConditionリソースを参照する。"
 * section[compositionSection].section[presentIllnessSection].entry ^definition = "フリーテキストでしか記述できない場合には、それをCondition.code.text 
                                                                             およびCodition.noteに記述したConditionリソースを参照する。
@@ -679,7 +679,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[pastIllnessSection].mode ..0
 * section[compositionSection].section[pastIllnessSection].orderedBy ..0
 * section[compositionSection].section[pastIllnessSection].entry 0..* MS
-* section[compositionSection].section[pastIllnessSection].entry only Reference(JP_Condition)
+* section[compositionSection].section[pastIllnessSection].entry only Reference(JP_Condition_eCS)
 * section[compositionSection].section[pastIllnessSection].entry ^short = "既往歴をConditionリソースに記述して参照する。"
 * section[compositionSection].section[pastIllnessSection].entry ^definition = "既往歴をConditionリソースに記述して参照する。
                                                                 1つの既往疾患につき1つのConditionリソースで記述されたものを参照する。
@@ -727,7 +727,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[allergiesIIntoleranceSection].mode ..0
 * section[compositionSection].section[allergiesIIntoleranceSection].orderedBy ..0
 * section[compositionSection].section[allergiesIIntoleranceSection].entry 0..* MS
-* section[compositionSection].section[allergiesIIntoleranceSection].entry only Reference(JP_AllergyIntolerance)
+* section[compositionSection].section[allergiesIIntoleranceSection].entry only Reference(JP_AllergyIntolerance_eCS)
 * section[compositionSection].section[allergiesIIntoleranceSection].entry ^short = "アレルギー・不耐性反応情報を記述したAllergyIntoleranceリソースを参照"
 * section[compositionSection].section[allergiesIIntoleranceSection].entry ^definition = "アレルギー・不耐性反応情報を記述して参照する。
                                                                 1つの既往疾患につき1つのAllergyIntoleranceリソースで記述されたものを参照する。
@@ -871,7 +871,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[infectiousDiseaseInformationSection].mode ..0
 * section[compositionSection].section[infectiousDiseaseInformationSection].orderedBy ..0
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry 0..* MS
-* section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(JP_Observation_Common)
+* section[compositionSection].section[infectiousDiseaseInformationSection].entry only Reference(JP_Observation_Common_eCS)
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^short = "感染症情報を記述したObservationリソースを参照"
 * section[compositionSection].section[infectiousDiseaseInformationSection].entry ^definition = "感染症情報を記述して参照する。
                                                                 1つの感染症情報につき1つのObservationリソースで記述されたものを参照する。

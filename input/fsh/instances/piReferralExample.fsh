@@ -17,6 +17,7 @@ Description: "Conditionリソース　（診療情報提供書　既往歴テキ
 * identifier.value = "192838"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
  // active | recurrence | relapse | inactive | remission | resolved
+* verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 
 * code[+].text = "上腹部痛"

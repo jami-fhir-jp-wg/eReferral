@@ -49,7 +49,9 @@ Description: "不均等投与1日用法の医薬品処方１件　MedicationRequ
 * identifier[rpNumber].value = "9"
 * identifier[orderInRp].system = "urn:oid:1.2.392.100495.20.3.82"
 * identifier[orderInRp].value = "1"
-* status = #active
+* identifier[requestIdentifier].system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
+* identifier[requestIdentifier].value = "1311234567-2020-00123456"
+* status = #completed
 * intent = #order
 
 * medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#105271807 "プレドニン錠５ｍｇ"
@@ -71,15 +73,15 @@ Description: "不均等投与1日用法の医薬品処方１件　MedicationRequ
 * dosageInstruction[=].extension[=].valueDuration = 7 'd' "日"
  // extension
 * dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V14NNNNN "不均等・１回目・４錠"
-
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・４錠"
 * dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V22NNNNN "不均等・２回目・２錠"
-
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・２錠"
 * dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V31NNNNN "不均等・３回目・１錠"
-
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・１錠"
 * dosageInstruction[=].timing.repeat.boundsDuration = 7 'd' "日"
 
 * dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#1013044400000000 "内服・経口・１日３回毎食後"
-
+* dosageInstruction[=].timing.code.text = "１日３回　毎食後　７錠（４錠－２錠－１錠）"
 
 //130on_処方用法部位(ARGsitecode,ARGsite)
 * dosageInstruction[=].route = http://jpfhir.jp/fhir/core/CodeSystem/route-codes#PO "口"

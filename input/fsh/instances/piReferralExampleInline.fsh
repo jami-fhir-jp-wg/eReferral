@@ -16,6 +16,7 @@ Description: "conditionReferralExample01 診療情報提供書　現病歴例　
 * identifier.system = "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier"
 * identifier.value = "192838"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
  // active | recurrence | relapse | inactive | remission | resolved
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 

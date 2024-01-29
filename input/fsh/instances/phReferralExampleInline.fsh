@@ -15,6 +15,7 @@ Description: "conditionReferralExample01 診療情報提供書　既往歴例1�
 * identifier.value = "192839-01"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
  // active | recurrence | relapse | inactive | remission | resolved
+* verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 
 * code[+].text = "狭心症"
@@ -43,6 +44,7 @@ Description: "conditionReferralExample01 診療情報提供書　既往歴例2�
 * identifier.value = "192839-02"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
  // active | recurrence | relapse | inactive | remission | resolved
+* verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 
 * code[+].text = "左前腕骨折"

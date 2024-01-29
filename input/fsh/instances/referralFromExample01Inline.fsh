@@ -36,13 +36,13 @@
 
 //--------------
 Instance: referralFromOrganizationExample01Inline
-InstanceOf: JP_Organization_eCS_issuer
+InstanceOf: JP_Organization_eCS
 Usage: #inline
 
 Description: "紹介元医療機関情報　例"
 
 // 002r_ValidationProfile(ARGmetaprofile)
-//* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_issuer"
+//* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
 * meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
