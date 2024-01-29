@@ -36,7 +36,7 @@
 
 //--------------
 Instance: referralFromOrganizationExample01Inline
-InstanceOf: JP_Organization_eCS
+InstanceOf: JP_Organization_eCS_fromOrganization
 Usage: #inline
 
 Description: "紹介元医療機関情報　例"
@@ -45,7 +45,7 @@ Description: "紹介元医療機関情報　例"
 //* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_fromOrganization"
 
 //
 // 機関都道府県番号：2桁数字　北海道は01
