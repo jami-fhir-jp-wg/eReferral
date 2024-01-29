@@ -13,7 +13,7 @@ Description: "Observationリソース　（診療情報提供書　腹部所見�
 * identifier.value = "192837"
 * status = #final
 
-* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#exam "身体検査・観察"
+* category[+] = http://jpfhir.jp/fhir/core/CodeSystem/JP_SimpleObservationCategory_CS#exam "Exam"
 
 * code.text = "腹部所見"
 
@@ -36,7 +36,7 @@ Description: "Observationリソース　（診療情報提供書　現症　腹�
 * identifier.value = "192837"
 * status = #final
 
-* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#exam "身体検査・観察"
+* category[+] = http://jpfhir.jp/fhir/core/CodeSystem/JP_SimpleObservationCategory_CS#exam "Exam"
 
 * code.text = "腹部所見"
 

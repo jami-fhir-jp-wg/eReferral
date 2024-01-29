@@ -13,7 +13,7 @@ Description: "ObservationCommon検査結果　現症例"
 * identifier.value = "192837"
 * status = #final
 
-* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#exam "身体検査・観察"
+* category[+] = http://jpfhir.jp/fhir/core/CodeSystem/JP_SimpleObservationCategory_CS#exam "Exam"
 
 * code.text = "腹部所見"
 
@@ -37,7 +37,7 @@ Description: "ObservationCommon検査結果　例"
 * identifier.value = "192837"
 * status = #final
 
-* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#exam "身体検査・観察"
+* category[+] = http://jpfhir.jp/fhir/core/CodeSystem/JP_SimpleObservationCategory_CS#exam "Exam"
 
 * code.text = "腹部所見"
 

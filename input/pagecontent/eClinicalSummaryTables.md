@@ -1201,7 +1201,7 @@ Compositionリソースに出現するsection要素は以下のような構造�
 ||system|| |1..1||"http://jpfhir.jp/fhir<br>/core/IdSystem/resourceInstance-identifier" | |
 ||value || |1..1||"1311234567-2020-00123456"|検査・観察情報IDの文字列。値は例示。 |
 |status||| |1..1|code|"final" |検査・観察のステータス。コード表："http://hl7.org/fhir/observation-status"registered \| preliminary \| final \| amended　など。結果未着、中間結果、最終結果、更新結果、エラー修正、キャンセル、エラー、不明、 |
-|category||| |0..1\*|CodeableConcept |"http://terminology.hl7.org/CodeSystem/observation-category" "laboratory" |検査・観察の種類区分。social-history:社会生活歴vital-signs：バイタルサインimaging：画像検査laboratory：検査室検査procedure：手術処置治療survey：調査・評価exam：身体検査・観察therapy：非介入治療による観察結果activity：身体活動記録|
+|category||| |0..1\*|CodeableConcept |"http://jpfhir.jp/fhir/core/CodeSystem/JP_SimpleObservationCategory_CS" "laboratory" |検査・観察の種類区分。social-history:社会生活歴vital-signs：バイタルサインimaging：画像検査laboratory：検査室検査procedure：手術処置治療survey：調査・評価exam：身体検査・観察therapy：非介入治療による観察結果activity：身体活動記録|
 |code||| |1..1|CodeableConcept ||検査・観察の項目コードLOINCコードと国内標準コードがある場合には国内標準コードを併用することが望ましいが、適切な標準コード化ができない場合には、施設固有コード、テキスト記述を併用する。|
 |subject ||| |1..1|Reference ||患者を表す**Patient**リソースへの参照。|
 |encounter ||| |0..1|Reference(Encounter)||検査・観察が実施された受診情報（外来受診情報または入院詳細情報） |

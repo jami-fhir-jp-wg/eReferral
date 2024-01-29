@@ -144,15 +144,15 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   apply-copyright: 'true'
   apply-publisher: 'true'
   apply-contact: 'true'
-  apply-licese: 'true'
+  apply-license: 'true'
   apply-jurisdiction: 'true'
   show-inherited-invariants: 'true'
   usage-stats-opt-out: 'true'
   excludexml: 'true'
-  excludejsn: 'false'
+  excludejson: 'false'
   excludettl: 'true'
   excludemap: 'true'
-  excludeexample: 'false'
+  #excludeexample: 'false'
   generate: #what does this do - todo: remove and see
     - json
   no-validate:

@@ -32,7 +32,7 @@
 
 //不均等投与1日用法の医薬品処方１件　
 //MedicationRequestリソースのインスタンス例
-//プレドニン錠５ｍｇ１日３回　毎食後　７錠（４錠－２錠－１錠）
+//プレドニン錠５ｍｇ・塩野義１日３回　毎食後　７錠（４錠－２錠－１錠）
 
 Instance: JP-MedReq-ePreData-Example-fukintouByDay
 InstanceOf: JP_MedicationRequest_eCS
@@ -53,9 +53,9 @@ Description: "MedicationRequestリソース　（診療情報提供書　内服�
 * status = #completed
 * intent = #order
 
-* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#105271807 "プレドニン錠５ｍｇ"
+* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#105271807 "プレドニン錠５ｍｇ・塩野義"
 
-* medicationCodeableConcept.text = "プレドニン錠５ｍｇ"
+* medicationCodeableConcept.text = "プレドニン錠５ｍｇ・塩野義"
 
 * subject.reference = "Patient/jppatientExample01"
 
@@ -70,14 +70,14 @@ Description: "MedicationRequestリソース　（診療情報提供書　内服�
 * dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDosage_UsageDuration"
 * dosageInstruction[=].extension[=].valueDuration = 7 'd' "日"
  // extension
-* dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V14NNNNN "不均等・１回目・４錠"
-* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・４錠"
+* dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V14NNNNN "不均等・１回目・４単位量"
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・４単位量"
 
-* dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V22NNNNN "不均等・２回目・２錠"
-* dosageInstruction[=].additionalInstruction[=].text = "不均等・２回目・２錠"
+* dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V22NNNNN "不均等・２回目・２単位量"
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・２回目・２単位量"
 
-* dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V31NNNNN "不均等・３回目・１錠"
-* dosageInstruction[=].additionalInstruction[=].text = "不均等・３回目・１錠"
+* dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V31NNNNN "不均等・３回目・１単位量"
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・３回目・１単位量"
 
 * dosageInstruction[=].timing.repeat.boundsDuration = 7 'd' "日"
 
