@@ -35,7 +35,7 @@
 // 030on_医療者カナ氏名(ARGfirstnamekana,ARGgivennamekana)
 
 Instance: referralToOrganizationExample01Inline
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_eCS
 Usage: #inline
 
 Description: "紹介先医療機関情報　例"
@@ -80,7 +80,7 @@ Description: "紹介先医療機関情報　例"
 //--------------
 
 Instance: referralToOrganizationDeptExample01Inline
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_eCS_department
 Usage: #inline
 
 Description: "紹介先医療機関の診療科情報　例"
@@ -103,7 +103,7 @@ Description: "紹介先医療機関の診療科情報　例"
 
 //--------------
 Instance: referralToPractitionerExample01Inline
-InstanceOf: JP_Practitioner
+InstanceOf: JP_Practitioner_eCS
 Usage: #inline
 
 Description: "紹介先医療機関の医師情報　例"

@@ -4,7 +4,7 @@
 
 
 Instance: piReferralExample01Inline
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #inline
 
 Description: "conditionReferralExample01 診療情報提供書　現病歴例　上腹部痛"

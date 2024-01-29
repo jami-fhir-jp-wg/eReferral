@@ -36,7 +36,7 @@
 
 //--------------
 Instance: referralFromOrganizationExample01Inline
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_eCS_issuer
 Usage: #inline
 
 Description: "紹介元医療機関情報　例"
@@ -81,7 +81,7 @@ Description: "紹介元医療機関情報　例"
 //--------------
 
 Instance: referralFromOrganizationDeptExample01Inline
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_eCS_department
 Usage: #inline
 
 Description: "紹介元医療機関の診療科情報　例"
@@ -104,7 +104,7 @@ Description: "紹介元医療機関の診療科情報　例"
 
 //--------------
 Instance: referralFromPractitionerExample01Inline
-InstanceOf: JP_Practitioner
+InstanceOf: JP_Practitioner_eCS
 Usage: #inline
 
 Description: "紹介元医療機関の医師情報　例"

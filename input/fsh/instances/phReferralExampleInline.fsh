@@ -3,7 +3,7 @@
 //当面中略（診療情報提供書）
 
 Instance: ph1ReferralExample01Inline
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #inline
 
 Description: "conditionReferralExample01 診療情報提供書　既往歴例1　狭心症"
@@ -30,7 +30,7 @@ Description: "conditionReferralExample01 診療情報提供書　既往歴例1�
 
 
 Instance: ph2ReferralExample01Inline
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #inline
 
 Description: "conditionReferralExample01 診療情報提供書　既往歴例2　左前腕骨折"

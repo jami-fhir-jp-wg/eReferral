@@ -1,7 +1,7 @@
 // Encounter_eCS
 //以下省略（診療情報提供書）
 Instance: purposeReferralExample01Inline
-InstanceOf: JP_Encounter
+InstanceOf: JP_Encounter_eCS
 Usage: #inline
 
 Description: "encounterReferralExample01 診療情報提供書での紹介目的　例　腹痛精査お願い"
@@ -24,7 +24,7 @@ Description: "encounterReferralExample01 診療情報提供書での紹介目的
 
 
 Instance: encounterReferralExample01Inline
-InstanceOf: JP_Encounter
+InstanceOf: JP_Encounter_eCS
 Usage: #inline
 
 Description: "encounterReferralExample01 外来受診歴　例"

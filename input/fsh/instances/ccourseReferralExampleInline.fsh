@@ -3,7 +3,7 @@
 // JP_DocumentReference_eCS
 
 Instance: ccourseReferralExample01Inline
-InstanceOf: JP_DocumentReference
+InstanceOf: JP_DocumentReference_eCS
 Usage: #inline
 
 Description: "ccourseReferralExample01 診療情報提供書　臨床経過記録文書参照例"

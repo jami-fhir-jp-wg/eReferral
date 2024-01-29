@@ -1,7 +1,7 @@
 // Encounter_eCS
 //以下省略（診療情報提供書）
 Instance: purposeReferralExample01
-InstanceOf: JP_Encounter
+InstanceOf: JP_Encounter_eCS
 Usage: #example
   
 Description: "Encounterリソース　（診療情報提供書　紹介目的テキスト）"
@@ -21,7 +21,7 @@ Description: "Encounterリソース　（診療情報提供書　紹介目的テ
 
 
 Instance: encounterReferralExample01
-InstanceOf: JP_Encounter
+InstanceOf: JP_Encounter_eCS
 Usage: #example
   
 Description: "Encounterリソース　（診療情報提供書　外来受診）"

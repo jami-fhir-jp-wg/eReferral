@@ -35,14 +35,14 @@
 //プレドニン錠５ｍｇ１日３回　毎食後　７錠（４錠－２錠－１錠）
 
 Instance: JP-MedReq-ePreData-Example-fukintouByDayInline
-InstanceOf: JP_MedicationRequest
+InstanceOf: JP_MedicationRequest_eCS
 Usage: #inline
 
 Description: "不均等投与1日用法の医薬品処方１件　MedicationRequestリソースのインスタンス例（プレドニン錠５ｍｇ１日３回　毎食後　７錠（４錠－２錠－１錠））"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest"
+* meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_eCS"
 
 
 * identifier[rpNumber].system = "urn:oid:1.2.392.100495.20.3.81"

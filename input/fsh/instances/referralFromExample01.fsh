@@ -36,7 +36,7 @@
 
 //--------------
 Instance: referralFromOrganizationExample01
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_eCS_issuer
 Usage: #example
 
 Description: "Organizationリソース　（診療情報提供書　紹介元　医療機関情報）"
@@ -81,7 +81,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介元　
 //--------------
 
 Instance: referralFromOrganizationDeptExample01
-InstanceOf: JP_Organization
+InstanceOf: JP_Organization_eCS_department
 Usage: #example
 
 Description: "Organizationリソース　（診療情報提供書　紹介元　診療科情報）"
@@ -103,7 +103,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介元　
 
 //--------------
 Instance: referralFromPractitionerExample01
-InstanceOf: JP_Practitioner
+InstanceOf: JP_Practitioner_eCS
 Usage: #example
 
 Description: "Organizationリソース　（診療情報提供書　紹介元　医師情報）"

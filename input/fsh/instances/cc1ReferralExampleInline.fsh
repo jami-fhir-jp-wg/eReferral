@@ -3,7 +3,7 @@
 //当面中略（診療情報提供書）
 
 Instance: cc1ReferralExample01Inline
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #inline
 
 Description: "conditionReferralExample01CC1 診療情報提供書　主訴例　上腹部痛"
@@ -28,7 +28,7 @@ Description: "conditionReferralExample01CC1 診療情報提供書　主訴例　
 
 
 Instance: cc2ReferralExample01Inline
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #inline
 
 Description: "conditionReferralExample01CC2 診療情報提供書　主訴例　腰痛"

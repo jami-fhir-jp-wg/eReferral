@@ -3,7 +3,7 @@
 //当面中略（診療情報提供書）
 
 Instance: alg1ReferralExample01Inline
-InstanceOf: JP_AllergyIntolerance
+InstanceOf: JP_AllergyIntolerance_eCS
 Usage: #inline
 
 Description: "allergyeferralExample01 診療情報提供書　アレルギー例1　サバ"
@@ -47,7 +47,7 @@ Description: "allergyeferralExample01 診療情報提供書　アレルギー例
 
 
 Instance: alg1ReferralExample02Inline
-InstanceOf: JP_AllergyIntolerance
+InstanceOf: JP_AllergyIntolerance_eCS
 Usage: #inline
 
 Description: "allergyeferralExample01 診療情報提供書　アレルギー例1　キーウイ"

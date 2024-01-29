@@ -4,7 +4,7 @@
 
 
 Instance: piReferralExample01
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #example
   
 Description: "Conditionリソース　（診療情報提供書　既往歴テキスト　上腹部痛）"

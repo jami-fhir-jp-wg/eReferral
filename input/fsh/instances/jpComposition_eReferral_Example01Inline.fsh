@@ -10,7 +10,7 @@ Alias: $referral-section = http://jpfhir.jp/fhir/eReferral/CodeSystem/document-s
 
 
 Instance: compositionReferralExample01Inline
-InstanceOf: Composition
+InstanceOf: Composition_eReferral
 Usage: #inline
 
 Description: "構成情報サンプル　composition"

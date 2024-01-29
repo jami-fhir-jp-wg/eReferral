@@ -44,7 +44,7 @@ Description: "AllergyIntoleranceリソース　（診療情報提供書　アレ
 
 
 Instance: alg1ReferralExample02
-InstanceOf: JP_AllergyIntolerance
+InstanceOf: JP_AllergyIntolerance_eCS
 Usage: #example
 
 Description: "AllergyIntoleranceリソース　（診療情報提供書　アレルギー　キーウイ）"

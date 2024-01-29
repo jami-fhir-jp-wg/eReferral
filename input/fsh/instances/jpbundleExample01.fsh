@@ -1,6 +1,6 @@
 
 Instance: BundleReferralExample01
-InstanceOf: Bundle
+InstanceOf: JP_Bundle_eReferral
 Usage: #example
 
 Description: "■ 診療情報提供書　全体 Bundleリソース"

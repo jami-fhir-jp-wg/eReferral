@@ -33,14 +33,14 @@
 //300on_処方後発変更不可(ARGnote)
 
 Instance: MedicationRequestExample01Inline
-InstanceOf: JP_MedicationRequest
+InstanceOf: JP_MedicationRequest_eCS
 Usage: #inline
 
 Description: "内服　処方例１件　MedicationRequestリソースのインスタンス例"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest"
+* meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_eCS"
 
 
 * identifier[rpNumber].system = "urn:oid:1.2.392.100495.20.3.81"

@@ -3,7 +3,7 @@
 //当面中略（診療情報提供書）
 
 Instance: ph1ReferralExample01
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #example
   
 Description: "Conditionリソース　（診療情報提供書　既往歴テキスト　狭心症）"
@@ -30,7 +30,7 @@ Description: "Conditionリソース　（診療情報提供書　既往歴テキ
 
 
 Instance: ph2ReferralExample01
-InstanceOf: JP_Condition
+InstanceOf: JP_Condition_eCS
 Usage: #example
   
 Description: "Conditionリソース　（診療情報提供書　既往歴テキスト　左前腕骨折）"
