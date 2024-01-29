@@ -1,3 +1,4 @@
+/*
 ValueSet:  JP_valueSet_carePlanCategory
 Id:   JP-valueSet-carePlanCategory
 Description: "CarePlan カテゴリー　hospital-plan または discharge-plan"
@@ -7,7 +8,7 @@ Description: "CarePlan カテゴリー　hospital-plan または discharge-plan"
 * ^experimental = false
 * include codes from system http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
 
-
+*/
 // 診療情報提供書セクション区分コード
 ValueSet: JP_ValueSet_eReferral_document_section
 Id: jp-valueset-eReferral-document-section

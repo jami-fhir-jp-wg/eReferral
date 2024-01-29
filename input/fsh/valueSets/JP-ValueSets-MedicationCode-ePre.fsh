@@ -1,3 +1,4 @@
+/*
 ValueSet: JP_MedicationCode_ePrescription
 Id: jp-medicationcode-eprescription
 Title: "JP MedicationCode ePrescription ValueSet"
@@ -15,3 +16,4 @@ Description: "医薬品処方コードの値セット 処方情報規格用"
 * include codes from system $JP_MedicationCodeYJ_CS
 * include codes from system $JP_MedicationCodeGS1_CS
 
+*/
