@@ -9,9 +9,9 @@ id: eReferral
 canonical: http://jpfhir.jp/fhir/eReferral
 name: "HL7Japan_JAMIeReferralImplementationGuide"
 title: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
-description: "0.9.7 (2023.05.17)"
+description: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
 status: active # draft | active | retired | unknown 
-version: 1.1.5
+version: 1.0.0-temp
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
