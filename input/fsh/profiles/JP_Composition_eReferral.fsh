@@ -444,7 +444,7 @@ and authorDepartment 0..1 MS
 * section[pdfSection].mode ..0
 * section[pdfSection].orderedBy ..0
 * section[pdfSection].entry 1..*
-* section[pdfSection].entry only Reference(DocumentReference or Binary)
+* section[pdfSection].entry only Reference(Binary)
 * section[pdfSection].entry ^short = "PDFファイルへの参照"
 * section[pdfSection].entry ^definition = "PDFファイルへの参照"
 * section[pdfSection].emptyReason ..1

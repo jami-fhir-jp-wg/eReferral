@@ -116,8 +116,8 @@ menu:
     表24 RelatedPersonリソース  患者関係者情報: eClinicalSummaryTables.html#tbl-24
     表25 ResearchStudyリソース  研究対象情報: eClinicalSummaryTables.html#tbl-25
     表26 ResearchSubjectリソース  研究対象情報: eClinicalSummaryTables.html#tbl-26
-  名前空間一覧: namespace.html
-  履歴情報: updateHistory.html
+  改訂履歴:
+   History: history.html
   Artifacts:
     Structures Resource Profiles: artifacts.html#structures-resource-profiles
     Structures Extension Definitions: artifacts.html#structures-extension-definitions
@@ -158,64 +158,91 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   no-validate:
     - '*/hl7.fhir.jp.core'
   special-url:
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_AllergyIntolerance_eClinicalSummary
+    - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_AllergyIntolerance_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_AllergyIntolerance_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Binary
+    - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Bundle_CLINS
     - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_CarePlan_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_CarePlan_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_CarePlan
     - http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Condition_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Consent_eClinicalSummary
+    - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Condition_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Condition_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Consent_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Consent
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Device_eClinicalSummary
+    - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_eCS_insurance
+    - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Coverage_eCS_publicPayment
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Device_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Device
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DeviceUseStatement_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_DeviceUseStatement_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_DeviceUseStatement
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_CDAdocument
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_DocumentReference_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_DocumentReference_CDAdocument
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_DocumentReference_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_DocumentReference
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Encounter_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_FamilyMemberHistory_eClinicalSummary
-    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Immunization_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_FamilyMemberHistory_eCS
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Immunization_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization
+    - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_MedicationRequest_CLINS_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_MedicationRequest_eCS
     - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_MedicationStatement_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_MedicationStatement_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationStatement
-    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Observation_Common
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Observation_Common_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary_department
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Organization_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Patient_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary_author
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Practitioner_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_PractitionerRole_eClinicalSummary_author
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_Procedure_eClinicalSummary
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_RelatedPerson_eClinicalSummary
+    - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Observation_LabResult_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Observation_LabResult_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Observation_Common_eCS
+    - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_Organization_eCS_coveragePayer
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS
+    - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Patient_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Patient_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS_author
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_PractitionerRole_eCS_author
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Procedure_eCS
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_RelatedPerson_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_RelatedPerson
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ResearchStudy_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_ResearchStudy_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchStudy
-    - http://jpfhir.jp/fhir/eClinicalSummary/StructureDefinition/JP_ResearchSubject_eClinicalSummary
+    - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_ResearchSubject_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ResearchSubject
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ServiceRequest
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Specimen
+    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationDosage_eCS
     - http://jpfhir.jp/fhir/eReferral/Extension/StructureDefinition/JP_Communication_CommunicationContent
+    - http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department
+    - http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_InstitutionNumber
     - http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/jlac10-specimen-codes
     - urn:oid:1.2.392.200250.2.2.20.30
     - urn:oid:1.2.392.200250.2.2.20.40
     - urn:oid:1.2.392.200250.2.2.30.10
     - urn:oid:1.2.392.200250.2.2.20.22
     - urn:oid:1.2.392.200250.2.2.20.32
-    - http://jpfhir.jp/fhir/core/CodeSystem/route-codes
-    - http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
+    - http://jpfhir.jp/fhir/ePrescription/CodeSystem/route-codes
+    - http://jpfhir.jp/fhir/clins/CodeSystem/BundleResourceType_CS
+    - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_CoreLabo_CS
+    - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_InfectionLabo_CS
+    - http://jpfhir.jp/fhir/clins/ValueSet/JP_ObservationLabResultLocalUncoded_CS
+    - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_Uncoded_CS
     - http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes
+    - http://loinc.org
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/communication-category
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-section
     - http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section
-    - urn:ietf:bcp:13
     - urn:oid:1.2.392.100495.20.3.61
     - http://jpfhir.jp/fhir/core/CodeSystem/practitioner-certificate-category
+    - http://jpfhir.jp/fhir/Common/CodeSystem/practitioner-role-category
     - urn:oid:1.2.392.100495.20.3.21
     - http://jpfhir.jp/fhir/ePrescription/CodeSystem/prescription-category
     - urn:oid:1.2.392.100495.20.3.71
+    - urn:oid:1.2.392.200250.2.2.2
+    - http://jpfhir.jp/fhir/eCS/CodeSystem/MedicationCodeNocoded_CS
+    - http://jpfhir.jp/fhir/clins/CodeSystem/JP_ehrshrs_indication
+    - http://jpfhir.jp/fhir/core/CodeSystem/JP_MedicalLicenseCertificate_CS
+    - http://jpfhir.jp/fhir/eCS/CodeSystem/observation-subcategory-cs
+    - http://jpfhir.jp/fhir/core/CodeSystem/JP_SimpleObservationCategory_CS
     - urn:oid:1.2.392.100495.20.3.22
     - urn:oid:1.2.392.100495.20.1.23
     - urn:oid:1.2.392.100495.20.2.101
@@ -234,6 +261,9 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/ePrescription/ValueSet/jami-ePreOrderUsageCode
     - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-medicationcode
     - http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes
-    - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-medicationcode-gs1-14
+    - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-gs1-14
+    - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-hot9
+    - http://jpfhir.jp/fhir/ePrescription/ValueSet/jp-drugCode-yj
+    - http://jpfhir.jp/fhir/eReferral/ValueSet/document-section
+    - http://jpfhir.jp/fhir/ePrescription/ValueSet/mhlw-drugCode-generalNameCode
     - http://jpfhir.jp/fhir/Common/ValueSet/mhlw-ePreCDA-insuranceCategory
-
