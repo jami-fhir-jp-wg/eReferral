@@ -69,15 +69,21 @@ Description: "不均等投与1日用法の医薬品処方１件　MedicationRequ
 * dosageInstruction[+].text = "１日３回　毎食後　７錠（４錠－２錠－１錠）"
 
 //080on_処方開始日(ARGdate) // extension
+* dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDosage_PeriodOfUse"
+* dosageInstruction[=].extension[=].valuePeriod.start = "2020-08-22"
+
 * dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DosageInstruction_UsageDuration"
 * dosageInstruction[=].extension[=].valueDuration = 7 'd' "日"
  // extension
 * dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V14NNNNN "不均等・１回目・４単位量"
-* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・４単位量"
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・４錠"
+
 * dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V22NNNNN "不均等・２回目・２単位量"
-* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・２錠"
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・２回目・２錠"
+
 * dosageInstruction[=].additionalInstruction[+] = urn:oid:1.2.392.200250.2.2.20.22#V31NNNNN "不均等・３回目・１単位量"
-* dosageInstruction[=].additionalInstruction[=].text = "不均等・１回目・１錠"
+* dosageInstruction[=].additionalInstruction[=].text = "不均等・３回目・１錠"
+
 * dosageInstruction[=].timing.repeat.boundsDuration = 7 'd' "日"
 
 * dosageInstruction[=].timing.code = urn:oid:1.2.392.200250.2.2.20.20#1013044400000000 "内服・経口・１日３回毎食後"

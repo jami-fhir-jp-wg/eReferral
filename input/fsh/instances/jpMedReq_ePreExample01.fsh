@@ -52,9 +52,9 @@ Description: "MedicationRequestリソース　（診療情報提供書　内服�
 * identifier[requestIdentifier].value = "1311234567-2020-00123456"
 * intent = #order
 
-* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ「サワイ」・沢井製薬"
+* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ「サワイ」"
 
-* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ「サワイ」・沢井製薬"
+* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ「サワイ」"
 
 //* medicationCodeableConcept.coding[+] = ARGlocalsystem#ARGcode "ARGname"
 
@@ -68,8 +68,8 @@ Description: "MedicationRequestリソース　（診療情報提供書　内服�
 * dosageInstruction[+].text = "内服・経口・１日３回朝昼夕食後"
 
 //080on_処方開始日(ARGdate)
-* dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDosage_UsageDuration"
-* dosageInstruction[=].extension[=].valueDuration = 7 'd' "日"
+* dosageInstruction[=].extension[+].url = "http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationDosage_PeriodOfUse"
+* dosageInstruction[=].extension[=].valuePeriod.start = "2020-08-22"
 
 //100or_処方補足用法(ARGusageauxcode,ARGusageauxname)
 * dosageInstruction[=].timing.repeat.boundsDuration = 7 'd' "日"
