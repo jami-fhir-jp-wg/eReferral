@@ -97,7 +97,7 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[practitioners].request ..0
 * entry[practitioners].response ..0
 
-* entry[organization].resource only JP_Organization_eCS_fromOrganization
+* entry[organization].resource only JP_Organization_eCS
 * entry[organization] ^short = "紹介先／元医療機関／文書作成機関／文書管理機関"
 * entry[organization] ^definition = "紹介先／元医療機関"
 * entry[organization].search ..0
