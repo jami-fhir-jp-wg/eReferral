@@ -181,12 +181,10 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_DocumentReference
     - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Encounter_eCS
     - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_FamilyMemberHistory_eCS
-    - http://jpfhir.jp/fhir/core/StructureDefinition/JP_ImagingStudy_Radiology_eCS
     - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Immunization_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_Immunization
     - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_MedicationRequest_CLINS_eCS
     - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_MedicationRequest_eCS
-    - http://jpfhir.jp/fhir/ePrescription/StructureDefinition/JP_MedicationRequest_ePrescriptionData
     - http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_MedicationStatement_eCS
     - http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationStatement
     - http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Observation_LabResult_eCS
@@ -216,6 +214,15 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_InstitutionNumber
     - http://jpfhir.jp/fhir/core/Extension/StructureDefinition/JP_MedicationRequest_DispenseRequest_InstructionForDispense
     - http://jpfhir.jp/fhir/eCheckup/CodeSystem/jlac10-specimen-codes
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/attachement-format
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/encounter-category
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/checkup-encounter-type
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/jlac10-specimen-codes
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/observationGroup-codes
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/checkup-report-category
+    - http://jpfhir.jp/fhir/eCheckup/CodeSystem/section-code
+    - urn:oid:1.2.392.200119.6.208
+    - urn:oid:1.2.392.200119.6.1002
     - urn:oid:1.2.392.200250.2.2.20.30
     - urn:oid:1.2.392.200250.2.2.20.40
     - urn:oid:1.2.392.200250.2.2.30.10
@@ -258,6 +265,70 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:oid:1.2.392.100495.20.2.62
     - urn:oid:1.2.392.100495.20.2.12
     - urn:oid:1.2.392.100495.20.2.41
+    - urn:oid:2.16.840.1.113883.2.2.1.6.1001
+    - urn:oid:1.2.392.200119.6.1008
+    - urn:oid:1.2.392.200119.6.18030
+    - urn:oid:1.2.392.200119.6.18040
+    - urn:oid:1.2.392.200119.6.18050
+    - urn:oid:1.2.392.200119.6.18060
+    - urn:oid:1.2.392.200119.6.18080
+    - urn:oid:1.2.392.200119.6.18090
+    - urn:oid:1.2.392.200119.6.18100
+    - urn:oid:1.2.392.200119.6.18120
+    - urn:oid:1.2.392.200119.6.18130
+    - urn:oid:1.2.392.200119.6.19010
+    - urn:oid:1.2.392.200119.6.19020
+    - urn:oid:1.2.392.200119.6.19030
+    - urn:oid:1.2.392.200119.6.19040
+    - urn:oid:1.2.392.200119.6.19050
+    - urn:oid:1.2.392.200119.6.19060
+    - urn:oid:1.2.392.200119.6.19070
+    - urn:oid:1.2.392.200119.6.19080
+    - urn:oid:1.2.392.200119.6.19090
+    - urn:oid:1.2.392.200119.6.19100
+    - urn:oid:1.2.392.200119.6.19110
+    - urn:oid:1.2.392.200119.6.19120
+    - urn:oid:1.2.392.200119.6.19130
+    - urn:oid:1.2.392.200119.6.19140
+    - urn:oid:1.2.392.200119.6.19150
+    - urn:oid:1.2.392.200119.6.2001
+    - urn:oid:1.2.392.200119.6.2002
+    - urn:oid:1.2.392.200119.6.2003
+    - urn:oid:1.2.392.200119.6.2004
+    - urn:oid:1.2.392.200119.6.2007
+    - urn:oid:1.2.392.200119.6.2008
+    - urn:oid:1.2.392.200119.6.2009
+    - urn:oid:1.2.392.200119.6.2100
+    - urn:oid:1.2.392.200119.6.2102
+    - urn:oid:1.2.392.200119.6.2103
+    - urn:oid:1.2.392.200119.6.2110
+    - urn:oid:1.2.392.200119.6.2111
+    - urn:oid:1.2.392.200119.6.2112
+    - urn:oid:1.2.392.200119.6.2113
+    - urn:oid:1.2.392.200119.6.2115
+    - urn:oid:1.2.392.200119.6.2116
+    - urn:oid:1.2.392.200119.6.2120
+    - urn:oid:1.2.392.200119.6.2122
+    - urn:oid:1.2.392.200119.6.2130
+    - urn:oid:1.2.392.200119.6.2131
+    - urn:oid:1.2.392.200119.6.2140
+    - urn:oid:1.2.392.200119.6.2141
+    - urn:oid:1.2.392.200119.6.2150
+    - urn:oid:1.2.392.200119.6.2202
+    - urn:oid:1.2.392.200119.6.2301
+    - urn:oid:1.2.392.200119.6.24020
+    - urn:oid:1.2.392.200119.6.24040
+    - urn:oid:1.2.392.200119.6.24050
+    - urn:oid:1.2.392.200119.6.24060
+    - urn:oid:1.2.392.200119.6.24080
+    - urn:oid:1.2.392.200119.6.2501
+    - urn:oid:1.2.392.200119.6.2502
+    - urn:oid:1.2.392.200119.6.3001
+    - urn:oid:1.2.392.200119.6.1007
+    - urn:oid:1.2.392.200119.6.1005
+    - http://jpfhir.jp/fhir/eCheckup/ValueSet/encounter-category
+    - http://jpfhir.jp/fhir/eCheckup/ValueSet/checkup-encounter-type
+    - http://jpfhir.jp/fhir/clins/ValueSet/BundleResourceType_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_CoreLabo_abo_bld_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_CoreLabo_alb_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_CoreLabo_alp_VS
@@ -365,7 +436,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_InfectionLabo_TPQUANTCOI_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_InfectionLabo_TPQUANTRESULT_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_InfectionLabo_TPRESULT_VS
+    - http://jpfhir.jp/fhir/eCS/CodeSystem/MedicationCodeNocoded_VS
     - http://jpfhir.jp/fhir/eCS/ValueSet/JP_eCS_ObservationLabResultCode_VS
     - http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes
     - http://jpfhir.jp/fhir/eReferral/ValueSet/document-section
- 
