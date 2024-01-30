@@ -7,7 +7,7 @@
 # =======================================================
 require "json"
 # リソース格納フォルダ
-genenareted = "./fsh-generated/resources/"
+genenareted = "./fsh-generated/package/"
 # sushi-configパス
 sushiconfigPath="sushi-config.yaml"
 
