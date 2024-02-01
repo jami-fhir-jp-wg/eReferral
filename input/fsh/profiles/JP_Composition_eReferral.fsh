@@ -480,7 +480,7 @@ and authorDepartment 0..1 MS
 * section[compositionSection].code.coding.display MS
 * section[compositionSection].code.coding.userSelected ..0
 * section[compositionSection].code.text ..0
-* section[compositionSection].text ..0 
+* section[compositionSection].text 0.. 
 * section[compositionSection].mode ..0
 * section[compositionSection].orderedBy ..0
 * section[compositionSection].emptyReason ..1  MS
@@ -499,7 +499,7 @@ and authorDepartment 0..1 MS
     and pastIllnessSection    0..1    MS  // 既往歴セクション pastIllnessSection
     and allergiesIIntoleranceSection      0..1    MS  // アレルギー・不耐性反応セクション allergiesIIntoleranceSection
     and familiyHistorySection     0..1    MS  // 家族歴セクション familiyHistorySection
-    and admissinoPhysicalStatusSection    0..1    MS  // 身体所見セクション   admissinoPhysicalStatusSection
+    and admissionPhysicalStatusSection    0..1    MS  // 身体所見セクション   admissionPhysicalStatusSection
     and infectiousDiseaseInformationSection   0..1    MS  //  感染症情報セクション    infectiousDiseaseInformationSection"
     and socialHistorySection      0..1    MS  //  社会歴・生活習慣セクション  socialHistorySection
 	and immunizationSection   0..1    MS  //  予防接種歴セクション    immunizationSection
@@ -792,53 +792,53 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section[familiyHistorySection].emptyReason ..1
 * section[compositionSection].section[familiyHistorySection].section ..0
 ////
-* section[compositionSection].section[admissinoPhysicalStatusSection]
-* section[compositionSection].section[admissinoPhysicalStatusSection] ^short = "身体所見セクション"
-* section[compositionSection].section[admissinoPhysicalStatusSection] ^definition = "身体所見セクション"
-* section[compositionSection].section[admissinoPhysicalStatusSection].title 1.. MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].title = "身体所見"
-* section[compositionSection].section[admissinoPhysicalStatusSection].title ^short = "セクションタイトル"
-* section[compositionSection].section[admissinoPhysicalStatusSection].title ^definition = "セクションタイトル。固定値。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code 1.. MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].code ^short = "セクション区分コード"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code ^definition = "セクション区分コード"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding 1..1 MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.system 1.. MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section" (exactly)
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.system ^short = "セクション区分コードのコード体系"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code 1.. MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code = #610 (exactly)
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code ^short = "セクション区分のコード値"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display = "身体所見セクション"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display ^short = "セクション区分コードの表示名"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display ^definition = "セクション区分コードの表示名。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.display MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.coding.userSelected ..0
-* section[compositionSection].section[admissinoPhysicalStatusSection].code.text ..0
-* section[compositionSection].section[admissinoPhysicalStatusSection].text ^short = "このセクションに含められるすべてのテキスト（叙述的記述）表現"
-* section[compositionSection].section[admissinoPhysicalStatusSection].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].text MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].text.status MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].text.status = #additional (exactly)
-* section[compositionSection].section[admissinoPhysicalStatusSection].text.status ^short = "セクションの内容作成状態コード"
-* section[compositionSection].section[admissinoPhysicalStatusSection].text.status ^definition = "generated | extensions | additional | empty　から　\"additional\" の固定値。このセクションに含められるすべてのentry要素による情報に加えて、それらで表現し尽くせていない情報も含めた完全な叙述表現であることを示す。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].text.div ^short = "xhtml簡略形式に従った叙述記述データ"
-* section[compositionSection].section[admissinoPhysicalStatusSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
-* section[compositionSection].section[admissinoPhysicalStatusSection].mode ..0
-* section[compositionSection].section[admissinoPhysicalStatusSection].orderedBy ..0
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry 0..* MS
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry only Reference(JP_Observation_Common)
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry ^short = "身体所見を記述したObservationリソースを参照"
-* section[compositionSection].section[admissinoPhysicalStatusSection].entry ^definition = "身体所見を記述して参照する。
+* section[compositionSection].section[admissionPhysicalStatusSection]
+* section[compositionSection].section[admissionPhysicalStatusSection] ^short = "身体所見セクション"
+* section[compositionSection].section[admissionPhysicalStatusSection] ^definition = "身体所見セクション"
+* section[compositionSection].section[admissionPhysicalStatusSection].title 1.. MS
+* section[compositionSection].section[admissionPhysicalStatusSection].title = "身体所見"
+* section[compositionSection].section[admissionPhysicalStatusSection].title ^short = "セクションタイトル"
+* section[compositionSection].section[admissionPhysicalStatusSection].title ^definition = "セクションタイトル。固定値。"
+* section[compositionSection].section[admissionPhysicalStatusSection].code 1.. MS
+* section[compositionSection].section[admissionPhysicalStatusSection].code ^short = "セクション区分コード"
+* section[compositionSection].section[admissionPhysicalStatusSection].code ^definition = "セクション区分コード"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding 1..1 MS
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.system 1.. MS
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.system = "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section" (exactly)
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.system ^short = "セクション区分コードのコード体系"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.system ^definition = "セクション区分コードのコード体系を識別するURI。固定値。"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.code 1.. MS
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.code = #610 (exactly)
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.code ^short = "セクション区分のコード値"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.code ^definition = "セクション区分のコード値。\r\n固定値。"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.display = "身体所見セクション"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.display ^short = "セクション区分コードの表示名"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.display ^definition = "セクション区分コードの表示名。"
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.display MS
+* section[compositionSection].section[admissionPhysicalStatusSection].code.coding.userSelected ..0
+* section[compositionSection].section[admissionPhysicalStatusSection].code.text ..0
+* section[compositionSection].section[admissionPhysicalStatusSection].text ^short = "このセクションに含められるすべてのテキスト（叙述的記述）表現"
+* section[compositionSection].section[admissionPhysicalStatusSection].text ^definition = "本セクションの内容をテキストで表現した文字列。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。"
+* section[compositionSection].section[admissionPhysicalStatusSection].text MS
+* section[compositionSection].section[admissionPhysicalStatusSection].text.status MS
+* section[compositionSection].section[admissionPhysicalStatusSection].text.status = #additional (exactly)
+* section[compositionSection].section[admissionPhysicalStatusSection].text.status ^short = "セクションの内容作成状態コード"
+* section[compositionSection].section[admissionPhysicalStatusSection].text.status ^definition = "generated | extensions | additional | empty　から　\"additional\" の固定値。このセクションに含められるすべてのentry要素による情報に加えて、それらで表現し尽くせていない情報も含めた完全な叙述表現であることを示す。"
+* section[compositionSection].section[admissionPhysicalStatusSection].text.div ^short = "xhtml簡略形式に従った叙述記述データ"
+* section[compositionSection].section[admissionPhysicalStatusSection].text.div ^definition = "本セクションの内容を xhtml 形式のテキストで表現した文字列。内容を省略しても構わない。 \r\nこのデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。\r\nテキストは構造化された情報から自動的にシステムが生成したものとし、それ以上に情報を追加してはならない。"
+* section[compositionSection].section[admissionPhysicalStatusSection].mode ..0
+* section[compositionSection].section[admissionPhysicalStatusSection].orderedBy ..0
+* section[compositionSection].section[admissionPhysicalStatusSection].entry 0..* MS
+* section[compositionSection].section[admissionPhysicalStatusSection].entry only Reference(JP_Observation_Common)
+* section[compositionSection].section[admissionPhysicalStatusSection].entry ^short = "身体所見を記述したObservationリソースを参照"
+* section[compositionSection].section[admissionPhysicalStatusSection].entry ^definition = "身体所見を記述して参照する。
                                                                 1つの身体所見につき1つのObservationリソースで記述されたものを参照する。
                                                                 記述すべき身体所見が存在しないことを明示的に記述する（「特になし」など）場合にはentry要素は出現せず、emptyReasonに nilknown を記述する。
                                                                 身体所見を聴取しようとしていない場合でそれを明示的に記述する（「取得せず」など）場合にはentry要素は出現せず、emptyReasonに notasked を記述する。
                                                                 情報が患者やシステムから取得できない状況でそれを明示的に記述する（「取得できず」「不明」など）場合にはentry要素は出現せず、emptyReasonに unavailable を記述する。
                                                                 "
-* section[compositionSection].section[admissinoPhysicalStatusSection].emptyReason ..1
-* section[compositionSection].section[admissinoPhysicalStatusSection].section ..0
+* section[compositionSection].section[admissionPhysicalStatusSection].emptyReason ..1
+* section[compositionSection].section[admissionPhysicalStatusSection].section ..0
 ////
 * section[compositionSection].section[infectiousDiseaseInformationSection]
 * section[compositionSection].section[infectiousDiseaseInformationSection] ^short = "感染症情報セクション"

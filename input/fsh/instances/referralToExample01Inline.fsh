@@ -98,8 +98,8 @@ Description: "紹介先医療機関の診療科情報　例"
 
 * name = "循環器内科"
 
-* partOf.reference = "referralToOrganizationExample01"
-//* partOf.reference = "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441"
+//* partOf.reference = "referralToOrganizationExample01"
+* partOf.reference = "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441"
 
 //--------------
 Instance: referralToPractitionerExample01Inline

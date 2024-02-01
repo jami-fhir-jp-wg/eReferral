@@ -14,7 +14,7 @@ cp ../forPackageRelease/package-diff.json package/package.json
 mkdir -p ../ExampleJson
 rm -rf ../ExampleJson
 mkdir ../ExampleJson
-mv package/*GOFSH* ../ExampleJson/
+mv package/Bundle* ../ExampleJson/
 gtar czf jp-eReferral.r4.tgz package
 rm ../packages_snapshot/jp-eReferral.r4.tgz
 rm ../pkgValidation/jp-eReferral.r4.tgz

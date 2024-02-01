@@ -29,15 +29,7 @@
           <td>ERROR</td>
           <td/>
           <td>Structural Issue</td>
-          <td>相対URLは[ResourceName]/[id]の形式でなければならない。 referralFromOrganizationExample01 に遭遇しました</td>
-          <td/>
-          <td>No display for Extension</td>
-        </tr>
-        <tr>
-          <td>ERROR</td>
-          <td/>
-          <td>Structural Issue</td>
-          <td>相対URLは[ResourceName]/[id]の形式でなければならない。 referralToOrganizationExample01 に遭遇しました</td>
+          <td>プロファイルhttp://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral、要素は複数のスライスに一致します - referralFromOrganization, referralFromDepartment</td>
           <td/>
           <td>No display for Extension</td>
         </tr>
@@ -70,22 +62,6 @@
           <td/>
           <td>Structural Issue</td>
           <td>Bundle.entry:composition: 最小必要値 = 1、見つかった値 = 0 (from http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral)</td>
-          <td/>
-          <td>No display for Extension</td>
-        </tr>
-        <tr>
-          <td>ERROR</td>
-          <td/>
-          <td>Structural Issue</td>
-          <td>Composition.section:referralFromSection: 最小必要値 = 1、見つかった値 = 0 (from http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral)</td>
-          <td/>
-          <td>No display for Extension</td>
-        </tr>
-        <tr>
-          <td>ERROR</td>
-          <td/>
-          <td>Structural Issue</td>
-          <td>Composition.section:compositionSection.text: 最大許容値 = 0、見つかった値 = 1 (from http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral)</td>
           <td/>
           <td>No display for Extension</td>
         </tr>
@@ -152,36 +128,28 @@
     <valueString value="ExampleJson/Bundle-BundleReferralExample01.json"/>
   </extension>
   <issue>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
+      <valueInteger value="57"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
+      <valueInteger value="16"/>
+    </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source">
       <valueString value="InstanceValidator"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id">
-      <valueCode value="Reference_REF_Format2"/>
+      <valueCode value="Validation_VAL_Profile_MatchMultiple"/>
     </extension>
     <severity value="error"/>
     <code value="structure"/>
     <details>
-      <text value="相対URLは[ResourceName]/[id]の形式でなければならない。 referralFromOrganizationExample01 に遭遇しました"/>
+      <text value="プロファイルhttp://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral、要素は複数のスライスに一致します - referralFromOrganization, referralFromDepartment"/>
     </details>
-    <expression value="Bundle.entry[8].resource/*Organization/referralFromOrganizationDeptExample01Inline*/.partOf"/>
-  </issue>
-  <issue>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source">
-      <valueString value="InstanceValidator"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id">
-      <valueCode value="Reference_REF_Format2"/>
-    </extension>
-    <severity value="error"/>
-    <code value="structure"/>
-    <details>
-      <text value="相対URLは[ResourceName]/[id]の形式でなければならない。 referralToOrganizationExample01 に遭遇しました"/>
-    </details>
-    <expression value="Bundle.entry[7].resource/*Organization/referralToOrganizationDeptExample01Inline*/.partOf"/>
+    <expression value="Bundle.entry[0].resource/*Composition/compositionReferralExample01Inline*/.section[0].entry[0]"/>
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="300"/>
+      <valueInteger value="90"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="16"/>
@@ -201,7 +169,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="569"/>
+      <valueInteger value="581"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="6"/>
@@ -221,7 +189,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="635"/>
+      <valueInteger value="647"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="6"/>
@@ -261,47 +229,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="19"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
-      <valueInteger value="8"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source">
-      <valueString value="InstanceValidator"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id">
-      <valueCode value="Validation_VAL_Profile_Minimum"/>
-    </extension>
-    <severity value="error"/>
-    <code value="structure"/>
-    <details>
-      <text value="Composition.section:referralFromSection: 最小必要値 = 1、見つかった値 = 0 (from http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral)"/>
-    </details>
-    <expression value="Bundle.entry[0].resource/*Composition/compositionReferralExample01Inline*/"/>
-  </issue>
-  <issue>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="41"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
-      <valueInteger value="12"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-source">
-      <valueString value="InstanceValidator"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-message-id">
-      <valueCode value="Validation_VAL_Profile_Maximum"/>
-    </extension>
-    <severity value="error"/>
-    <code value="structure"/>
-    <details>
-      <text value="Composition.section:compositionSection.text: 最大許容値 = 0、見つかった値 = 1 (from http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral)"/>
-    </details>
-    <expression value="Bundle.entry[0].resource/*Composition/compositionReferralExample01Inline*/.section[0]"/>
-  </issue>
-  <issue>
-    <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="458"/>
+      <valueInteger value="470"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="10"/>
@@ -321,7 +249,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="471"/>
+      <valueInteger value="483"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="14"/>
@@ -341,7 +269,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="783"/>
+      <valueInteger value="795"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="10"/>
@@ -361,7 +289,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="458"/>
+      <valueInteger value="470"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="10"/>
@@ -378,7 +306,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="471"/>
+      <valueInteger value="483"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="14"/>
@@ -395,7 +323,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="783"/>
+      <valueInteger value="795"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="10"/>
@@ -412,7 +340,7 @@
   </issue>
   <issue>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-line">
-      <valueInteger value="367"/>
+      <valueInteger value="379"/>
     </extension>
     <extension url="http://hl7.org/fhir/StructureDefinition/operationoutcome-issue-col">
       <valueInteger value="12"/>
