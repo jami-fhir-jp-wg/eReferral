@@ -33,7 +33,7 @@ Description: "JPPatient患者情報（田中"
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_Patient_eCS"
+* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Patient_eCS"
 
 * identifier.system = "urn:oid:1.2.392.200119.6.102.11234567890"
 * identifier.value = "12345778"

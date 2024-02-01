@@ -40,7 +40,7 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/core/StructureDefinition/JP_MedicationRequest_eCS"
+* meta.profile[+] = $JP_MedicationRequest_eCS
 
 
 * identifier[rpNumber].system = "urn:oid:1.2.392.100495.20.3.81"
@@ -52,9 +52,9 @@ Description: "内服　処方例１件　MedicationRequestリソースのイン�
 
 * intent = #order
 
-* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ「サワイ」・沢井製薬"
+* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.200119.4.403.1#103831601 "カルボシステイン錠２５０ｍｇ「サワイ」"
 
-* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ「サワイ」・沢井製薬"
+* medicationCodeableConcept.coding[+] = urn:oid:1.2.392.100495.20.1.73#2233002F1280 "カルボシステイン錠２５０ｍｇ「サワイ」"
 
 //* medicationCodeableConcept.coding[+] = ARGlocalsystem#ARGcode "ARGname"
 

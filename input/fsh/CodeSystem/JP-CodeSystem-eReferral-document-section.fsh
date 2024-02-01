@@ -1,3 +1,20 @@
+// 医療文書区分コード
+CodeSystem:  JP_codeSystem_documentTypeCode
+Id:   jp-codeSystem-documentTypeCode
+Description: "FHIR文書の文書区分（医療文書全般）"
+* ^url = "http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes"
+// * ^valueSet = "http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes"
+* ^title = "FHIR文書の文書区分（医療文書全般）"
+* ^status = #active
+* ^experimental = false
+* ^content = #complete
+* ^caseSensitive = false
+* #JPGCHKUP01 "健診結果報告書"
+* #JPMCHKUP01 "自治体検診結果報告書"
+* #18842-5 "退院時サマリー"
+* #57133-1 "診療情報提供書"
+* #57833-6 "処方箋"
+
 // 診療情報提供書セクション区分コード
 CodeSystem: JP_codeSystem_eReferral_document_section
 Id: jp-codeSystem-eReferral-document-section

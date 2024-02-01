@@ -211,7 +211,14 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[binaryData] ^short = "各種備考参照情報を記述したBinaryリソースを参照"
 * entry[binaryData] ^definition = "各種備考参照情報をBinaryリソースで記述して参照する。"
 
-* entry[bundleData].resource only  Bundle
+* entry[bundleData].resource only  JP_Bundle
 * entry[bundleData] ^short = "各種のBudle文書"
 * entry[bundleData] ^definition = "各種のBudle文書を参照する。"
 
+Profile:        JP_Bundle
+Parent:			Bundle
+Id:             JP-Bundle
+Description:    "Derived Profile from JP-Core"
+* ^url = "http://jpfhir.jp/fhir/eRegerral/StructureDefinition/JP_Bundle"
+* ^date = "2023-03-31"
+* meta.lastUpdated 0.. MS

@@ -54,7 +54,7 @@ Description: "構成情報サンプル　composition"
 * event.code.text = "診療情報提供書発行"
 * event.period.start = "2020-08-21"
 
-* section[+].title = "紹介先情報"
+* section[0].title = "紹介先情報"
 * section[=].code = $referral-section#910 "紹介先情報セクション"
 * section[=].text.status = #additional
 * section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">東京第一テスト病院</div>"

@@ -20,7 +20,7 @@ publisher:
   name: 管理団体：（一社）日本HL7協会、（一社）日本医療情報学会.
   url: http://jpfhir.jp
   email: office@hlfhir.jp
-copyright:  （一社）日本HL7協会、（一社）日本医療情報学会.
+copyright:  （一社）日本HL7協会、（一社）日本医療情報学会. CC(Creative Commons) BY-ND 4.0
 jurisdiction: 'urn:iso:std:iso:3166-2#JP'
 dependencies:
   jp-core.r4:
@@ -222,11 +222,13 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:oid:1.2.392.200119.6.208
     - urn:oid:1.2.392.200119.6.1002
     - http://jpfhir.jp/fhir/Common/CodeSystem/admit-Source
+    - http://jpfhir.jp/fhir/CarePlan/CodeSystem/category
     - http://jpfhir.jp/fhir/clins/CodeSystem/BundleResourceType_CS
     - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_CoreLabo_CS
     - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_InfectionLabo_CS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_ObservationLabResultLocalUncoded_CS
     - http://jpfhir.jp/fhir/clins/CodeSystem/JP_CLINS_ObsLabResult_Uncoded_CS
+    - http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes
     - http://loinc.org
     - http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section
     - urn:oid:1.2.392.200250.2.2.2
@@ -298,6 +300,8 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:oid:1.2.392.200119.6.1005
     - http://jpfhir.jp/fhir/eCheckup/ValueSet/encounter-category
     - http://jpfhir.jp/fhir/eCheckup/ValueSet/checkup-encounter-type
+    - http://jpfhir.jp/fhir/CarePlan/ValueSet/category
+    - http://jpfhir.jp/fhir/Common/ValueSet/admit-Source
     - http://jpfhir.jp/fhir/clins/ValueSet/BundleResourceType_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_CoreLabo_abo_bld_VS
     - http://jpfhir.jp/fhir/clins/ValueSet/JP_CLINS_ObsLabResult_CoreLabo_alb_VS
