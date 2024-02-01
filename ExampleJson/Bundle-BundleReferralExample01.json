@@ -20,10 +20,10 @@
         "resourceType": "Composition",
         "id": "compositionReferralExample01Inline",
         "meta": {
+          "lastUpdated": "2021-11-26T10:00:00+09:00",
           "profile": [
             "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
-          ],
-          "lastUpdated": "2021-11-26T10:00:00+09:00"
+          ]
         },
         "status": "final",
         "title": "診療情報提供書",

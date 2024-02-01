@@ -38,7 +38,7 @@ Description:  "診療情報提供書情報のリソース構成情報と文書�
 * ^status = #active
 * meta.lastUpdated 1.. MS
 * meta.profile 1.. MS
-* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
+//* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"

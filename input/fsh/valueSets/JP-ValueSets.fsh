@@ -18,5 +18,6 @@ Title: "FHIR文書の文書区分（医療文書）"
 Description: "FHIR文書の文書区分（医療文書全般）"
 * ^url = "http://jpfhir.jp/fhir/Common/ValueSet/doc-typecodes"
 * ^status = #active
+* ^experimental = false
 * include codes from system http://jpfhir.jp/fhir/Common/CodeSystem/doc-typecodes
 
