@@ -30,12 +30,12 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
-            "valueString": "ARGcode"
+            "valueString": "1.0"
           }
         ],
         "identifier": {
           "system": "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier",
-          "value": "ARGcode"
+          "value": "1311234567-2021-12345678"
         },
         "section": [
           {

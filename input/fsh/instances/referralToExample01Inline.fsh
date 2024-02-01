@@ -43,7 +43,7 @@ Description: "紹介先医療機関情報　例"
 // 002or_ValidationProfile(ARGmetaprofile)
 
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
+//* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS"
 
 //
 //--------------
@@ -87,7 +87,7 @@ Description: "紹介先医療機関の診療科情報　例"
 
 //002or_ValidationProfile(ARGmetaprofile)
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department"
+//* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department"
 
 //
 * type[+].coding.system = "http://terminology.hl7.org/CodeSystem/organization-type"
@@ -110,7 +110,7 @@ Description: "紹介先医療機関の医師情報　例"
 
 // 002or_ValidationProfile(ARGmetaprofile)
 * meta.lastUpdated = "2021-11-26T10:00:00+09:00"
-* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS"
+//* meta.profile[+] = "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Practitioner_eCS"
 
 * name[+].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation"
 * name[=].extension.valueCode = #IDE
