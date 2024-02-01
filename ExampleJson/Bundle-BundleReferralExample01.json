@@ -60,11 +60,6 @@
                 "display": "紹介元医療機関"
               },
               {
-                "reference": "urn:uuid:2e979bec-720b-4e36-8eb9-ebe661172af3",
-                "type": "Organization",
-                "display": "紹介元診療科"
-              },
-              {
                 "reference": "urn:uuid:3e6a0ba2-d781-4fd7-9de6-e077b690daed",
                 "type": "Practitioner",
                 "display": "紹介元医師"
@@ -91,11 +86,6 @@
                 "reference": "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441",
                 "type": "Organization",
                 "display": "紹介先医療機関"
-              },
-              {
-                "reference": "urn:uuid:9f92f003-69e6-4983-85eb-fb49a3110b59",
-                "type": "Organization",
-                "display": "紹介先診療科"
               },
               {
                 "reference": "urn:uuid:f11535c2-043d-43b6-bf99-b8298ea3c946",

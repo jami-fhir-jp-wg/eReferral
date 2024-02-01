@@ -33,7 +33,7 @@ and patient 1..1 MS  //  患者情報
 and practitioners 1.. MS
 and organization 1.. MS
 //and organizationFrom 1..* MS
-and department 0.. MS
+//and department 0.. MS
 //and departmentOfissuer  0..* MS
 //and referralDoctor 1..* MS
 //and cdaDocument 0..1 MS
@@ -110,14 +110,14 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 //* entry[organizationFrom].search ..0
 //* entry[organizationFrom].request ..0
 //* entry[organizationFrom].response ..0
-
+/*
 * entry[department].resource only JP_Organization_eCS_department
 * entry[department] ^short = "紹介先／元医療機関／文書作成機関の診療科"
 * entry[department] ^definition = "紹介先／元医療機関／文書作成機関の診療科"
 * entry[department].search ..0
 * entry[department].request ..0
 * entry[department].response ..0
-
+*/
 /*
 * entry[departmentOfissuer].resource only  JP-Organization-eCS-departmentOfissuer
 * entry[departmentOfissuer] ^short = "紹介元文書作成機関の診療科"

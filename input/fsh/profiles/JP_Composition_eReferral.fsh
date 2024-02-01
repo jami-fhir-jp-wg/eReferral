@@ -135,7 +135,7 @@ and authorDepartment 0..1 MS
 
 * author ^short = "文書作成責任者と文書作成機関とへの参照。"
 * author ^definition = "文書作成責任者を表すPractitionerリソースへの参照、および,文書作成機関か、または文書作成機関の診療科と文書作成機関を表すOrganizationリソースへの参照の2つのReferenceを繰り返す。"
-* author only  Reference(JP_Practitioner_eCS or JP_Organization_eCS or JP_Organization_eCS_department)
+* author only  Reference(JP_Practitioner_eCS or JP_Organization_eCS)
  
 * title 1..1 MS
 * title = "診療情報提供書" (exactly)
@@ -219,7 +219,7 @@ and authorDepartment 0..1 MS
 * section[referralToSection].entry  ^slicing.rules = #open
 * section[referralToSection].entry contains
     referralToOrganization  1..1 MS
-    and referralToDepartment    0..1 MS
+//    and referralToDepartment    0..1 MS
     and referralToDoctor    0..1 MS
 * section[referralToSection].entry[referralToOrganization] only Reference(JP_Organization_eCS)
 * section[referralToSection].entry[referralToOrganization] ^short = "紹介先医療機関"
@@ -275,7 +275,7 @@ and authorDepartment 0..1 MS
 * section[referralFromSection].entry  ^slicing.rules = #open
 * section[referralFromSection].entry contains
     referralFromOrganization  1..1 MS
-    and referralFromDepartment    0..1 MS
+//    and referralFromDepartment    0..1 MS
     and referralFromDoctor    0..1 MS
 //* section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eCS_issuer)
 * section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eCS)

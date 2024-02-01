@@ -70,10 +70,11 @@ Description: "構成情報サンプル　composition"
 
 
 // * section[=].entry[+].reference = "referralToOrganizationDeptExample01Inline"
+/*
 * section[referralToSection].entry[referralToDepartment].reference = "urn:uuid:9f92f003-69e6-4983-85eb-fb49a3110b59"
 * section[referralToSection].entry[referralToDepartment].type = "Organization"
 * section[referralToSection].entry[referralToDepartment].display = "紹介先診療科"
-
+*/
 
 // * section[=].entry[+].reference = "referralToPractitionerExample01Inline"
 * section[referralToSection].entry[referralToDoctor].reference = "urn:uuid:f11535c2-043d-43b6-bf99-b8298ea3c946"
@@ -92,10 +93,11 @@ Description: "構成情報サンプル　composition"
 
 
 // * section[=].entry[+].reference = "referralFromOrganizationDeptExample01Inline"
+/*
 * section[referralFromSection].entry[referralFromDepartment].reference = "urn:uuid:2e979bec-720b-4e36-8eb9-ebe661172af3"
 * section[referralFromSection].entry[referralFromDepartment].type = "Organization"
 * section[referralFromSection].entry[referralFromDepartment].display = "紹介元診療科"
-
+*/
 
 // * section[=].entry[+].reference = "referralFromPractitionerExample01Inline"
 * section[referralFromSection].entry[referralFromDoctor].reference = "urn:uuid:3e6a0ba2-d781-4fd7-9de6-e077b690daed"
