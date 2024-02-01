@@ -18,3 +18,13 @@ The link 'StructureDefinition-jp-organization.html#医療機関コード１０�
 if identifier.system is%
 %urn:ietf:rfc:3986%
 if identifier.system is ''urn:ietf:rfc:3986'', then the identifier.value must be a full URI (e.g. start with a scheme)%
+
+# Publisherのmarkdown チェック 
+The markdown contains content that appears%
+
+# Publisherのstring チェック 
+The string value contains text%
+
+#Best Practice Recommendation
+Best Practice Recommendation:%
+
