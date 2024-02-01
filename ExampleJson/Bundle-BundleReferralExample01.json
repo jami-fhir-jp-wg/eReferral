@@ -620,6 +620,18 @@
               "system": "urn:oid:1.2.392.100495.20.3.23",
               "value": "9876543"
             }
+          },
+          {
+            "url": "http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "26",
+                  "system": "urn:oid:1.2.392.200250.2.2.2",
+                  "display": "眼科"
+                }
+              ]
+            }
           }
         ],
         "identifier": [
@@ -686,6 +698,18 @@
               "system": "urn:oid:1.2.392.100495.20.3.23",
               "value": "1234567"
             }
+          },
+          {
+            "url": "http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "081",
+                  "system": "urn:oid:1.2.392.200250.2.2.2",
+                  "display": "循環器内科"
+                }
+              ]
+            }
           }
         ],
         "identifier": [
@@ -708,76 +732,6 @@
             "country": "JP"
           }
         ]
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:9f92f003-69e6-4983-85eb-fb49a3110b59",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "referralToOrganizationDeptExample01Inline",
-        "meta": {
-          "lastUpdated": "2021-11-26T10:00:00+09:00",
-          "profile": [
-            "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department"
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                "code": "dept"
-              }
-            ]
-          },
-          {
-            "coding": [
-              {
-                "system": "urn:oid:1.2.392.100495.20.2.51",
-                "code": "03"
-              }
-            ]
-          }
-        ],
-        "name": "循環器内科",
-        "partOf": {
-          "reference": "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441"
-        }
-      }
-    },
-    {
-      "fullUrl": "urn:uuid:2e979bec-720b-4e36-8eb9-ebe661172af3",
-      "resource": {
-        "resourceType": "Organization",
-        "id": "referralFromOrganizationDeptExample01Inline",
-        "meta": {
-          "lastUpdated": "2021-11-26T10:00:00+09:00",
-          "profile": [
-            "http://jpfhir.jp/fhir/eCS/StructureDefinition/JP_Organization_eCS_department"
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                "code": "dept"
-              }
-            ]
-          },
-          {
-            "coding": [
-              {
-                "system": "urn:oid:1.2.392.100495.20.2.51",
-                "code": "11"
-              }
-            ]
-          }
-        ],
-        "name": "眼科",
-        "partOf": {
-          "reference": "urn:uuid:8a888471-9781-4fb7-b5c4-b34afcdea638"
-        }
       }
     },
     {

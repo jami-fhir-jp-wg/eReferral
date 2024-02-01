@@ -35,11 +35,13 @@ Description: "■ 診療情報提供書　全体 Bundleリソース"
 * entry[+].fullUrl = "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441"
 * entry[=].resource = referralToOrganizationExample01Inline
 
+/*
 * entry[+].fullUrl = "urn:uuid:9f92f003-69e6-4983-85eb-fb49a3110b59"
 * entry[=].resource = referralToOrganizationDeptExample01Inline
 
 * entry[+].fullUrl = "urn:uuid:2e979bec-720b-4e36-8eb9-ebe661172af3"
 * entry[=].resource = referralFromOrganizationDeptExample01Inline
+*/
 
 * entry[+].fullUrl = "urn:uuid:3acc3dc7-c79b-41f1-8eea-ac4de9b664b8"
 * entry[=].resource = purposeReferralExample01Inline

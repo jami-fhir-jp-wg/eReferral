@@ -62,6 +62,10 @@ Description: "Organizationリソース　（診療情報提供書　紹介先　
 * extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.23"
 * extension[=].valueIdentifier.value = "1234567"
 
+// 診療科情報（循環器内科）
+* extension[+].url = $JP_eCS_Department (exactly)
+* extension[=].valueCodeableConcept = $JP_Department_SsMix_CS#081 "循環器内科"
+
 //
 * identifier[+].system = "http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no"
 * identifier[=].value = "1311234567"
@@ -78,7 +82,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介先　
 * address[=].country = "JP"
 
 //--------------
-
+/*
 Instance: referralToOrganizationDeptExample01
 InstanceOf: JP_Organization_eCS_department
 Usage: #example
@@ -99,7 +103,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介先　
 * name = "循環器内科"
 
 * partOf.reference = "Organization/referralToOrganizationExample01"
-
+*/
 //--------------
 Instance: referralToPractitionerExample01
 InstanceOf: JP_Practitioner_eCS

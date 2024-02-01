@@ -63,6 +63,10 @@ Description: "Organizationリソース　（診療情報提供書　紹介元　
 * extension[=].valueIdentifier.system = "urn:oid:1.2.392.100495.20.3.23"
 * extension[=].valueIdentifier.value = "9876543"
 
+// 診療科情報（眼科）
+* extension[+].url = $JP_eCS_Department (exactly)
+* extension[=].valueCodeableConcept = $JP_Department_SsMix_CS#26 "眼科"
+
 //
 * identifier[+].system = "http://jpfhir.jp/fhir/core/IdSystem/insurance-medical-institution-no"
 * identifier[=].value = "1319876543"
@@ -79,7 +83,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介元　
 * address[=].country = "JP"
 
 //--------------
-
+/*
 Instance: referralFromOrganizationDeptExample01
 InstanceOf: JP_Organization_eCS_department
 Usage: #example
@@ -100,6 +104,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介元　
 * name = "眼科"
 
 * partOf.reference = "Organization/referralFromOrganizationExample01"
+*/
 
 //--------------
 Instance: referralFromPractitionerExample01
