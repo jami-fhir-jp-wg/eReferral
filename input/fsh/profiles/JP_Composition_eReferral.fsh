@@ -29,7 +29,7 @@ Expression: "((section.code.coding.where(code = '200')).exists()) xor ((section.
 Profile: JP_Composition_eReferral
 Parent: Composition
 Id: JP-Composition-eReferral
-Description:  "処方情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
+Description:  "診療情報提供書情報のリソース構成情報と文書日付に関するCompositionの派生プロファイル"
 // * obeys checkValidCategoryTitle
 // * obeys checkValidCategory
 // * obeys checkValidSections
@@ -223,10 +223,10 @@ and authorDepartment 0..1 MS
     and referralToDoctor    0..1 MS
 * section[referralToSection].entry[referralToOrganization] only Reference(JP_Organization_eCS)
 * section[referralToSection].entry[referralToOrganization] ^short = "紹介先医療機関"
-* section[referralToSection].entry[referralToOrganization] ^definition = "紹介先医療機関"
-* section[referralToSection].entry[referralToDepartment] only Reference(JP_Organization_eCS_department)
-* section[referralToSection].entry[referralToDepartment] ^short = "紹介先医療機関の診療科"
-* section[referralToSection].entry[referralToDepartment] ^definition = "紹介先医療機関の診療科"
+* section[referralToSection].entry[referralToOrganization] ^definition = "紹介先医療機関.診療科情報をExtensionで含めることが可能。"
+// * section[referralToSection].entry[referralToDepartment] only Reference(JP_Organization_eCS_department)
+// * section[referralToSection].entry[referralToDepartment] ^short = "紹介先医療機関の診療科"
+// * section[referralToSection].entry[referralToDepartment] ^definition = "紹介先医療機関の診療科"
 * section[referralToSection].entry[referralToDoctor] only Reference(JP_Practitioner_eCS)
 * section[referralToSection].entry[referralToDoctor] ^short = "紹介先医師"
 * section[referralToSection].entry[referralToDoctor] ^definition = "紹介先医師"
@@ -280,10 +280,10 @@ and authorDepartment 0..1 MS
 //* section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eCS_issuer)
 * section[referralFromSection].entry[referralFromOrganization] only Reference(JP_Organization_eCS)
 * section[referralFromSection].entry[referralFromOrganization] ^short = "紹介元医療機関"
-* section[referralFromSection].entry[referralFromOrganization] ^definition = "紹介元医療機関"
-* section[referralFromSection].entry[referralFromDepartment] only Reference(JP_Organization_eCS_department)
-* section[referralFromSection].entry[referralFromDepartment] ^short = "紹介元医療機関の診療科"
-* section[referralFromSection].entry[referralFromDepartment] ^definition = "紹介元医療機関の診療科"
+* section[referralFromSection].entry[referralFromOrganization] ^definition = "紹介元医療機関.診療科情報をExtensionで含めることが可能。"
+// * section[referralFromSection].entry[referralFromDepartment] only Reference(JP_Organization_eCS_department)
+// * section[referralFromSection].entry[referralFromDepartment] ^short = "紹介元医療機関の診療科"
+// * section[referralFromSection].entry[referralFromDepartment] ^definition = "紹介元医療機関の診療科"
 * section[referralFromSection].entry[referralFromDoctor] only Reference(JP_Practitioner_eCS)
 * section[referralFromSection].entry[referralFromDoctor] ^short = "紹介元医師"
 * section[referralFromSection].entry[referralFromDoctor] ^definition = "紹介元医師"
