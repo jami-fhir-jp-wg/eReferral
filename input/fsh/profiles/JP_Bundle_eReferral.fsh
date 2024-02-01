@@ -8,7 +8,7 @@ Description: "診療情報提供書のための文書 Bundleリソース"
 * . ^definition = "診療情報提供書のための文書 Bundleリソース"
 * meta.lastUpdated 1.. MS
 * meta.profile 1.. MS
-* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
+//* meta.profile = "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Bundle_eReferral"
 
 * identifier 1.. MS
 * identifier ^short = "この文書Bundleの固定識別番号。Bundle作成時にシステムが設定し、サーバ間で移動、コピーされても変更されないID。"

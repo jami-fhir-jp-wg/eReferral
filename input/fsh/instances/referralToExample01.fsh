@@ -98,7 +98,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介先　
 
 * name = "循環器内科"
 
-* partOf.reference = "Organization/referralToOrganizationDeptExample01"
+* partOf.reference = "Organization/referralToOrganizationExample01"
 
 //--------------
 Instance: referralToPractitionerExample01

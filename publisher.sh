@@ -7,7 +7,7 @@ rm -rf input/fsh/eClinicalSummary/
 mkdir -p input/fsh/eClinicalSummary/
 cp -r eClinicalSummary/input/fsh/* input/fsh/eClinicalSummary/
 
-java -jar ../work/publisher_latest.jar  -ig ig.ini  -tx n/a
+java -jar ../work/publisher_latest.jar  -ig ig.ini  -tx n/a -nonetwork -resetTx
 
 rm -r ~/.fhir
 cp -r ~/.fhir.validation ~/.fhir

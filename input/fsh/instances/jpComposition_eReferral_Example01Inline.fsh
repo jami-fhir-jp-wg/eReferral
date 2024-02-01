@@ -59,54 +59,54 @@ Description: "構成情報サンプル　composition"
 * event.code.text = "診療情報提供書発行"
 * event.period.start = "2020-08-21"
 
-* section[0].title = "紹介先情報"
-* section[=].code = $referral-section#910 "紹介先情報セクション"
-* section[=].text.status = #additional
-* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">東京第一テスト病院</div>"
+* section[referralToSection].title = "紹介先情報"
+* section[referralToSection].code.coding = $referral-section#910 "紹介先情報セクション"
+* section[referralToSection].text.status = #additional
+* section[referralToSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">東京第一テスト病院</div>"
 // * section[=].entry[+].reference = "referralToOrganizationExample01Inline"
-* section[=].entry[+].reference = "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441"
-* section[=].entry[=].type = "Organization"
-* section[=].entry[=].display = "紹介先医療機関"
+* section[referralToSection].entry[referralToOrganization].reference = "urn:uuid:a44951be-cdaa-4c53-9e35-6be013da5441"
+* section[referralToSection].entry[referralToOrganization].type = "Organization"
+* section[referralToSection].entry[referralToOrganization].display = "紹介先医療機関"
 
 
 // * section[=].entry[+].reference = "referralToOrganizationDeptExample01Inline"
-* section[=].entry[+].reference = "urn:uuid:9f92f003-69e6-4983-85eb-fb49a3110b59"
-* section[=].entry[=].type = "Organization"
-* section[=].entry[=].display = "紹介先診療科"
+* section[referralToSection].entry[referralToDepartment].reference = "urn:uuid:9f92f003-69e6-4983-85eb-fb49a3110b59"
+* section[referralToSection].entry[referralToDepartment].type = "Organization"
+* section[referralToSection].entry[referralToDepartment].display = "紹介先診療科"
 
 
 // * section[=].entry[+].reference = "referralToPractitionerExample01Inline"
-* section[=].entry[+].reference = "urn:uuid:f11535c2-043d-43b6-bf99-b8298ea3c946"
-* section[=].entry[=].type = "Practitioner"
-* section[=].entry[=].display = "紹介先医師"
+* section[referralToSection].entry[referralToDoctor].reference = "urn:uuid:f11535c2-043d-43b6-bf99-b8298ea3c946"
+* section[referralToSection].entry[referralToDoctor].type = "Practitioner"
+* section[referralToSection].entry[referralToDoctor].display = "紹介先医師"
 
 
-* section[+].title = "紹介元情報"
-* section[=].code = $referral-section#920 "紹介元情報セクション"
-* section[=].text.status = #additional
-* section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">港診療所</div>"
+* section[referralFromSection].title = "紹介元情報"
+* section[referralFromSection].code.coding = $referral-section#920 "紹介元情報セクション"
+* section[referralFromSection].text.status = #additional
+* section[referralFromSection].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">港診療所</div>"
 // * section[=].entry[+].reference = "referralFromOrganizationExample01Inline"
-* section[=].entry[+].reference = "urn:uuid:8a888471-9781-4fb7-b5c4-b34afcdea638"
-* section[=].entry[=].type = "Organization"
-* section[=].entry[=].display = "紹介元医療機関"
+* section[referralFromSection].entry[referralFromOrganization].reference = "urn:uuid:8a888471-9781-4fb7-b5c4-b34afcdea638"
+* section[referralFromSection].entry[referralFromOrganization].type = "Organization"
+* section[referralFromSection].entry[referralFromOrganization].display = "紹介元医療機関"
 
 
 // * section[=].entry[+].reference = "referralFromOrganizationDeptExample01Inline"
-* section[=].entry[+].reference = "urn:uuid:2e979bec-720b-4e36-8eb9-ebe661172af3"
-* section[=].entry[=].type = "Organization"
-* section[=].entry[=].display = "紹介元診療科"
+* section[referralFromSection].entry[referralFromDepartment].reference = "urn:uuid:2e979bec-720b-4e36-8eb9-ebe661172af3"
+* section[referralFromSection].entry[referralFromDepartment].type = "Organization"
+* section[referralFromSection].entry[referralFromDepartment].display = "紹介元診療科"
 
 
 // * section[=].entry[+].reference = "referralFromPractitionerExample01Inline"
-* section[=].entry[+].reference = "urn:uuid:3e6a0ba2-d781-4fd7-9de6-e077b690daed"
-* section[=].entry[=].type = "Practitioner"
-* section[=].entry[=].display = "紹介元医師"
+* section[referralFromSection].entry[referralFromDoctor].reference = "urn:uuid:3e6a0ba2-d781-4fd7-9de6-e077b690daed"
+* section[referralFromSection].entry[referralFromDoctor].type = "Practitioner"
+* section[referralFromSection].entry[referralFromDoctor].display = "紹介元医師"
 
 
 * section[+].title = "構造情報"
-* section[=].code = $referral-section#300 "構造情報セクション"
+* section[=].code.coding = $referral-section#300 "構造情報セクション"
 * section[=].section[+].title = "紹介目的"
-* section[=].section[=].code = $referral-section#950 "紹介目的セクション"
+* section[=].section[=].code.coding = $referral-section#950 "紹介目的セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">腹痛精査お願いします。</div>"
 // * section[=].section[=].entry[+].reference = "purposeReferralExample01Inline"
@@ -116,7 +116,7 @@ Description: "構成情報サンプル　composition"
 
 
 * section[=].section[+].title = "傷病名・主訴"
-* section[=].section[=].code = $referral-section#340 "傷病名・主訴セクション"
+* section[=].section[=].code.coding = $referral-section#340 "傷病名・主訴セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">上腹部痛、腰痛</div>"
 // * section[=].section[=].entry[+].reference = "cc1ReferralExample01Inline"
@@ -130,7 +130,7 @@ Description: "構成情報サンプル　composition"
 
 
 * section[=].section[+].title = "現病歴"
-* section[=].section[=].code = $referral-section#360 "現病歴セクション"
+* section[=].section[=].code.coding = $referral-section#360 "現病歴セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">２０２２年６月上旬から夜食後に時々上腹部痛があり、だんだんひどくなっている。他に目立った症状なし。</div>"
 // * section[=].section[=].entry[+].reference = "piReferralExample01Inline"
@@ -140,7 +140,7 @@ Description: "構成情報サンプル　composition"
 
 
 * section[=].section[+].title = "既往歴"
-* section[=].section[=].code = $referral-section#370 "既往歴セクション"
+* section[=].section[=].code.coding = $referral-section#370 "既往歴セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">2018年　狭心症　２ヶ月治療で軽快。2019年　交通事故で左前腕骨折　３ヶ月ギプス固定。</div>"
 //  Reference(JP_Condition) 既往歴
@@ -155,7 +155,7 @@ Description: "構成情報サンプル　composition"
 
 
 * section[=].section[+].title = "アレルギー・不耐性反応"
-* section[=].section[=].code = $referral-section#510 "アレルギー・不耐性反応セクション"
+* section[=].section[=].code.coding = $referral-section#510 "アレルギー・不耐性反応セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">サバ　キーウイ</div>"
 //  Reference(JP_Condition) アレルギー
@@ -170,14 +170,14 @@ Description: "構成情報サンプル　composition"
 
 
 * section[=].section[+].title = "家族歴"
-* section[=].section[=].code = $referral-section#550 "家族歴セクション"
+* section[=].section[=].code.coding = $referral-section#550 "家族歴セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">母　胃がん</div>"
 //  Reference(JP_FamilyMemberHistory) 家族歴
 
 
 * section[=].section[+].title = "身体所見"
-* section[=].section[=].code = $referral-section#610 "身体所見セクション"
+* section[=].section[=].code.coding = $referral-section#610 "身体所見セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">腹部所見：上腹部圧痛あり、その他特に所見なし。</div>"
 //  Reference(JP_Observation_Common) 身体所見
@@ -188,14 +188,14 @@ Description: "構成情報サンプル　composition"
 
 
 * section[=].section[+].title = "感染症情報"
-* section[=].section[=].code = $referral-section#520 "感染症情報セクション"
+* section[=].section[=].code.coding = $referral-section#520 "感染症情報セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">特になし</div>"
 //  Reference(JP_Observation_Common) 感染症情報
 
 
 * section[=].section[+].title = "臨床経過"
-* section[=].section[=].code = $referral-section#330 "臨床経過セクション"
+* section[=].section[=].code.coding = $referral-section#330 "臨床経過セクション"
 * section[=].section[=].text.status = #additional
 * section[=].section[=].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">添付参照</div>"
 //  Reference(JP_DocumentReference) 臨床経過

@@ -99,7 +99,7 @@ Description: "Organizationリソース　（診療情報提供書　紹介元　
 
 * name = "眼科"
 
-* partOf.reference = "Organization/referralFromOrganizationDeptExample01"
+* partOf.reference = "Organization/referralFromOrganizationExample01"
 
 //--------------
 Instance: referralFromPractitionerExample01

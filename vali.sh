@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #ネットワークなし版
-java -jar ../work/validator_cli_618.jar ExampleJson/*.json -version 4.0.1  -language ja   -ig  pkgValidation/jp-core.r4-1.1.2.tgz -ig pkgValidation/jpfhir-terminology.r4-1.1.1.tgz  -ig pkgValidation/jp-eChekupReport.r4.tgz -locale ja-JP -tx n/a  -display-issues-are-warnings -level warnings  -best-practice ignore -no-extensible-binding-warnings  -want-invariants-in-messages   -output testout.html 
+java -jar ../work/validator_cli_618.jar ExampleJson/*.json -version 4.0.1  -language ja   -ig  pkgValidation/jp-core.r4-1.1.2.tgz -ig pkgValidation/jpfhir-terminology.r4-1.1.1.tgz  -ig pkgValidation/jp-eReferral.r4.tgz -locale ja-JP -tx n/a  -display-issues-are-warnings -level warnings  -best-practice ignore -no-extensible-binding-warnings  -want-invariants-in-messages   -output testout.html 
 java -jar ../work/validator_cli.jar ExampleJson/*.json -version 4.0.1  -language ja   -ig  pkgValidation/jp-core.r4-1.1.2.tgz -ig pkgValidation/jpfhir-terminology.r4-1.1.1.tgz  -ig pkgValidation/jp-eChekupReport.r4.tgz -locale ja-JP -tx n/a  -display-issues-are-warnings -level warnings  -best-practice ignore -no-extensible-binding-warnings  -want-invariants-in-messages   -output testout.html 
 
 java -jar ../work/validator_cli_618.jar ExampleJson/Bundle-BundleTestInstance.json -version 4.0.1  -language ja   -ig  pkgValidation/jp-core.r4-1.1.2.tgz -ig pkgValidation/jpfhir-terminology.r4-1.1.1.tgz  -ig pkgValidation/jp-eChekupReport.r4.tgz -locale ja-JP -tx n/a  -display-issues-are-warnings -level warnings  -best-practice ignore -no-extensible-binding-warnings  -want-invariants-in-messages   -output testout.html 
