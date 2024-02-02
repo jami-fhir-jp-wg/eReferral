@@ -612,7 +612,7 @@
             }
           },
           {
-            "url": "http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department",
+            "url": "http://jpfhir.jp/fhir/eCS/Extension/StructureDefinition/JP_eCS_Department",
             "valueCodeableConcept": {
               "coding": [
                 {
@@ -690,7 +690,7 @@
             }
           },
           {
-            "url": "http://jpfhir.jp/fhir/clins/Extension/StructureDefinition/JP_eCS_Department",
+            "url": "http://jpfhir.jp/fhir/eCS/Extension/StructureDefinition/JP_eCS_Department",
             "valueCodeableConcept": {
               "coding": [
                 {
