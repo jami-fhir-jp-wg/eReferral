@@ -493,9 +493,9 @@ and authorDepartment 0..1 MS
 * section[compositionSection].section ^slicing.rules = #open
 
 * section[compositionSection].section   contains 
-        referralPurposeSection  0..1    MS  // 紹介目的セクション referralPurposeSection
-    and problemSection    0..1    MS  // 傷病名・主訴セクション   problemSection
-    and presentIllnessSection     0..1    MS  // 現病歴セクション presentIllnessSection
+        referralPurposeSection  1..1    MS  // 紹介目的セクション referralPurposeSection
+    and problemSection    1..1    MS  // 傷病名・主訴セクション   problemSection
+    and presentIllnessSection     1..1    MS  // 現病歴セクション presentIllnessSection
     and pastIllnessSection    0..1    MS  // 既往歴セクション pastIllnessSection
     and allergiesIIntoleranceSection      0..1    MS  // アレルギー・不耐性反応セクション allergiesIIntoleranceSection
     and familiyHistorySection     0..1    MS  // 家族歴セクション familiyHistorySection

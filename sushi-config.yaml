@@ -49,73 +49,8 @@ pages:
 menu:
   Home:
     全文: index.html
-    1.本仕様書の位置づけ: index.html#本仕様書の位置づけ
-    2.参照する仕様等: index.html#参照する仕様等
-    3.文書データの表現形式: index.html#文書データの表現形式
-    4./4.1全体構造: index.html#全体構造
-    4.2FHIRDocument: index.html#fhirdocument
-    4.3/4.4Compositionリソース: index.html#compositionリソース
-    4.5紹介目的セクション: index.html#紹介目的セクション
-    4.6傷病名・主訴セクション: index.html#傷病名主訴セクション
-    4.7現病歴セクション: index.html#現病歴セクション
-    4.8既往歴セクション: index.html#既往歴セクション
-    4.9アレルギー・不耐性反応セクション: index.html#アレルギー不耐性反応セクション
-    4.10家族歴セクション: index.html#家族歴セクション
-    4.11身体所見セクション: index.html#身体所見セクション
-    4.12感染症情報セクション: index.html#感染症情報セクション
-    4.13社会歴・生活習慣セクション: index.html#社会歴生活習慣セクション
-    4.14予防接種歴セクション: index.html#予防接種歴セクション
-    4.15手術セクション: index.html#手術セクション
-    4.16輸血歴セクション: index.html#輸血歴セクション
-    4.17処置セクション: index.html#処置セクション
-    4.18投薬指示セクション: index.html#投薬指示セクション
-    4.19検査結果セクション: index.html#検査結果セクション
-    4.20臨床経過セクション: index.html#臨床経過セクション
-    4.21診療方針指示セクション: index.html#診療方針指示セクション
-    4.22医療機器セクション: index.html#医療機器セクション
-    4.23事前指示セクション: index.html#事前指示セクション
-    4.24臨床研究参加セクション: index.html#臨床研究参加セクション
-    4.25添付情報セクション: index.html#添付情報セクション
-    4.26備考・連絡情報セクション: index.html#備考連絡情報セクション
-    4.27セクションから直接参照されないリソース: index.html#セクションから直接参照されないリソース
-    5.データタイプ: index.html#データタイプ
-    6.名前空間と識別ＩＤ: index.html#名前空間と識別ｉｄ
-    7.仕様策定メンバー: index.html#仕様策定メンバー
-    8.謝辞: index.html#謝辞
   リソース表:
     全表: eClinicalSummaryTables.html
-    表1 AllergyIntoleranceリソースアレルギー情報: https://std.jpfhir.jp/stddoc/eCSTables.html#tbl-1
-    表2 Binaryリソースバイナリーデータ情報: eClinicalSummaryTables.html#tbl-2
-    表3_Bundleリソース 文書情報: eClinicalSummaryTables.html#tbl-3
-    表4 CarePlanリソース 診療方針指示情報: eClinicalSummaryTables.html#tbl-4
-    表5 Compositionリソース 文書構成情報: eClinicalSummaryTables.html#tbl-5
-    表5-1 Compositionリソース (退院時サマリー): eClinicalSummaryTables.html#tbl-5-1
-    表5-2 Compositionリソース (診療情報提供書): eClinicalSummaryTables.html#tbl-5-2
-    表5-3 Composition_sectionの情報構造: eClinicalSummaryTables.html#tbl-5-3
-    表6 Conditionリソース 患者状態情報: eClinicalSummaryTables.html#tbl-6
-    表7	Consentリソース 同意情報: eClinicalSummaryTables.html#tbl-7
-    表8	DeviceUseStatementリソース 医療機器使用歴情報: eClinicalSummaryTables.html#tbl-8
-    表9	Deviceリソース 医療機器情報: eClinicalSummaryTables.html#tbl-9
-    表10 DiagnosticReportリソース 診断報告書情報: eClinicalSummaryTables.html#tbl-10
-    表11 DocumentReferenceリソース 文書参照情報: eClinicalSummaryTables.html#tbl-11
-    表12 Encounterリソース 入院詳細情報: eClinicalSummaryTables.html#tbl-12
-    表13 FamiliMemberHistoryリソース 家族歴情報: eClinicalSummaryTables.html#tbl-13
-    表14 ImagingStudyリソース 画像検査実施情報: eClinicalSummaryTables.html#tbl-14
-    表15 Immunizationリソース ワクチン接種情報: eClinicalSummaryTables.html#tbl-15
-    表16 MedicationRequestリソース 処方依頼情報: eClinicalSummaryTables.html#tbl-16
-    表16-1 MedicationRequest.dosageInstruction  処方情報の用法指示情報: eClinicalSummaryTables.html#tbl-16-1
-    表16-2 Extension （InstructionForDispense） 調剤指示拡張情報: eClinicalSummaryTables.html#tbl-16-2
-    表17 MedicationStatementリソース  服薬情報: eClinicalSummaryTables.html#tbl-17
-    表17-1 MedicationStatement dosage 処方依頼情報の服薬用法情報: eClinicalSummaryTables.html#tbl-17-1
-    表18 Observationリソース  検査・観察情報: eClinicalSummaryTables.html#tbl-18
-    表19 Organizationリソース 文書作成医療機関情報: eClinicalSummaryTables.html#tbl-19
-    表20 Organizationリソース 診療科情報: eClinicalSummaryTables.html#tbl-20
-    表21 Patientリソース 患者情報: eClinicalSummaryTables.html#tbl-21
-    表22 Practitionerリソース  文書作成責任者情報/文書法的責任者情報: eClinicalSummaryTables.html#tbl-22
-    表23 Procedureリソース  入院中治療処置情報: eClinicalSummaryTables.html#tbl-23
-    表24 RelatedPersonリソース  患者関係者情報: eClinicalSummaryTables.html#tbl-24
-    表25 ResearchStudyリソース  研究対象情報: eClinicalSummaryTables.html#tbl-25
-    表26 ResearchSubjectリソース  研究対象情報: eClinicalSummaryTables.html#tbl-26
   改訂履歴:
    History: history.html
   Artifacts:

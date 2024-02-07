@@ -31,14 +31,14 @@ Description: "診療情報提供書のための文書 Bundleリソース"
     composition 1..1 MS  // 文書構成情報
 and patient 1..1 MS  //  患者情報
 and practitioners 1.. MS
-and organization 1.. MS
+and organization 2.. MS // 文書作成機関*、文書管理責任機関*、紹介先医療機関*、紹介元医療機関*
 //and organizationFrom 1..* MS
 //and department 0.. MS
 //and departmentOfissuer  0..* MS
 //and referralDoctor 1..* MS
 //and cdaDocument 0..1 MS
-and referralEncounter 1.. MS
-and problem 1..* MS
+and referralEncounter 0.. MS
+and problem 0..* MS
 and allergy 0..* MS
 and familyHistory 0..* MS
 and observation 0..* MS
@@ -99,7 +99,7 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 
 * entry[organization].resource only JP_Organization_eCS
 * entry[organization] ^short = "紹介先／元医療機関／文書作成機関／文書管理機関"
-* entry[organization] ^definition = "紹介先／元医療機関"
+* entry[organization] ^definition = "紹介先／元医療機関／文書作成機関／文書管理機関"
 * entry[organization].search ..0
 * entry[organization].request ..0
 * entry[organization].response ..0
