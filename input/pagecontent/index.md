@@ -77,7 +77,7 @@ table th {
 </style>
 
 
-<a id="top"></a>日本HL7協会 日本医療情報学会　2021年10月承認 　改訂Ver. 1.1.3 (2023.04.25) 
+<a id="top"></a>
 
 # **診療情報提供書HL7FHIR記述仕様 第1版**
 ## 本仕様書の位置づけ
@@ -85,7 +85,7 @@ table th {
 
 仕様は、以下のPDF版またはHTMLページを参照のこと。
   - [診療情報提供書 HL7FHIR 記述仕様(PDF版)](https://std.jpfhir.jp/stddoc/eReferralFHIR_v1x.pdf)
-  - [診療情報提供書 HL7FHIR 記述仕様(HTML版)](https://std.jpfhir.jp/stddoceReferralFHIR_v1x.html)
+  - [診療情報提供書 HL7FHIR 記述仕様(HTML版)](https://std.jpfhir.jp/stddoc/eReferralFHIR_v1x.html)
  
 ## リソース記述に関する表 診療情報提供書・退院時サマリー 共通
 **目次**<br>
