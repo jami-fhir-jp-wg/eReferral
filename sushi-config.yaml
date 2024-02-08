@@ -53,7 +53,7 @@ menu:
   Home:
     全文: index.html
   リソース表:
-    全表: https://std.jpfhir.jp/stddoc/commonTablesFHIRv1x.html
+    全表: https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html
   改訂履歴:
    History: history.html
   Artifacts:
