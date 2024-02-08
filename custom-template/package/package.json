@@ -1,10 +1,10 @@
 {
-    "name": "eCheckupReport.ig-template",
+    "name": "eReferral.ig-template",
     "type": "fhir.template",
     "license": "CC0-1.0",
-    "description": "jp.fhir.eCheckupReport IG Template",
+    "description": "jp.fhir.eReferral IG Template",
     "author": "https://jpfhir.jp",
-    "canonical": "https://jpfhir.jp/fhir/eCheckup/templates/eCheckupReport.ig-template",
+    "canonical": "https://jpfhir.jp/fhir/eReferral/templates/eReferral.ig-template",
     "base": "fhir.base.template",
     "dependencies": {
         "fhir.base.template": "current"

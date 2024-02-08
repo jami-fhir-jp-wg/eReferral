@@ -1,7 +1,7 @@
 {
-  "name": "jp-eCheckupReport.r4",
+  "name": "jp-eReferral.r4",
   "version": "1.0.0-temp",
-  "description": "jp-eCheckupReport-snapshot 1.0.0-temp",
+  "description": "jp-eReferral-snapshot 1.0.0-temp",
   "author": "Kazuhiko Ohe",
   "fhirVersions": [
     "4.0.1"
@@ -9,6 +9,6 @@
   "dependencies": {
     "hl7.fhir.r4.core": "4.0.1"
   },
-  "url": "http://jpfhir.jp/fhir/eCheckupReport",
-  "canonical": "http://jpfhir.jp/fhir/eCheckupReport"
+  "url": "http://jpfhir.jp/fhir/eReferral",
+  "canonical": "http://jpfhir.jp/fhir/eReferral"
 }

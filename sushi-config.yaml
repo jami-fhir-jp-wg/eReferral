@@ -67,7 +67,7 @@ menu:
   パッケージDownload:
     標準(diff)版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.5.tgz 
     snapshot版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.5-snap.tgz
-
+    
 #-----------------------------------------
 # IG 外部パラメータ設定
 #-----------------------------------------
