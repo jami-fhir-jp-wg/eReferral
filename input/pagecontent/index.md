@@ -79,15 +79,18 @@ table th {
 
 <a id="top"></a>
 
-# **診療情報提供書HL7FHIR記述仕様 第1版**
-## 本仕様書の位置づけ
-この仕様書は、HL7FHIR（以下、単に「FHIR」という）に準拠した診療情報提供書の記述仕様を記述した文書である。
+# **診療情報提供書HL7FHIR記述仕様第1版 実装ガイド **
+
+## 実装ガイドの位置づけ
+この実装ガイドは、HL7FHIR（以下、単に「FHIR」という）に準拠した診療情報提供書の記述仕様第1版の実装ガイドである。
 
 仕様は、以下のPDF版またはHTMLページを参照のこと。
+
   - [診療情報提供書 HL7FHIR 記述仕様(PDF版)](https://std.jpfhir.jp/stddoc/eReferralFHIR_v1x.pdf)
   - [診療情報提供書 HL7FHIR 記述仕様(HTML版)](https://std.jpfhir.jp/stddoc/eReferralFHIR_v1x.html)
- 
-## リソース記述に関する表 診療情報提供書・退院時サマリー 共通
+
+
+## リソース記述に関する表（診療情報提供書・退院時サマリー 共通）
 **目次**<br>
 [表全体](https://std.jpfhir.jp/stddoc/commonTablesFHIR_V1x.html)<br><br>
 [表1　AllergyIntoleranceリソース　アレルギー情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_V1x.html#表1)<br>
