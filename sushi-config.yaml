@@ -7,9 +7,9 @@
 
 id: eReferral
 canonical: http://jpfhir.jp/fhir/eReferral
-name: "HL7Japan_JAMIeReferralImplementationGuide"
-title: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
-description: "診療情報提供書　HL7 Japan-JAMI eReferral ImplementationGuide"
+name: "診療情報提供書FHIR記述仕様　実装ガイド"
+title: "診療情報提供書FHIR記述仕様　実装ガイド"
+description: "診療情報提供FHIR記述仕様　実装ガイド　eReferral Implementation　Guide"
 status: active # draft | active | retired | unknown 
 version: 1.0.0-temp
 date: 2024-02-07
@@ -38,7 +38,7 @@ dependencies:
 
 pages:
   index.md:
-    title: 診療情報提供書HL7 FHIR 記述仕様書 第1版 V1.1.5
+    title: 診療情報提供書HL7&reg; FHIR&reg;記述仕様第1.1版　実装ガイド
   eClinicalSummaryTables.md:
     title: リソース表
   validationGuide.md:
