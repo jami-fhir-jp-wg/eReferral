@@ -39,7 +39,9 @@ pages:
   index.md:
     title: 診療情報提供書HL7 FHIR 記述仕様書 第1版 V1.1.5
   eClinicalSummaryTables.md:
-    title: リソース表 各表一覧
+    title: リソース表
+  validationGuide.md:
+    title: Validationガイド
   history.md:
     title: 改訂履歴
 
@@ -50,7 +52,7 @@ menu:
   Home:
     全文: index.html
   リソース表:
-    全表: eClinicalSummaryTables.html
+    全表: https://std.jpfhir.jp/stddoc/commonTablesFHIR_V1x.html
   改訂履歴:
    History: history.html
   Artifacts:
@@ -59,6 +61,11 @@ menu:
     Terminology Value Sets: artifacts.html#terminology-value-sets
     Terminology Code Systems: artifacts.html#terminology-code-systems
     Example Instances: artifacts.html#example-example-instances
+  Validationガイド:
+    Validationガイド: validationGuide.html
+  パッケージDownload:
+    標準(diff)版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.5.tgz 
+    snapshot版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.5-snap.tgz
 
 #-----------------------------------------
 # IG 外部パラメータ設定
