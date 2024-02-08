@@ -123,5 +123,10 @@ table th {
 [表25	ResearchStudyリソース　研究対象情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_V1x.html#表25)<br>
 [表26	ResearchSubjectリソース　研究対象情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_V1x.html#表26)<br>
 
+## 仕様策定
+令和２年度厚生労働科学特別研究事業「診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究」研究班 (研究代表：大江和彦（東京大学）)<br>
+日本医療情報学会NeXEHRS課題研究会、HL7FHIR 日本実装検討WGでの検討結果を反映している。<br>
+https://std.jpfhir.jp/<br>
+Authorized by （一社）日本HL7協会 for Ver.1.0<br>
 
-
+*以下余白*
