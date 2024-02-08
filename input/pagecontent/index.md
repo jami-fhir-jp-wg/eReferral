@@ -98,9 +98,9 @@ table th {
 [表3　Bundleリソース  文書情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表3)<br>
 [表4　CarePlanリソース  診療方針指示情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表4)<br>
 [表5	Compositionリソース 文書構成情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5)<br>
-[表5-1	Compositionリソース (退院時サマリー)](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5-1)<br>
-[表5-2	Compositionリソース (診療情報提供書)](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5-2)<br>
-[表5-3	Composition_sectionの情報構造](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5-3)<br>
+[表5-1	Compositionリソース (退院時サマリー)](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5_1)<br>
+[表5-2	Compositionリソース (診療情報提供書)](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5_2)<br>
+[表5-3	Composition_sectionの情報構造](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表5_3)<br>
 [表6	Conditionリソース　患者状態情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表6)<br>
 [表7	Consentリソース　同意情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表7)<br>
 [表8	DeviceUseStatementリソース　医療機器使用歴情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表8)<br>
@@ -112,8 +112,8 @@ table th {
 [表14	ImagingStudyリソース　画像検査実施情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表14)<br>
 [表15	Immunizationリソース　ワクチン接種情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表15)<br>
 [表16	MedicationRequestリソース　処方依頼情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表16)<br>
-[表16-1	MedicationRequest.dosageInstruction  処方情報の用法指示情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表16-1)<br>
-[表16-2	Extension　（InstructionForDispense） 調剤指示拡張情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表16-2)<br>
+[表16-1	MedicationRequest.dosageInstruction  処方情報の用法指示情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表16_1)<br>
+[表16-2	Extension　（InstructionForDispense） 調剤指示拡張情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表16_2)<br>
 [表17	MedicationStatementリソース　服薬情報【廃止】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表17)<br>
 [表17-1	MedicationStatement.dosage　処方依頼情報の服薬用法情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表17-1)<br>
 [表18	Observationリソース　検査【6情報共通仕様】・観察情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表18)<br>
