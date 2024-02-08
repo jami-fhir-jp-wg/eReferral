@@ -1,3 +1,11 @@
+Profile:        JP_Bundle
+Parent:			Bundle
+Id:             JP-Bundle
+Description:    "Derived Profile from JP-Core"
+* ^url = "http://jpfhir.jp/fhir/eRegerral/StructureDefinition/JP_Bundle"
+* ^date = "2023-03-31"
+* meta.lastUpdated 0.. MS
+
 Profile: JP_Bundle_eReferral
 Parent: Bundle
 Id: JP-Bundle-eReferral
@@ -163,7 +171,7 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[procedure] ^definition = "手術処置/輸血歴情報/処置等を記述して参照する。"
 
 * entry[medicationRequest].resource only  JP_MedicationRequest
-* entry[medicationRequest] ^short = "処方情報を記述したMedicationStatementリソースを参照"
+* entry[medicationRequest] ^short = "処方情報を記述したMedicationRequestリソースを参照"
 * entry[medicationRequest] ^definition = "処方情報を記述して参照する。"
 
 * entry[documentReference].resource only  JP_DocumentReference_eCS
@@ -215,10 +223,3 @@ and bundleData 0..* MS   // 他のBundle情報（たとえば処方や退院時�
 * entry[bundleData] ^short = "各種のBudle文書"
 * entry[bundleData] ^definition = "各種のBudle文書を参照する。"
 
-Profile:        JP_Bundle
-Parent:			Bundle
-Id:             JP-Bundle
-Description:    "Derived Profile from JP-Core"
-* ^url = "http://jpfhir.jp/fhir/eRegerral/StructureDefinition/JP_Bundle"
-* ^date = "2023-03-31"
-* meta.lastUpdated 0.. MS
