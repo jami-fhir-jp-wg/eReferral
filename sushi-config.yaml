@@ -39,7 +39,7 @@ dependencies:
 pages:
   index.md:
     title: 診療情報提供書HL7&reg; FHIR&reg;記述仕様第1.1版　実装ガイド
-  eClinicalSummaryTables.md:
+  https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html:
     title: リソース表
   validationGuide.md:
     title: Validationガイド
