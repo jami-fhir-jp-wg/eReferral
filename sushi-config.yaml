@@ -360,3 +360,4 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - http://jpfhir.jp/fhir/eCS/Extension/StructureDefinition/JP_eCS_Department
     - http://jpfhir.jp/fhir/Common/CodeSystem/discharge-disposition
     - http://jpfhir.jp/fhir/Common/ValueSet/discharge-disposition
+    - http://jpfhir.jp/fhir/Common/StructureDefinition/JP_Bundle
