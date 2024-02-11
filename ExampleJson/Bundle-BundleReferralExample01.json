@@ -96,15 +96,6 @@
           },
           {
             "title": "構造情報",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
-                  "code": "300",
-                  "display": "構造情報セクション"
-                }
-              ]
-            },
             "section": [
               {
                 "title": "紹介目的",
@@ -314,7 +305,16 @@
                   }
                 ]
               }
-            ]
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://jpfhir.jp/fhir/eReferral/CodeSystem/document-section",
+                  "code": "300",
+                  "display": "構造情報セクション"
+                }
+              ]
+            }
           }
         ],
         "type": {
