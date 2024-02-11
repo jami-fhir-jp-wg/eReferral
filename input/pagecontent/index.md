@@ -120,7 +120,7 @@ table th {
 [表19	Organizationリソース　文書作成医療機関情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表19)<br>
 [表20	Organizationリソース　診療科情報【廃止】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表20)<br>
 [表21	Patientリソース　患者情報【6情報共通仕様】](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表21)<br>
-[表22	Practitionerリソース　文書作成責任者情報/文書法的責任者情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表22)<br>
+[表22	Practitionerリソース　文書作成責任者情報/文書管理責任者情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表22)<br>
 [表23	Procedureリソース　入院中治療処置情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表23)<br>
 [表24	RelatedPersonリソース　患者関係者情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表24)<br>
 [表25	ResearchStudyリソース　研究対象情報](https://std.jpfhir.jp/stddoc/commonTablesFHIR_v1x.html#表25)<br>
