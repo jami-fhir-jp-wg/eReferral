@@ -462,12 +462,6 @@
           "code": "AMB",
           "display": "外来"
         },
-        "identifier": [
-          {
-            "system": "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier",
-            "value": "192844"
-          }
-        ],
         "classHistory": [
           {
             "class": {
@@ -478,6 +472,12 @@
             "period": {
               "start": "2020-08-20"
             }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://jpfhir.jp/fhir/core/IdSystem/resourceInstance-identifier",
+            "value": "192844"
           }
         ]
       }
