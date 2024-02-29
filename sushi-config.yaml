@@ -12,7 +12,7 @@ title: "診療情報提供書FHIR記述仕様　実装ガイド"
 description: "診療情報提供FHIR記述仕様　実装ガイド　eReferral Implementation　Guide"
 status: active # draft | active | retired | unknown 
 version: 1.0.0-temp
-date: 2024-02-07
+date: 2024-02-29
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html 
 copyrightYear: 2022+
 releaseLabel: release # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
