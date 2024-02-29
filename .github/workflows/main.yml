@@ -15,7 +15,7 @@ on:
   repository_dispatch:
     types: [update]
 env:
-  release_version : 1.1.5
+  release_version : 1.1.6
 jobs:
   turn:
     runs-on: ubuntu-latest

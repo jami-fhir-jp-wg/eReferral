@@ -63,8 +63,8 @@ menu:
   Validationガイド:
     Validationガイド: validationGuide.html
   パッケージDownload:
-    標準(diff)版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.5.tgz 
-    snapshot版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.5-snap.tgz
+    標準(diff)版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.6.tgz 
+    snapshot版: https://jpfhir.jp/fhir/eReferral/jp-eReferral.r4-1.1.6-snap.tgz
     
 #-----------------------------------------
 # IG 外部パラメータ設定
