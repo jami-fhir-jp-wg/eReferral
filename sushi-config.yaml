@@ -38,7 +38,7 @@ dependencies:
 
 pages:
   index.md:
-    title: 診療情報提供書HL7&reg; FHIR&reg;記述仕様第1.1版　実装ガイド
+    title: 診療情報提供書HL7 FHIR記述仕様第1.1版　実装ガイド
   validationGuide.md:
     title: Validationガイド
   history.md:
